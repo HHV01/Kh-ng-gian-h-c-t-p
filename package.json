@@ -1,7 +1,7 @@
 {
-  "name": "ba-academy",
+  "name": "vy-workspace",
   "version": "1.0.0",
-  "description": "BA Academy - Nền tảng học tập & case study Business Analyst",
+  "description": "Vy Workspace - Nền tảng học tập & case study Business Analyst",
   "main": "server.js",
   "scripts": {
     "test": "node verify-cases.cjs",
@@ -11,7 +11,8 @@
   "keywords": [
     "business-analyst",
     "learning",
-    "case-study"
+    "case-study",
+    "vy-workspace"
   ],
   "engines": {
     "node": ">=18.0.0"

@@ -1,4 +1,4 @@
-# BA Academy - Nền tảng học tập & Case Study Business Analyst
+# Vy Workspace - Nền tảng học tập & Case Study Business Analyst
 
 Dự án cung cấp giao diện LMS, dashboard học tập, flashcard và 12 tình huống case study BA thực tế (HTML, CSS, JavaScript thuần).
 
@@ -9,12 +9,12 @@ Dự án cung cấp giao diện LMS, dashboard học tập, flashcard và 12 tì
 Render không hỗ trợ upload trực tiếp file `.zip` từ máy tính lên dashboard, mà triển khai code qua **GitHub/GitLab Repository**.
 
 ### Bước 1: Đưa mã nguồn lên GitHub
-1. Tạo một repository mới trên GitHub (ví dụ: `ba-academy`).
+1. Tạo một repository mới trên GitHub (ví dụ: `vy-workspace`).
 2. Tải/đẩy toàn bộ mã nguồn của thư mục này lên GitHub:
    ```bash
    git init
    git add .
-   git commit -m "Initial commit for BA Academy"
+   git commit -m "Initial commit for Vy Workspace"
    git branch -M main
    git remote add origin https://github.com/<tai-khoan-cua-ban>/<ten-repo>.git
    git push -u origin main
@@ -31,14 +31,14 @@ Dự án đã có sẵn file cấu hình chuẩn **`render.yaml`**:
 1. Đăng nhập [render.com](https://dashboard.render.com).
 2. Nhấn nút **New +** ở góc trên bên phải -> Chọn **Blueprint**.
 3. Kết nối với repository GitHub vừa tạo.
-4. Render sẽ tự động đọc file `render.yaml` và thiết lập mọi thông số (Tên: `ba-academy`, Runtime: `static`, Build: `node verify-cases.cjs`, Publish: `./dist`).
+4. Render sẽ tự động đọc file `render.yaml` và thiết lập mọi thông số (Tên: `vy-workspace`, Runtime: `static`, Build: `node verify-cases.cjs`, Publish: `./dist`).
 5. Nhấn **Apply** để hoàn tất triển khai.
 
 #### 👉 Cách 2: Tạo Static Site thủ công (Miễn phí 100%)
 1. Trên Render Dashboard, nhấn **New +** -> Chọn **Static Site**.
 2. Chọn repository của bạn.
 3. Điền các thông số:
-   - **Name**: `ba-academy`
+   - **Name**: `vy-workspace`
    - **Branch**: `main`
    - **Build Command**: `node verify-cases.cjs` (hoặc để trống)
    - **Publish Directory**: `dist`

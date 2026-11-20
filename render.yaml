@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: ba-academy
+    name: vy-workspace
     runtime: static
     buildCommand: node verify-cases.cjs
     staticPublishPath: ./dist
