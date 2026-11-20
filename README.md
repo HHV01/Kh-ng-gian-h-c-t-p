@@ -1,24 +1,78 @@
-# BA Academy
+# BA Academy - Nền tảng học tập & Case Study Business Analyst
 
-## Cập nhật thư viện & case study
+Dự án cung cấp giao diện LMS, dashboard học tập, flashcard và 12 tình huống case study BA thực tế (HTML, CSS, JavaScript thuần).
 
-- Thư viện theo module có filter Tất cả/Cơ bản/Nâng cao/Đang học/Chưa học, chế độ Grid/List, trạng thái từng bài và tiến độ từ các bài đã đánh dấu hoàn thành. Có 10 module, mỗi module 6 tiêu đề bài mẫu, hiển thị trước 4 bài.
-- Nút menu cạnh tìm kiếm: thu gọn/mở rộng trên desktop; mở drawer trên tablet/mobile. Đóng bằng nút ×, click nền hoặc Escape. Có giữ focus trong drawer và ghi nhớ trạng thái thu gọn desktop.
-- 12 case tự biên soạn: bán lẻ/tồn kho, lịch dịch vụ, phê duyệt mua sắm, thanh toán bất đồng bộ, đối soát dashboard pilot AI CSKH, CRM trùng hồ sơ, EdTech, SLA hỗ trợ CNTT, đổi trả, billing thuê bao B2B và chuyển đổi API. Tình huống, chính sách và số liệu đều giả lập.
-- Mỗi case có 7 bước, gợi ý, hướng giải riêng, rubric 4 tiêu chí, bản nháp tự lưu, lịch sử các lần tự chấm và tải bài làm Markdown. Dữ liệu chỉ ở localStorage trên trình duyệt; tải file để sao lưu.
-- Nguồn tham khảo phương pháp được ghi cuối mỗi case; không coi đây là bài dự án thực tế hoặc đáp án của tổ chức tham khảo.
-- `node verify-cases.cjs` kiểm tra điều kiện nộp, quy đổi điểm, snapshot lịch sử, lưu dữ liệu và escape nội dung người dùng.
+---
 
-Giao diện LMS tiếng Việt bằng HTML, CSS và JavaScript thuần.
+## 🚀 Hướng dẫn Triển khai lên Render (render.com)
 
-Mở `dist/index.html` bằng trình duyệt hoặc chạy `python -m http.server 5174 --directory dist` từ thư mục dự án.
+Render không hỗ trợ upload trực tiếp file `.zip` từ máy tính lên dashboard, mà triển khai code qua **GitHub/GitLab Repository**.
 
-Bao gồm dashboard, 10 track, trang bài học 3 tab, flashcard 3D, quiz mở khóa từ 70%, tìm kiếm, dark mode. Tiến độ lưu bằng localStorage trên trình duyệt hiện tại.
+### Bước 1: Đưa mã nguồn lên GitHub
+1. Tạo một repository mới trên GitHub (ví dụ: `ba-academy`).
+2. Tải/đẩy toàn bộ mã nguồn của thư mục này lên GitHub:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit for BA Academy"
+   git branch -M main
+   git remote add origin https://github.com/<tai-khoan-cua-ban>/<ten-repo>.git
+   git push -u origin main
+   ```
 
-Đây là bản mẫu giao diện có tương tác. Các thống kê, lịch học và nội dung chuyên môn là dữ liệu minh họa; mỗi track hiện có 6 bài mẫu dùng chung, chưa phải giáo trình đầy đủ theo số lượng trên thẻ. Chưa có máy chủ, tài khoản đăng nhập hay đồng bộ tiến độ giữa thiết bị. Font Google Fonts cần kết nối mạng; nếu không có, trình duyệt dùng sans-serif.
+---
 
-Đã kiểm tra cú pháp JavaScript và xem giao diện desktop, tablet, mobile; kiểm tra mở bài học, chuyển tab và flashcard. Chưa kiểm thử toàn bộ chức năng đầu cuối.
+### Bước 2: Triển khai trên Render
 
+Bạn có thể chọn **1 trong 2 cách** sau:
 
+#### 👉 Cách 1: Dùng Render Blueprint (Tự động - Khuyên dùng)
+Dự án đã có sẵn file cấu hình chuẩn **`render.yaml`**:
+1. Đăng nhập [render.com](https://dashboard.render.com).
+2. Nhấn nút **New +** ở góc trên bên phải -> Chọn **Blueprint**.
+3. Kết nối với repository GitHub vừa tạo.
+4. Render sẽ tự động đọc file `render.yaml` và thiết lập mọi thông số (Tên: `ba-academy`, Runtime: `static`, Build: `node verify-cases.cjs`, Publish: `./dist`).
+5. Nhấn **Apply** để hoàn tất triển khai.
 
-Đã bỏ mục Template khỏi menu, trang nội dung và chức năng tải mẫu. Tìm kiếm trên header có thể tìm case study theo tiêu đề, mô tả, lĩnh vực và kỹ năng.
+#### 👉 Cách 2: Tạo Static Site thủ công (Miễn phí 100%)
+1. Trên Render Dashboard, nhấn **New +** -> Chọn **Static Site**.
+2. Chọn repository của bạn.
+3. Điền các thông số:
+   - **Name**: `ba-academy`
+   - **Branch**: `main`
+   - **Build Command**: `node verify-cases.cjs` (hoặc để trống)
+   - **Publish Directory**: `dist`
+4. Trong mục **Advanced** -> **Redirects/Rewrites**:
+   - Chọn **Add Rule**: `Rewrite` | Source: `/*` | Destination: `/index.html`
+5. Nhấn **Create Static Site**.
+
+*(Nếu bạn muốn chạy dạng Node.js Web Service: Dự án đã được bổ sung sẵn file `package.json` và `server.js`. Render sẽ tự chạy lệnh `node server.js` và lắng nghe cổng $PORT).*
+
+---
+
+## 💻 Chạy thử nghiệm ở máy local
+
+- Mở trực tiếp file `dist/index.html` bằng trình duyệt web.
+- Hoặc chạy server nội bộ:
+  ```bash
+  npm start
+  # Hoặc: python -m http.server 5174 --directory dist
+  ```
+- Chạy kiểm tra tính đúng đắn của dữ liệu case study:
+  ```bash
+  npm test
+  # Hoặc: node verify-cases.cjs
+  ```
+
+---
+
+## 📂 Cấu trúc thư mục
+
+- `dist/`: Toàn bộ giao diện web tĩnh (HTML, CSS, JS, icon, UI).
+  - `dist/index.html`: Trang chính LMS.
+  - `dist/cases.js`, `dist/cases-extra.js`: 12 case study BA có giải pháp & rubric chấm điểm.
+  - `dist/app.js`, `dist/library.js`: Logic điều hướng, flashcard, bài học.
+- `render.yaml`: File cấu hình kết nối tự động với Render (Blueprint).
+- `package.json`: Khai báo dự án, scripts build/test/start.
+- `server.js`: Server Node.js tĩnh nhẹ (zero-dependency) dự phòng cho Web Service.
+- `verify-cases.cjs`: Bộ test tự động kiểm thử logic case study.

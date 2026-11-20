@@ -1,0 +1,21 @@
+{
+  "name": "ba-academy",
+  "version": "1.0.0",
+  "description": "BA Academy - Nền tảng học tập & case study Business Analyst",
+  "main": "server.js",
+  "scripts": {
+    "test": "node verify-cases.cjs",
+    "build": "node verify-cases.cjs",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "business-analyst",
+    "learning",
+    "case-study"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}
