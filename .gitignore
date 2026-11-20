@@ -1,0 +1,10 @@
+# Local hosting identity and generated previews
+.openai/
+UI-*.jpg
+*.tar.gz
+*.zip
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
