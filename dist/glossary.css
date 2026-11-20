@@ -1,0 +1,876 @@
+/* ==========================================================================
+   BA GLOSSARY (THUẬT NGỮ CHUYÊN NGÀNH)
+   Phong cách Modern EdTech / SaaS tối giản
+   Palette: Nền #F8FAFC, Card trắng #FFFFFF, Viền #E2E8F0, Accent #6366F1
+   ========================================================================== */
+
+:root {
+  --gl-bg: #F8FAFC;
+  --gl-card: #FFFFFF;
+  --gl-border: #E2E8F0;
+  --gl-border-hover: #6366F1;
+  --gl-primary: #6366F1;
+  --gl-primary-hover: #4F46E5;
+  --gl-primary-soft: #EEF2FF;
+  --gl-primary-subtle: #E0E7FF;
+  --gl-text: #0F172A;
+  --gl-text-sub: #64748B;
+  --gl-text-muted: #94A3B8;
+  --gl-card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  --gl-card-shadow-hover: 0 10px 25px -5px rgba(99, 102, 241, 0.1), 0 8px 10px -6px rgba(99, 102, 241, 0.04);
+}
+
+body.dark {
+  --gl-bg: #141621;
+  --gl-card: #202332;
+  --gl-border: #34384D;
+  --gl-border-hover: #818CF8;
+  --gl-primary: #818CF8;
+  --gl-primary-hover: #A5B4FC;
+  --gl-primary-soft: #2E334D;
+  --gl-primary-subtle: #3C4266;
+  --gl-text: #F8FAFC;
+  --gl-text-sub: #94A3B8;
+  --gl-text-muted: #64748B;
+  --gl-card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  --gl-card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Container chính của trang Glossary */
+.glossary-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+/* Header & Mô tả */
+.glossary-header {
+  margin-bottom: 24px;
+}
+
+.glossary-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.glossary-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--gl-text);
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.glossary-count-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gl-primary);
+  background: var(--gl-primary-soft);
+  padding: 3px 10px;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.glossary-header p {
+  color: var(--gl-text-sub);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Thanh công cụ tra cứu & Tìm kiếm */
+.glossary-toolbar {
+  background: var(--gl-card);
+  border: 1px solid var(--gl-border);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--gl-card-shadow);
+}
+
+.glossary-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--gl-bg);
+  border: 1.5px solid var(--gl-border);
+  border-radius: 10px;
+  padding: 0 14px;
+  height: 44px;
+  transition: all 0.18s ease;
+}
+
+.glossary-search-box:focus-within {
+  border-color: var(--gl-primary);
+  background: var(--gl-card);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.glossary-search-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--gl-text-muted);
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.glossary-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--gl-text);
+  font-size: 13.5px;
+  font-family: inherit;
+}
+
+.glossary-search-input::placeholder {
+  color: var(--gl-text-muted);
+}
+
+.glossary-search-clear {
+  border: none;
+  background: transparent;
+  color: var(--gl-text-muted);
+  font-size: 16px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.15s ease;
+}
+
+.glossary-search-clear:hover {
+  background: var(--gl-border);
+  color: var(--gl-text);
+}
+
+/* Category Pills & Nút Đã lưu */
+.glossary-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.glossary-category-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.glossary-pill {
+  border: 1px solid var(--gl-border);
+  background: var(--gl-bg);
+  color: var(--gl-text-sub);
+  padding: 6px 13px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.glossary-pill:hover {
+  border-color: var(--gl-primary);
+  color: var(--gl-primary);
+  background: var(--gl-primary-soft);
+}
+
+.glossary-pill.active {
+  background: var(--gl-primary);
+  border-color: var(--gl-primary);
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+}
+
+.glossary-bookmark-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--gl-border);
+  background: var(--gl-bg);
+  color: var(--gl-text-sub);
+  padding: 6px 13px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.glossary-bookmark-toggle:hover {
+  border-color: #EAB308;
+  color: #B45309;
+  background: #FEFCE8;
+}
+
+.glossary-bookmark-toggle.active {
+  background: #FEFCE8;
+  border-color: #FACC15;
+  color: #854D0E;
+  font-weight: 600;
+}
+
+body.dark .glossary-bookmark-toggle:hover,
+body.dark .glossary-bookmark-toggle.active {
+  background: #422006;
+  border-color: #A16207;
+  color: #FEF08A;
+}
+
+.glossary-bookmark-toggle svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Thanh chỉ mục bảng chữ cái A-Z */
+.glossary-alphabet-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+  background: var(--gl-card);
+  border: 1px solid var(--gl-border);
+  border-radius: 10px;
+  padding: 6px 10px;
+  margin-bottom: 28px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  box-shadow: var(--gl-card-shadow);
+}
+
+.alphabet-letter-btn {
+  border: none;
+  background: transparent;
+  color: var(--gl-text-muted);
+  font-size: 12.5px;
+  font-weight: 700;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.alphabet-letter-btn.has-data {
+  color: var(--gl-primary);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.alphabet-letter-btn.has-data:hover {
+  background: var(--gl-primary-soft);
+  color: var(--gl-primary-hover);
+  transform: scale(1.1);
+}
+
+.alphabet-letter-btn.no-data {
+  color: var(--gl-text-muted);
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Nhóm các chữ cái (Group by Letter) */
+.glossary-group {
+  margin-bottom: 32px;
+  scroll-margin-top: 110px;
+}
+
+.glossary-group-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.glossary-group-letter {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--gl-primary);
+  background: var(--gl-primary-soft);
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.12);
+}
+
+.glossary-group-line {
+  flex: 1;
+  height: 1px;
+  background: var(--gl-border);
+}
+
+.glossary-group-count {
+  font-size: 11.5px;
+  color: var(--gl-text-muted);
+  white-space: nowrap;
+}
+
+/* Lưới thẻ thuật ngữ (Term Cards Grid) */
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Thẻ thuật ngữ (Term Card) */
+.glossary-card {
+  background: var(--gl-card);
+  border: 1px solid var(--gl-border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--gl-card-shadow);
+  cursor: pointer;
+  position: relative;
+}
+
+.glossary-card:hover {
+  border-color: var(--gl-border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--gl-card-shadow-hover);
+}
+
+/* 1. Tiêu đề thẻ */
+.term-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.term-title-wrap {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+.term-abbr {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gl-text);
+  letter-spacing: -0.01em;
+}
+
+.term-fullname {
+  font-size: 13px;
+  color: var(--gl-text-sub);
+  font-weight: 500;
+}
+
+.term-actions-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.term-category-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gl-primary);
+  background: var(--gl-primary-soft);
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.term-bookmark-btn {
+  border: none;
+  background: transparent;
+  color: var(--gl-text-muted);
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.15s ease;
+}
+
+.term-bookmark-btn:hover {
+  background: var(--gl-bg);
+  color: #EAB308;
+}
+
+.term-bookmark-btn.active {
+  color: #EAB308;
+}
+
+.term-bookmark-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  fill: transparent;
+  transition: fill 0.15s ease;
+}
+
+.term-bookmark-btn.active svg {
+  fill: #EAB308;
+  stroke: #CA8A04;
+}
+
+/* 2. Giải thích cốt lõi */
+.term-core-definition {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--gl-text);
+  margin-bottom: 12px;
+}
+
+/* 3. Khối Ứng dụng thực tế */
+.term-practical-box {
+  background: var(--gl-bg);
+  border-left: 3.5px solid var(--gl-primary);
+  border-radius: 0 8px 8px 0;
+  padding: 9px 12px;
+  margin-bottom: 14px;
+}
+
+.term-practical-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gl-primary);
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.term-practical-label svg {
+  width: 13px;
+  height: 13px;
+}
+
+.term-practical-text {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--gl-text-sub);
+}
+
+/* 4. Chân thẻ (Footer) */
+.term-card-footer {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--gl-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.term-related-chips {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  font-size: 11.5px;
+  color: var(--gl-text-muted);
+}
+
+.term-chip {
+  border: 1px solid var(--gl-border);
+  background: var(--gl-bg);
+  color: var(--gl-text-sub);
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.term-chip:hover {
+  border-color: var(--gl-primary);
+  color: var(--gl-primary);
+  background: var(--gl-primary-soft);
+}
+
+.term-lesson-link {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--gl-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.term-lesson-link:hover {
+  color: var(--gl-primary-hover);
+  transform: translateX(2px);
+}
+
+/* Highlight từ khóa khớp */
+.glossary-mark {
+  background: #FEF08A;
+  color: #854D0E;
+  padding: 1px 3px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+body.dark .glossary-mark {
+  background: #713F12;
+  color: #FEF08A;
+}
+
+/* ==========================================================================
+   SIDE DRAWER (CHI TIẾT THUẬT NGỮ)
+   ========================================================================== */
+.glossary-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.glossary-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.glossary-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 480px;
+  max-width: 100vw;
+  background: var(--gl-card);
+  border-left: 1px solid var(--gl-border);
+  box-shadow: -10px 0 35px rgba(15, 23, 42, 0.15);
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.glossary-drawer.open {
+  transform: translateX(0);
+}
+
+.glossary-drawer-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--gl-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.glossary-drawer-close {
+  border: none;
+  background: var(--gl-bg);
+  color: var(--gl-text-sub);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.15s ease;
+}
+
+.glossary-drawer-close:hover {
+  background: var(--gl-border);
+  color: var(--gl-text);
+}
+
+.glossary-drawer-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: thin;
+}
+
+.drawer-term-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gl-primary);
+  background: var(--gl-primary-soft);
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.drawer-term-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gl-text);
+  margin: 0 0 4px;
+}
+
+.drawer-term-subtitle {
+  font-size: 14px;
+  color: var(--gl-text-sub);
+  margin: 0 0 20px;
+}
+
+.drawer-section {
+  margin-bottom: 24px;
+}
+
+.drawer-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--gl-text-sub);
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.drawer-section-title svg {
+  width: 15px;
+  height: 15px;
+  color: var(--gl-primary);
+}
+
+.drawer-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--gl-text);
+  margin: 0;
+}
+
+/* Khối so sánh nhanh trong Drawer */
+.drawer-comparison-card {
+  background: var(--gl-bg);
+  border: 1px solid var(--gl-border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.drawer-comparison-head {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--gl-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.drawer-comparison-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.drawer-comp-box {
+  background: var(--gl-card);
+  border: 1px solid var(--gl-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.drawer-comp-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--gl-text);
+  margin-bottom: 4px;
+}
+
+.drawer-comp-desc {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--gl-text-sub);
+  margin: 0;
+}
+
+/* Pro tip box */
+.drawer-protip-box {
+  background: linear-gradient(135deg, var(--gl-primary-soft), var(--gl-bg));
+  border: 1px solid var(--gl-primary-subtle);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.drawer-protip-box b {
+  font-size: 13px;
+  color: var(--gl-primary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.drawer-protip-box p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--gl-text);
+  margin: 0;
+}
+
+/* Drawer footer action */
+.drawer-lesson-card {
+  background: var(--gl-bg);
+  border: 1px solid var(--gl-border);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.drawer-lesson-info b {
+  display: block;
+  font-size: 13px;
+  color: var(--gl-text);
+}
+
+.drawer-lesson-info span {
+  font-size: 11.5px;
+  color: var(--gl-text-sub);
+}
+
+.drawer-lesson-btn {
+  background: var(--gl-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.drawer-lesson-btn:hover {
+  background: var(--gl-primary-hover);
+}
+
+/* Empty State */
+.glossary-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--gl-card);
+  border: 1px dashed var(--gl-border);
+  border-radius: 14px;
+  margin: 20px 0;
+}
+
+.glossary-empty-icon {
+  width: 52px;
+  height: 52px;
+  color: var(--gl-text-muted);
+  margin-bottom: 14px;
+}
+
+.glossary-empty-state h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--gl-text);
+  margin: 0 0 6px;
+}
+
+.glossary-empty-state p {
+  font-size: 13.5px;
+  color: var(--gl-text-sub);
+  margin: 0 0 18px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.glossary-empty-btn {
+  background: var(--gl-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.glossary-empty-btn:hover {
+  background: var(--gl-primary-hover);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .glossary-grid {
+    grid-template-columns: 1fr;
+  }
+  .glossary-drawer {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .glossary-header h1 {
+    font-size: 22px;
+  }
+  .glossary-toolbar {
+    padding: 14px;
+  }
+  .glossary-card {
+    padding: 16px;
+  }
+  .term-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .term-actions-wrap {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .drawer-comparison-cols {
+    grid-template-columns: 1fr;
+  }
+}
