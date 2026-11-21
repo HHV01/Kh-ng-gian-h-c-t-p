@@ -136,64 +136,65 @@ function renderScaleLessonView(slug, stepNumber) {
 
   return `
     <div class="scale-lesson-studio">
-      <!-- 1. Learning Header: Tiêu đề bài học, Mục tiêu, Tiến độ, Nút quay lại -->
+      <!-- 1. Learning Header: Tiêu đề bài học, Mục tiêu, Tiến độ & Chọn bước ở trên -->
       ${ScaleLearningHeader({
         lesson,
         validStep,
         totalSteps: steps.length,
+        steps,
         isEn: scaleState.language === 'en'
       })}
 
-      <!-- Studio Layout: Sidebar + Main Stage + Inspector -->
-      <div class="studio-workspace-grid ${scaleState.isLessonSidebarOpen ? 'sidebar-open' : 'sidebar-collapsed'} ${scaleState.isInspectorDrawerOpen ? 'drawer-open' : ''}">
-        <!-- Sidebar bài học bên trái -->
-        ${ScaleSidebarMenu({ activeSlug: slug, modules: scaleModulesData })}
+      <!-- 2. Khung phòng học chính: Sidebar (nếu mở) + [Sơ đồ trung tâm | Giải thích & Chi tiết bên cạnh] -->
+      <div class="classroom-layout-container ${scaleState.isLessonSidebarOpen ? 'with-sidebar' : ''}">
+        <!-- Sidebar danh mục 40 bài học (bật/tắt bằng nút trên Header) -->
+        ${scaleState.isLessonSidebarOpen ? ScaleSidebarMenu({ activeSlug: slug, modules: scaleModulesData }) : ''}
 
-        <!-- Khung làm việc trung tâm (Main Stage) -->
-        <main class="studio-main-stage">
-          <!-- 2. Explanation Panel: Giải thích ngắn gọn, Bước học & Hướng dẫn thao tác -->
-          ${ScaleExplanationPanel({
-            stepTitle: currentStepData.title,
-            stepExplanation: currentStepData.explanation,
-            validStep,
-            totalSteps: steps.length
-          })}
+        <!-- Workspace Grid: Sơ đồ ở trung tâm, Giải thích và Chi tiết thành phần bên cạnh -->
+        <div class="classroom-workspace-grid">
+          <!-- SƠ ĐỒ Ở TRUNG TÂM & CHỈ SỐ MÔ PHỎNG MINH HỌA -->
+          <main class="classroom-center-stage" role="main">
+            <!-- Sơ đồ kiến trúc tương tác trực quan SVG -->
+            <div class="classroom-diagram-wrapper">
+              ${ScaleLessonDiagram({
+                diagramState: currentStepData.diagram,
+                activeStepNumber: validStep,
+                selectedNodeId: scaleState.selectedNodeId
+              })}
+            </div>
 
-          <!-- 3. Interactive Workspace: Sơ đồ tương tác SVG & Highlight thành phần -->
-          <div class="interactive-workspace-area">
-            ${ScaleLessonDiagram({
-              diagramState: currentStepData.diagram,
-              activeStepNumber: validStep,
-              selectedNodeId: scaleState.selectedNodeId
-            })}
-
-            <!-- Bảng số liệu Live Metrics -->
+            <!-- Bảng chỉ số hệ thống (Dữ liệu mô phỏng minh họa) -->
             ${ScaleMetricsPanel({
               metrics: currentStepData.metrics
             })}
-          </div>
 
-          <!-- 4. Learning Navigation: Bước trước, Tiếp theo, Reset mô phỏng, Hoàn thành -->
-          ${ScaleLearningNavigation({
-            currentStep: validStep,
-            totalSteps: steps.length,
-            isPlaying: scaleState.isPlaying,
-            isCompleted: scaleState.completedLessons.includes(slug)
-          })}
-        </main>
+            <!-- Điều khiển chuyển bước dưới chân sơ đồ -->
+            ${ScaleLearningNavigation({
+              currentStep: validStep,
+              totalSteps: steps.length,
+              isPlaying: scaleState.isPlaying,
+              isCompleted: scaleState.completedLessons.includes(slug)
+            })}
+          </main>
 
-        <!-- 5. Inspector Panel: Hiển thị chi tiết node đang chọn, vai trò, trạng thái, tác động -->
-        <aside class="studio-inspector-col ${scaleState.isInspectorDrawerOpen ? 'open' : ''}">
-          <div class="inspector-col-top">
-            <span class="inspector-panel-title">Chi tiết kỹ thuật</span>
-            <button class="close-inspector-drawer-btn" data-scale-action="toggle-inspector" aria-label="Đóng bảng inspector">✕</button>
-          </div>
-          ${ScaleInspectorPanel({
-            inspectorData: currentStepData.inspector,
-            selectedNode,
-            selectedNodeInfo
-          })}
-        </aside>
+          <!-- GIẢI THÍCH VÀ CHI TIẾT THÀNH PHẦN BÊN CẠNH (Tự nhiên trong luồng layout, không đè nội dung) -->
+          <aside class="classroom-side-column" role="complementary" aria-label="Giải thích bước học và chi tiết kỹ thuật">
+            <!-- Giải thích bước học -->
+            ${ScaleExplanationPanel({
+              stepTitle: currentStepData.title,
+              stepExplanation: currentStepData.explanation,
+              validStep,
+              totalSteps: steps.length
+            })}
+
+            <!-- Chi tiết thành phần đang chọn (Inspector) -->
+            ${ScaleInspectorPanel({
+              inspectorData: currentStepData.inspector,
+              selectedNode,
+              selectedNodeInfo
+            })}
+          </aside>
+        </div>
       </div>
     </div>
   `;
@@ -326,6 +327,26 @@ document.addEventListener('click', e => {
     const view = navBtn.dataset.scaleNav;
     const slug = navBtn.dataset.scaleSlug || 'caching';
     goScale(view, slug, 1);
+    return;
+  }
+
+  // 1b. Chọn bước trực tiếp từ thanh chọn bước ở trên (Step Selector Bar)
+  const goStepBtn = e.target.closest('[data-scale-action="go-step"]');
+  if (goStepBtn) {
+    e.preventDefault();
+    const targetStep = Number(goStepBtn.dataset.scaleStep) || 1;
+    scaleState.activeStep = targetStep;
+    scaleState.selectedNodeId = null; // reset node selection khi đổi bước
+    location.hash = `#/${scaleState.activeSlug}/${scaleState.activeStep}`;
+    renderScaleApp();
+    return;
+  }
+
+  // 1c. Bật / Tắt Sidebar danh mục 40 bài học
+  if (e.target.closest('[data-scale-action="toggle-lessons-sidebar"]')) {
+    e.preventDefault();
+    scaleState.isLessonSidebarOpen = !scaleState.isLessonSidebarOpen;
+    renderScaleApp();
     return;
   }
 

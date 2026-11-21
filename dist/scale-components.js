@@ -439,10 +439,11 @@ function ScaleFAQAccordion({ faqList }) {
   `;
 }
 
-// 8b. Component LearningHeader (Chuẩn hóa Header phòng học)
-function ScaleLearningHeader({ lesson, validStep, totalSteps, isEn = false }) {
+// 8b. Component LearningHeader (Chuẩn hóa Header phòng học & Chọn bước ở trên)
+function ScaleLearningHeader({ lesson, validStep, totalSteps, steps = [], isEn = false }) {
   const percent = Math.round((validStep / totalSteps) * 100);
   const isDone = scaleState.completedLessons.includes(lesson.slug);
+  const stepList = (steps && steps.length) ? steps : (lesson.steps || []);
 
   return `
     <header class="scale-learning-header" role="region" aria-label="Tiêu đề & tiến độ bài học">
@@ -453,9 +454,6 @@ function ScaleLearningHeader({ lesson, validStep, totalSteps, isEn = false }) {
         <div class="learning-header-actions">
           <button class="scale-btn scale-btn-outline scale-btn-sm btn-toggle-lessons ${scaleState.isLessonSidebarOpen ? 'active' : ''}" data-scale-action="toggle-lessons-sidebar" aria-label="Bật tắt danh mục 40 bài học">
             <span>☰</span> ${scaleState.isLessonSidebarOpen ? 'Đóng danh mục' : 'Danh mục 40 bài'}
-          </button>
-          <button class="scale-btn scale-btn-outline scale-btn-sm toggle-inspector-btn ${scaleState.isInspectorDrawerOpen ? 'active' : ''}" data-scale-action="toggle-inspector" aria-label="Bật tắt Inspector">
-            <span>🔍 Inspector</span>
           </button>
           <span class="learning-status-pill ${isDone ? 'done' : ''}">
             ${isDone ? '✓ Đã hoàn thành' : `Tiến độ: ${percent}%`}
@@ -474,13 +472,36 @@ function ScaleLearningHeader({ lesson, validStep, totalSteps, isEn = false }) {
 
         <div class="learning-step-progress-box">
           <div class="step-progress-labels">
-            <span>Bước ${validStep} / ${totalSteps}</span>
-            <strong>${percent}%</strong>
+            <span>Tiến độ bài học</span>
+            <strong>Bước ${validStep} / ${totalSteps} (${percent}%)</strong>
           </div>
           <div class="step-progress-track">
             <div class="step-progress-bar" style="width: ${percent}%"></div>
           </div>
         </div>
+      </div>
+
+      <!-- Chọn bước ở trên (Horizontal Step Selector Bar) -->
+      <div class="scale-step-selector-strip" role="tablist" aria-label="Chọn bước bài học">
+        ${stepList.map(st => {
+          const isCur = st.step === validStep;
+          const isPast = st.step < validStep;
+          return `
+            <button class="step-strip-tab ${isCur ? 'active' : ''} ${isPast ? 'completed' : ''}" 
+                    data-scale-action="go-step" 
+                    data-scale-step="${st.step}" 
+                    role="tab" 
+                    aria-selected="${isCur}" 
+                    title="${escScale(st.title)}">
+              <span class="tab-step-badge">${st.step}</span>
+              <div class="tab-step-info">
+                <span class="tab-step-kicker">Bước ${st.step}</span>
+                <strong class="tab-step-title">${escScale(st.title)}</strong>
+              </div>
+              ${isPast ? '<span class="tab-step-check">✓</span>' : ''}
+            </button>
+          `;
+        }).join('')}
       </div>
     </header>
   `;
@@ -589,12 +610,24 @@ function ScaleLessonDiagram({ diagramState, activeStepNumber = 1, selectedNodeId
   `;
 }
 
-// 10. Component MetricsPanel (p50, p99, throughput, cpu, cacheHit)
+// 10. Component MetricsPanel (p50, p99, throughput, cpu, cacheHit - Ghi rõ dữ liệu mô phỏng minh họa)
 function ScaleMetricsPanel({ metrics }) {
   if (!metrics) return '';
 
   return `
-    <div class="scale-metrics-panel" role="region" aria-label="Bảng số liệu thời gian thực">
+    <div class="scale-metrics-panel" role="region" aria-label="Bảng chỉ số hệ thống (Dữ liệu mô phỏng minh họa)">
+      <div class="metrics-panel-header">
+        <div class="metrics-title-wrap">
+          <span class="metrics-header-icon">📊</span>
+          <span class="metrics-header-title">Bảng chỉ số hệ thống</span>
+          <span class="metrics-simulation-badge">Dữ liệu mô phỏng minh họa</span>
+        </div>
+        <div class="metrics-legend-status">
+          <span class="status-pulse-dot"></span>
+          <span>Mô phỏng thời gian thực</span>
+        </div>
+      </div>
+
       <div class="metrics-grid">
         <!-- p50 Latency -->
         <div class="metric-card ${metrics.p50 > 100 ? 'status-danger' : metrics.p50 > 30 ? 'status-warn' : 'status-good'}">
@@ -672,6 +705,11 @@ function ScaleMetricsPanel({ metrics }) {
             </div>
           </div>
         ` : ''}
+      </div>
+
+      <div class="metrics-simulation-disclaimer">
+        <span class="disclaimer-icon">ℹ️</span>
+        <span><strong>Ghi chú số liệu:</strong> Toàn bộ thông số p50, p99, Throughput, CPU và Tỉ lệ hit cache là <em>dữ liệu mô phỏng minh họa</em> nhằm phục vụ mục đích học tập, so sánh trực quan hiệu năng qua từng giai đoạn mở rộng kiến trúc.</span>
       </div>
     </div>
   `;
