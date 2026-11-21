@@ -87,8 +87,8 @@ const scalePagesData = {
         content: "Tiến độ bài học và tuỳ chọn giao diện của bạn được lưu trữ an toàn trong localStorage của trình duyệt trên thiết bị cá nhân. Chúng tôi không thu thập thông tin định danh cá nhân khi bạn học ở chế độ mặc định."
       },
       {
-        heading: "Đăng nhập và tài khoản Pro",
-        content: "Khi nâng cấp gói học hoặc đăng nhập, chúng tôi chỉ lưu trữ thông tin cơ bản gồm email và tên để xác thực quyền truy cập các bài học nâng cao."
+        heading: "Đăng nhập và bảo lưu tiến độ",
+        content: "Khi sử dụng nền tảng học tập hoặc đăng nhập, chúng tôi chỉ lưu trữ thông tin cơ bản gồm email và tên để lưu trạng thái và đồng bộ tiến độ học tập của bạn."
       },
       {
         heading: "Xoá dữ liệu vĩnh viễn",
@@ -106,7 +106,7 @@ const scalePagesData = {
     sections: [
       {
         heading: "1. Dịch vụ và chấp thuận điều khoản",
-        content: "Các điều khoản này điều chỉnh việc sử dụng khoá học Designed to Scale. Bằng việc truy cập hoặc mua khoá học, bạn đồng ý tuân thủ toàn bộ các quy định tại đây."
+        content: "Các điều khoản này điều chỉnh việc sử dụng khoá học Designed to Scale. Bằng việc truy cập hoặc tham gia học tập, bạn đồng ý tuân thủ toàn bộ các quy định tại đây."
       },
       {
         heading: "2. Quyền sử dụng nội dung",
@@ -556,3 +556,54 @@ const scaleLessonsDetail = {
     ]
   }
 };
+
+// Dữ liệu mô tả chi tiết cho từng loại Node khi người dùng nhấp chuột vào sơ đồ
+const scaleNodeMetadata = {
+  client: {
+    title: "Thiết bị người dùng (Client Applications)",
+    role: "Khởi phát các yêu cầu HTTP/HTTPS từ trình duyệt web, thiết bị di động (iOS/Android) hoặc thiết bị IoT.",
+    state: "Đang gửi requests đồng thời (Concurrent Traffic)",
+    advice: "Độ trễ người dùng cảm nhận (User Perceived Latency) phụ thuộc trực tiếp vào thời gian phản hồi vòng lặp (RTT) từ Client tới nút mạng đầu tiên."
+  },
+  lb: {
+    title: "Application Load Balancer (Bộ cân bằng tải)",
+    role: "Tiếp nhận lưu lượng vào từ Internet, giải mã SSL/TLS và phân phối thông minh tới các máy chủ ứng dụng theo thuật toán Round Robin hoặc Least Connections.",
+    state: "Điều phối tải đồng đều, kiểm tra sức khỏe máy chủ liên tục (Health Checks)",
+    advice: "Cấu hình Keep-Alive và Offload SSL tại tầng Load Balancer giúp tiết kiệm tới 30% tài nguyên CPU cho cụm App Servers phía sau."
+  },
+  server: {
+    title: "Cụm máy chủ ứng dụng (App Servers)",
+    role: "Xử lý logic nghiệp vụ, xác thực người dùng, tính toán dữ liệu và điều phối truy vấn giữa Cache và Database.",
+    state: "Vận hành ổn định trong ngưỡng an toàn",
+    advice: "Thiết kế máy chủ ứng dụng theo mô hình phi trạng thái (Stateless) cho phép hệ thống tự động tăng giảm số lượng instance (Auto-scaling) theo tải thực tế."
+  },
+  cache: {
+    title: "Bộ nhớ đệm In-Memory (Redis / Memcached)",
+    role: "Lưu trữ dữ liệu đọc thường xuyên trên RAM, cho phép phản hồi các truy vấn phổ biến với độ trễ siêu thấp dưới 10ms mà không chạm vào đĩa cứng.",
+    state: "Giảm tải hiệu quả cho cơ sở dữ liệu chính",
+    advice: "Cần thiết lập thời gian sống (TTL) và cơ chế Cache Eviction (LRU/LFU) để tránh tình trạng tràn RAM và hiện tượng Cache Stampede."
+  },
+  db: {
+    title: "Hệ quản trị Cơ sở dữ liệu (PostgreSQL / MySQL)",
+    role: "Lưu trữ bền vững (Persistence) dữ liệu giao dịch cốt lõi, đảm bảo tính toàn vẹn và tính nhất quán theo chuẩn ACID.",
+    state: "Đảm bảo tính toàn vẹn dữ liệu giao dịch",
+    advice: "Khi số lượng đọc tăng cao, tách Read Replicas; khi khối lượng ghi và dữ liệu vượt ngưỡng đĩa đơn, áp dụng kỹ thuật Database Sharding."
+  },
+  dns: {
+    title: "Hệ thống phân giải tên miền (DNS Anycast)",
+    role: "Phân giải tên miền (ví dụ: api.example.com) thành địa chỉ IP máy chủ gần nhất theo vị trí địa lý của người dùng.",
+    state: "Phân giải tên miền độ trễ cực thấp (< 20ms)",
+    advice: "Sử dụng GeoDNS và TTL tối ưu giúp định tuyến người dùng tới Edge Location gần nhất, giảm đáng kể thời gian thiết lập kết nối."
+  },
+  cdn: {
+    title: "Mạng phân phối nội dung (Edge CDN & WAF)",
+    role: "Lưu trữ các tệp tĩnh (hình ảnh, video, CSS/JS) tại các máy chủ biên trên toàn cầu và ngăn chặn các cuộc tấn công DDoS/WAF.",
+    state: "Phục vụ 80-90% tài nguyên tĩnh tại rìa mạng",
+    advice: "Đẩy tài nguyên tĩnh ra CDN giúp giảm tới 75% băng thông và tải xử lý của máy chủ gốc (Origin Server)."
+  }
+};
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { scalePagesData, scaleModulesData, scaleLessonsDetail, scaleNodeMetadata };
+}
+

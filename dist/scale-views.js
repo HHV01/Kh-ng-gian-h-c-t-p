@@ -122,54 +122,72 @@ function renderScaleLessonView(slug, stepNumber) {
   const validStep = Math.max(1, Math.min(steps.length, stepNumber));
   const currentStepData = steps[validStep - 1] || steps[0];
 
+  // Tìm node đang được người dùng click chọn trong sơ đồ
+  const selectedNode = currentStepData.diagram && currentStepData.diagram.nodes
+    ? currentStepData.diagram.nodes.find(n => n.id === scaleState.selectedNodeId)
+    : null;
+  const selectedNodeInfo = selectedNode 
+    ? (typeof scaleNodeMetadata !== 'undefined' ? (scaleNodeMetadata[selectedNode.id] || scaleNodeMetadata[selectedNode.type]) : null)
+    : null;
+
   return `
     <div class="scale-lesson-studio">
-      <!-- Breadcrumb Bar -->
-      <div class="scale-lesson-bar">
-        <div class="bar-left">
-          <a href="#/scale" data-scale-nav="home" class="bar-back-link">← Trang chủ</a>
-          <span class="bar-sep">/</span>
-          <span class="bar-module">${esc(lesson.moduleTitle)}</span>
-          <span class="bar-sep">/</span>
-          <span class="bar-lesson-title">${esc(lesson.titleVi || lesson.title)}</span>
-        </div>
-        <div class="bar-right">
-          <span class="save-status">✓ Tiến độ tự lưu cục bộ</span>
-        </div>
-      </div>
+      <!-- 1. Learning Header: Tiêu đề bài học, Mục tiêu, Tiến độ, Nút quay lại -->
+      ${ScaleLearningHeader({
+        lesson,
+        validStep,
+        totalSteps: steps.length,
+        isEn: scaleState.language === 'en'
+      })}
 
       <!-- Studio Layout: Sidebar + Main Stage + Inspector -->
-      <div class="studio-workspace-grid">
+      <div class="studio-workspace-grid ${scaleState.isInspectorDrawerOpen ? 'drawer-open' : ''}">
         <!-- Sidebar bài học bên trái -->
         ${ScaleSidebarMenu({ activeSlug: slug, modules: scaleModulesData })}
 
-        <!-- Khung làm việc trung tâm -->
+        <!-- Khung làm việc trung tâm (Main Stage) -->
         <main class="studio-main-stage">
-          <!-- Step Navigation Bar -->
-          ${ScaleStepNavigation({
-            currentStep: validStep,
-            totalSteps: steps.length,
+          <!-- 2. Explanation Panel: Giải thích ngắn gọn, Bước học & Hướng dẫn thao tác -->
+          ${ScaleExplanationPanel({
             stepTitle: currentStepData.title,
             stepExplanation: currentStepData.explanation,
-            isPlaying: scaleState.isPlaying
+            validStep,
+            totalSteps: steps.length
           })}
 
-          <!-- Sơ đồ kiến trúc động -->
-          ${ScaleLessonDiagram({
-            diagramState: currentStepData.diagram,
-            activeStepNumber: validStep
-          })}
+          <!-- 3. Interactive Workspace: Sơ đồ tương tác SVG & Highlight thành phần -->
+          <div class="interactive-workspace-area">
+            ${ScaleLessonDiagram({
+              diagramState: currentStepData.diagram,
+              activeStepNumber: validStep,
+              selectedNodeId: scaleState.selectedNodeId
+            })}
 
-          <!-- Bảng số liệu Live Metrics -->
-          ${ScaleMetricsPanel({
-            metrics: currentStepData.metrics
+            <!-- Bảng số liệu Live Metrics -->
+            ${ScaleMetricsPanel({
+              metrics: currentStepData.metrics
+            })}
+          </div>
+
+          <!-- 4. Learning Navigation: Bước trước, Tiếp theo, Reset mô phỏng, Hoàn thành -->
+          ${ScaleLearningNavigation({
+            currentStep: validStep,
+            totalSteps: steps.length,
+            isPlaying: scaleState.isPlaying,
+            isCompleted: scaleState.completedLessons.includes(slug)
           })}
         </main>
 
-        <!-- Inspector Panel bên phải -->
-        <aside class="studio-inspector-col">
+        <!-- 5. Inspector Panel: Hiển thị chi tiết node đang chọn, vai trò, trạng thái, tác động -->
+        <aside class="studio-inspector-col ${scaleState.isInspectorDrawerOpen ? 'open' : ''}">
+          <div class="inspector-col-top">
+            <span class="inspector-panel-title">Chi tiết kỹ thuật</span>
+            <button class="close-inspector-drawer-btn" data-scale-action="toggle-inspector" aria-label="Đóng bảng inspector">✕</button>
+          </div>
           ${ScaleInspectorPanel({
-            inspectorData: currentStepData.inspector
+            inspectorData: currentStepData.inspector,
+            selectedNode,
+            selectedNodeInfo
           })}
         </aside>
       </div>
@@ -423,6 +441,54 @@ document.addEventListener('click', e => {
     return;
   }
 
+  // 11b. Reset mô phỏng về trạng thái mặc định của bước
+  if (e.target.closest('[data-scale-action="reset-sim"]')) {
+    e.preventDefault();
+    scaleState.selectedNodeId = null;
+    if (scaleState.playTimer) {
+      clearInterval(scaleState.playTimer);
+      scaleState.playTimer = null;
+      scaleState.isPlaying = false;
+    }
+    if (typeof toast === 'function') {
+      toast('Đã reset mô phỏng về trạng thái mặc định của bước.');
+    }
+    renderScaleApp();
+    return;
+  }
+
+  // 11c. Reset lựa chọn node quay về mặc định
+  if (e.target.closest('[data-scale-action="reset-node"]')) {
+    e.preventDefault();
+    scaleState.selectedNodeId = null;
+    renderScaleApp();
+    return;
+  }
+
+  // 11d. Hoàn thành bài học
+  if (e.target.closest('[data-scale-action="complete-lesson"]')) {
+    e.preventDefault();
+    if (!scaleState.completedLessons.includes(scaleState.activeSlug)) {
+      scaleState.completedLessons.push(scaleState.activeSlug);
+      try {
+        localStorage.setItem('vy-scale-completed', JSON.stringify(scaleState.completedLessons));
+      } catch(e) {}
+    }
+    if (typeof toast === 'function') {
+      toast('🎉 Xuất sắc! Bạn đã hoàn thành toàn bộ bài học này.');
+    }
+    renderScaleApp();
+    return;
+  }
+
+  // 11e. Bật tắt bảng Inspector Drawer trên tablet / mobile
+  if (e.target.closest('[data-scale-action="toggle-inspector"]')) {
+    e.preventDefault();
+    scaleState.isInspectorDrawerOpen = !scaleState.isInspectorDrawerOpen;
+    renderScaleApp();
+    return;
+  }
+
   // 12. Gửi phản hồi liên hệ
   if (e.target.closest('[data-scale-action="send-feedback"]')) {
     e.preventDefault();
@@ -466,6 +532,8 @@ window.addEventListener('hashchange', () => {
   if (!hash) return;
 
   if (hash === 'scale') {
+    goScale('home');
+  } else if (hash === 'pricing') {
     goScale('home');
   } else if (['about', 'contact', 'privacy', 'terms'].includes(hash)) {
     goScale(hash);

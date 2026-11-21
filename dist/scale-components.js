@@ -5,13 +5,15 @@
 
 // Global State cho Designed to Scale
 const scaleState = {
-  currentView: 'home', // 'home' | 'lesson' | 'pricing' | 'about' | 'contact' | 'privacy' | 'terms'
+  currentView: 'home', // 'home' | 'lesson' | 'about' | 'contact' | 'privacy' | 'terms'
   activeSlug: 'caching',
   activeStep: 1,
   language: 'vi', // 'vi' | 'en'
   isPlaying: false,
   playTimer: null,
   selectedNodeId: null,
+  isInspectorDrawerOpen: false,
+  completedLessons: [],
   expandedModules: { 'foundations': true, 'scaling': true },
   faqOpen: { 'faq-1': true }
 };
@@ -433,9 +435,70 @@ function ScaleFAQAccordion({ faqList }) {
   `;
 }
 
+// 8b. Component LearningHeader (Chuẩn hóa Header phòng học)
+function ScaleLearningHeader({ lesson, validStep, totalSteps, isEn = false }) {
+  const percent = Math.round((validStep / totalSteps) * 100);
+  const isDone = scaleState.completedLessons.includes(lesson.slug);
+
+  return `
+    <header class="scale-learning-header" role="region" aria-label="Tiêu đề & tiến độ bài học">
+      <div class="learning-header-top">
+        <a href="#/scale" data-scale-nav="home" class="learning-back-btn" aria-label="Quay lại danh sách bài học">
+          <span>← Quay lại danh mục Designed to Scale</span>
+        </a>
+        <div class="learning-header-actions">
+          <button class="scale-btn scale-btn-outline scale-btn-sm toggle-inspector-btn" data-scale-action="toggle-inspector" aria-label="Bật tắt Inspector">
+            <span>⚙️ Inspector</span>
+          </button>
+          <span class="learning-status-pill ${isDone ? 'done' : ''}">
+            ${isDone ? '✓ Đã hoàn thành' : `Tiến độ: ${percent}%`}
+          </span>
+        </div>
+      </div>
+
+      <div class="learning-header-main">
+        <div class="learning-header-info">
+          <span class="learning-module-tag">${esc(lesson.moduleTitle)}</span>
+          <h1 class="learning-lesson-title">${esc(lesson.titleVi || lesson.title)}</h1>
+          <p class="learning-objective">
+            <strong>🎯 Mục tiêu bài học:</strong> Nắm vững nguyên lý và kiểm chứng hiệu năng chịu tải của ${esc(lesson.titleVi || lesson.title)} qua ${totalSteps} bước mô phỏng luồng dữ liệu thời gian thực.
+          </p>
+        </div>
+
+        <div class="learning-step-progress-box">
+          <div class="step-progress-labels">
+            <span>Bước ${validStep} / ${totalSteps}</span>
+            <strong>${percent}%</strong>
+          </div>
+          <div class="step-progress-track">
+            <div class="step-progress-bar" style="width: ${percent}%"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+  `;
+}
+
+// 8c. Component ExplanationPanel (Chuẩn hóa Panel giải thích)
+function ScaleExplanationPanel({ stepTitle, stepExplanation, validStep, totalSteps }) {
+  return `
+    <section class="scale-explanation-panel" role="region" aria-label="Giải thích bước học">
+      <div class="explanation-step-pill">BƯỚC ${validStep} / ${totalSteps}</div>
+      <h2 class="explanation-step-title">${esc(stepTitle)}</h2>
+      <p class="explanation-step-body">${esc(stepExplanation)}</p>
+      <div class="explanation-interaction-guide">
+        <span class="guide-icon">👉</span>
+        <span><strong>Hướng dẫn thao tác:</strong> Nhấp chuột vào bất kỳ node nào trên sơ đồ (Client, Load Balancer, App Server, Redis, Database...) để kiểm tra vai trò, trạng thái tải và tác động kiến trúc tại bảng Inspector bên phải.</span>
+      </div>
+    </section>
+  `;
+}
+
 // 9. Component LessonDiagram (SVG tương tác thời gian thực)
-function ScaleLessonDiagram({ diagramState, activeStepNumber = 1 }) {
+function ScaleLessonDiagram({ diagramState, activeStepNumber = 1, selectedNodeId = null }) {
   if (!diagramState || !diagramState.nodes) return '<div class="diagram-empty">Không có sơ đồ cho bước này.</div>';
+
+  const activeNodeId = selectedNodeId || scaleState.selectedNodeId || diagramState.activeNode;
 
   return `
     <div class="scale-lesson-diagram-card" role="region" aria-label="Sơ đồ kiến trúc động">
@@ -452,7 +515,7 @@ function ScaleLessonDiagram({ diagramState, activeStepNumber = 1 }) {
       </div>
 
       <div class="diagram-svg-container">
-        <svg viewBox="0 0 760 300" class="scale-diagram-interactive-svg">
+        <svg viewBox="0 0 760 300" class="scale-diagram-interactive-svg" preserveAspectRatio="xMidYMid meet">
           <!-- Background Pattern -->
           <defs>
             <pattern id="diag-grid" width="24" height="24" patternUnits="userSpaceOnUse">
@@ -466,19 +529,22 @@ function ScaleLessonDiagram({ diagramState, activeStepNumber = 1 }) {
             const fromNode = diagramState.nodes.find(n => n.id === c.from);
             const toNode = diagramState.nodes.find(n => n.id === c.to);
             if (!fromNode || !toNode) return '';
-            const strokeColor = c.color || '#6366F1';
-            const midX = (fromNode.x + toNode.x) / 2 + 35;
+            const isConnHighlighted = activeNodeId && (c.from === activeNodeId || c.to === activeNodeId);
+            const strokeColor = isConnHighlighted ? '#6366F1' : (c.color || '#94A3B8');
+            const strokeWidth = isConnHighlighted ? 3.5 : 2;
+            const midX = (fromNode.x + toNode.x) / 2 + 42;
             const midY = (fromNode.y + toNode.y) / 2 + 25;
 
             return `
-              <g class="connection-group">
-                <line x1="${fromNode.x + 40}" y1="${fromNode.y + 30}" 
-                      x2="${toNode.x + 40}" y2="${toNode.y + 30}" 
+              <g class="connection-group ${isConnHighlighted ? 'highlighted' : ''}">
+                <line x1="${fromNode.x + 42}" y1="${fromNode.y + 32}" 
+                      x2="${toNode.x + 42}" y2="${toNode.y + 32}" 
                       stroke="${strokeColor}" 
-                      stroke-width="2.5" 
+                      stroke-width="${strokeWidth}" 
                       stroke-dasharray="6,4" 
-                      class="anim-dash" />
-                <rect x="${midX - 45}" y="${midY - 12}" width="90" height="20" rx="4" fill="var(--gl-card)" stroke="var(--gl-border)" stroke-width="1"/>
+                      class="anim-dash ${isConnHighlighted ? 'pulse-line' : ''}" />
+                <rect x="${midX - 45}" y="${midY - 12}" width="90" height="20" rx="4" 
+                      fill="var(--gl-card)" stroke="${isConnHighlighted ? '#6366F1' : 'var(--gl-border)'}" stroke-width="${isConnHighlighted ? 1.5 : 1}"/>
                 <text x="${midX}" y="${midY + 2}" text-anchor="middle" font-size="9" font-weight="600" fill="var(--gl-text)">${esc(c.label)}</text>
               </g>
             `;
@@ -486,7 +552,7 @@ function ScaleLessonDiagram({ diagramState, activeStepNumber = 1 }) {
 
           <!-- Render Nodes -->
           ${diagramState.nodes.map(node => {
-            const isSelected = scaleState.selectedNodeId === node.id || diagramState.activeNode === node.id;
+            const isSelected = activeNodeId === node.id;
             const borderColor = node.status === 'overload' ? '#EF4444' : node.status === 'warming' ? '#F59E0B' : node.type === 'cache' ? '#10B981' : '#6366F1';
             const icon = node.type === 'client' ? '📱' : node.type === 'lb' ? '⚖️' : node.type === 'cache' ? '⚡' : node.type === 'dns' ? '🌐' : node.type === 'cdn' ? '☁️' : node.type === 'server' ? '⚙️' : '🗄️';
 
@@ -496,14 +562,15 @@ function ScaleLessonDiagram({ diagramState, activeStepNumber = 1 }) {
                  data-scale-node="${node.id}"
                  tabindex="0"
                  role="button"
-                 aria-label="Node ${node.label}">
-                <rect width="85" height="65" rx="12" 
+                 aria-label="Node ${node.label} (${node.type})">
+                <rect width="86" height="64" rx="12" 
                       fill="var(--gl-card)" 
-                      stroke="${borderColor}" 
-                      stroke-width="${isSelected ? 3 : 2}" 
+                      stroke="${isSelected ? '#6366F1' : borderColor}" 
+                      stroke-width="${isSelected ? 3.5 : 2}" 
                       class="node-rect"/>
-                <text x="42" y="30" text-anchor="middle" font-size="20">${icon}</text>
-                <text x="42" y="52" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor">${esc(node.label)}</text>
+                <text x="43" y="30" text-anchor="middle" font-size="20">${icon}</text>
+                <text x="43" y="52" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor">${esc(node.label)}</text>
+                ${isSelected ? `<circle cx="43" cy="5" r="3.5" fill="#6366F1" class="anim-pulse"/>` : ''}
                 ${node.status === 'overload' ? `<circle cx="75" cy="12" r="6" fill="#EF4444" class="anim-pulse"/>` : ''}
                 ${node.status === 'warming' ? `<circle cx="75" cy="12" r="6" fill="#F59E0B" class="anim-pulse"/>` : ''}
               </g>
@@ -603,8 +670,8 @@ function ScaleMetricsPanel({ metrics }) {
   `;
 }
 
-// 11. Component StepNavigation
-function ScaleStepNavigation({ currentStep, totalSteps, stepTitle, stepExplanation, isPlaying = false }) {
+// 11. Component StepNavigation (Giữ tương thích ngược và mở rộng)
+function ScaleStepNavigation({ currentStep, totalSteps, stepTitle, stepExplanation, isPlaying = false, isCompleted = false }) {
   const isFirst = currentStep <= 1;
   const isLast = currentStep >= totalSteps;
 
@@ -620,12 +687,21 @@ function ScaleStepNavigation({ currentStep, totalSteps, stepTitle, stepExplanati
           <button class="scale-btn scale-btn-secondary" data-scale-action="prev-step" ${isFirst ? 'disabled' : ''} aria-label="Bước trước">
             <span>← Trước</span>
           </button>
+          <button class="scale-btn scale-btn-outline" data-scale-action="reset-sim" title="Khôi phục trạng thái mô phỏng ban đầu của bước này" aria-label="Reset mô phỏng">
+            <span>↺ Reset</span>
+          </button>
           <button class="scale-btn ${isPlaying ? 'scale-btn-secondary' : 'scale-btn-outline'}" data-scale-action="toggle-play" aria-label="${isPlaying ? 'Tạm dừng' : 'Tự động phát'}">
             <span>${isPlaying ? '⏸ Tạm dừng' : '▶ Tự động phát'}</span>
           </button>
-          <button class="scale-btn scale-btn-primary" data-scale-action="next-step" ${isLast ? 'disabled' : ''} aria-label="Bước tiếp">
-            <span>Tiếp theo →</span>
-          </button>
+          ${!isLast ? `
+            <button class="scale-btn scale-btn-primary" data-scale-action="next-step" aria-label="Bước tiếp">
+              <span>Tiếp theo →</span>
+            </button>
+          ` : `
+            <button class="scale-btn scale-btn-primary" data-scale-action="complete-lesson" aria-label="Hoàn thành bài học">
+              <span>✓ Hoàn thành</span>
+            </button>
+          `}
         </div>
       </div>
 
@@ -639,46 +715,115 @@ function ScaleStepNavigation({ currentStep, totalSteps, stepTitle, stepExplanati
   `;
 }
 
+// 11b. Component LearningNavigation (Thanh điều khiển bước dưới chân màn hình)
+function ScaleLearningNavigation({ currentStep, totalSteps, isPlaying = false, isCompleted = false }) {
+  const isFirst = currentStep <= 1;
+  const isLast = currentStep >= totalSteps;
+
+  return `
+    <nav class="scale-learning-navigation" role="navigation" aria-label="Điều khiển bài học">
+      <div class="learning-nav-group-left">
+        <button class="scale-btn scale-btn-secondary" data-scale-action="prev-step" ${isFirst ? 'disabled' : ''} aria-label="Bước trước">
+          <span>← Bước trước</span>
+        </button>
+        <button class="scale-btn scale-btn-outline" data-scale-action="reset-sim" aria-label="Reset mô phỏng">
+          <span>↺ Reset mô phỏng</span>
+        </button>
+      </div>
+
+      <div class="learning-nav-group-center">
+        <button class="scale-btn ${isPlaying ? 'scale-btn-secondary' : 'scale-btn-outline'}" data-scale-action="toggle-play" aria-label="${isPlaying ? 'Tạm dừng' : 'Tự động phát'}">
+          <span>${isPlaying ? '⏸ Tạm dừng' : '▶ Tự động chạy'}</span>
+        </button>
+      </div>
+
+      <div class="learning-nav-group-right">
+        ${!isLast ? `
+          <button class="scale-btn scale-btn-primary" data-scale-action="next-step" aria-label="Bước tiếp theo">
+            <span>Bước tiếp theo →</span>
+          </button>
+        ` : `
+          <button class="scale-btn scale-btn-primary" data-scale-action="complete-lesson" aria-label="Hoàn thành bài học">
+            <span>✓ Hoàn thành bài học</span>
+          </button>
+        `}
+      </div>
+    </nav>
+  `;
+}
+
 // 12. Component InspectorPanel (Chi tiết thành phần được chọn)
-function ScaleInspectorPanel({ inspectorData }) {
-  if (!inspectorData) return '';
+function ScaleInspectorPanel({ inspectorData, selectedNode = null, selectedNodeInfo = null }) {
+  const isCustomNode = !!selectedNode;
+  const title = isCustomNode 
+    ? (selectedNodeInfo ? `${selectedNode.label} (${selectedNodeInfo.title})` : `Node: ${selectedNode.label}`) 
+    : (inspectorData ? inspectorData.title : 'Primary Database');
+  
+  const role = isCustomNode && selectedNodeInfo ? selectedNodeInfo.role : null;
+  const state = isCustomNode 
+    ? (selectedNode.status === 'overload' ? 'Bị nghẽn tải I/O (Disk Bottleneck)' : selectedNode.status === 'warming' ? 'Đang làm nóng bộ nhớ (Warming up)' : 'Hoạt động tối ưu (Healthy)')
+    : (inspectorData ? inspectorData.state : 'Hoạt động ổn định');
+  
+  const advice = isCustomNode && selectedNodeInfo ? selectedNodeInfo.advice : (inspectorData ? inspectorData.advice : '');
 
   return `
     <div class="scale-inspector-panel" role="region" aria-label="Bảng chi tiết kỹ thuật">
       <div class="inspector-head">
-        <span class="inspector-badge">INSPECTOR</span>
-        <h4>${esc(inspectorData.title)}</h4>
+        <div class="inspector-badge-wrap">
+          <span class="inspector-badge">${isCustomNode ? 'NODE ĐANG CHỌN' : 'INSPECTOR'}</span>
+          ${isCustomNode ? `
+            <button class="scale-btn-reset-node" data-scale-action="reset-node" title="Trở về thông số tổng thể của bước">
+              ↺ Mặc định bước
+            </button>
+          ` : ''}
+        </div>
+        <h4>${esc(title)}</h4>
       </div>
 
       <div class="inspector-body">
+        ${role ? `
+          <div class="inspector-row">
+            <label>Vai trò kiến trúc (Role):</label>
+            <p class="inspector-role-desc">${esc(role)}</p>
+          </div>
+        ` : ''}
+
         <div class="inspector-row">
           <label>Trạng thái hiện hành:</label>
-          <strong>${esc(inspectorData.state)}</strong>
+          <strong class="${state.includes('nghẽn') || state.includes('Bottleneck') ? 'text-danger' : 'text-success'}">${esc(state)}</strong>
         </div>
-        ${inspectorData.queryRate ? `
+
+        ${inspectorData && inspectorData.queryRate ? `
           <div class="inspector-row">
             <label>Tốc độ truy vấn:</label>
             <span>${esc(inspectorData.queryRate)}</span>
           </div>
         ` : ''}
-        ${inspectorData.memoryUsed ? `
+
+        ${inspectorData && inspectorData.memoryUsed ? `
           <div class="inspector-row">
             <label>Bộ nhớ sử dụng:</label>
             <span>${esc(inspectorData.memoryUsed)}</span>
           </div>
         ` : ''}
-        ${inspectorData.cacheHits ? `
+
+        ${inspectorData && inspectorData.cacheHits ? `
           <div class="inspector-row">
             <label>Tỉ lệ Hit:</label>
             <span class="text-success">${esc(inspectorData.cacheHits)}</span>
           </div>
         ` : ''}
-        ${inspectorData.advice ? `
+
+        ${advice ? `
           <div class="inspector-advice">
-            <b>Nhận định kiến trúc:</b>
-            <p>${esc(inspectorData.advice)}</p>
+            <b>Nhận định kiến trúc & tác động hệ thống:</b>
+            <p>${esc(advice)}</p>
           </div>
         ` : ''}
+
+        <div class="inspector-node-guide">
+          <small>💡 Bấm vào bất kỳ node nào trên sơ đồ (Client, LB, App, Redis, DB...) để kiểm tra vai trò và số liệu.</small>
+        </div>
       </div>
     </div>
   `;
