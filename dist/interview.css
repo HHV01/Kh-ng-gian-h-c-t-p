@@ -928,3 +928,651 @@
     justify-content: center;
   }
 }
+
+
+/* =========================================================================
+   VYWORKSPACE INTERVIEW MODULE - ENHANCED STYLES (SESSION TRACKER & 2-COL STUDIO)
+   ========================================================================= */
+
+/* 1. Session History Tracker */
+.interview-sessions-tracker {
+  background: var(--gl-card, #FFFFFF);
+  border: 1px solid var(--gl-border, #E2E8F0);
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tracker-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tracker-title span {
+  font-size: 18px;
+}
+
+.tracker-title h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0;
+}
+
+.tracker-badge {
+  background: #EEF2FF;
+  color: #6366F1;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid #C7D2FE;
+}
+
+.btn-clear-history {
+  background: transparent;
+  border: 1px solid #E2E8F0;
+  color: #94A3B8;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-clear-history:hover {
+  color: #EF4444;
+  border-color: #FCA5A5;
+  background: #FEF2F2;
+}
+
+.session-history-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.session-item-card {
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.session-item-card:hover {
+  border-color: #CBD5E1;
+  background: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.session-item-card.done {
+  border-left: 4px solid #10B981;
+}
+
+.session-item-card.in-progress {
+  border-left: 4px solid #F59E0B;
+}
+
+.session-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.session-badge.badge-done {
+  background: #ECFDF5;
+  color: #059669;
+  border: 1px solid #A7F3D0;
+}
+
+.session-badge.badge-progress {
+  background: #FFFBEB;
+  color: #D97706;
+  border: 1px solid #FDE68A;
+}
+
+.session-item-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1E293B;
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+}
+
+.session-item-date {
+  font-size: 11.5px;
+  color: #94A3B8;
+  display: block;
+}
+
+.session-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-view-eval, .btn-resume-scenario, .btn-retake {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.btn-view-eval {
+  background: #EEF2FF;
+  color: #4F46E5;
+  border: 1px solid #C7D2FE;
+}
+
+.btn-view-eval:hover {
+  background: #E0E7FF;
+}
+
+.btn-resume-scenario {
+  background: #6366F1;
+  color: #FFFFFF;
+  border: none;
+}
+
+.btn-resume-scenario:hover {
+  background: #4F46E5;
+}
+
+.btn-retake {
+  background: #FFFFFF;
+  color: #64748B;
+  border: 1px solid #CBD5E1;
+}
+
+.btn-retake:hover {
+  background: #F1F5F9;
+  color: #0F172A;
+}
+
+.tracker-empty {
+  padding: 16px;
+  text-align: center;
+  background: #F8FAFC;
+  border-radius: 8px;
+  border: 1px dashed #E2E8F0;
+}
+
+.tracker-empty p {
+  font-size: 13px;
+  color: #64748B;
+  margin: 0;
+}
+
+/* 2. Category Pills */
+.interview-category-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--gl-border, #E2E8F0);
+}
+
+.scenario-roles-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: #F8FAFC;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #64748B;
+}
+
+.scenario-roles-strip strong {
+  color: #334155;
+}
+
+/* 3. Studio 2-Column Grid Layout */
+.simulation-studio-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.studio-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.dialogue-main-column {
+  background: var(--gl-card, #FFFFFF);
+  border: 1px solid var(--gl-border, #E2E8F0);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+/* Lịch sử câu hỏi vòng trước (Previous Turn) */
+.timeline-prev-turn {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-left: 3px solid #6366F1;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prev-turn-head {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #4F46E5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.prev-question-box p, .prev-answer-box p {
+  font-size: 13px;
+  color: #475569;
+  margin: 3px 0 0 0;
+  line-height: 1.5;
+}
+
+.prev-question-box strong, .prev-answer-box strong {
+  font-size: 12px;
+  color: #1E293B;
+}
+
+/* Word Counter Row & Draft Indicator */
+.word-counter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.word-counter {
+  font-size: 12px;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.word-counter.valid {
+  color: #10B981;
+  font-weight: 600;
+}
+
+.draft-indicator {
+  font-size: 11.5px;
+  color: #059669;
+  font-weight: 600;
+}
+
+.btn-save-draft {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-save-draft:hover {
+  background: #F8FAFC;
+  border-color: #94A3B8;
+  color: #0F172A;
+}
+
+.btn-submit-answer.disabled,
+.btn-submit-answer:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: #94A3B8 !important;
+}
+
+.btn-mobile-context-toggle {
+  display: none;
+  background: #EEF2FF;
+  border: 1px solid #C7D2FE;
+  color: #4F46E5;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 4. Studio Sidebar Panel (Sticky Right Info Panel) */
+.studio-sidebar-panel {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.panel-card {
+  background: var(--gl-card, #FFFFFF);
+  border: 1px solid var(--gl-border, #E2E8F0);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.panel-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #F1F5F9;
+  padding-bottom: 8px;
+}
+
+.panel-card-head h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748B;
+  margin: 0;
+}
+
+.panel-scenario-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.panel-scenario-desc {
+  font-size: 12.5px;
+  color: #64748B;
+  line-height: 1.5;
+  margin: 0 0 14px 0;
+}
+
+.panel-roles-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #F8FAFC;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.panel-role-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.role-lbl {
+  font-size: 11px;
+  color: #94A3B8;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.role-val {
+  font-size: 12px;
+  color: #1E293B;
+  font-weight: 600;
+}
+
+/* Stepper */
+.interview-stepper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.step-item.active {
+  opacity: 1;
+}
+
+.step-item.done {
+  opacity: 0.9;
+}
+
+.step-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #E2E8F0;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.step-item.active .step-dot {
+  background: #6366F1;
+  color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.step-item.done .step-dot {
+  background: #10B981;
+  color: #FFFFFF;
+}
+
+.step-meta strong {
+  font-size: 12.5px;
+  color: #0F172A;
+  display: block;
+}
+
+.step-meta small {
+  font-size: 11px;
+  color: #64748B;
+  display: block;
+}
+
+.btn-panel-action {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #CBD5E1;
+  color: #64748B;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-panel-action:hover {
+  background: #F8FAFC;
+  color: #0F172A;
+  border-color: #94A3B8;
+}
+
+/* 5. Evaluation Candidate Review Box */
+.candidate-review-section {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.review-dialogue-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.review-turn-item {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.review-turn-lbl {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #6366F1;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.review-question {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1E293B;
+  margin: 0 0 10px 0;
+}
+
+.review-answer {
+  background: #F8FAFC;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border-left: 3px solid #10B981;
+}
+
+.review-answer strong {
+  font-size: 11.5px;
+  color: #059669;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.review-answer p {
+  font-size: 13px;
+  color: #334155;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.score-grade-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.score-grade-tag.advanced {
+  background: #ECFDF5;
+  color: #059669;
+  border: 1px solid #A7F3D0;
+}
+
+.score-grade-tag.competent {
+  background: #EEF2FF;
+  color: #4F46E5;
+  border: 1px solid #C7D2FE;
+}
+
+/* 6. Responsive Breakdown for Tablet & Mobile */
+@media (max-width: 1024px) {
+  .studio-layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-mobile-context-toggle {
+    display: inline-flex;
+  }
+
+  .studio-sidebar-panel {
+    display: none;
+    position: static;
+    max-height: none;
+  }
+
+  .studio-sidebar-panel.mobile-open {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .interview-container {
+    padding: 16px 12px;
+  }
+
+  .interview-header-card {
+    padding: 20px;
+  }
+
+  .session-history-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dialogue-main-column {
+    padding: 16px;
+  }
+
+  .simulation-actions {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+
+  .simulation-actions-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn-submit-answer {
+    width: 100%;
+    justify-content: center;
+  }
+}
