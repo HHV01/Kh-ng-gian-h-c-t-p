@@ -2,7 +2,7 @@ services:
   - type: web
     name: vy-workspace
     runtime: static
-    buildCommand: node verify-cases.cjs
+    buildCommand: node verify-cases.cjs && node dist/test-scale-components.cjs
     staticPublishPath: ./dist
     routes:
       - type: rewrite

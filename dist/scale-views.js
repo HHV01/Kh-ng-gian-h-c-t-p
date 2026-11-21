@@ -1,0 +1,526 @@
+/**
+ * DESIGNED TO SCALE - VIEW CONTROLLER & ROUTER
+ * Handles page rendering, navigation state, interactive animations, and keyboard accessibility.
+ */
+
+// Điều hướng trang trong Designed to Scale
+function goScale(view = 'home', slug = 'caching', step = 1) {
+  scaleState.currentView = view;
+  scaleState.activeSlug = slug;
+  scaleState.activeStep = Number(step) || 1;
+
+  // Dừng auto-play nếu đang chạy
+  if (scaleState.playTimer) {
+    clearInterval(scaleState.playTimer);
+    scaleState.playTimer = null;
+    scaleState.isPlaying = false;
+  }
+
+  // Cập nhật URL hash
+  if (view === 'home') {
+    location.hash = '#/scale';
+  } else if (view === 'lesson') {
+    location.hash = `#/${slug}/${scaleState.activeStep}`;
+  } else {
+    location.hash = `#/${view}`;
+  }
+
+  renderScaleApp();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Render ứng dụng Designed to Scale vào #main
+function renderScaleApp() {
+  const main = document.querySelector('#main');
+  if (!main) return;
+
+  // Đổi title tab
+  const isEn = scaleState.language === 'en';
+  let titlePrefix = 'Designed to Scale';
+  if (scaleState.currentView === 'lesson') {
+    const lesson = scaleLessonsDetail[scaleState.activeSlug];
+    if (lesson) titlePrefix = `${lesson.titleVi || lesson.title} (Step ${scaleState.activeStep}) · Designed to Scale`;
+  } else if (scaleState.currentView === 'pricing') {
+    titlePrefix = 'Bảng giá khoá học · Designed to Scale';
+  } else if (scaleState.currentView === 'about') {
+    titlePrefix = 'Giới thiệu · Designed to Scale';
+  }
+  document.title = titlePrefix;
+
+  // Khung layout chính
+  let pageContent = '';
+  switch (scaleState.currentView) {
+    case 'lesson':
+      pageContent = renderScaleLessonView(scaleState.activeSlug, scaleState.activeStep);
+      break;
+    case 'pricing':
+      pageContent = renderScalePricingView();
+      break;
+    case 'about':
+      pageContent = renderScaleAboutView();
+      break;
+    case 'contact':
+      pageContent = renderScaleContactView();
+      break;
+    case 'privacy':
+      pageContent = renderScalePrivacyView();
+      break;
+    case 'terms':
+      pageContent = renderScaleTermsView();
+      break;
+    case 'home':
+    default:
+      pageContent = renderScaleHomeView();
+      break;
+  }
+
+  main.innerHTML = `
+    <div class="designed-to-scale-app" role="main">
+      ${ScaleNavBar({ isPro: false, currentModule: 'Scaling', lang: scaleState.language })}
+      <div class="scale-page-wrapper">
+        ${pageContent}
+      </div>
+      ${ScaleFooter({ lang: scaleState.language })}
+    </div>
+  `;
+}
+
+// Trang chủ (Home View)
+function renderScaleHomeView() {
+  const isEn = scaleState.language === 'en';
+  const data = scalePagesData.home;
+
+  return `
+    <div class="scale-home-page">
+      ${ScaleHeroBanner({
+        title: isEn ? data.titleEn : data.title,
+        subtitle: isEn ? data.subtitleEn : data.subtitle,
+        ctaStart: data.ctaStart,
+        ctaDemo: data.ctaDemo,
+        isEn
+      })}
+
+      ${ScaleFeatureList({
+        features: data.features,
+        useCases: data.useCases,
+        isEn
+      })}
+
+      ${ScaleACloserLook()}
+
+      ${ScaleCourseOutline({
+        modules: scaleModulesData,
+        isEn
+      })}
+
+      ${ScaleFAQAccordion({
+        faqList: data.faq
+      })}
+    </div>
+  `;
+}
+
+// Trang bài học tương tác (Interactive Lesson Studio View)
+function renderScaleLessonView(slug, stepNumber) {
+  const lesson = scaleLessonsDetail[slug] || scaleLessonsDetail['caching'];
+  const steps = lesson.steps || [];
+  const validStep = Math.max(1, Math.min(steps.length, stepNumber));
+  const currentStepData = steps[validStep - 1] || steps[0];
+
+  return `
+    <div class="scale-lesson-studio">
+      <!-- Breadcrumb Bar -->
+      <div class="scale-lesson-bar">
+        <div class="bar-left">
+          <a href="#/scale" data-scale-nav="home" class="bar-back-link">← Trang chủ</a>
+          <span class="bar-sep">/</span>
+          <span class="bar-module">${esc(lesson.moduleTitle)}</span>
+          <span class="bar-sep">/</span>
+          <span class="bar-lesson-title">${esc(lesson.titleVi || lesson.title)}</span>
+        </div>
+        <div class="bar-right">
+          <span class="save-status">✓ Tiến độ tự lưu cục bộ</span>
+        </div>
+      </div>
+
+      <!-- Studio Layout: Sidebar + Main Stage + Inspector -->
+      <div class="studio-workspace-grid">
+        <!-- Sidebar bài học bên trái -->
+        ${ScaleSidebarMenu({ activeSlug: slug, modules: scaleModulesData })}
+
+        <!-- Khung làm việc trung tâm -->
+        <main class="studio-main-stage">
+          <!-- Step Navigation Bar -->
+          ${ScaleStepNavigation({
+            currentStep: validStep,
+            totalSteps: steps.length,
+            stepTitle: currentStepData.title,
+            stepExplanation: currentStepData.explanation,
+            isPlaying: scaleState.isPlaying
+          })}
+
+          <!-- Sơ đồ kiến trúc động -->
+          ${ScaleLessonDiagram({
+            diagramState: currentStepData.diagram,
+            activeStepNumber: validStep
+          })}
+
+          <!-- Bảng số liệu Live Metrics -->
+          ${ScaleMetricsPanel({
+            metrics: currentStepData.metrics
+          })}
+        </main>
+
+        <!-- Inspector Panel bên phải -->
+        <aside class="studio-inspector-col">
+          ${ScaleInspectorPanel({
+            inspectorData: currentStepData.inspector
+          })}
+        </aside>
+      </div>
+    </div>
+  `;
+}
+
+// Trang Bảng giá (Pricing View)
+function renderScalePricingView() {
+  const p = scalePagesData.pricing;
+
+  return `
+    <div class="scale-pricing-page">
+      <div class="scale-section-header">
+        <span class="scale-kicker">GÓI TRUY CẬP ĐẦY ĐỦ</span>
+        <h1>${esc(p.title)}</h1>
+        <p>${esc(p.description)}</p>
+      </div>
+
+      <div class="scale-pricing-card-wrap">
+        <div class="scale-pricing-card">
+          <div class="pricing-card-badge">TRUY CẬP TRỌN ĐỜI</div>
+          <div class="pricing-price-row">
+            <span class="price-currency">$</span>
+            <span class="price-val">4.99</span>
+            <span class="price-period">/ một lần duy nhất</span>
+          </div>
+          <div class="price-vnd-note">Tương đương khoảng ${p.priceVnd}</div>
+
+          <ul class="pricing-checklist">
+            ${p.features.map(f => `
+              <li>
+                <span class="check-icon">✓</span>
+                <span>${esc(f)}</span>
+              </li>
+            `).join('')}
+          </ul>
+
+          <button class="scale-btn scale-btn-primary scale-btn-lg full-w" data-scale-nav="lesson" data-scale-slug="caching">
+            <span>Bắt đầu học ngay với Free Plan</span>
+            <span>→</span>
+          </button>
+
+          <p class="pricing-refund-text">${esc(p.refundPolicy)}</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Trang Giới thiệu (About View)
+function renderScaleAboutView() {
+  const a = scalePagesData.about;
+
+  return `
+    <div class="scale-static-page">
+      <div class="scale-section-header">
+        <span class="scale-kicker">ABOUT DESIGNED TO SCALE</span>
+        <h1>${esc(a.title)}</h1>
+        <p>${esc(a.description)}</p>
+      </div>
+
+      <div class="static-content-card">
+        <h3>Phương pháp học tương tác (Interactive Visual Learning)</h3>
+        <p>Hệ thống bao gồm <strong>40 bài học</strong> được tổ chức khoa học qua <strong>9 module</strong>. Mỗi bài học được thiết kế như một phòng thí nghiệm thu nhỏ, nơi bạn có thể chủ động kích hoạt lưu lượng, bật tắt các thành phần hạ tầng và đánh giá sự biến thiên của hệ thống.</p>
+
+        <h3>Cách sử dụng khoá học hiệu quả</h3>
+        <p>${esc(a.howToUse)}</p>
+
+        <h3>Đính chính và hỗ trợ kỹ thuật</h3>
+        <p>Nếu bạn phát hiện điểm chưa chuẩn xác trong giải thích kiến trúc hoặc gặp lỗi hiển thị trên thiết bị, xin vui lòng gửi phản hồi tại <a href="#/contact" data-scale-nav="contact">Trang liên hệ & báo lỗi</a>.</p>
+      </div>
+    </div>
+  `;
+}
+
+// Trang Liên hệ (Contact View)
+function renderScaleContactView() {
+  const c = scalePagesData.contact;
+
+  return `
+    <div class="scale-static-page">
+      <div class="scale-section-header">
+        <span class="scale-kicker">SUPPORT & FEEDBACK</span>
+        <h1>${esc(c.title)}</h1>
+        <p>${esc(c.description)}</p>
+      </div>
+
+      <div class="static-content-card">
+        <h3>Kênh liên hệ trực tiếp</h3>
+        <p>Gửi thư hỗ trợ tới hòm thư: <a href="mailto:${c.supportEmail}" class="contact-email-link"><strong>${c.supportEmail}</strong></a></p>
+
+        <h3>Hướng dẫn báo cáo lỗi hoặc đề xuất kỹ thuật</h3>
+        <ul class="scale-bullet-list">
+          ${c.reportInstructions.map(inst => `
+            <li>
+              <span class="check-icon">✓</span>
+              <span>${esc(inst)}</span>
+            </li>
+          `).join('')}
+        </ul>
+
+        <div class="contact-quick-form">
+          <h3>Gửi tin nhắn nhanh</h3>
+          <div class="form-group">
+            <label>Nội dung đóng góp:</label>
+            <textarea id="scale-feedback-input" class="scale-textarea" placeholder="Nhập câu hỏi hoặc phản hồi của bạn..."></textarea>
+          </div>
+          <button class="scale-btn scale-btn-primary" data-scale-action="send-feedback">
+            <span>Gửi phản hồi</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Trang Chính sách bảo mật (Privacy View)
+function renderScalePrivacyView() {
+  const p = scalePagesData.privacy;
+
+  return `
+    <div class="scale-static-page">
+      <div class="scale-section-header">
+        <span class="scale-kicker">LEGAL & PRIVACY</span>
+        <h1>${esc(p.title)}</h1>
+        <p>Cập nhật lần cuối: ${esc(p.lastUpdated)}</p>
+      </div>
+
+      <div class="static-content-card">
+        ${p.sections.map(sec => `
+          <div class="legal-section">
+            <h3>${esc(sec.heading)}</h3>
+            <p>${esc(sec.content)}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+// Trang Điều khoản dịch vụ (Terms View)
+function renderScaleTermsView() {
+  const t = scalePagesData.terms;
+
+  return `
+    <div class="scale-static-page">
+      <div class="scale-section-header">
+        <span class="scale-kicker">TERMS OF USE</span>
+        <h1>${esc(t.title)}</h1>
+        <p>Cập nhật lần cuối: ${esc(t.lastUpdated)}</p>
+      </div>
+
+      <div class="static-content-card">
+        ${t.sections.map(sec => `
+          <div class="legal-section">
+            <h3>${esc(sec.heading)}</h3>
+            <p>${esc(sec.content)}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+// =========================================================================
+// EVENT DELEGATION & TƯƠNG TÁC NGƯỜI DÙNG
+// =========================================================================
+
+document.addEventListener('click', e => {
+  // 1. Điều hướng theo Navigation Data
+  const navBtn = e.target.closest('[data-scale-nav]');
+  if (navBtn) {
+    e.preventDefault();
+    const view = navBtn.dataset.scaleNav;
+    const slug = navBtn.dataset.scaleSlug || 'caching';
+    goScale(view, slug, 1);
+    return;
+  }
+
+  // 2. Chuyển bước bài học: Next Step
+  if (e.target.closest('[data-scale-action="next-step"]')) {
+    e.preventDefault();
+    const lesson = scaleLessonsDetail[scaleState.activeSlug] || scaleLessonsDetail['caching'];
+    if (scaleState.activeStep < lesson.steps.length) {
+      scaleState.activeStep++;
+      location.hash = `#/${scaleState.activeSlug}/${scaleState.activeStep}`;
+      renderScaleApp();
+    }
+    return;
+  }
+
+  // 3. Chuyển bước bài học: Prev Step
+  if (e.target.closest('[data-scale-action="prev-step"]')) {
+    e.preventDefault();
+    if (scaleState.activeStep > 1) {
+      scaleState.activeStep--;
+      location.hash = `#/${scaleState.activeSlug}/${scaleState.activeStep}`;
+      renderScaleApp();
+    }
+    return;
+  }
+
+  // 4. Bật / Tắt Tự động phát (Auto-play)
+  if (e.target.closest('[data-scale-action="toggle-play"]')) {
+    e.preventDefault();
+    scaleState.isPlaying = !scaleState.isPlaying;
+    if (scaleState.isPlaying) {
+      scaleState.playTimer = setInterval(() => {
+        const lesson = scaleLessonsDetail[scaleState.activeSlug] || scaleLessonsDetail['caching'];
+        if (scaleState.activeStep < lesson.steps.length) {
+          scaleState.activeStep++;
+        } else {
+          scaleState.activeStep = 1;
+        }
+        location.hash = `#/${scaleState.activeSlug}/${scaleState.activeStep}`;
+        renderScaleApp();
+      }, 3500);
+    } else if (scaleState.playTimer) {
+      clearInterval(scaleState.playTimer);
+      scaleState.playTimer = null;
+    }
+    renderScaleApp();
+    return;
+  }
+
+  // 5. Mở / Đóng Accordion FAQ
+  const faqBtn = e.target.closest('[data-scale-action="toggle-faq"]');
+  if (faqBtn) {
+    e.preventDefault();
+    const faqId = faqBtn.dataset.scaleFaq;
+    scaleState.faqOpen[faqId] = !scaleState.faqOpen[faqId];
+    renderScaleApp();
+    return;
+  }
+
+  // 6. Mở / Thu gọn Module trong Sidebar
+  const modBtn = e.target.closest('[data-scale-action="toggle-module"]');
+  if (modBtn) {
+    e.preventDefault();
+    const modId = modBtn.dataset.scaleMod;
+    scaleState.expandedModules[modId] = !scaleState.expandedModules[modId];
+    renderScaleApp();
+    return;
+  }
+
+  // 7. Chọn nút Demo trên Homepage
+  const demoBtn = e.target.closest('[data-scale-demo-step]');
+  if (demoBtn) {
+    e.preventDefault();
+    const mode = demoBtn.dataset.scaleDemoStep;
+    document.querySelectorAll('[data-scale-demo-step]').forEach(b => b.classList.toggle('active', b === demoBtn));
+    const playground = document.querySelector('#scale-demo-playground');
+    if (playground) playground.innerHTML = renderDemoCanvas(mode);
+    return;
+  }
+
+  // 8. Cuộn mượt đến demo
+  if (e.target.closest('[data-scale-action="scroll-to-demo"]')) {
+    e.preventDefault();
+    const sec = document.querySelector('#caching-demo-section');
+    if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
+
+  // 9. Đổi ngôn ngữ
+  if (e.target.closest('[data-scale-action="toggle-lang"]')) {
+    e.preventDefault();
+    scaleState.language = scaleState.language === 'vi' ? 'en' : 'vi';
+    if (typeof toast === 'function') {
+      toast(scaleState.language === 'en' ? 'Language switched to English' : 'Đã đổi sang Tiếng Việt');
+    }
+    renderScaleApp();
+    return;
+  }
+
+  // 10. Đổi Theme Sáng / Tối
+  if (e.target.closest('[data-scale-action="toggle-theme"]')) {
+    e.preventDefault();
+    document.body.classList.toggle('dark');
+    if (typeof toast === 'function') {
+      toast(document.body.classList.contains('dark') ? 'Chế độ tối (Dark mode)' : 'Chế độ sáng (Light mode)');
+    }
+    renderScaleApp();
+    return;
+  }
+
+  // 11. Bấm vào Node trong sơ đồ kiến trúc để inspect
+  const nodeEl = e.target.closest('[data-scale-node]');
+  if (nodeEl) {
+    e.preventDefault();
+    scaleState.selectedNodeId = nodeEl.dataset.scaleNode;
+    renderScaleApp();
+    return;
+  }
+
+  // 12. Gửi phản hồi liên hệ
+  if (e.target.closest('[data-scale-action="send-feedback"]')) {
+    e.preventDefault();
+    const input = document.querySelector('#scale-feedback-input');
+    if (input && input.value.trim()) {
+      input.value = '';
+      if (typeof toast === 'function') {
+        toast('Cảm ơn bạn! Phản hồi kỹ thuật đã được ghi nhận.');
+      }
+    }
+    return;
+  }
+});
+
+// Điều khiển bàn phím (Keyboard Navigation)
+document.addEventListener('keydown', e => {
+  if (scaleState.currentView !== 'lesson') return;
+  if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+  const lesson = scaleLessonsDetail[scaleState.activeSlug] || scaleLessonsDetail['caching'];
+  if (e.key === 'ArrowRight' || e.key === ' ') {
+    if (scaleState.activeStep < lesson.steps.length) {
+      e.preventDefault();
+      scaleState.activeStep++;
+      location.hash = `#/${scaleState.activeSlug}/${scaleState.activeStep}`;
+      renderScaleApp();
+    }
+  } else if (e.key === 'ArrowLeft') {
+    if (scaleState.activeStep > 1) {
+      e.preventDefault();
+      scaleState.activeStep--;
+      location.hash = `#/${scaleState.activeSlug}/${scaleState.activeStep}`;
+      renderScaleApp();
+    }
+  }
+});
+
+// Lắng nghe hash change để đồng bộ URL
+window.addEventListener('hashchange', () => {
+  const hash = location.hash.replace(/^#\/?/, '');
+  if (!hash) return;
+
+  if (hash === 'scale') {
+    goScale('home');
+  } else if (['pricing', 'about', 'contact', 'privacy', 'terms'].includes(hash)) {
+    goScale(hash);
+  } else {
+    const parts = hash.split('/');
+    if (parts.length >= 1 && scaleLessonsDetail[parts[0]]) {
+      goScale('lesson', parts[0], parts[1] || 1);
+    }
+  }
+});

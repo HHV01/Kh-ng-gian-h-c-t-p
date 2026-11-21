@@ -4,8 +4,8 @@
   "description": "Vy Workspace - Nền tảng học tập & case study Business Analyst",
   "main": "server.js",
   "scripts": {
-    "test": "node verify-cases.cjs",
-    "build": "node verify-cases.cjs",
+    "test": "node verify-cases.cjs && node dist/test-scale-components.cjs",
+    "build": "node verify-cases.cjs && node dist/test-scale-components.cjs",
     "start": "node server.js"
   },
   "keywords": [

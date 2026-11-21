@@ -31,7 +31,7 @@ Dự án đã có sẵn file cấu hình chuẩn **`render.yaml`**:
 1. Đăng nhập [render.com](https://dashboard.render.com).
 2. Nhấn nút **New +** ở góc trên bên phải -> Chọn **Blueprint**.
 3. Kết nối với repository GitHub vừa tạo.
-4. Render sẽ tự động đọc file `render.yaml` và thiết lập mọi thông số (Tên: `vy-workspace`, Runtime: `static`, Build: `node verify-cases.cjs`, Publish: `./dist`).
+4. Render sẽ tự động đọc file `render.yaml` và thiết lập mọi thông số (Tên: `vy-workspace`, Runtime: `static`, Build: `node verify-cases.cjs && node dist/test-scale-components.cjs`, Publish: `./dist`).
 5. Nhấn **Apply** để hoàn tất triển khai.
 
 #### 👉 Cách 2: Tạo Static Site thủ công (Miễn phí 100%)
@@ -40,7 +40,7 @@ Dự án đã có sẵn file cấu hình chuẩn **`render.yaml`**:
 3. Điền các thông số:
    - **Name**: `vy-workspace`
    - **Branch**: `main`
-   - **Build Command**: `node verify-cases.cjs` (hoặc để trống)
+   - **Build Command**: `node verify-cases.cjs && node dist/test-scale-components.cjs` (hoặc để trống)
    - **Publish Directory**: `dist`
 4. Trong mục **Advanced** -> **Redirects/Rewrites**:
    - Chọn **Add Rule**: `Rewrite` | Source: `/*` | Destination: `/index.html`
@@ -70,6 +70,11 @@ Dự án đã có sẵn file cấu hình chuẩn **`render.yaml`**:
 
 - `dist/`: Toàn bộ giao diện web tĩnh (HTML, CSS, JS, icon, UI).
   - `dist/index.html`: Trang chính LMS.
+  - `dist/scale-data.js`: Dữ liệu 9 module, 40 bài học, bảng giá, pháp lý và sơ đồ kiến trúc động.
+  - `dist/scale-components.js`: Hệ thống 14+ UI components tương tác (NavBar, Hero, Sơ đồ SVG, MetricsPanel, StepNavigation...).
+  - `dist/scale-views.js`: Điều hướng và bộ điều khiển các trang Designed to Scale (#/scale, #/pricing, #/about, #/caching...).
+  - `dist/scale.css`: Toàn bộ phong cách thiết kế hiện đại, animation luồng dữ liệu, hỗ trợ Dark/Light mode và trợ năng ARIA.
+  - `dist/test-scale-components.cjs`: Bộ kiểm thử tự động toàn diện cho hệ thống Designed to Scale.
   - `dist/cases.js`, `dist/cases-extra.js`: 12 case study BA có giải pháp & rubric chấm điểm.
   - `dist/app.js`, `dist/library.js`: Logic điều hướng, flashcard, bài học.
 - `render.yaml`: File cấu hình kết nối tự động với Render (Blueprint).
