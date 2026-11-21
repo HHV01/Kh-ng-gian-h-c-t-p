@@ -3,7 +3,7 @@
  * 10 Real-world BA scenarios, dynamic dialog flow, counter-questions, and 6-criteria rubric evaluation.
  */
 
-var esc = typeof esc !== 'undefined' ? esc : (s => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])));
+function escInterview(s) { return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
 // Dữ liệu 10 tình huống phỏng vấn thực tế
 const interviewScenariosData = [
@@ -1130,7 +1130,7 @@ function renderInterviewHome() {
             <span class="interview-search-icon">⌕</span>
             <input type="text" class="interview-search-input" id="interview-search-input" 
                    placeholder="Tìm kiếm tình huống, từ khóa kỹ năng (xung đột, scope creep, dev)..."
-                   value="${esc(interviewState.searchQuery)}" />
+                   value="${escInterview(interviewState.searchQuery)}" />
           </div>
 
           <div class="interview-level-filters">
@@ -1150,7 +1150,7 @@ function renderInterviewHome() {
             return `
               <button class="skill-pill ${isActive ? 'active' : ''}"
                       data-interview-action="filter-skill" data-skill="${val}">
-                ${esc(sk)}
+                ${escInterview(sk)}
               </button>
             `;
           }).join('')}
@@ -1168,14 +1168,14 @@ function renderInterviewHome() {
               <div class="scenario-top">
                 <div class="scenario-badges">
                   <span class="badge-level ${lvlClass}">${sc.level}</span>
-                  <span class="badge-skill">${esc(sc.skill)}</span>
+                  <span class="badge-skill">${escInterview(sc.skill)}</span>
                 </div>
                 <span class="scenario-duration">⏱ ${sc.duration}</span>
               </div>
 
               <div>
-                <h3 class="scenario-title">${idx + 1}. ${esc(sc.title)}</h3>
-                <p class="scenario-brief">${esc(sc.brief)}</p>
+                <h3 class="scenario-title">${idx + 1}. ${escInterview(sc.title)}</h3>
+                <p class="scenario-brief">${escInterview(sc.brief)}</p>
               </div>
 
               <div class="scenario-footer">
@@ -1238,18 +1238,18 @@ function renderInterviewStudio() {
           <div class="context-header">
             <span>📋</span> Bối cảnh dự án & Vấn đề phát sinh
           </div>
-          <h2 class="context-title">${esc(scenario.title)}</h2>
-          <p class="context-text">${esc(scenario.context)}</p>
+          <h2 class="context-title">${escInterview(scenario.title)}</h2>
+          <p class="context-text">${escInterview(scenario.context)}</p>
         </div>
 
         <!-- 2. Người phỏng vấn đặt câu hỏi -->
         <div class="dialogue-turn">
-          <div class="interviewer-avatar" title="${esc(scenario.interviewer.name)}">
+          <div class="interviewer-avatar" title="${escInterview(scenario.interviewer.name)}">
             ${scenario.interviewer.avatar}
           </div>
           <div class="interviewer-bubble">
-            <span class="speaker-role">${esc(scenario.interviewer.name)} · ${esc(scenario.interviewer.role)}</span>
-            <p class="question-text">${esc(turn.question)}</p>
+            <span class="speaker-role">${escInterview(scenario.interviewer.name)} · ${escInterview(scenario.interviewer.role)}</span>
+            <p class="question-text">${escInterview(turn.question)}</p>
           </div>
         </div>
 
@@ -1276,7 +1276,7 @@ function renderInterviewStudio() {
 
             <div class="answer-textarea-wrap">
               <textarea class="answer-textarea" id="candidate-text-answer" 
-                        placeholder="Trình bày giải pháp và cách xử lý của bạn theo cấu trúc rõ ràng...">${esc(textVal)}</textarea>
+                        placeholder="Trình bày giải pháp và cách xử lý của bạn theo cấu trúc rõ ràng...">${escInterview(textVal)}</textarea>
               <div class="word-counter">
                 <span>${wordCount} từ</span>
               </div>
@@ -1289,7 +1289,7 @@ function renderInterviewStudio() {
                   <div class="strategy-option ${isSelected ? 'selected' : ''}" 
                        data-interview-action="select-option" data-key="${opt.key}">
                     <span class="option-key">${opt.key}</span>
-                    <p class="option-desc">${esc(opt.text)}</p>
+                    <p class="option-desc">${escInterview(opt.text)}</p>
                   </div>
                 `;
               }).join('')}
@@ -1299,7 +1299,7 @@ function renderInterviewStudio() {
           <!-- Gợi ý (Hint) trong chế độ Guided hoặc khi bấm xem -->
           ${(isGuided || interviewState.showHint) ? `
             <div class="hint-box">
-              <strong>💡 Gợi ý tư duy BA:</strong> ${esc(turn.hint)}
+              <strong>💡 Gợi ý tư duy BA:</strong> ${escInterview(turn.hint)}
             </div>
           ` : ''}
 
@@ -1343,7 +1343,7 @@ function renderInterviewEvaluation(scenario) {
         <div class="summary-score-hero">
           <div class="score-hero-left">
             <h2>${isHigh ? '🌟 Kết quả xuất sắc! Bạn thể hiện tư duy BA chuẩn mực.' : '👍 Hoàn thành tốt! Hãy xem các điểm cần cải thiện bên dưới.'}</h2>
-            <p>Tình huống: <strong>${esc(scenario.title)}</strong> (${scenario.level} · ${esc(scenario.skill)})</p>
+            <p>Tình huống: <strong>${escInterview(scenario.title)}</strong> (${scenario.level} · ${escInterview(scenario.skill)})</p>
           </div>
           <div class="score-circle">
             ${avgScore}/100
@@ -1359,13 +1359,13 @@ function renderInterviewEvaluation(scenario) {
             ${scenario.rubricCriteria.map(c => `
               <div class="criteria-cell">
                 <div class="criteria-name">
-                  <span>${esc(c.name)}</span>
+                  <span>${escInterview(c.name)}</span>
                   <span class="criteria-score">${c.score}/100</span>
                 </div>
                 <div class="criteria-bar">
                   <div class="criteria-bar-fill" style="width: ${c.score}%"></div>
                 </div>
-                <p class="criteria-desc">${esc(c.desc)}</p>
+                <p class="criteria-desc">${escInterview(c.desc)}</p>
               </div>
             `).join('')}
           </div>
@@ -1376,14 +1376,14 @@ function renderInterviewEvaluation(scenario) {
           <div class="feedback-card strengths">
             <h3><span>✓</span> Điểm mạnh nổi bật</h3>
             <ul>
-              ${scenario.strengths.map(s => `<li>${esc(s)}</li>`).join('')}
+              ${scenario.strengths.map(s => `<li>${escInterview(s)}</li>`).join('')}
             </ul>
           </div>
 
           <div class="feedback-card weaknesses">
             <h3><span>⚠️</span> Điểm cần hoàn thiện thêm</h3>
             <ul>
-              ${scenario.weaknesses.map(w => `<li>${esc(w)}</li>`).join('')}
+              ${scenario.weaknesses.map(w => `<li>${escInterview(w)}</li>`).join('')}
             </ul>
           </div>
         </div>
@@ -1398,19 +1398,19 @@ function renderInterviewEvaluation(scenario) {
           <div class="star-breakdown">
             <div class="star-block">
               <strong>S - Situation (Bối cảnh thực tế):</strong>
-              <p style="margin:0">${esc(scenario.modelAnswer.situation)}</p>
+              <p style="margin:0">${escInterview(scenario.modelAnswer.situation)}</p>
             </div>
             <div class="star-block">
               <strong>T - Task (Nhiệm vụ của BA):</strong>
-              <p style="margin:0">${esc(scenario.modelAnswer.task)}</p>
+              <p style="margin:0">${escInterview(scenario.modelAnswer.task)}</p>
             </div>
             <div class="star-block">
               <strong>A - Action (Hành động chiến lược):</strong>
-              <p style="margin:0">${esc(scenario.modelAnswer.action)}</p>
+              <p style="margin:0">${escInterview(scenario.modelAnswer.action)}</p>
             </div>
             <div class="star-block">
               <strong>R - Result (Kết quả & Giá trị kinh doanh):</strong>
-              <p style="margin:0">${esc(scenario.modelAnswer.result)}</p>
+              <p style="margin:0">${escInterview(scenario.modelAnswer.result)}</p>
             </div>
           </div>
         </div>
@@ -1419,7 +1419,7 @@ function renderInterviewEvaluation(scenario) {
         <div class="pitfalls-card">
           <h3>🚫 Các lỗi thường gặp (Common Pitfalls) cần tuyệt đối tránh</h3>
           <ul>
-            ${scenario.pitfalls.map(p => `<li>${esc(p)}</li>`).join('')}
+            ${scenario.pitfalls.map(p => `<li>${escInterview(p)}</li>`).join('')}
           </ul>
         </div>
 
