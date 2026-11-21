@@ -40,8 +40,6 @@ function renderScaleApp() {
   if (scaleState.currentView === 'lesson') {
     const lesson = scaleLessonsDetail[scaleState.activeSlug];
     if (lesson) titlePrefix = `${lesson.titleVi || lesson.title} (Step ${scaleState.activeStep}) · Designed to Scale`;
-  } else if (scaleState.currentView === 'pricing') {
-    titlePrefix = 'Bảng giá khoá học · Designed to Scale';
   } else if (scaleState.currentView === 'about') {
     titlePrefix = 'Giới thiệu · Designed to Scale';
   }
@@ -52,9 +50,6 @@ function renderScaleApp() {
   switch (scaleState.currentView) {
     case 'lesson':
       pageContent = renderScaleLessonView(scaleState.activeSlug, scaleState.activeStep);
-      break;
-    case 'pricing':
-      pageContent = renderScalePricingView();
       break;
     case 'about':
       pageContent = renderScaleAboutView();
@@ -177,49 +172,6 @@ function renderScaleLessonView(slug, stepNumber) {
             inspectorData: currentStepData.inspector
           })}
         </aside>
-      </div>
-    </div>
-  `;
-}
-
-// Trang Bảng giá (Pricing View)
-function renderScalePricingView() {
-  const p = scalePagesData.pricing;
-
-  return `
-    <div class="scale-pricing-page">
-      <div class="scale-section-header">
-        <span class="scale-kicker">GÓI TRUY CẬP ĐẦY ĐỦ</span>
-        <h1>${esc(p.title)}</h1>
-        <p>${esc(p.description)}</p>
-      </div>
-
-      <div class="scale-pricing-card-wrap">
-        <div class="scale-pricing-card">
-          <div class="pricing-card-badge">TRUY CẬP TRỌN ĐỜI</div>
-          <div class="pricing-price-row">
-            <span class="price-currency">$</span>
-            <span class="price-val">4.99</span>
-            <span class="price-period">/ một lần duy nhất</span>
-          </div>
-          <div class="price-vnd-note">Tương đương khoảng ${p.priceVnd}</div>
-
-          <ul class="pricing-checklist">
-            ${p.features.map(f => `
-              <li>
-                <span class="check-icon">✓</span>
-                <span>${esc(f)}</span>
-              </li>
-            `).join('')}
-          </ul>
-
-          <button class="scale-btn scale-btn-primary scale-btn-lg full-w" data-scale-nav="lesson" data-scale-slug="caching">
-            <span>Bắt đầu học ngay với Free Plan</span>
-            <span>→</span>
-          </button>
-
-          <p class="pricing-refund-text">${esc(p.refundPolicy)}</p>
-        </div>
       </div>
     </div>
   `;
@@ -515,7 +467,7 @@ window.addEventListener('hashchange', () => {
 
   if (hash === 'scale') {
     goScale('home');
-  } else if (['pricing', 'about', 'contact', 'privacy', 'terms'].includes(hash)) {
+  } else if (['about', 'contact', 'privacy', 'terms'].includes(hash)) {
     goScale(hash);
   } else {
     const parts = hash.split('/');

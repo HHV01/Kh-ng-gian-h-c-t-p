@@ -59,24 +59,6 @@ const scalePagesData = {
       }
     ]
   },
-  pricing: {
-    title: "Bảng giá khoá học",
-    titleEn: "Course pricing",
-    price: 4.99,
-    priceVnd: "120.000 ₫",
-    currency: "USD",
-    description: "Sở hữu trọn đời khoá học Designed to Scale với mức phí một lần duy nhất. Không phí duy trì định kỳ.",
-    ctaText: "Mở khoá toàn bộ 40 bài học",
-    features: [
-      "Truy cập trọn đời toàn bộ 40 bài học tương tác",
-      "9 module kiến trúc hệ thống phân tán hoàn chỉnh",
-      "Sơ đồ kiến trúc động tương tác từng bước",
-      "Bảng số liệu thời gian thực (Live Metrics: p50, p99, RPS, CPU)",
-      "Hỗ trợ chế độ tối (Dark mode) & lưu tiến độ học tập",
-      "Cập nhật nội dung mới miễn phí trong tương lai"
-    ],
-    refundPolicy: "Chính sách hoàn tiền: Các sản phẩm khoá học kỹ thuật số được hoàn tiền trong vòng 14 ngày nếu bạn chưa học quá 3 bài và không hài lòng với nội dung."
-  },
   about: {
     title: "Về Designed to Scale",
     description: "Designed to Scale ra đời với sứ mệnh trực quan hoá các khái niệm kiến trúc hệ thống phức tạp, giúp kỹ sư phần mềm, BA và sinh viên công nghệ thấu hiểu cách các hệ thống triệu người dùng vận hành.",

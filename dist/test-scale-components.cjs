@@ -73,23 +73,23 @@ assert.equal(
 );
 console.log('✓ PASS: Đầy đủ 9 module và 40 bài học phân tán.');
 
-// TEST SUITE 2: Kiểm thử các trang tĩnh (Home, Pricing, About, Contact, Privacy, Terms)
+// TEST SUITE 2: Kiểm thử các trang tĩnh (Home, About, Contact, Privacy, Terms - Bảng giá đã xoá)
 console.log('[Test 2] Kiểm tra dữ liệu trang tĩnh và pháp lý...');
 const pagesData = vm.runInContext('scalePagesData', ctx);
 assert.ok(pagesData.home && pagesData.home.title, 'Trang chủ phải có title');
-assert.ok(pagesData.pricing && pagesData.pricing.price === 4.99, 'Bảng giá phải có giá $4.99');
+assert.equal(pagesData.pricing, undefined, 'Bảng giá phải được xoá hoàn toàn');
 assert.ok(pagesData.about && pagesData.about.lessonsCount === 40, 'About phải nêu rõ 40 bài học');
 assert.ok(pagesData.contact && pagesData.contact.supportEmail.includes('@'), 'Contact phải có email hợp lệ');
 assert.ok(pagesData.privacy && pagesData.privacy.sections.length >= 4, 'Privacy phải có ít nhất 4 điều khoản');
 assert.ok(pagesData.terms && pagesData.terms.sections.length >= 6, 'Terms phải có 6 điều khoản đánh số');
-console.log('✓ PASS: Dữ liệu schema của tất cả các trang hoàn thiện.');
+console.log('✓ PASS: Dữ liệu schema của tất cả các trang hoàn thiện (Bảng giá đã xoá).');
 
 // TEST SUITE 3: Kiểm thử Component NavBar & Footer
 console.log('[Test 3] Kiểm thử Component NavBar & Footer...');
 const navbarHtml = vm.runInContext('ScaleNavBar({ isPro: false, currentModule: "Scaling", lang: "vi" })', ctx);
 assert.ok(navbarHtml.includes('scale-navbar'), 'Navbar phải chứa class scale-navbar');
 assert.ok(navbarHtml.includes('Designed to'), 'Navbar phải có Logo Designed to Scale');
-assert.ok(navbarHtml.includes('Free Plan'), 'Trạng thái Free Plan phải hiển thị');
+assert.ok(navbarHtml.includes('Miễn phí') || navbarHtml.includes('Unlocked'), 'Trạng thái mở khoá miễn phí phải hiển thị');
 
 const footerHtml = vm.runInContext('ScaleFooter({ lang: "vi" })', ctx);
 assert.ok(footerHtml.includes('support@designedtoscale.app'), 'Footer phải chứa email liên hệ');

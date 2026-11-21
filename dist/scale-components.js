@@ -55,9 +55,6 @@ function ScaleNavBar({ isPro = false, currentModule = 'Scaling', lang = 'vi' }) 
           <button class="scale-nav-link ${scaleState.currentView === 'lesson' ? 'active' : ''}" data-scale-nav="lesson" data-scale-slug="caching">
             ${isEn ? 'Lessons (40)' : 'Bài học (40 bài)'}
           </button>
-          <button class="scale-nav-link ${scaleState.currentView === 'pricing' ? 'active' : ''}" data-scale-nav="pricing">
-            ${isEn ? 'Pricing' : 'Bảng giá'}
-          </button>
           <button class="scale-nav-link ${scaleState.currentView === 'about' ? 'active' : ''}" data-scale-nav="about">
             ${isEn ? 'About' : 'Giới thiệu'}
           </button>
@@ -69,9 +66,9 @@ function ScaleNavBar({ isPro = false, currentModule = 'Scaling', lang = 'vi' }) 
         <!-- Right Actions: Plan Status, Language, Theme, Back to BA Academy -->
         <div class="scale-nav-actions">
           <!-- Gói tài khoản -->
-          <div class="scale-plan-badge ${isPro ? 'pro' : 'free'}">
+          <div class="scale-plan-badge pro">
             <span class="plan-dot"></span>
-            <span>${isPro ? 'Pro Unlocked' : 'Free Plan · Foundations'}</span>
+            <span>${isEn ? '40 Lessons Unlocked' : 'Mở toàn bộ 40 bài · Miễn phí'}</span>
           </div>
 
           <!-- Nút chọn ngôn ngữ -->
@@ -121,7 +118,6 @@ function ScaleFooter({ lang = 'vi' }) {
           <h4>${isEn ? 'Navigation' : 'Điều hướng'}</h4>
           <a href="#/scale" data-scale-nav="home">${isEn ? 'Home' : 'Trang chủ'}</a>
           <a href="#/caching/1" data-scale-nav="lesson" data-scale-slug="caching">${isEn ? 'Interactive Lessons' : 'Bài học tương tác'}</a>
-          <a href="#/pricing" data-scale-nav="pricing">${isEn ? 'Pricing' : 'Bảng giá'}</a>
           <a href="#/about" data-scale-nav="about">${isEn ? 'About Course' : 'Về khoá học'}</a>
         </div>
 
