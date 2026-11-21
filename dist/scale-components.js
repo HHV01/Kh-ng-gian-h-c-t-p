@@ -1,3 +1,7 @@
+function escScale(s) { 
+  return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); 
+}
+
 /**
  * DESIGNED TO SCALE - COMPONENT SYSTEM
  * Implements reusable UI components with accessibility, responsive behavior & state variants.
@@ -22,14 +26,14 @@ const scaleState = {
 function ScaleButton({ text, onClickAttr, variant = 'primary', size = 'md', icon = '', disabled = false, ariaLabel = '' }) {
   const vClass = variant === 'primary' ? 'scale-btn-primary' : variant === 'outline' ? 'scale-btn-outline' : variant === 'secondary' ? 'scale-btn-secondary' : 'scale-btn-text';
   const sClass = size === 'sm' ? 'scale-btn-sm' : size === 'lg' ? 'scale-btn-lg' : '';
-  const labelAttr = ariaLabel ? `aria-label="${esc(ariaLabel)}"` : '';
+  const labelAttr = ariaLabel ? `aria-label="${escScale(ariaLabel)}"` : '';
   const disAttr = disabled ? 'disabled' : '';
   const clickAttr = onClickAttr ? `data-scale-action="${onClickAttr}"` : '';
 
   return `
     <button class="scale-btn ${vClass} ${sClass}" ${clickAttr} ${labelAttr} ${disAttr}>
       ${icon ? `<span class="scale-btn-icon">${icon}</span>` : ''}
-      <span>${esc(text)}</span>
+      <span>${escScale(text)}</span>
     </button>
   `;
 }
@@ -144,16 +148,16 @@ function ScaleHeroBanner({ title, subtitle, ctaStart, ctaDemo, isEn = false }) {
           <span class="sparkle">✦</span>
           <span>40 ANIMATED LESSONS · 9 SYSTEM MODULES</span>
         </div>
-        <h1 id="hero-title" class="scale-hero-title">${esc(title)}</h1>
-        <p class="scale-hero-subtitle">${esc(subtitle)}</p>
+        <h1 id="hero-title" class="scale-hero-title">${escScale(title)}</h1>
+        <p class="scale-hero-subtitle">${escScale(subtitle)}</p>
         <div class="scale-hero-actions">
           <button class="scale-btn scale-btn-primary scale-btn-lg" data-scale-nav="lesson" data-scale-slug="caching">
-            <span>${esc(ctaStart)}</span>
+            <span>${escScale(ctaStart)}</span>
             <span>→</span>
           </button>
           <button class="scale-btn scale-btn-outline scale-btn-lg" data-scale-action="scroll-to-demo">
             <span>▶</span>
-            <span>${esc(ctaDemo)}</span>
+            <span>${escScale(ctaDemo)}</span>
           </button>
         </div>
       </div>
@@ -195,7 +199,7 @@ function ScaleFeatureList({ features, useCases, isEn = false }) {
             ${features.map(f => `
               <li>
                 <span class="check-icon">✓</span>
-                <span>${esc(f)}</span>
+                <span>${escScale(f)}</span>
               </li>
             `).join('')}
           </ul>
@@ -208,8 +212,8 @@ function ScaleFeatureList({ features, useCases, isEn = false }) {
               <div class="scale-usecase-item">
                 <div class="usecase-icon">${u.icon === 'server' ? '🌐' : u.icon === 'briefcase' ? '💼' : '🛡️'}</div>
                 <div>
-                  <h4>${esc(u.title)}</h4>
-                  <p>${esc(u.desc)}</p>
+                  <h4>${escScale(u.title)}</h4>
+                  <p>${escScale(u.desc)}</p>
                 </div>
               </div>
             `).join('')}
@@ -382,14 +386,14 @@ function ScaleCourseOutline({ modules, isEn = false }) {
           <div class="scale-module-box">
             <div class="scale-module-head">
               <span class="module-chip">${m.lessons.length} ${isEn ? 'lessons' : 'bài'}</span>
-              <h3>${esc(m.titleVi || m.title)}</h3>
-              <p>${esc(m.desc)}</p>
+              <h3>${escScale(m.titleVi || m.title)}</h3>
+              <p>${escScale(m.desc)}</p>
             </div>
             <div class="scale-module-lessons">
               ${m.lessons.map((l, idx) => `
                 <a href="#/${l.slug}/1" class="scale-lesson-row" data-scale-nav="lesson" data-scale-slug="${l.slug}">
                   <span class="lesson-num">${String(idx + 1).padStart(2, '0')}</span>
-                  <span class="lesson-name">${esc(l.titleVi || l.title)}</span>
+                  <span class="lesson-name">${escScale(l.titleVi || l.title)}</span>
                   <span class="lesson-arrow">→</span>
                 </a>
               `).join('')}
@@ -421,11 +425,11 @@ function ScaleFAQAccordion({ faqList }) {
                       data-scale-faq="${item.id}"
                       aria-expanded="${isOpen}"
                       aria-controls="${item.id}-answer">
-                <span>${esc(item.question)}</span>
+                <span>${escScale(item.question)}</span>
                 <span class="faq-icon">${isOpen ? '−' : '+'}</span>
               </button>
               <div class="scale-faq-answer" id="${item.id}-answer" role="region" aria-hidden="${!isOpen}">
-                <p>${esc(item.answer)}</p>
+                <p>${escScale(item.answer)}</p>
               </div>
             </div>
           `;
@@ -447,8 +451,11 @@ function ScaleLearningHeader({ lesson, validStep, totalSteps, isEn = false }) {
           <span>← Quay lại danh mục Designed to Scale</span>
         </a>
         <div class="learning-header-actions">
-          <button class="scale-btn scale-btn-outline scale-btn-sm toggle-inspector-btn" data-scale-action="toggle-inspector" aria-label="Bật tắt Inspector">
-            <span>⚙️ Inspector</span>
+          <button class="scale-btn scale-btn-outline scale-btn-sm btn-toggle-lessons ${scaleState.isLessonSidebarOpen ? 'active' : ''}" data-scale-action="toggle-lessons-sidebar" aria-label="Bật tắt danh mục 40 bài học">
+            <span>☰</span> ${scaleState.isLessonSidebarOpen ? 'Đóng danh mục' : 'Danh mục 40 bài'}
+          </button>
+          <button class="scale-btn scale-btn-outline scale-btn-sm toggle-inspector-btn ${scaleState.isInspectorDrawerOpen ? 'active' : ''}" data-scale-action="toggle-inspector" aria-label="Bật tắt Inspector">
+            <span>🔍 Inspector</span>
           </button>
           <span class="learning-status-pill ${isDone ? 'done' : ''}">
             ${isDone ? '✓ Đã hoàn thành' : `Tiến độ: ${percent}%`}
@@ -458,10 +465,10 @@ function ScaleLearningHeader({ lesson, validStep, totalSteps, isEn = false }) {
 
       <div class="learning-header-main">
         <div class="learning-header-info">
-          <span class="learning-module-tag">${esc(lesson.moduleTitle)}</span>
-          <h1 class="learning-lesson-title">${esc(lesson.titleVi || lesson.title)}</h1>
+          <span class="learning-module-tag">${escScale(lesson.moduleTitle)}</span>
+          <h1 class="learning-lesson-title">${escScale(lesson.titleVi || lesson.title)}</h1>
           <p class="learning-objective">
-            <strong>🎯 Mục tiêu bài học:</strong> Nắm vững nguyên lý và kiểm chứng hiệu năng chịu tải của ${esc(lesson.titleVi || lesson.title)} qua ${totalSteps} bước mô phỏng luồng dữ liệu thời gian thực.
+            <strong>🎯 Mục tiêu bài học:</strong> Nắm vững nguyên lý và kiểm chứng hiệu năng chịu tải của ${escScale(lesson.titleVi || lesson.title)} qua ${totalSteps} bước mô phỏng luồng dữ liệu thời gian thực.
           </p>
         </div>
 
@@ -484,8 +491,8 @@ function ScaleExplanationPanel({ stepTitle, stepExplanation, validStep, totalSte
   return `
     <section class="scale-explanation-panel" role="region" aria-label="Giải thích bước học">
       <div class="explanation-step-pill">BƯỚC ${validStep} / ${totalSteps}</div>
-      <h2 class="explanation-step-title">${esc(stepTitle)}</h2>
-      <p class="explanation-step-body">${esc(stepExplanation)}</p>
+      <h2 class="explanation-step-title">${escScale(stepTitle)}</h2>
+      <p class="explanation-step-body">${escScale(stepExplanation)}</p>
       <div class="explanation-interaction-guide">
         <span class="guide-icon">👉</span>
         <span><strong>Hướng dẫn thao tác:</strong> Nhấp chuột vào bất kỳ node nào trên sơ đồ (Client, Load Balancer, App Server, Redis, Database...) để kiểm tra vai trò, trạng thái tải và tác động kiến trúc tại bảng Inspector bên phải.</span>
@@ -545,7 +552,7 @@ function ScaleLessonDiagram({ diagramState, activeStepNumber = 1, selectedNodeId
                       class="anim-dash ${isConnHighlighted ? 'pulse-line' : ''}" />
                 <rect x="${midX - 45}" y="${midY - 12}" width="90" height="20" rx="4" 
                       fill="var(--gl-card)" stroke="${isConnHighlighted ? '#6366F1' : 'var(--gl-border)'}" stroke-width="${isConnHighlighted ? 1.5 : 1}"/>
-                <text x="${midX}" y="${midY + 2}" text-anchor="middle" font-size="9" font-weight="600" fill="var(--gl-text)">${esc(c.label)}</text>
+                <text x="${midX}" y="${midY + 2}" text-anchor="middle" font-size="9" font-weight="600" fill="var(--gl-text)">${escScale(c.label)}</text>
               </g>
             `;
           }).join('')}
@@ -569,7 +576,7 @@ function ScaleLessonDiagram({ diagramState, activeStepNumber = 1, selectedNodeId
                       stroke-width="${isSelected ? 3.5 : 2}" 
                       class="node-rect"/>
                 <text x="43" y="30" text-anchor="middle" font-size="20">${icon}</text>
-                <text x="43" y="52" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor">${esc(node.label)}</text>
+                <text x="43" y="52" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor">${escScale(node.label)}</text>
                 ${isSelected ? `<circle cx="43" cy="5" r="3.5" fill="#6366F1" class="anim-pulse"/>` : ''}
                 ${node.status === 'overload' ? `<circle cx="75" cy="12" r="6" fill="#EF4444" class="anim-pulse"/>` : ''}
                 ${node.status === 'warming' ? `<circle cx="75" cy="12" r="6" fill="#F59E0B" class="anim-pulse"/>` : ''}
@@ -680,7 +687,7 @@ function ScaleStepNavigation({ currentStep, totalSteps, stepTitle, stepExplanati
       <div class="step-nav-header">
         <div class="step-counter">
           <span class="step-pill">BƯỚC ${currentStep} / ${totalSteps}</span>
-          <h3>${esc(stepTitle)}</h3>
+          <h3>${escScale(stepTitle)}</h3>
         </div>
 
         <div class="step-buttons">
@@ -708,7 +715,7 @@ function ScaleStepNavigation({ currentStep, totalSteps, stepTitle, stepExplanati
       <div class="step-explanation-card">
         <div class="explanation-icon">💡</div>
         <div class="explanation-text">
-          <p>${esc(stepExplanation)}</p>
+          <p>${escScale(stepExplanation)}</p>
         </div>
       </div>
     </div>
@@ -777,47 +784,47 @@ function ScaleInspectorPanel({ inspectorData, selectedNode = null, selectedNodeI
             </button>
           ` : ''}
         </div>
-        <h4>${esc(title)}</h4>
+        <h4>${escScale(title)}</h4>
       </div>
 
       <div class="inspector-body">
         ${role ? `
           <div class="inspector-row">
             <label>Vai trò kiến trúc (Role):</label>
-            <p class="inspector-role-desc">${esc(role)}</p>
+            <p class="inspector-role-desc">${escScale(role)}</p>
           </div>
         ` : ''}
 
         <div class="inspector-row">
           <label>Trạng thái hiện hành:</label>
-          <strong class="${state.includes('nghẽn') || state.includes('Bottleneck') ? 'text-danger' : 'text-success'}">${esc(state)}</strong>
+          <strong class="${state.includes('nghẽn') || state.includes('Bottleneck') ? 'text-danger' : 'text-success'}">${escScale(state)}</strong>
         </div>
 
         ${inspectorData && inspectorData.queryRate ? `
           <div class="inspector-row">
             <label>Tốc độ truy vấn:</label>
-            <span>${esc(inspectorData.queryRate)}</span>
+            <span>${escScale(inspectorData.queryRate)}</span>
           </div>
         ` : ''}
 
         ${inspectorData && inspectorData.memoryUsed ? `
           <div class="inspector-row">
             <label>Bộ nhớ sử dụng:</label>
-            <span>${esc(inspectorData.memoryUsed)}</span>
+            <span>${escScale(inspectorData.memoryUsed)}</span>
           </div>
         ` : ''}
 
         ${inspectorData && inspectorData.cacheHits ? `
           <div class="inspector-row">
             <label>Tỉ lệ Hit:</label>
-            <span class="text-success">${esc(inspectorData.cacheHits)}</span>
+            <span class="text-success">${escScale(inspectorData.cacheHits)}</span>
           </div>
         ` : ''}
 
         ${advice ? `
           <div class="inspector-advice">
             <b>Nhận định kiến trúc & tác động hệ thống:</b>
-            <p>${esc(advice)}</p>
+            <p>${escScale(advice)}</p>
           </div>
         ` : ''}
 
@@ -844,7 +851,7 @@ function ScaleSidebarMenu({ activeSlug, modules }) {
           return `
             <div class="sidebar-mod-item ${isExpanded ? 'expanded' : ''}">
               <button class="sidebar-mod-head" data-scale-action="toggle-module" data-scale-mod="${mod.id}" aria-expanded="${isExpanded}">
-                <span>${esc(mod.titleVi || mod.title)}</span>
+                <span>${escScale(mod.titleVi || mod.title)}</span>
                 <span class="chevron">${isExpanded ? '▾' : '▸'}</span>
               </button>
 
@@ -859,7 +866,7 @@ function ScaleSidebarMenu({ activeSlug, modules }) {
                          data-scale-slug="${l.slug}"
                          aria-current="${isActive ? 'page' : 'false'}">
                         <span class="link-bullet">${isActive ? '●' : '○'}</span>
-                        <span class="link-text">${esc(l.titleVi || l.title)}</span>
+                        <span class="link-text">${escScale(l.titleVi || l.title)}</span>
                       </a>
                     `;
                   }).join('')}

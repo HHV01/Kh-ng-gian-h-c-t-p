@@ -1,3 +1,7 @@
+function escScale(s) { 
+  return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); 
+}
+
 /**
  * DESIGNED TO SCALE - VIEW CONTROLLER & ROUTER
  * Handles page rendering, navigation state, interactive animations, and keyboard accessibility.
@@ -141,7 +145,7 @@ function renderScaleLessonView(slug, stepNumber) {
       })}
 
       <!-- Studio Layout: Sidebar + Main Stage + Inspector -->
-      <div class="studio-workspace-grid ${scaleState.isInspectorDrawerOpen ? 'drawer-open' : ''}">
+      <div class="studio-workspace-grid ${scaleState.isLessonSidebarOpen ? 'sidebar-open' : 'sidebar-collapsed'} ${scaleState.isInspectorDrawerOpen ? 'drawer-open' : ''}">
         <!-- Sidebar bài học bên trái -->
         ${ScaleSidebarMenu({ activeSlug: slug, modules: scaleModulesData })}
 
@@ -203,8 +207,8 @@ function renderScaleAboutView() {
     <div class="scale-static-page">
       <div class="scale-section-header">
         <span class="scale-kicker">ABOUT DESIGNED TO SCALE</span>
-        <h1>${esc(a.title)}</h1>
-        <p>${esc(a.description)}</p>
+        <h1>${escScale(a.title)}</h1>
+        <p>${escScale(a.description)}</p>
       </div>
 
       <div class="static-content-card">
@@ -212,7 +216,7 @@ function renderScaleAboutView() {
         <p>Hệ thống bao gồm <strong>40 bài học</strong> được tổ chức khoa học qua <strong>9 module</strong>. Mỗi bài học được thiết kế như một phòng thí nghiệm thu nhỏ, nơi bạn có thể chủ động kích hoạt lưu lượng, bật tắt các thành phần hạ tầng và đánh giá sự biến thiên của hệ thống.</p>
 
         <h3>Cách sử dụng khoá học hiệu quả</h3>
-        <p>${esc(a.howToUse)}</p>
+        <p>${escScale(a.howToUse)}</p>
 
         <h3>Đính chính và hỗ trợ kỹ thuật</h3>
         <p>Nếu bạn phát hiện điểm chưa chuẩn xác trong giải thích kiến trúc hoặc gặp lỗi hiển thị trên thiết bị, xin vui lòng gửi phản hồi tại <a href="#/contact" data-scale-nav="contact">Trang liên hệ & báo lỗi</a>.</p>
@@ -229,8 +233,8 @@ function renderScaleContactView() {
     <div class="scale-static-page">
       <div class="scale-section-header">
         <span class="scale-kicker">SUPPORT & FEEDBACK</span>
-        <h1>${esc(c.title)}</h1>
-        <p>${esc(c.description)}</p>
+        <h1>${escScale(c.title)}</h1>
+        <p>${escScale(c.description)}</p>
       </div>
 
       <div class="static-content-card">
@@ -242,7 +246,7 @@ function renderScaleContactView() {
           ${c.reportInstructions.map(inst => `
             <li>
               <span class="check-icon">✓</span>
-              <span>${esc(inst)}</span>
+              <span>${escScale(inst)}</span>
             </li>
           `).join('')}
         </ul>
@@ -270,15 +274,15 @@ function renderScalePrivacyView() {
     <div class="scale-static-page">
       <div class="scale-section-header">
         <span class="scale-kicker">LEGAL & PRIVACY</span>
-        <h1>${esc(p.title)}</h1>
-        <p>Cập nhật lần cuối: ${esc(p.lastUpdated)}</p>
+        <h1>${escScale(p.title)}</h1>
+        <p>Cập nhật lần cuối: ${escScale(p.lastUpdated)}</p>
       </div>
 
       <div class="static-content-card">
         ${p.sections.map(sec => `
           <div class="legal-section">
-            <h3>${esc(sec.heading)}</h3>
-            <p>${esc(sec.content)}</p>
+            <h3>${escScale(sec.heading)}</h3>
+            <p>${escScale(sec.content)}</p>
           </div>
         `).join('')}
       </div>
@@ -294,15 +298,15 @@ function renderScaleTermsView() {
     <div class="scale-static-page">
       <div class="scale-section-header">
         <span class="scale-kicker">TERMS OF USE</span>
-        <h1>${esc(t.title)}</h1>
-        <p>Cập nhật lần cuối: ${esc(t.lastUpdated)}</p>
+        <h1>${escScale(t.title)}</h1>
+        <p>Cập nhật lần cuối: ${escScale(t.lastUpdated)}</p>
       </div>
 
       <div class="static-content-card">
         ${t.sections.map(sec => `
           <div class="legal-section">
-            <h3>${esc(sec.heading)}</h3>
-            <p>${esc(sec.content)}</p>
+            <h3>${escScale(sec.heading)}</h3>
+            <p>${escScale(sec.content)}</p>
           </div>
         `).join('')}
       </div>
@@ -526,21 +530,33 @@ document.addEventListener('keydown', e => {
   }
 });
 
-// Lắng nghe hash change để đồng bộ URL
+// Lắng nghe hash change để đồng bộ URL và chuyển page sang System Scale
 window.addEventListener('hashchange', () => {
   const hash = location.hash.replace(/^#\/?/, '');
   if (!hash) return;
 
-  if (hash === 'scale') {
-    goScale('home');
-  } else if (hash === 'pricing') {
+  // Đồng bộ trạng thái page VyWorkspace
+  if (typeof page !== 'undefined' && page !== 'System Scale') {
+    page = 'System Scale';
+    document.querySelectorAll('[data-nav]').forEach(b => {
+      b.classList.toggle('active', b.dataset.nav === 'System Scale');
+    });
+  }
+
+  if (hash === 'scale' || hash === 'pricing') {
     goScale('home');
   } else if (['about', 'contact', 'privacy', 'terms'].includes(hash)) {
     goScale(hash);
   } else {
     const parts = hash.split('/');
-    if (parts.length >= 1 && scaleLessonsDetail[parts[0]]) {
-      goScale('lesson', parts[0], parts[1] || 1);
+    if (parts[0] === 'scale' && parts[1]) {
+      const slug = parts[1];
+      const step = parts[2] || 1;
+      goScale('lesson', slug, step);
+    } else if (parts[0]) {
+      const slug = parts[0];
+      const step = parts[1] || 1;
+      goScale('lesson', slug, step);
     }
   }
 });
