@@ -83,3 +83,9 @@ Dự án đã có sẵn file cấu hình chuẩn **`render.yaml`**:
 - `package.json`: Khai báo dự án, scripts build/test/start.
 - `server.js`: Server Node.js tĩnh nhẹ (zero-dependency) dự phòng cho Web Service.
 - `verify-cases.cjs`: Bộ test tự động kiểm thử logic case study.
+
+## Điều chỉnh nội dung theo công việc BA
+
+Mục Kỹ thuật cho BA (`#/scale`) ưu tiên nhu cầu, yêu cầu, quy tắc, dữ liệu, tích hợp ở mức đặc tả và UAT. Bài `#/how-request-travels/1` giữ URL cũ nhưng được viết lại thành Phân tích luồng đặt hàng cho BA, gồm 4 bước, câu hỏi khai thác, đầu ra mẫu, acceptance criteria và bài tập. Tình huống và các quy tắc là giả lập. Kiến thức kiến trúc hạ tầng cũ chỉ nằm trong phần tham khảo nâng cao tùy chọn trên trang danh mục.
+
+`dist/ba-focus.js` chứa nội dung BA và mô hình nghiệp vụ; `verify-request-journey.cjs` kiểm tra bài mới qua đủ 4 bước.
