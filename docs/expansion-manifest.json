@@ -1,0 +1,772 @@
+{
+  "version": 1,
+  "updated": "2026-11-22",
+  "targetPerSection": 200,
+  "totalTarget": 800,
+  "dedupe": {
+    "normalize": "lowercase, bỏ dấu tiếng Việt, gộp khoảng trắng",
+    "titleSimilarityThreshold": 0.85,
+    "factsSimilarityThreshold": 0.8,
+    "definitionSimilarityThreshold": 0.8,
+    "rules": [
+      "situationKey duy nhất",
+      "objectiveKey duy nhất",
+      "titleNormalized duy nhất",
+      "id/slug duy nhất"
+    ],
+    "questionsSimilarityThreshold": 0.95
+  },
+  "sections": [
+    {
+      "id": "interview",
+      "name": "Phỏng vấn",
+      "baseline": 10,
+      "target": 200,
+      "add": 190,
+      "idPattern": "iv-{nnn}",
+      "idStart": 11,
+      "idEnd": 200,
+      "route": "#/interview",
+      "pageSize": 12,
+      "levels": {
+        "Junior": 60,
+        "Middle": 90,
+        "Senior": 50
+      },
+      "submodules": [
+        {
+          "id": "IV-REQ",
+          "name": "Khai thác & phân tích yêu cầu",
+          "count": 36,
+          "families": [
+            {
+              "id": "ambiguous-requirement",
+              "name": "Yêu cầu mơ hồ, thiếu ngữ cảnh",
+              "count": 6
+            },
+            {
+              "id": "legacy-docs",
+              "name": "Tài liệu cũ, không có tài liệu",
+              "count": 6
+            },
+            {
+              "id": "mid-sprint-change",
+              "name": "Yêu cầu thay đổi giữa sprint",
+              "count": 6
+            },
+            {
+              "id": "conflicting-rules",
+              "name": "Quy tắc nghiệp vụ xung đột",
+              "count": 6
+            },
+            {
+              "id": "missing-nfr",
+              "name": "Thiếu NFR, không đo được",
+              "count": 6
+            },
+            {
+              "id": "data-migration",
+              "name": "Dữ liệu, báo cáo, di trú",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "id": "IV-STK",
+          "name": "Stakeholder & xung đột",
+          "count": 34,
+          "families": [
+            {
+              "id": "solution-resistance",
+              "name": "Phản đối giải pháp",
+              "count": 6
+            },
+            {
+              "id": "conflicting-priorities",
+              "name": "Ưu tiên xung đột giữa các phòng ban",
+              "count": 6
+            },
+            {
+              "id": "absent-sponsor",
+              "name": "Sponsor vắng mặt, quyết định chậm",
+              "count": 6
+            },
+            {
+              "id": "unavailable-sme",
+              "name": "SME không hợp tác, không có thời gian",
+              "count": 6
+            },
+            {
+              "id": "internal-politics",
+              "name": "Chính trị nội bộ, mất niềm tin",
+              "count": 5
+            },
+            {
+              "id": "vendor-failure",
+              "name": "Vendor/đối tác không đáp ứng",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "id": "IV-AGI",
+          "name": "Agile/Scrum & delivery",
+          "count": 30,
+          "families": [
+            {
+              "id": "scope-creep",
+              "name": "Scope creep sát release",
+              "count": 5
+            },
+            {
+              "id": "sprint-spillover",
+              "name": "Sprint spillover, cam kết trượt",
+              "count": 5
+            },
+            {
+              "id": "dor-dod",
+              "name": "DoR/DoD và backlog rối",
+              "count": 5
+            },
+            {
+              "id": "estimation",
+              "name": "Ước lượng, story point, cam kết",
+              "count": 5
+            },
+            {
+              "id": "release-pressure",
+              "name": "Áp lực release, cắt phạm vi",
+              "count": 5
+            },
+            {
+              "id": "retro",
+              "name": "Retro, cải tiến quy trình",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "id": "IV-PRB",
+          "name": "Giải quyết vấn đề & root cause",
+          "count": 30,
+          "families": [
+            {
+              "id": "production-incident",
+              "name": "Sự cố production",
+              "count": 5
+            },
+            {
+              "id": "uat-failure",
+              "name": "UAT fail sát go-live",
+              "count": 5
+            },
+            {
+              "id": "wrong-root-cause",
+              "name": "Chẩn đoán sai root cause",
+              "count": 5
+            },
+            {
+              "id": "process-bottleneck",
+              "name": "Nút thắt quy trình",
+              "count": 5
+            },
+            {
+              "id": "data-quality",
+              "name": "Chất lượng dữ liệu",
+              "count": 5
+            },
+            {
+              "id": "low-adoption",
+              "name": "Adoption thấp sau go-live",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "id": "IV-COM",
+          "name": "Giao tiếp, facilitation, viết",
+          "count": 30,
+          "families": [
+            {
+              "id": "difficult-conversation",
+              "name": "Hội thoại khó, thông báo tin xấu",
+              "count": 5
+            },
+            {
+              "id": "workshop-facilitation",
+              "name": "Facilitation workshop",
+              "count": 5
+            },
+            {
+              "id": "executive-summary",
+              "name": "Executive summary, báo cáo lãnh đạo",
+              "count": 5
+            },
+            {
+              "id": "spec-writing",
+              "name": "Viết đặc tả, BRD, user story",
+              "count": 5
+            },
+            {
+              "id": "remote-culture",
+              "name": "Làm việc remote/đa văn hóa",
+              "count": 5
+            },
+            {
+              "id": "feedback-review",
+              "name": "Feedback, mentoring, review tài liệu",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "id": "IV-TEC",
+          "name": "Tư duy kỹ thuật & hệ thống",
+          "count": 24,
+          "families": [
+            {
+              "id": "api-integration",
+              "name": "API & tích hợp",
+              "count": 4
+            },
+            {
+              "id": "data-model",
+              "name": "Mô hình dữ liệu",
+              "count": 4
+            },
+            {
+              "id": "security-compliance",
+              "name": "Bảo mật & tuân thủ",
+              "count": 4
+            },
+            {
+              "id": "performance-nfr",
+              "name": "Hiệu năng & NFR",
+              "count": 4
+            },
+            {
+              "id": "legacy-migration",
+              "name": "Legacy & migration",
+              "count": 4
+            },
+            {
+              "id": "cloud-ops",
+              "name": "Cloud & vận hành",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "id": "IV-BEH",
+          "name": "Hành vi & phỏng vấn STAR",
+          "count": 16,
+          "families": [
+            {
+              "id": "failure-lesson",
+              "name": "Thất bại và bài học",
+              "count": 3
+            },
+            {
+              "id": "conflict-persuasion",
+              "name": "Xung đột và thuyết phục",
+              "count": 3
+            },
+            {
+              "id": "informal-leadership",
+              "name": "Leadership không chức danh",
+              "count": 3
+            },
+            {
+              "id": "learn-domain",
+              "name": "Học nhanh domain mới",
+              "count": 3
+            },
+            {
+              "id": "prioritization",
+              "name": "Ưu tiên và đánh đổi",
+              "count": 2
+            },
+            {
+              "id": "impact-result",
+              "name": "Tác động và kết quả",
+              "count": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case",
+      "name": "Case study",
+      "baseline": 12,
+      "target": 200,
+      "add": 188,
+      "idPattern": "case-{nnn}",
+      "idStart": 13,
+      "idEnd": 200,
+      "route": "#/cases",
+      "pageSize": 9,
+      "levels": {
+        "Junior": 60,
+        "Mid": 80,
+        "Senior": 60
+      },
+      "submodules": [
+        {
+          "id": "CS-RET",
+          "name": "Bán lẻ & TMĐT",
+          "count": 20
+        },
+        {
+          "id": "CS-FIN",
+          "name": "Fintech & thanh toán",
+          "count": 20
+        },
+        {
+          "id": "CS-BNK",
+          "name": "Ngân hàng & tín dụng",
+          "count": 20
+        },
+        {
+          "id": "CS-INS",
+          "name": "Bảo hiểm",
+          "count": 20
+        },
+        {
+          "id": "CS-HLT",
+          "name": "Y tế & dược",
+          "count": 20
+        },
+        {
+          "id": "CS-LOG",
+          "name": "Logistics & chuỗi cung ứng",
+          "count": 20
+        },
+        {
+          "id": "CS-EDU",
+          "name": "Giáo dục & EdTech",
+          "count": 20
+        },
+        {
+          "id": "CS-SAS",
+          "name": "SaaS & B2B",
+          "count": 20
+        },
+        {
+          "id": "CS-MFG",
+          "name": "Sản xuất & IoT",
+          "count": 20
+        },
+        {
+          "id": "CS-PUB",
+          "name": "Khu vực công & tuân thủ",
+          "count": 20
+        }
+      ],
+      "problemFamilies": [
+        {
+          "id": "process",
+          "name": "Quy trình & vận hành",
+          "count": 4
+        },
+        {
+          "id": "data-reporting",
+          "name": "Dữ liệu & báo cáo",
+          "count": 4
+        },
+        {
+          "id": "integration",
+          "name": "Tích hợp & API",
+          "count": 4
+        },
+        {
+          "id": "experience-channel",
+          "name": "Trải nghiệm & kênh",
+          "count": 4
+        },
+        {
+          "id": "compliance-risk",
+          "name": "Tuân thủ & rủi ro",
+          "count": 4
+        }
+      ],
+      "variants": [
+        "happy",
+        "exception",
+        "scale",
+        "migration-compliance"
+      ]
+    },
+    {
+      "id": "glossary",
+      "name": "Glossary",
+      "baseline": 12,
+      "target": 200,
+      "add": 188,
+      "idPattern": "slug",
+      "route": "#/glossary",
+      "pageSize": 30,
+      "submodules": [
+        {
+          "id": "GL-FND",
+          "name": "Nền tảng BA",
+          "count": 30
+        },
+        {
+          "id": "GL-DOC",
+          "name": "Tài liệu BA",
+          "count": 30
+        },
+        {
+          "id": "GL-ELI",
+          "name": "Khai thác yêu cầu",
+          "count": 30
+        },
+        {
+          "id": "GL-MOD",
+          "name": "Mô hình hóa & phân tích",
+          "count": 35
+        },
+        {
+          "id": "GL-AGI",
+          "name": "Agile/Scrum",
+          "count": 30
+        },
+        {
+          "id": "GL-TST",
+          "name": "Kiểm thử & nghiệm thu",
+          "count": 25
+        },
+        {
+          "id": "GL-TEC",
+          "name": "Kỹ thuật cho BA",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "id": "tech",
+      "name": "Kỹ thuật cho BA",
+      "baseline": 1,
+      "target": 200,
+      "add": 199,
+      "idPattern": "tech-{nnn}",
+      "idStart": 1,
+      "idEnd": 199,
+      "route": "#/ba-tech",
+      "pageSize": 20,
+      "levels": {
+        "Junior": 60,
+        "Middle": 80,
+        "Senior": 60
+      },
+      "submodules": [
+        {
+          "id": "TB-STR",
+          "name": "Chiến lược & kiến trúc nghiệp vụ",
+          "count": 20,
+          "focus": [
+            "business capability",
+            "value stream",
+            "build-vs-buy",
+            "KPI tree",
+            "tech debt",
+            "roadmap dependency"
+          ]
+        },
+        {
+          "id": "TB-PRC",
+          "name": "Quy trình & mô hình vận hành",
+          "count": 20,
+          "focus": [
+            "BPMN",
+            "process mining",
+            "workflow",
+            "RPA",
+            "SLA",
+            "queue/capacity",
+            "straight-through processing",
+            "exception handling"
+          ]
+        },
+        {
+          "id": "TB-REQ",
+          "name": "Yêu cầu & thiết kế giải pháp",
+          "count": 20,
+          "focus": [
+            "NFR",
+            "acceptance criteria",
+            "API contract",
+            "state model",
+            "business rule",
+            "traceability",
+            "feasibility",
+            "prototype"
+          ]
+        },
+        {
+          "id": "TB-DAT",
+          "name": "Dữ liệu, báo cáo & phân tích",
+          "count": 20,
+          "focus": [
+            "data model",
+            "data dictionary",
+            "data lineage",
+            "data quality",
+            "reconciliation",
+            "warehouse/lake",
+            "metric definition",
+            "retention"
+          ]
+        },
+        {
+          "id": "TB-INT",
+          "name": "Tích hợp & API",
+          "count": 20,
+          "focus": [
+            "REST/GraphQL/gRPC",
+            "event",
+            "webhook",
+            "idempotency",
+            "retry/backoff",
+            "field mapping",
+            "error contract",
+            "legacy integration"
+          ]
+        },
+        {
+          "id": "TB-UX",
+          "name": "Sản phẩm số & trải nghiệm",
+          "count": 20,
+          "focus": [
+            "user journey",
+            "accessibility",
+            "responsive",
+            "performance perception",
+            "analytics event",
+            "experimentation",
+            "personalization",
+            "offline"
+          ]
+        },
+        {
+          "id": "TB-SEC",
+          "name": "Bảo mật, rủi ro & tuân thủ",
+          "count": 20,
+          "focus": [
+            "authN/authZ",
+            "OAuth/OIDC",
+            "encryption",
+            "PII",
+            "audit trail",
+            "consent",
+            "fraud",
+            "compliance evidence"
+          ]
+        },
+        {
+          "id": "TB-CHG",
+          "name": "Thay đổi & adoption",
+          "count": 20,
+          "focus": [
+            "change impact",
+            "training",
+            "feature flag",
+            "rollout/rollback",
+            "cutover",
+            "communication",
+            "adoption metric",
+            "support model"
+          ]
+        },
+        {
+          "id": "TB-EVL",
+          "name": "Đánh giá giải pháp & nghiệm thu",
+          "count": 20,
+          "focus": [
+            "test strategy",
+            "UAT",
+            "acceptance",
+            "observability",
+            "SLI/SLO",
+            "incident review",
+            "post-implementation review",
+            "benefits realization"
+          ]
+        },
+        {
+          "id": "TB-DOM",
+          "name": "Domain immersion theo ngành",
+          "count": 20,
+          "focus": [
+            "retail",
+            "fintech",
+            "banking",
+            "insurance",
+            "healthcare",
+            "logistics",
+            "edtech",
+            "saas",
+            "manufacturing",
+            "public sector"
+          ]
+        }
+      ],
+      "exerciseFamilies": [
+        {
+          "id": "diagnose",
+          "name": "Chẩn đoán yêu cầu thiếu",
+          "count": 5
+        },
+        {
+          "id": "specify",
+          "name": "Viết đặc tả/AC",
+          "count": 5
+        },
+        {
+          "id": "design-tests",
+          "name": "Thiết kế dữ liệu kiểm thử",
+          "count": 5
+        },
+        {
+          "id": "trade-off",
+          "name": "Đánh giá phương án & đánh đổi",
+          "count": 5
+        }
+      ],
+      "variants": [
+        "happy",
+        "exception",
+        "scale",
+        "migration",
+        "compliance"
+      ],
+      "groupBy": "baDomain",
+      "description": "Kỹ thuật cho BA được tổ chức theo 10 domain công việc BA; mỗi bài gắn technicalFocus và industry context.",
+      "industryContexts": [
+        "Bán lẻ & TMĐT",
+        "Fintech & thanh toán",
+        "Ngân hàng & tín dụng",
+        "Bảo hiểm",
+        "Y tế & dược",
+        "Logistics & chuỗi cung ứng",
+        "Giáo dục & EdTech",
+        "SaaS & B2B",
+        "Sản xuất & IoT",
+        "Khu vực công & tuân thủ"
+      ],
+      "technicalFocusTags": [
+        "business-capability",
+        "value-stream",
+        "build-vs-buy",
+        "kpi-tree",
+        "tech-debt",
+        "roadmap-dependency",
+        "bpmn",
+        "process-mining",
+        "workflow",
+        "rpa",
+        "sla",
+        "queue-capacity",
+        "straight-through",
+        "exception-handling",
+        "nfr",
+        "acceptance-criteria",
+        "api-contract",
+        "state-model",
+        "business-rule",
+        "traceability",
+        "feasibility",
+        "prototype",
+        "data-model",
+        "data-dictionary",
+        "data-lineage",
+        "data-quality",
+        "reconciliation",
+        "warehouse-lake",
+        "metric-definition",
+        "retention",
+        "rest-graphql-grpc",
+        "event",
+        "webhook",
+        "idempotency",
+        "retry-backoff",
+        "field-mapping",
+        "error-contract",
+        "legacy-integration",
+        "user-journey",
+        "accessibility",
+        "responsive",
+        "performance-perception",
+        "analytics-event",
+        "experimentation",
+        "personalization",
+        "offline",
+        "authn-authz",
+        "oauth-oidc",
+        "encryption",
+        "pii",
+        "audit-trail",
+        "consent",
+        "fraud",
+        "compliance-evidence",
+        "change-impact",
+        "training",
+        "feature-flag",
+        "rollout-rollback",
+        "cutover",
+        "communication",
+        "adoption-metric",
+        "support-model",
+        "test-strategy",
+        "uat",
+        "observability",
+        "sli-slo",
+        "incident-review",
+        "post-implementation-review",
+        "benefits-realization"
+      ],
+      "uniqueKeys": [
+        "situationKey",
+        "objectiveKey",
+        "titleNormalized"
+      ]
+    }
+  ],
+  "sourcePolicy": {
+    "sourceDocument": "Danh mục nguồn tài liệu Business Analyst (BA) (1).docx",
+    "policyFile": "docs/SOURCE-POLICY.md",
+    "principles": [
+      "Chỉ lưu tiêu đề, URL gốc, tác giả, ngày, nhãn chủ đề và ý chính tự tóm tắt.",
+      "Không sao chép nguyên văn.",
+      "Kiểm tra robots.txt, Terms of Service, giấy phép từng nguồn.",
+      "Ưu tiên RSS, sitemap, API chính thức; giới hạn tốc độ request.",
+      "Không crawl nhóm kín, tin nhắn, nội dung sau đăng nhập hoặc trả phí.",
+      "Luôn hiển thị link Nguồn tham khảo cuối mỗi bài học."
+    ],
+    "requiredField": "sourceRefs",
+    "caseFramework": [
+      "Làm rõ vấn đề và mục tiêu",
+      "Liệt kê câu hỏi cần hỏi stakeholder",
+      "Xác định stakeholder",
+      "Yêu cầu chính và ưu tiên",
+      "Giải pháp đề xuất",
+      "Rủi ro",
+      "Chỉ số đo thành công"
+    ],
+    "caseRubric": [
+      "logic",
+      "đầy đủ",
+      "ưu tiên",
+      "giao tiếp"
+    ],
+    "levels": [
+      "Junior",
+      "Mid",
+      "Senior"
+    ],
+    "unlockThreshold": 70,
+    "weakThreshold": 60,
+    "quickQuizThreshold": 80
+  }
+}

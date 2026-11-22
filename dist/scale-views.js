@@ -47,8 +47,6 @@ function renderScaleApp() {
   } else if (scaleState.currentView === 'about') {
     titlePrefix = 'Giới thiệu · Designed to Scale';
   }
-  if(scaleState.currentView==='home')titlePrefix='Kỹ thuật cho BA · Vy Workspace';
-  if(scaleState.currentView==='lesson'&&scaleState.activeSlug==='how-request-travels')titlePrefix=`Phân tích luồng đặt hàng cho BA · Bước ${scaleState.activeStep}`;
   document.title = titlePrefix;
 
   // Khung layout chính
@@ -71,17 +69,17 @@ function renderScaleApp() {
       break;
     case 'home':
     default:
-      pageContent = renderBAFocusHome();
+      pageContent = renderScaleHomeView();
       break;
   }
 
   main.innerHTML = `
     <div class="designed-to-scale-app" role="main">
-      ${scaleState.currentView==='home'||(scaleState.currentView==='lesson'&&scaleState.activeSlug==='how-request-travels')?BASectionNav():ScaleNavBar({ isPro: false, currentModule: 'Scaling', lang: scaleState.language })}
+      ${ScaleNavBar({ isPro: false, currentModule: 'Scaling', lang: scaleState.language })}
       <div class="scale-page-wrapper">
         ${pageContent}
       </div>
-      ${scaleState.currentView==='home'||(scaleState.currentView==='lesson'&&scaleState.activeSlug==='how-request-travels')?BASectionFooter():ScaleFooter({ lang: scaleState.language })}
+      ${ScaleFooter({ lang: scaleState.language })}
     </div>
   `;
 }
@@ -123,7 +121,6 @@ function renderScaleHomeView() {
 
 // Trang bài học tương tác (Interactive Lesson Studio View)
 function renderScaleLessonView(slug, stepNumber) {
-  if (slug === 'how-request-travels' && typeof renderRequestJourney === 'function') return renderRequestJourney(stepNumber);
   const lesson = scaleLessonsDetail[slug] || scaleLessonsDetail['caching'];
   const steps = lesson.steps || [];
   const validStep = Math.max(1, Math.min(steps.length, stepNumber));
@@ -465,7 +462,6 @@ document.addEventListener('click', e => {
   if (nodeEl) {
     e.preventDefault();
     scaleState.selectedNodeId = nodeEl.dataset.scaleNode;
-    if (scaleState.activeSlug === 'how-request-travels') scaleState.isInspectorDrawerOpen = true;
     renderScaleApp();
     return;
   }
