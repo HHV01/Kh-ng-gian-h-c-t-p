@@ -228,6 +228,22 @@
             var corText = q.opts[q.ans];
             var lvl = q.level == null ? 0 : q.level;
 
+            var qTopicLessonId = 'TOPIC-BACCM';
+            if (['Q2-14', 'Q2-15', 'Q6-16'].indexOf(q.id) !== -1) qTopicLessonId = 'TOPIC-IMPACT-ANALYSIS';
+            else if (['Q2-01', 'Q2-02', 'Q2-06', 'Q2-10'].indexOf(q.id) !== -1) qTopicLessonId = 'TOPIC-TRACEABILITY';
+            else if (['Q2-04', 'Q6-10', 'Q8-06'].indexOf(q.id) !== -1) qTopicLessonId = 'TOPIC-AC-GHERKIN';
+            else if (['Q3-04', 'Q3-15', 'Q4-14'].indexOf(q.id) !== -1) qTopicLessonId = 'TOPIC-STATE-MACHINE';
+            else if (q.track === 0) qTopicLessonId = 'TOPIC-BACCM';
+            else if (q.track === 1) qTopicLessonId = 'TOPIC-ELICITATION-TECH';
+            else if (q.track === 2) qTopicLessonId = 'TOPIC-TRACEABILITY';
+            else if (q.track === 3) qTopicLessonId = 'TOPIC-BPMN-PROCESS';
+            else if (q.track === 4) qTopicLessonId = 'TOPIC-SOLUTION-ARCHITECTURE';
+            else if (q.track === 5) qTopicLessonId = 'TOPIC-DATA-SQL-RECON';
+            else if (q.track === 6) qTopicLessonId = 'TOPIC-AGILE-USER-STORY';
+            else if (q.track === 7) qTopicLessonId = 'TOPIC-UX-PRODUCT-DISCOVERY';
+            else if (q.track === 8) qTopicLessonId = 'TOPIC-UAT-VERIFICATION';
+            else if (q.track === 9) qTopicLessonId = 'TOPIC-BEHAVIORAL-INTERVIEW';
+
             return '<div class="quiz-wrong-card">' +
               '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">' +
                 '<strong>' + q.id + ' · ' + levelLabel(lvl) + '</strong>' +
@@ -238,6 +254,9 @@
               '<div style="margin-bottom:12px;font-size:14px"><span style="color:#059669;font-weight:600">✓ Đáp án đúng:</span> ' + corText + '</div>' +
               '<div class="metadata" style="background:var(--surface-soft);padding:12px 14px;border-radius:8px;line-height:1.7;border:1px solid var(--line)">' +
                 '<b>Phân tích & Giải thích:</b> ' + (q.exp || '') +
+              '</div>' +
+              '<div style="margin-top:10px">' +
+                '<button class="secondary" data-study-topic="' + qTopicLessonId + '" style="font-size:12px;padding:6px 12px">📖 Ôn lại kiến thức từ sách ➔</button>' +
               '</div>' +
             '</div>';
           }).join('') +
