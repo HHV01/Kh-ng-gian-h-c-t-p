@@ -1,0 +1,58 @@
+{
+  "automation_id": "c-p-nh-t-ki-n-th-c-ba-h-ng-tu-n",
+  "checked_at": "2026-11-23T08:04:44+07:00",
+  "timezone": "Asia/Saigon",
+  "window_start": "2026-11-16T08:04:44+07:00",
+  "window_end": "2026-11-23T08:04:44+07:00",
+  "first_run": true,
+  "status": "draft",
+  "published_to_lms": false,
+  "items": [
+    {
+      "url": "https://www.iiba.org/business-analysis-blogs/how-ai-helps-me-ask-better-questions-as-a-business-analyst/",
+      "title": "How AI Helps Me Ask Better Questions as a Business Analyst",
+      "author": "Ajit Rajendran",
+      "source": "IIBA",
+      "published_date": "2026-11-19",
+      "date_evidence": "https://www.iiba.org/iiba-search-all-business-analysis-blogs/?s=Newest",
+      "modified_date": null,
+      "content_verified": "public_full_article",
+      "tags": ["elicitation", "ai-for-ba", "uat"],
+      "editorial_status": "draft"
+    },
+    {
+      "url": "https://www.modernanalyst.com/Resources/Articles/tabid/115/ID/8236/Core-Elements-of-the-Business-Analysis-Mindset.aspx",
+      "title": "Core Elements of the Business Analysis Mindset",
+      "author": "Karl Wiegers",
+      "source": "Modern Analyst",
+      "published_date": "2026-11-22",
+      "date_evidence": "https://www.modernanalyst.com/",
+      "modified_date": null,
+      "content_verified": "official_url_public_search_index; direct_fetch_cache_error",
+      "tags": ["ba-foundations", "stakeholder", "interview", "scope"],
+      "editorial_status": "draft_recheck_original_before_lms"
+    }
+  ],
+  "sources": [
+    {"url":"https://hoangphan.blog/","status":"readable_no_in_window_article_found","latest_visible_article_date":"2026-08-27"},
+    {"url":"https://bazone.org/","status":"no_readable_text"},
+    {"url":"https://bazone.org/feed","status":"fetch_cache_error"},
+    {"url":"https://www.iiba.org/business-analysis-blogs/","status":"readable_landing; used_newest_listing"},
+    {"url":"https://www.iiba.org/iiba-search-all-business-analysis-blogs/?s=Newest","status":"readable_newest_listing"},
+    {"url":"https://www.bridging-the-gap.com/","status":"readable_no_verified_in_window_date"},
+    {"url":"https://www.bridging-the-gap.com/deliverables/","status":"readable_undated_not_news"},
+    {"url":"https://www.modernanalyst.com/","status":"readable_dated_article_identified"},
+    {"url":"https://www.batimes.com/","canonical_url":"https://batimes.com/","status":"readable_no_in_window_article_found","latest_visible_article_date":"2026-11-09"},
+    {"url":"https://scrumguides.org/","status":"readable_no_verified_in_window_update_date"},
+    {"url":"https://www.omg.org/","status":"readable_no_verified_in_window_update_date"},
+    {"url":"https://www.atlassian.com/agile","status":"readable_evergreen_no_verified_update_date"},
+    {"url":"https://businessanalyst.techcanvass.com/ai-ba-hub","status":"fetch_cache_error"}
+  ],
+  "excluded": [
+    {"url":"https://www.modernanalyst.com/Resources/Articles/tabid/115/ID/8235/Your-Projects-Constraints-Are-Upside-Down.aspx","published_date":"2026-11-08","reason":"outside_window"},
+    {"url":"https://modernanalyst.com/Resources/Articles/tabid/115/ID/8231/categoryId/8/Requirements-for-Dashboards-How-Analysts-Can-Stop-Rebuilding-the-Same-Report.aspx","published_date":"2026-10-12","reason":"outside_window"},
+    {"url":"https://www.modernanalyst.com/Resources/Articles/tabid/115/ID/8234/Requirements-for-Dashboards-How-Analysts-Can-Stop-Rebuilding-the-Same-Report.aspx","reason":"listing_link_fetch_failed; older_same_title_article_not_assumed_new"}
+  ],
+  "coverage_note": "Checked the ten priority sources and selected linked listing/detail pages. Did not exhaustively crawl every supplementary URL or establish content diffs for undated standard pages.",
+  "next_run": "Use prior successful cutoff; deduplicate accepted URLs, revisit inaccessible sources, and do not infer a new publication date from crawler time."
+}
