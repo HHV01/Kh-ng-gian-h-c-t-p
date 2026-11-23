@@ -7,1832 +7,1914 @@ const booksMeta = [
   {
     "id": "babok-v3",
     "title": "A Guide to the Business Analysis Body of Knowledge (BABOK® Guide v3)",
+    "shortTitle": "BABOK Guide v3",
     "author": "International Institute of Business Analysis (IIBA)",
     "year": "2015",
     "totalPages": 514,
+    "pdfFileName": "A GUIDE TO THE BUSINESS ANALYSIS BODY OF KNOWLEDGE ( PDFDrive.com ).pdf",
+    "pdfPageOffset": 16,
     "status": "Full (Đầy đủ 11 chương & 50 kỹ thuật)",
     "description": "Tiêu chuẩn quốc tế chuẩn mực và toàn diện nhất thế giới về nghề Business Analysis. Bao phủ 6 Vùng tri thức (30 Tasks), Mô hình BACCM, 50 Kỹ thuật, Năng lực nền tảng và 5 Góc nhìn chuyên môn.",
     "color": "#6056d9",
-    "icon": "📘"
+    "icon": "📘",
+    "toc": [
+      {
+        "id": "ch-1",
+        "code": "Chương 1",
+        "title": "Introduction (Tổng quan về BABOK Guide v3)",
+        "category": "Nền tảng BA",
+        "pdfPage": 11,
+        "printPage": 1,
+        "available": true,
+        "summary": "Mục đích của BABOK Guide, định nghĩa nghề Business Analysis, ai là một BA và cấu trúc tổng thể của chuẩn quốc tế.",
+        "contentHtml": "\n      <h2>Chương 1: Introduction (Tổng quan BABOK® Guide v3)</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Nguồn:</b> A Guide to the Business Analysis Body of Knowledge® (BABOK® Guide v3)</span>\n        <span>📄 <b>Trang PDF:</b> 11 - 20 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 1 - 10</span>\n      </div>\n      <h3>1. Mục đích của BABOK® Guide</h3>\n      <p>BABOK® Guide là chuẩn mực toàn cầu được phát triển bởi Viện Phân tích Nghiệp vụ Quốc tế (IIBA®). Tài liệu này cung cấp một bộ khung thống nhất về các khái niệm, kiến thức, nhiệm vụ và kỹ thuật cần thiết để thực hành phân tích nghiệp vụ chuyên nghiệp.</p>\n      \n      <h3>2. Định nghĩa Business Analysis & Vai trò BA</h3>\n      <p><b>Business Analysis (Phân tích nghiệp vụ):</b> Là việc tạo điều kiện cho sự thay đổi trong một tổ chức bằng cách xác định nhu cầu và khuyến nghị các giải pháp mang lại giá trị cho các bên liên quan.</p>\n      <p><b>Business Analyst (BA):</b> Bất kỳ ai thực hiện các nhiệm vụ phân tích nghiệp vụ, bất kể chức danh công việc của họ là gì (Product Owner, Systems Analyst, Process Consultant...).</p>\n\n      <h3>3. Cấu trúc của BABOK® Guide v3</h3>\n      <ul>\n        <li><b>Business Analysis Key Concepts (BACCM™):</b> 6 khái niệm nền tảng: Change, Need, Solution, Stakeholder, Value, Context.</li>\n        <li><b>6 Vùng tri thức (Knowledge Areas):</b> Lập kế hoạch, Khai thác, Quản lý vòng đời yêu cầu, Phân tích chiến lược, Phân tích yêu cầu & Thiết kế, và Đánh giá giải pháp.</li>\n        <li><b>Năng lực nền tảng (Underlying Competencies):</b> Tư duy phân tích, giao tiếp, kiến thức kinh doanh, công cụ và công nghệ.</li>\n        <li><b>50 Kỹ thuật (Techniques):</b> Các công cụ thực hành cụ thể từ Phỏng vấn, BPMN, User Story đến Ma trận truy vết.</li>\n        <li><b>5 Góc nhìn chuyên môn (Perspectives):</b> Agile, Business Intelligence, Information Technology, Business Architecture, Business Process Management.</li>\n      </ul>\n    "
+      },
+      {
+        "id": "ch-2",
+        "code": "Chương 2",
+        "title": "Business Analysis Key Concepts (Mô hình BACCM & Thuật ngữ)",
+        "category": "Nền tảng BA",
+        "pdfPage": 21,
+        "printPage": 11,
+        "available": true,
+        "summary": "6 Khái niệm Cốt lõi của BACCM, phân loại yêu cầu (Business, Stakeholder, Solution, Transition) và danh mục các nhóm Stakeholder.",
+        "contentHtml": "\n      <h2>Chương 2: Business Analysis Key Concepts & Mô hình BACCM™</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Nguồn:</b> BABOK® Guide v3 - IIBA</span>\n        <span>📄 <b>Trang PDF:</b> 21 - 30 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 11 - 20</span>\n      </div>\n      <h3>1. Mô hình BACCM™ (Business Analysis Core Concept Model)</h3>\n      <p>Mô hình BACCM bao gồm 6 khái niệm cốt lõi có mối quan hệ tương hỗ chặt chẽ, áp dụng cho bất kỳ quy mô phân tích nào:</p>\n      <ol>\n        <li><b>Change (Sự thay đổi):</b> Hành động chuyển dịch tổ chức để đáp ứng nhu cầu.</li>\n        <li><b>Need (Nhu cầu):</b> Vấn đề nhức nhối hoặc cơ hội kinh doanh cần giải quyết.</li>\n        <li><b>Solution (Giải pháp):</b> Cách thức cụ thể đáp ứng nhu cầu trong một bối cảnh.</li>\n        <li><b>Stakeholder (Bên liên quan):</b> Cá nhân hoặc nhóm chịu ảnh hưởng bởi sự thay đổi.</li>\n        <li><b>Value (Giá trị):</b> Lợi ích hoặc sự hữu dụng mang lại cho các bên liên quan.</li>\n        <li><b>Context (Bối cảnh):</b> Môi trường văn hóa, pháp lý, công nghệ bao quanh sự thay đổi.</li>\n      </ol>\n\n      <h3>2. Phân tầng Yêu cầu trong BABOK®</h3>\n      <ul>\n        <li><b>Business Requirements:</b> Mục tiêu kinh doanh cấp cao của tổ chức.</li>\n        <li><b>Stakeholder Requirements:</b> Nhu cầu cụ thể của từng nhóm người dùng.</li>\n        <li><b>Solution Requirements:</b> Đặc tả hành vi (Functional) và tiêu chuẩn chất lượng (Non-Functional) của hệ thống.</li>\n        <li><b>Transition Requirements:</b> Điều kiện chuyển giao tạm thời (Data Migration, Đào tạo người dùng).</li>\n      </ul>\n    "
+      },
+      {
+        "id": "task-3-1",
+        "code": "Task 3.1",
+        "title": "3.1 Plan Business Analysis Approach",
+        "category": "Planning & Monitoring",
+        "pdfPage": 34,
+        "printPage": 24,
+        "available": true,
+        "summary": "Lựa chọn phương pháp tiếp cận BA (Predictive vs Adaptive).",
+        "contentHtml": "\n      <h2>Task 3.1: Plan Business Analysis Approach</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 34 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 24</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Planning & Monitoring</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Lựa chọn phương pháp tiếp cận BA (Predictive vs Adaptive).</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Needs</li><li>Enterprise Environmental Factors</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Business Analysis Approach</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-3-2",
+        "code": "Task 3.2",
+        "title": "3.2 Plan Stakeholder Engagement",
+        "category": "Planning & Monitoring",
+        "pdfPage": 41,
+        "printPage": 31,
+        "available": true,
+        "summary": "Xác định các bên liên quan và kế hoạch cộng tác tối ưu.",
+        "contentHtml": "\n      <h2>Task 3.2: Plan Stakeholder Engagement</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 41 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 31</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Planning & Monitoring</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Xác định các bên liên quan và kế hoạch cộng tác tối ưu.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Needs</li><li>Business Analysis Approach</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Stakeholder Engagement Approach</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-3-3",
+        "code": "Task 3.3",
+        "title": "3.3 Plan Business Analysis Governance",
+        "category": "Planning & Monitoring",
+        "pdfPage": 47,
+        "printPage": 37,
+        "available": true,
+        "summary": "Quy định thẩm quyền phê duyệt và quy trình kiểm soát thay đổi.",
+        "contentHtml": "\n      <h2>Task 3.3: Plan Business Analysis Governance</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 47 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 37</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Planning & Monitoring</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Quy định thẩm quyền phê duyệt và quy trình kiểm soát thay đổi.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Business Analysis Approach</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Governance Approach</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-3-4",
+        "code": "Task 3.4",
+        "title": "3.4 Plan Business Analysis Information Management",
+        "category": "Planning & Monitoring",
+        "pdfPage": 52,
+        "printPage": 42,
+        "available": true,
+        "summary": "Xây dựng cấu trúc lưu trữ và quy tắc truy vết yêu cầu.",
+        "contentHtml": "\n      <h2>Task 3.4: Plan Business Analysis Information Management</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 52 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 42</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Planning & Monitoring</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Xây dựng cấu trúc lưu trữ và quy tắc truy vết yêu cầu.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Business Analysis Approach</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Information Management Approach</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-3-5",
+        "code": "Task 3.5",
+        "title": "3.5 Identify Business Analysis Performance Improvements",
+        "category": "Planning & Monitoring",
+        "pdfPage": 57,
+        "printPage": 47,
+        "available": true,
+        "summary": "Đánh giá hiệu suất làm việc của BA và rút ra bài học cải tiến.",
+        "contentHtml": "\n      <h2>Task 3.5: Identify Business Analysis Performance Improvements</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 57 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 47</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Planning & Monitoring</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Đánh giá hiệu suất làm việc của BA và rút ra bài học cải tiến.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Business Analysis Approach</li><li>Performance Objectives</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Business Analysis Performance Assessment</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-4-1",
+        "code": "Task 4.1",
+        "title": "4.1 Prepare for Elicitation",
+        "category": "Elicitation & Collaboration",
+        "pdfPage": 66,
+        "printPage": 56,
+        "available": true,
+        "summary": "Chuẩn bị tài liệu, mục tiêu và kỹ thuật trước khi làm việc với Stakeholder.",
+        "contentHtml": "\n      <h2>Task 4.1: Prepare for Elicitation</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 66 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 56</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Elicitation & Collaboration</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Chuẩn bị tài liệu, mục tiêu và kỹ thuật trước khi làm việc với Stakeholder.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Needs</li><li>Stakeholder Engagement Approach</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Elicitation Activity Plan</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-4-2",
+        "code": "Task 4.2",
+        "title": "4.2 Conduct Elicitation",
+        "category": "Elicitation & Collaboration",
+        "pdfPage": 71,
+        "printPage": 61,
+        "available": true,
+        "summary": "Thực hiện phỏng vấn, workshop, quan sát để khám phá nhu cầu ẩn.",
+        "contentHtml": "\n      <h2>Task 4.2: Conduct Elicitation</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 71 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 61</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Elicitation & Collaboration</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Thực hiện phỏng vấn, workshop, quan sát để khám phá nhu cầu ẩn.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Elicitation Activity Plan</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Elicitation Results (Unconfirmed)</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-4-3",
+        "code": "Task 4.3",
+        "title": "4.3 Confirm Elicitation Results",
+        "category": "Elicitation & Collaboration",
+        "pdfPage": 75,
+        "printPage": 65,
+        "available": true,
+        "summary": "Xác nhận thông tin thu thập được với các bên để đảm bảo không hiểu nhầm.",
+        "contentHtml": "\n      <h2>Task 4.3: Confirm Elicitation Results</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 75 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 65</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Elicitation & Collaboration</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Xác nhận thông tin thu thập được với các bên để đảm bảo không hiểu nhầm.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Elicitation Results (Unconfirmed)</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Elicitation Results (Confirmed)</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-4-4",
+        "code": "Task 4.4",
+        "title": "4.4 Communicate Business Analysis Information",
+        "category": "Elicitation & Collaboration",
+        "pdfPage": 77,
+        "printPage": 67,
+        "available": true,
+        "summary": "Truyền đạt thông tin yêu cầu dưới dạng phù hợp với từng đối tượng.",
+        "contentHtml": "\n      <h2>Task 4.4: Communicate Business Analysis Information</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 77 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 67</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Elicitation & Collaboration</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Truyền đạt thông tin yêu cầu dưới dạng phù hợp với từng đối tượng.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Business Analysis Information</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Business Analysis Information (Communicated)</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-4-5",
+        "code": "Task 4.5",
+        "title": "4.5 Manage Stakeholder Collaboration",
+        "category": "Elicitation & Collaboration",
+        "pdfPage": 81,
+        "printPage": 71,
+        "available": true,
+        "summary": "Duy trì sự hợp tác và đồng thuận tích cực trong suốt dự án.",
+        "contentHtml": "\n      <h2>Task 4.5: Manage Stakeholder Collaboration</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 81 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 71</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Elicitation & Collaboration</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Duy trì sự hợp tác và đồng thuận tích cực trong suốt dự án.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Stakeholder Engagement Approach</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Stakeholder Engagement</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-5-1",
+        "code": "Task 5.1",
+        "title": "5.1 Trace Requirements",
+        "category": "Requirements Life Cycle",
+        "pdfPage": 89,
+        "printPage": 79,
+        "available": true,
+        "summary": "Thiết lập ma trận truy vết hai chiều (Forward & Backward Traceability).",
+        "contentHtml": "\n      <h2>Task 5.1: Trace Requirements</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 89 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 79</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Requirements Life Cycle</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Thiết lập ma trận truy vết hai chiều (Forward & Backward Traceability).</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Requirements</li><li>Information Management Approach</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Requirements (Traced)</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-5-2",
+        "code": "Task 5.2",
+        "title": "5.2 Maintain Requirements",
+        "category": "Requirements Life Cycle",
+        "pdfPage": 93,
+        "printPage": 83,
+        "available": true,
+        "summary": "Duy trì tính chính xác và tái sử dụng của các yêu cầu và quy tắc nghiệp vụ.",
+        "contentHtml": "\n      <h2>Task 5.2: Maintain Requirements</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 93 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 83</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Requirements Life Cycle</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Duy trì tính chính xác và tái sử dụng của các yêu cầu và quy tắc nghiệp vụ.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Requirements</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Requirements (Maintained)</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-5-3",
+        "code": "Task 5.3",
+        "title": "5.3 Prioritize Requirements",
+        "category": "Requirements Life Cycle",
+        "pdfPage": 96,
+        "printPage": 86,
+        "available": true,
+        "summary": "Ưu tiên yêu cầu theo giá trị, rủi ro và ràng buộc tài nguyên.",
+        "contentHtml": "\n      <h2>Task 5.3: Prioritize Requirements</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 96 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 86</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Requirements Life Cycle</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Ưu tiên yêu cầu theo giá trị, rủi ro và ràng buộc tài nguyên.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Requirements</li><li>Solution Scope</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Requirements (Prioritized)</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-5-4",
+        "code": "Task 5.4",
+        "title": "5.4 Assess Requirements Changes",
+        "category": "Requirements Life Cycle",
+        "pdfPage": 101,
+        "printPage": 91,
+        "available": true,
+        "summary": "Đánh giá tác động toàn diện của đề xuất thay đổi trước khi quyết định.",
+        "contentHtml": "\n      <h2>Task 5.4: Assess Requirements Changes</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 101 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 91</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Requirements Life Cycle</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Đánh giá tác động toàn diện của đề xuất thay đổi trước khi quyết định.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Proposed Change</li><li>Requirements</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Requirements Change Assessment</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-5-5",
+        "code": "Task 5.5",
+        "title": "5.5 Approve Requirements",
+        "category": "Requirements Life Cycle",
+        "pdfPage": 105,
+        "printPage": 95,
+        "available": true,
+        "summary": "Lấy phê duyệt chính thức (Sign-off) từ các bên có thẩm quyền.",
+        "contentHtml": "\n      <h2>Task 5.5: Approve Requirements</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 105 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 95</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Requirements Life Cycle</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Lấy phê duyệt chính thức (Sign-off) từ các bên có thẩm quyền.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Requirements</li><li>Governance Approach</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Requirements (Approved)</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-6-1",
+        "code": "Task 6.1",
+        "title": "6.1 Analyze Current State",
+        "category": "Strategy Analysis",
+        "pdfPage": 113,
+        "printPage": 103,
+        "available": true,
+        "summary": "Thấu hiểu hiện trạng quy trình, năng lực hiện tại và nỗi đau nghiệp vụ.",
+        "contentHtml": "\n      <h2>Task 6.1: Analyze Current State</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 113 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 103</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Strategy Analysis</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Thấu hiểu hiện trạng quy trình, năng lực hiện tại và nỗi đau nghiệp vụ.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Needs</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Current State Description</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-6-2",
+        "code": "Task 6.2",
+        "title": "6.2 Define Future State",
+        "category": "Strategy Analysis",
+        "pdfPage": 120,
+        "printPage": 110,
+        "available": true,
+        "summary": "Vẽ ra trạng thái tương lai mong muốn và các chỉ số đo lường thành công.",
+        "contentHtml": "\n      <h2>Task 6.2: Define Future State</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 120 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 110</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Strategy Analysis</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Vẽ ra trạng thái tương lai mong muốn và các chỉ số đo lường thành công.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Business Requirements</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Future State Description</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-6-3",
+        "code": "Task 6.3",
+        "title": "6.3 Assess Risks",
+        "category": "Strategy Analysis",
+        "pdfPage": 130,
+        "printPage": 120,
+        "available": true,
+        "summary": "Nhận diện rủi ro, đánh giá xác suất và mức độ tác động.",
+        "contentHtml": "\n      <h2>Task 6.3: Assess Risks</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 130 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 120</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Strategy Analysis</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Nhận diện rủi ro, đánh giá xác suất và mức độ tác động.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Business Objectives</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Risk Assessment</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-6-4",
+        "code": "Task 6.4",
+        "title": "6.4 Define Change Strategy",
+        "category": "Strategy Analysis",
+        "pdfPage": 134,
+        "printPage": 124,
+        "available": true,
+        "summary": "Xác định chiến lược chuyển đổi và phân tích khoảng cách (Gap Analysis).",
+        "contentHtml": "\n      <h2>Task 6.4: Define Change Strategy</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 134 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 124</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Strategy Analysis</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Xác định chiến lược chuyển đổi và phân tích khoảng cách (Gap Analysis).</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Current State</li><li>Future State</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Change Strategy</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-7-1",
+        "code": "Task 7.1",
+        "title": "7.1 Specify and Model Requirements",
+        "category": "Analysis & Design Definition",
+        "pdfPage": 146,
+        "printPage": 136,
+        "available": true,
+        "summary": "Mô hình hóa yêu cầu bằng sơ đồ BPMN, Use Case, ERD và bảng quyết định.",
+        "contentHtml": "\n      <h2>Task 7.1: Specify and Model Requirements</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 146 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 136</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Analysis & Design Definition</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Mô hình hóa yêu cầu bằng sơ đồ BPMN, Use Case, ERD và bảng quyết định.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Elicitation Results (Confirmed)</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Requirements (Specified and Modelled)</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-7-2",
+        "code": "Task 7.2",
+        "title": "7.2 Verify Requirements",
+        "category": "Analysis & Design Definition",
+        "pdfPage": 151,
+        "printPage": 141,
+        "available": true,
+        "summary": "Đảm bảo yêu cầu rõ ràng, nhất quán, không mơ hồ và kiểm thử được.",
+        "contentHtml": "\n      <h2>Task 7.2: Verify Requirements</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 151 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 141</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Analysis & Design Definition</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Đảm bảo yêu cầu rõ ràng, nhất quán, không mơ hồ và kiểm thử được.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Requirements (Specified and Modelled)</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Requirements (Verified)</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-7-3",
+        "code": "Task 7.3",
+        "title": "7.3 Validate Requirements",
+        "category": "Analysis & Design Definition",
+        "pdfPage": 154,
+        "printPage": 144,
+        "available": true,
+        "summary": "Xác nhận rằng yêu cầu trực tiếp phục vụ mục tiêu và giá trị doanh nghiệp.",
+        "contentHtml": "\n      <h2>Task 7.3: Validate Requirements</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 154 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 144</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Analysis & Design Definition</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Xác nhận rằng yêu cầu trực tiếp phục vụ mục tiêu và giá trị doanh nghiệp.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Requirements (Specified and Modelled)</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Requirements (Validated)</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-7-4",
+        "code": "Task 7.4",
+        "title": "7.4 Define Requirements Architecture",
+        "category": "Analysis & Design Definition",
+        "pdfPage": 158,
+        "printPage": 148,
+        "available": true,
+        "summary": "Cấu trúc hóa tập yêu cầu thành một kiến trúc logic thống nhất.",
+        "contentHtml": "\n      <h2>Task 7.4: Define Requirements Architecture</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 158 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 148</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Analysis & Design Definition</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Cấu trúc hóa tập yêu cầu thành một kiến trúc logic thống nhất.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Requirements</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Requirements Architecture</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-7-5",
+        "code": "Task 7.5",
+        "title": "7.5 Define Design Options",
+        "category": "Analysis & Design Definition",
+        "pdfPage": 162,
+        "printPage": 152,
+        "available": true,
+        "summary": "Định hình các phương án giải pháp (Build, Buy, Custom, SaaS).",
+        "contentHtml": "\n      <h2>Task 7.5: Define Design Options</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 162 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 152</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Analysis & Design Definition</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Định hình các phương án giải pháp (Build, Buy, Custom, SaaS).</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Requirements Architecture</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Design Options</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-7-6",
+        "code": "Task 7.6",
+        "title": "7.6 Analyze Potential Value and Recommend Solution",
+        "category": "Analysis & Design Definition",
+        "pdfPage": 167,
+        "printPage": 157,
+        "available": true,
+        "summary": "Đo lường ROI và khuyến nghị giải pháp tối ưu nhất cho doanh nghiệp.",
+        "contentHtml": "\n      <h2>Task 7.6: Analyze Potential Value and Recommend Solution</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 167 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 157</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Analysis & Design Definition</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Đo lường ROI và khuyến nghị giải pháp tối ưu nhất cho doanh nghiệp.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Design Options</li><li>Potential Value</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Solution Recommendation</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-8-1",
+        "code": "Task 8.1",
+        "title": "8.1 Measure Solution Performance",
+        "category": "Solution Evaluation",
+        "pdfPage": 176,
+        "printPage": 166,
+        "available": true,
+        "summary": "Thu thập số liệu thực tế về hiệu quả hoạt động sau Go-Live.",
+        "contentHtml": "\n      <h2>Task 8.1: Measure Solution Performance</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 176 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 166</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Solution Evaluation</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Thu thập số liệu thực tế về hiệu quả hoạt động sau Go-Live.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Implemented Solution</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Solution Performance Measures</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-8-2",
+        "code": "Task 8.2",
+        "title": "8.2 Analyze Performance Measures",
+        "category": "Solution Evaluation",
+        "pdfPage": 180,
+        "printPage": 170,
+        "available": true,
+        "summary": "Phân tích số liệu để phát hiện khoảng cách giữa kỳ vọng và thực tế.",
+        "contentHtml": "\n      <h2>Task 8.2: Analyze Performance Measures</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 180 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 170</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Solution Evaluation</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Phân tích số liệu để phát hiện khoảng cách giữa kỳ vọng và thực tế.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Solution Performance Measures</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Solution Performance Analysis</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-8-3",
+        "code": "Task 8.3",
+        "title": "8.3 Assess Solution Limitations",
+        "category": "Solution Evaluation",
+        "pdfPage": 183,
+        "printPage": 173,
+        "available": true,
+        "summary": "Xác định các lỗi hoặc hạn chế kỹ thuật nội tại của giải pháp.",
+        "contentHtml": "\n      <h2>Task 8.3: Assess Solution Limitations</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 183 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 173</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Solution Evaluation</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Xác định các lỗi hoặc hạn chế kỹ thuật nội tại của giải pháp.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Implemented Solution</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Solution Limitation</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-8-4",
+        "code": "Task 8.4",
+        "title": "8.4 Assess Enterprise Limitations",
+        "category": "Solution Evaluation",
+        "pdfPage": 187,
+        "printPage": 177,
+        "available": true,
+        "summary": "Nhận diện rào cản tổ chức, văn hóa hoặc quy trình ảnh hưởng giá trị.",
+        "contentHtml": "\n      <h2>Task 8.4: Assess Enterprise Limitations</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 187 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 177</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Solution Evaluation</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Nhận diện rào cản tổ chức, văn hóa hoặc quy trình ảnh hưởng giá trị.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Current State Description</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Enterprise Limitation</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "task-8-5",
+        "code": "Task 8.5",
+        "title": "8.5 Recommend Actions to Increase Solution Value",
+        "category": "Solution Evaluation",
+        "pdfPage": 192,
+        "printPage": 182,
+        "available": true,
+        "summary": "Đề xuất cải tiến và tối ưu hóa liên tục để gia tăng giá trị phần mềm.",
+        "contentHtml": "\n      <h2>Task 8.5: Recommend Actions to Increase Solution Value</h2>\n      <div class=\"reader-meta-box\">\n        <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n        <span>📄 <b>Trang PDF:</b> 192 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 182</span>\n        <span>🏷️ <b>Vùng tri thức:</b> Solution Evaluation</span>\n      </div>\n      <h3>1. Mục đích của Task (Purpose)</h3>\n      <p>Đề xuất cải tiến và tối ưu hóa liên tục để gia tăng giá trị phần mềm.</p>\n\n      <h3>2. Đầu vào & Đầu ra (Inputs & Outputs)</h3>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0\">\n        <div class=\"callout\" style=\"margin:0\">\n          <b>Đầu vào (Inputs):</b>\n          <ul><li>Solution Limitation</li><li>Enterprise Limitation</li></ul>\n        </div>\n        <div class=\"callout tip\" style=\"margin:0\">\n          <b>Đầu ra (Outputs):</b>\n          <ul><li><b>Recommended Action</b></li></ul>\n        </div>\n      </div>\n\n      <h3>3. Hướng dẫn áp dụng thực tế</h3>\n      <p>Khi thực hiện nhiệm vụ này trong môi trường dự án thực tế, Business Analyst cần cân bằng giữa tính đầy đủ của tài liệu và tốc độ phát triển. Tránh sa vào bẫy \"tê liệt vì phân tích\" (Analysis Paralysis). Luôn đối chiếu kết quả với các bên liên quan then chốt để đảm bảo tính khả thi.</p>\n    "
+      },
+      {
+        "id": "ch-9",
+        "code": "Chương 9",
+        "title": "Underlying Competencies (Năng lực Nền tảng của BA)",
+        "category": "Kỹ năng BA",
+        "pdfPage": 197,
+        "printPage": 187,
+        "available": true,
+        "summary": "6 Nhóm năng lực cốt lõi: Tư duy phân tích, Phẩm chất hành vi, Kiến thức kinh doanh, Giao tiếp, Tương tác và Công cụ công nghệ.",
+        "contentHtml": "\n    <h2>Chương 9: Underlying Competencies (Năng lực Nền tảng)</h2>\n    <div class=\"reader-meta-box\">\n      <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n      <span>📄 <b>Trang PDF:</b> 197 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 187</span>\n    </div>\n    <p>Một Business Analyst xuất sắc không chỉ nắm vững phương pháp mà còn cần rèn giũa 6 nhóm năng lực nền tảng:</p>\n    <ul>\n      <li><b>9.1 Analytical Thinking & Problem Solving:</b> Tư duy sáng tạo, ra quyết định, học hỏi nhanh và giải quyết vấn đề tận gốc rễ.</li>\n      <li><b>9.2 Behavioural Characteristics:</b> Đạo đức nghề nghiệp, trách nhiệm cá nhân, đáng tin cậy và khả năng thích ứng linh hoạt.</li>\n      <li><b>9.3 Business Knowledge:</b> Thấu hiểu nguyên lý kinh doanh, mô hình ngành, cơ cấu tổ chức và giải pháp hiện hành.</li>\n      <li><b>9.4 Communication Skills:</b> Kỹ năng giao tiếp qua lời nói, văn bản và khả năng lắng nghe chủ động.</li>\n      <li><b>9.5 Interaction Skills:</b> Kỹ năng điều phối (Facilitation), lãnh đạo, đàm phán và xây dựng tinh thần đồng đội.</li>\n      <li><b>9.6 Tools and Technology:</b> Sử dụng thành thạo các công cụ mô hình hóa, quản lý yêu cầu và kiểm thử.</li>\n    </ul>\n  "
+      },
+      {
+        "id": "ch-10",
+        "code": "Chương 10",
+        "title": "Techniques (Danh mục 50 Kỹ thuật Chuẩn mực)",
+        "category": "Kỹ thuật BA",
+        "pdfPage": 227,
+        "printPage": 217,
+        "available": true,
+        "summary": "Kho vũ khí 50 kỹ thuật thực hành từ Phỏng vấn, BPMN, User Story, Mô hình hóa dữ liệu đến Đánh giá nhà cung cấp.",
+        "contentHtml": "\n    <h2>Chương 10: Techniques (50 Kỹ thuật Thực hành của BA)</h2>\n    <div class=\"reader-meta-box\">\n      <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n      <span>📄 <b>Trang PDF:</b> 227 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 217</span>\n    </div>\n    <p>BABOK Guide v3 chuẩn hóa 50 kỹ thuật thực hành phân tích phổ biến nhất thế giới:</p>\n    <div style=\"display:grid;grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));gap:8px;font-size:12.5px;margin:16px 0\">\n      <div>10.1 Acceptance Criteria</div>\n      <div>10.2 Backlog Management</div>\n      <div>10.8 Business Model Canvas</div>\n      <div>10.9 Business Rules Analysis</div>\n      <div>10.13 Data Flow Diagrams</div>\n      <div>10.15 Data Modelling</div>\n      <div>10.25 Interviews</div>\n      <div>10.35 Process Modelling</div>\n      <div>10.36 Prototyping</div>\n      <div>10.40 Root Cause Analysis</div>\n      <div>10.44 State Modelling</div>\n      <div>10.47 Use Cases</div>\n      <div>10.48 User Stories</div>\n      <div>10.50 Workshops</div>\n    </div>\n    <p class=\"metadata\">Mỗi kỹ thuật đều được mô tả chi tiết gồm: Mục đích, Mô tả, Các phần tử cốt lõi và Ưu/Nhược điểm khi áp dụng.</p>\n  "
+      },
+      {
+        "id": "ch-11",
+        "code": "Chương 11",
+        "title": "Perspectives (5 Góc nhìn Chuyên môn Thực tế)",
+        "category": "Góc nhìn BA",
+        "pdfPage": 377,
+        "printPage": 367,
+        "available": true,
+        "summary": "5 Bối cảnh chuyên môn: Agile, Business Intelligence, Information Technology, Business Architecture và BPM.",
+        "contentHtml": "\n    <h2>Chương 11: Perspectives (5 Góc nhìn Chuyên môn)</h2>\n    <div class=\"reader-meta-box\">\n      <span>📘 <b>Sách:</b> BABOK® Guide v3 (IIBA)</span>\n      <span>📄 <b>Trang PDF:</b> 377 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 367</span>\n    </div>\n    <p>BABOK cung cấp lăng kính áp dụng các kỹ thuật vào 5 bối cảnh chuyên sâu:</p>\n    <ul>\n      <li><b>11.1 The Agile Perspective:</b> Phân tích thích ứng, lặp ngắn, chuyển dịch từ tài liệu dài sang User Story và Conversation.</li>\n      <li><b>11.2 The Business Intelligence Perspective:</b> Phân tích dữ liệu lớn, Data Warehouse, Dashboard báo cáo và trực quan hóa insight.</li>\n      <li><b>11.3 The Information Technology Perspective:</b> Phân tích hệ thống IT, kiến trúc vi dịch vụ (Microservices), API và tích hợp hệ thống.</li>\n      <li><b>11.4 The Business Architecture Perspective:</b> Định hình bản đồ năng lực doanh nghiệp, chuỗi giá trị và dòng chảy thông tin toàn diện.</li>\n      <li><b>11.5 The Business Process Management Perspective:</b> Quản trị quy trình kinh doanh, tinh gọn hóa (Lean) và tự động hóa quy trình.</li>\n    </ul>\n  "
+      }
+    ]
   },
   {
     "id": "bcs-ba-3rd",
     "title": "Business Analysis (3rd Edition)",
+    "shortTitle": "Business Analysis 3rd Edition (BCS)",
     "author": "Debra Paul, Donald Yeates, James Cadle (BCS - The Chartered Institute for IT)",
     "year": "2014",
     "totalPages": 235,
-    "status": "Split 1 (Có đầy đủ Chương 1 đến Chương 8; Chương 9 đến 14 thuộc phần tiếp theo)",
+    "pdfFileName": "3rd_Business_Analysis__split_1.pdf",
+    "pdfPageOffset": 34,
+    "status": "Split 1 (Có đầy đủ Chương 1 đến Chương 8; Chương 9 đến 14 thuộc split_2)",
     "description": "Giáo trình cốt lõi của Viện CNTT Hoàng gia Anh (BCS). Hướng dẫn quy trình tư vấn và phân tích thực tiễn: từ Chiến lược, Mô hình quy trình BA, Kỹ thuật điều tra, Quản lý Stakeholder đến Mô hình hóa quy trình và Xác định kiến trúc giải pháp.",
     "color": "#e7a05e",
     "icon": "📙",
-    "missingNotice": "Lưu ý về tài liệu: File PDF đính kèm là split_1 gồm 235 trang, bao phủ trọn vẹn Chương 1 đến Chương 8. Các chương 9 đến 14 (Lập Business Case, Kỹ nghệ yêu cầu, Quản lý yêu cầu, Mô hình hóa yêu cầu, Triển khai giải pháp) được liệt kê trong mục lục nhưng nội dung nằm ở split_2 của sách."
+    "missingNotice": "Lưu ý về tài liệu: File PDF đính kèm là split_1 gồm 235 trang, bao phủ trọn vẹn Chương 1 đến Chương 8. Các chương 9 đến 14 (Lập Business Case, Kỹ nghệ yêu cầu, Quản lý yêu cầu, Mô hình hóa yêu cầu, Triển khai giải pháp) được liệt kê trong mục lục nhưng nội dung nằm ở split_2 của sách.",
+    "toc": [
+      {
+        "id": "bcs-ch-1",
+        "code": "Chương 1",
+        "title": "What is Business Analysis? (Bản chất Nghề BA)",
+        "pdfPage": 35,
+        "printPage": 1,
+        "available": true,
+        "summary": "Ranh giới nghề BA, nguồn gốc lịch sử, mô hình trưởng thành BA (Business Analysis Maturity Model).",
+        "contentHtml": "\n      <h2>Chương 1: What is Business Analysis?</h2>\n      <div class=\"reader-meta-box\">\n        <span>📙 <b>Sách:</b> Business Analysis (3rd Edition) - BCS</span>\n        <span>📄 <b>Trang PDF:</b> 35 - 55 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 1 - 21</span>\n      </div>\n      <h3>1. Nguồn gốc và sự phát triển của Business Analysis</h3>\n      <p>BCS định vị Business Analysis xuất phát từ nhu cầu thu hẹp khoảng cách giao tiếp giữa Ban Giám đốc Kinh doanh và Bộ phận Công nghệ Thông tin (IT). Khi các dự án phần mềm thất bại hàng loạt vì \"lập trình đúng thứ nhưng không ai cần\", vai trò của BA ra đời để đảm bảo công nghệ phục vụ trọn vẹn mục tiêu chiến lược.</p>\n\n      <h3>2. Phạm vi công việc của BA (Scope of BA Work)</h3>\n      <p>BCS phân định rõ 3 cấp độ can thiệp của BA:</p>\n      <ul>\n        <li><b>Strategic Analysis:</b> Tư vấn định hình chiến lược và nhận diện vấn đề trước khi có bất kỳ dự án nào.</li>\n        <li><b>Business Process Improvement:</b> Tái thiết kế quy trình nghiệp vụ để nâng cao năng suất và loại bỏ lãng phí.</li>\n        <li><b>IT Systems Analysis:</b> Đặc tả chi tiết các yêu cầu phần mềm để đội ngũ kỹ thuật xây dựng chính xác.</li>\n      </ul>\n\n      <h3>3. Mô hình Trưởng thành BA (Business Analysis Maturity Model)</h3>\n      <p>Từ mức độ cơ bản (chỉ đặc tả phần mềm) ➔ mức cải tiến quy trình ➔ mức đối tác chiến lược của doanh nghiệp.</p>\n    "
+      },
+      {
+        "id": "bcs-ch-2",
+        "code": "Chương 2",
+        "title": "The Competencies of a Business Analyst (Khung Năng lực)",
+        "pdfPage": 56,
+        "printPage": 22,
+        "available": true,
+        "summary": "Phẩm chất cá nhân, kiến thức kinh doanh, kỹ thuật chuyên môn và khung phát triển kỹ năng SFIA.",
+        "contentHtml": "\n      <h2>Chương 2: The Competencies of a Business Analyst</h2>\n      <div class=\"reader-meta-box\">\n        <span>📙 <b>Sách:</b> Business Analysis (3rd Edition) - BCS</span>\n        <span>📄 <b>Trang PDF:</b> 56 - 78 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 22 - 44</span>\n      </div>\n      <h3>1. Ba trụ cột năng lực theo chuẩn BCS</h3>\n      <ul>\n        <li><b>Personal Qualities (Phẩm chất cá nhân):</b> Tư duy phản biện, sự đồng cảm, giao tiếp tự tin và khả năng giải quyết xung đột.</li>\n        <li><b>Business Knowledge (Kiến thức kinh doanh):</b> Hiểu biết tài chính doanh nghiệp, cấu trúc tổ chức và đặc thù ngành.</li>\n        <li><b>Professional Techniques (Kỹ thuật chuyên môn):</b> Kỹ năng phỏng vấn, workshop, vẽ BPMN, lập User Story và viết kịch bản UAT.</li>\n      </ul>\n      <h3>2. Khung phát triển kỹ năng SFIA (Skills Framework for the Information Age)</h3>\n      <p>BCS áp dụng SFIA để đo lường cấp độ trưởng thành của BA từ Junior lên Senior và Principal Consultant.</p>\n    "
+      },
+      {
+        "id": "bcs-ch-3",
+        "code": "Chương 3",
+        "title": "Strategy Analysis (Phân tích Chiến lược & Môi trường)",
+        "pdfPage": 79,
+        "printPage": 45,
+        "available": true,
+        "summary": "Phân tích môi trường bên ngoài (PESTLE, 5 Forces), môi trường nội bộ (VMOST, Resource Audit), ma trận SWOT và Balanced Scorecard.",
+        "contentHtml": "\n      <h2>Chương 3: Strategy Analysis (Phân tích Chiến lược)</h2>\n      <div class=\"reader-meta-box\">\n        <span>📙 <b>Sách:</b> Business Analysis (3rd Edition) - BCS</span>\n        <span>📄 <b>Trang PDF:</b> 79 - 101 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 45 - 67</span>\n      </div>\n      <h3>1. Phân tích môi trường bên ngoài (External Analysis)</h3>\n      <p><b>PESTLE:</b> Đánh giá các yếu tố Chính trị (Political), Kinh tế (Economic), Xã hội (Social), Công nghệ (Technological), Pháp lý (Legal) và Môi trường (Environmental).</p>\n      <p><b>Porter’s Five Forces:</b> Đánh giá áp lực cạnh tranh ngành gồm đối thủ hiện tại, đối thủ tiềm năng, sản phẩm thay thế, quyền lực nhà cung ứng và khách hàng.</p>\n\n      <h3>2. Phân tích nội bộ & Chiến lược tổ chức</h3>\n      <p><b>Khung VMOST:</b> Vision (Tầm nhìn), Mission (Sứ mệnh), Objectives (Mục tiêu), Strategy (Chiến lược), Tactics (Chiến thuật tác nghiệp).</p>\n      <p><b>Ma trận SWOT & BSC:</b> Tổng hợp điểm mạnh/yếu nội bộ với cơ hội/thách thức bên ngoài để định hình phương án chuyển đổi.</p>\n    "
+      },
+      {
+        "id": "bcs-ch-4",
+        "code": "Chương 4",
+        "title": "The Business Analysis Process Model (Mô hình Quy trình BA)",
+        "pdfPage": 102,
+        "printPage": 68,
+        "available": true,
+        "summary": "Mô hình 5 giai đoạn: Investigate situation -> Consider perspectives -> Analyse needs -> Evaluate options -> Define requirements.",
+        "contentHtml": "\n      <h2>Chương 4: The Business Analysis Process Model</h2>\n      <div class=\"reader-meta-box\">\n        <span>📙 <b>Sách:</b> Business Analysis (3rd Edition) - BCS</span>\n        <span>📄 <b>Trang PDF:</b> 102 - 120 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 68 - 86</span>\n      </div>\n      <h3>Mô hình 5 Giai đoạn cốt lõi của BCS</h3>\n      <ol>\n        <li><b>Investigate Situation (Điều tra hiện trạng):</b> Thu thập dữ liệu để nhìn thấu toàn bộ bối cảnh và nguyên nhân gốc rễ.</li>\n        <li><b>Consider Perspectives (Xem xét các góc nhìn):</b> Phân tích động cơ và kỳ vọng của các nhóm bên liên quan.</li>\n        <li><b>Analyse Needs (Phân tích nhu cầu):</b> Xác định khoảng cách (Gap Analysis) giữa hiện tại và tương lai.</li>\n        <li><b>Evaluate Options (Đánh giá các phương án):</b> Đánh giá tính khả thi về kỹ thuật, tài chính và rủi ro.</li>\n        <li><b>Define Requirements (Xác định yêu cầu):</b> Đặc tả chi tiết các yêu cầu để bàn giao cho đội ngũ triển khai.</li>\n      </ol>\n    "
+      },
+      {
+        "id": "bcs-ch-5",
+        "code": "Chương 5",
+        "title": "Investigation Techniques (Kỹ thuật Điều tra Hiện trạng)",
+        "pdfPage": 121,
+        "printPage": 87,
+        "available": true,
+        "summary": "Phỏng vấn, Quan sát (Shadowing), Workshop, Scenario, Phân tích tài liệu và khảo sát số lượng.",
+        "contentHtml": "\n      <h2>Chương 5: Investigation Techniques</h2>\n      <div class=\"reader-meta-box\">\n        <span>📙 <b>Sách:</b> Business Analysis (3rd Edition) - BCS</span>\n        <span>📄 <b>Trang PDF:</b> 121 - 158 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 87 - 124</span>\n      </div>\n      <h3>Bộ công cụ điều tra thực địa của BA</h3>\n      <ul>\n        <li><b>Interviews (Phỏng vấn cá nhân):</b> Kỹ thuật đào sâu nguyên nhân và xây dựng mối quan hệ tin cậy.</li>\n        <li><b>Observation & Shadowing (Quan sát thực tế):</b> Trực tiếp theo dõi nhân viên thao tác để phát hiện các bước làm thủ công không có trong tài liệu.</li>\n        <li><b>Workshops (Hội thảo đồng thuận):</b> Tập hợp các bên liên quan để thống nhất ưu tiên và giải quyết mâu thuẫn trực diện.</li>\n        <li><b>Scenarios & Prototyping:</b> Dùng kịch bản và bản mẫu giao diện sớm để kiểm chứng logic.</li>\n      </ul>\n    "
+      },
+      {
+        "id": "bcs-ch-6",
+        "code": "Chương 6",
+        "title": "Stakeholder Analysis and Management (Quản lý Stakeholder)",
+        "pdfPage": 159,
+        "printPage": 125,
+        "available": true,
+        "summary": "Phân loại Stakeholder, Ma trận Mendelow (Power/Interest), Ma trận RACI/RASCI và kỹ thuật phân tích CATWOE.",
+        "contentHtml": "\n      <h2>Chương 6: Stakeholder Analysis and Management</h2>\n      <div class=\"reader-meta-box\">\n        <span>📙 <b>Sách:</b> Business Analysis (3rd Edition) - BCS</span>\n        <span>📄 <b>Trang PDF:</b> 159 - 185 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 125 - 151</span>\n      </div>\n      <h3>1. Ma trận Mendelow (Power vs Interest Grid)</h3>\n      <p>4 Chiến lược tương tác kinh điển dựa trên vị thế quyền lực và mức độ quan tâm:</p>\n      <ul>\n        <li><b>High Power / High Interest:</b> Quản lý chặt chẽ (Manage Closely) - Tham vấn liên tục.</li>\n        <li><b>High Power / Low Interest:</b> Giữ cho hài lòng (Keep Satisfied) - Gửi báo cáo tóm tắt mốc lớn.</li>\n        <li><b>Low Power / High Interest:</b> Cập nhật thường xuyên (Keep Informed) - Lắng nghe phản hồi chi tiết.</li>\n        <li><b>Low Power / Low Interest:</b> Theo dõi định kỳ (Monitor with minimal effort).</li>\n      </ul>\n      <h3>2. Kỹ thuật CATWOE</h3>\n      <p>Công cụ phân tích thế giới quan của từng nhóm stakeholder: Customer (Khách hàng), Actor (Người thực hiện), Transformation (Quá trình biến đổi), Weltanschauung (Thế giới quan), Owner (Chủ sở hữu), Environment (Ràng buộc môi trường).</p>\n    "
+      },
+      {
+        "id": "bcs-ch-7",
+        "code": "Chương 7",
+        "title": "Modelling Business Processes (Mô hình hóa Quy trình)",
+        "pdfPage": 186,
+        "printPage": 152,
+        "available": true,
+        "summary": "Sơ đồ phân làn Swimlane, phân tích quy trình As-Is, thiết kế quy trình To-Be, BPMN và Six Sigma.",
+        "contentHtml": "\n      <h2>Chương 7: Modelling Business Processes</h2>\n      <div class=\"reader-meta-box\">\n        <span>📙 <b>Sách:</b> Business Analysis (3rd Edition) - BCS</span>\n        <span>📄 <b>Trang PDF:</b> 186 - 220 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 152 - 186</span>\n      </div>\n      <h3>Quy trình Mô hình hóa phân làn (Swimlane Process Models)</h3>\n      <p>BCS nhấn mạnh việc trực quan hóa luồng công việc xuyên suốt qua nhiều phòng ban chức năng. Phân làn Swimlane giúp chỉ rõ trách nhiệm của ai ở từng bước, nơi xảy ra bàn giao (Hand-off) và các điểm nghẽn gây lãng phí thời gian.</p>\n      <p>Phương pháp tiếp cận: Phân tích quy trình As-Is ➔ Nhận diện lãng phí (Waste/Bottleneck) ➔ Thiết kế quy trình mục tiêu To-Be tinh gọn.</p>\n    "
+      },
+      {
+        "id": "bcs-ch-8",
+        "code": "Chương 8",
+        "title": "Defining the Solution (Xác định Kiến trúc Giải pháp)",
+        "pdfPage": 221,
+        "printPage": 187,
+        "available": true,
+        "summary": "Phân tích khoảng cách (Gap Analysis), định hình các phương án khả thi và đặt nền tảng kiến trúc doanh nghiệp.",
+        "contentHtml": "\n      <h2>Chương 8: Defining the Solution</h2>\n      <div class=\"reader-meta-box\">\n        <span>📙 <b>Sách:</b> Business Analysis (3rd Edition) - BCS</span>\n        <span>📄 <b>Trang PDF:</b> 221 - 235 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 187 - 201</span>\n      </div>\n      <h3>Phân tích Khoảng cách (Gap Analysis)</h3>\n      <p>So sánh trạng thái hiện tại (As-Is) với tương lai mong muốn (To-Be) để xác định rõ những gì cần xây dựng mới, những gì cần cải tạo và những gì cần loại bỏ. Đây là trang tài liệu kết thúc của file PDF <code>split_1</code>.</p>\n    "
+      },
+      {
+        "id": "bcs-ch-9",
+        "code": "Chương 9",
+        "title": "Making a Business Case (Lập Hồ sơ Kinh doanh)",
+        "pdfPage": 236,
+        "printPage": 202,
+        "available": false,
+        "statusText": "Chưa có trong PDF đính kèm (Nội dung nằm ở file split_2)",
+        "summary": "Xác định chi phí/lợi ích (Cost-Benefit Analysis), đánh giá rủi ro tài chính và trình bày Business Case.",
+        "contentHtml": "<div class=\"callout warning\"><b>Chưa có trong PDF đính kèm:</b> File tài liệu đính kèm là split_1 kết thúc tại trang 235 (cuối Chương 8). Nội dung Chương 9 thuộc phần split_2 của tác phẩm.</div>"
+      },
+      {
+        "id": "bcs-ch-10",
+        "code": "Chương 10",
+        "title": "Establishing the Requirements (Kỹ nghệ Yêu cầu)",
+        "pdfPage": 250,
+        "printPage": 216,
+        "available": false,
+        "statusText": "Chưa có trong PDF đính kèm (Nội dung nằm ở file split_2)",
+        "summary": "Thu thập và cấu trúc hóa tập yêu cầu chức năng và phi chức năng.",
+        "contentHtml": "<div class=\"callout warning\"><b>Chưa có trong PDF đính kèm:</b> File tài liệu đính kèm là split_1 kết thúc tại trang 235 (cuối Chương 8). Nội dung Chương 10 thuộc phần split_2 của tác phẩm.</div>"
+      },
+      {
+        "id": "bcs-ch-11",
+        "code": "Chương 11",
+        "title": "Documenting and Managing Requirements (Quản lý Yêu cầu)",
+        "pdfPage": 270,
+        "printPage": 236,
+        "available": false,
+        "statusText": "Chưa có trong PDF đính kèm (Nội dung nằm ở file split_2)",
+        "summary": "Tài liệu hóa SRS, thiết lập từ điển dữ liệu, ma trận truy vết và kiểm soát phiên bản.",
+        "contentHtml": "<div class=\"callout warning\"><b>Chưa có trong PDF đính kèm:</b> File tài liệu đính kèm là split_1 kết thúc tại trang 235 (cuối Chương 8). Nội dung Chương 11 thuộc phần split_2 của tác phẩm.</div>"
+      },
+      {
+        "id": "bcs-ch-12",
+        "code": "Chương 12",
+        "title": "Modelling Requirements (Mô hình hóa Yêu cầu)",
+        "pdfPage": 290,
+        "printPage": 256,
+        "available": false,
+        "statusText": "Chưa có trong PDF đính kèm (Nội dung nằm ở file split_2)",
+        "summary": "Sơ đồ Use Case, ERD, Class Diagram và kịch bản nghiệp vụ chi tiết.",
+        "contentHtml": "<div class=\"callout warning\"><b>Chưa có trong PDF đính kèm:</b> File tài liệu đính kèm là split_1 kết thúc tại trang 235 (cuối Chương 8). Nội dung Chương 12 thuộc phần split_2 của tác phẩm.</div>"
+      },
+      {
+        "id": "bcs-ch-13",
+        "code": "Chương 13",
+        "title": "Delivering the Requirements (Bàn giao & Nghiệm thu)",
+        "pdfPage": 310,
+        "printPage": 276,
+        "available": false,
+        "statusText": "Chưa có trong PDF đính kèm (Nội dung nằm ở file split_2)",
+        "summary": "Quy trình kiểm thử UAT, nghiệm thu có điều kiện và chuyển giao phần mềm cho vận hành.",
+        "contentHtml": "<div class=\"callout warning\"><b>Chưa có trong PDF đính kèm:</b> File tài liệu đính kèm là split_1 kết thúc tại trang 235 (cuối Chương 8). Nội dung Chương 13 thuộc phần split_2 của tác phẩm.</div>"
+      },
+      {
+        "id": "bcs-ch-14",
+        "code": "Chương 14",
+        "title": "Delivering the Business Solution (Triển khai Giá trị)",
+        "pdfPage": 330,
+        "printPage": 296,
+        "available": false,
+        "statusText": "Chưa có trong PDF đính kèm (Nội dung nằm ở file split_2)",
+        "summary": "Quản trị sự thay đổi tổ chức, đào tạo người dùng và đo lường giá trị sau Go-Live.",
+        "contentHtml": "<div class=\"callout warning\"><b>Chưa có trong PDF đính kèm:</b> File tài liệu đính kèm là split_1 kết thúc tại trang 235 (cuối Chương 8). Nội dung Chương 14 thuộc phần split_2 của tác phẩm.</div>"
+      }
+    ]
   },
   {
     "id": "100-days-ba",
     "title": "100 ngày viết về nghề BA",
+    "shortTitle": "100 ngày viết về nghề BA",
     "author": "Nguyễn Bá Phú (Chuyên gia BA / Tác giả thực chiến)",
     "year": "2023",
     "totalPages": 237,
+    "pdfFileName": "Sách 100 ngày viết về nghề BA - A5 (3) (1) (1).pdf",
+    "pdfPageOffset": 3,
     "status": "Full (Đầy đủ 100 DAY từ DAY 1 đến DAY 100)",
     "description": "Góc nhìn người trong nghề, tổng hợp 100 câu chuyện va vấp và bài học xương máu thực tế tại thị trường Việt Nam: cách làm việc với Dev/Tester/PO, quản lý kỳ vọng khách hàng, xử lý phát sinh và duy trì tư duy hệ thống.",
     "color": "#059669",
-    "icon": "📗"
+    "icon": "📗",
+    "toc": [
+      {
+        "id": "day-1",
+        "code": "DAY 1",
+        "title": "BA NÊN LÀM GÌ - SAU KHI TÍNH NĂNG ĐƯỢC RELEASE?",
+        "category": "Testing & UAT",
+        "pdfPage": 4,
+        "printPage": 1,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 1: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 1 (BA NÊN LÀM GÌ - SAU KHI TÍNH NĂNG ĐƯỢC RELEASE?) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 1: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 1: BA NÊN LÀM GÌ - SAU KHI TÍNH NĂNG ĐƯỢC RELEASE?</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 4 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 1</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 1 / 1 0 0 BA NÊN LÀM GÌ  SAU KHI TÍNH NĂNG ĐƯỢC RELEASE? Nhiều bạn BA nghĩ:  Xong tài liệu ➝ DEV code xong ➝ TEST pass ➝ Release, là hết việc. Sai nha! Release không phải là điểm kết thúc, mà là lúc BA chứng minh giá trị của mình.  Dưới đây là 5 việc bạn nên làm ngay sau khi sản phẩm được release: 1. Kiểm tra thực tế trên Production Đăng nhập như người dùng thật, thao tác từng bước. Check kỹ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 1: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 1 (BA NÊN LÀM GÌ - SAU KHI TÍNH NĂNG ĐƯỢC RELEASE?) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-2",
+        "code": "DAY 2",
+        "title": "BA KHÔNG TƯ DUY HỆ THỐNG = NGƯỜI XÂY - NHÀ KHÔNG CÓ BẢN VẼ",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 5,
+        "printPage": 2,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 2: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 2 (BA KHÔNG TƯ DUY HỆ THỐNG = NGƯỜI XÂY - NHÀ KHÔNG CÓ BẢN VẼ) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 2: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 2: BA KHÔNG TƯ DUY HỆ THỐNG = NGƯỜI XÂY - NHÀ KHÔNG CÓ BẢN VẼ</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 5 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 2</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 2 / 1 0 0 BA KHÔNG TƯ DUY HỆ THỐNG = NGƯỜI XÂY NHÀ KHÔNG CÓ BẢN VẼ Bạn có thể hoàn thành task. Bạn có thể “hoàn thành SRS đúng deadline”. Nhưng nếu bạn chỉ làm theo từng yêu cầu mà không hình dung toàn cảnh, thì hệ thống bạn xây sẽ rối như tơ vò sau vài tháng. 💥 Một ví dụ có thật 100%: Giai đoạn 1: Làm tính năng tạo đơn hàng → theo luồng của bộ phận Sales. Giai đoạn 2: Gắn với hệ thống kế to...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 2: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 2 (BA KHÔNG TƯ DUY HỆ THỐNG = NGƯỜI XÂY - NHÀ KHÔNG CÓ BẢN VẼ) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-3",
+        "code": "DAY 3",
+        "title": "KỸ THUẬT BABOK GIÚP BẠN KHÔNG BỊ ĐỔ LỖI - KHI KHÁCH NÓI: \"TÔI CHƯA NÓI THẾ BAO GIỜ\"",
+        "category": "Testing & UAT",
+        "pdfPage": 8,
+        "printPage": 5,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 3: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 3 (KỸ THUẬT BABOK GIÚP BẠN KHÔNG BỊ ĐỔ LỖI - KHI KHÁCH NÓI: \"TÔI CHƯA NÓI THẾ BAO GIỜ\") đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 3: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 3: KỸ THUẬT BABOK GIÚP BẠN KHÔNG BỊ ĐỔ LỖI - KHI KHÁCH NÓI: \"TÔI CHƯA NÓI THẾ BAO GIỜ\"</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 8 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 5</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 3 / 1 0 0 3 KỸ THUẬT BABOK GIÚP BẠN KHÔNG BỊ ĐỔ LỖI KHI KHÁCH NÓI: \"TÔI CHƯA NÓI THẾ BAO GIỜ\" Câu nói tưởng nhẹ, nhưng có thể thổi bay cả sprint và đạp BA xuống hố. 🧨 Chuyện có thật 100%: Khách từng bảo trong họp: “Không cần kiểm tra tồn kho đâu, cứ tạo đơn rồi xử lý sau.” Tôi gật đầu. DEV làm theo. 3 tuần sau UAT, khách quay lại: 8 “Ủa? Không có bước kiểm tra tồn à? Tôi đâu có nói bỏ cái đó...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 3: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 3 (KỸ THUẬT BABOK GIÚP BẠN KHÔNG BỊ ĐỔ LỖI - KHI KHÁCH NÓI: \"TÔI CHƯA NÓI THẾ BAO GIỜ\") đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-4",
+        "code": "DAY 4",
+        "title": "KỸ THUẬT BABOK GIÚP BẠN XỬ LÝ - YÊU CẦU GẤP MÀ KHÔNG VỠ TIẾN ĐỘ",
+        "category": "Agile & Scrum",
+        "pdfPage": 10,
+        "printPage": 7,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 4: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 4 (KỸ THUẬT BABOK GIÚP BẠN XỬ LÝ - YÊU CẦU GẤP MÀ KHÔNG VỠ TIẾN ĐỘ) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 4: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 4: KỸ THUẬT BABOK GIÚP BẠN XỬ LÝ - YÊU CẦU GẤP MÀ KHÔNG VỠ TIẾN ĐỘ</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 10 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 7</span>\n        <span>🏷️ <b>Chủ đề:</b> Agile & Scrum</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 4 / 1 0 0 3 KỸ THUẬT BABOK GIÚP BẠN XỬ LÝ  YÊU CẦU GẤP MÀ KHÔNG VỠ TIẾN ĐỘ \"Quan trọng lắm!\", \"Phải có ngay!\", \"Còn chờ gì nữa?\" Bạn không sai khi làm đúng yêu cầu.  Nhưng nếu bạn không quản trị được kỳ vọng và ưu tiên, thì: Backlog sẽ ngày càng phình to Sprint nào cũng vỡ plan Và người bị truy trách nhiệm đầu tiên: chính là bạn – BA của dự án 🎯 3 kỹ thuật từ BABOK giúp bạn đứng vững trước á...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 4: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 4 (KỸ THUẬT BABOK GIÚP BẠN XỬ LÝ - YÊU CẦU GẤP MÀ KHÔNG VỠ TIẾN ĐỘ) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-5",
+        "code": "DAY 5",
+        "title": "KỸ THUẬT BABOK GIÚP BA TƯ DUY LỖI – VIẾT - LOGIC CHẶT CHẼ, KHÔNG BỊ LỌT CASE",
+        "category": "Khai thác yêu cầu",
+        "pdfPage": 12,
+        "printPage": 9,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 5: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 5 (KỸ THUẬT BABOK GIÚP BA TƯ DUY LỖI – VIẾT - LOGIC CHẶT CHẼ, KHÔNG BỊ LỌT CASE) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 5: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 5: KỸ THUẬT BABOK GIÚP BA TƯ DUY LỖI – VIẾT - LOGIC CHẶT CHẼ, KHÔNG BỊ LỌT CASE</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 12 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 9</span>\n        <span>🏷️ <b>Chủ đề:</b> Khai thác yêu cầu</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 5 / 1 0 0 3 KỸ THUẬT BABOK GIÚP BA TƯ DUY LỖI – VIẾT LOGIC CHẶT CHẼ, KHÔNG BỊ LỌT CASE BA giỏi không phải người nghĩ được nhiều tính năng,  Mà là người đủ tỉnh để hỏi:  👉 “Nếu sai thì sao?”  👉 “Nếu người dùng thao tác ngược thì sao?”  👉 “Nếu server lag, mất kết nối thì sao?” 🎯 1. Exception Flow – Tư duy lỗi = tư duy sống sót 📘 BABOK Technique: Scenario & Use Case, Exception Handling Input: T...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 5: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 5 (KỸ THUẬT BABOK GIÚP BA TƯ DUY LỖI – VIẾT - LOGIC CHẶT CHẼ, KHÔNG BỊ LỌT CASE) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-6",
+        "code": "DAY 6",
+        "title": "Tôi không còn là người viết đặc tả từng dòng SRS. Tôi cũng không còn là người ngồi - da...",
+        "category": "Đặc tả & Quản lý yêu cầu",
+        "pdfPage": 14,
+        "printPage": 11,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 6: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 6 (Tôi không còn là người viết đặc tả từng dòng SRS. Tôi cũng không còn là người ngồi - da...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 6: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 6: Tôi không còn là người viết đặc tả từng dòng SRS. Tôi cũng không còn là người ngồi - da...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 14 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 11</span>\n        <span>🏷️ <b>Chủ đề:</b> Đặc tả & Quản lý yêu cầu</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 6 / 1 0 0 Tôi không còn là người viết đặc tả từng dòng SRS. Tôi cũng không còn là người ngồi daily với Dev mỗi sáng. Nhưng tôi là người mà cả team BA sẽ gọi… khi mọi thứ bắt đầu rối. Tôi không còn làm BA như trước. Giờ tôi làm người đứng sau. Không để kiểm soát. Mà để giữ cho từng người trong team có thể tiếp tục đi mà không thấy đơn độc. ☀️ Buổi sáng Không mở task, chỉ mở đoạn tin nhắn gửi ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 6: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 6 (Tôi không còn là người viết đặc tả từng dòng SRS. Tôi cũng không còn là người ngồi - da...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-7",
+        "code": "DAY 7",
+        "title": "Bạn từng đề xuất một tính năng, tự tin lắm, tâm huyết lắm. Nhưng sau khi release: - Khô...",
+        "category": "Testing & UAT",
+        "pdfPage": 16,
+        "printPage": 13,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 7: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 7 (Bạn từng đề xuất một tính năng, tự tin lắm, tâm huyết lắm. Nhưng sau khi release: - Khô...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 7: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 7: Bạn từng đề xuất một tính năng, tự tin lắm, tâm huyết lắm. Nhưng sau khi release: - Khô...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 16 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 13</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 7 / 1 0 0 Bạn từng đề xuất một tính năng, tự tin lắm, tâm huyết lắm. Nhưng sau khi release: Không ai dùng. Không ai đoái hoài. Không tạo impact. Không phải do DEV code sai. Không phải do UI xấu. Mà vì ngay từ đầu bạn không nghĩ đến chuyện đo lường. “Viết tính năng mà không đo được hiệu quả thì không phải là làm BA – đó là đoán mò.” Muốn tránh cảnh đó, đây là 3 kỹ thuật trích từ BABOK, cộng v...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 7: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 7 (Bạn từng đề xuất một tính năng, tự tin lắm, tâm huyết lắm. Nhưng sau khi release: - Khô...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-8",
+        "code": "DAY 8",
+        "title": "“Tôi làm BA 4 năm rồi, sao vẫn chưa được tin tưởng giao vai trò cao hơn?” Không hiếm - ...",
+        "category": "Khai thác yêu cầu",
+        "pdfPage": 18,
+        "printPage": 15,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 8: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 8 (“Tôi làm BA 4 năm rồi, sao vẫn chưa được tin tưởng giao vai trò cao hơn?” Không hiếm - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 8: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 8: “Tôi làm BA 4 năm rồi, sao vẫn chưa được tin tưởng giao vai trò cao hơn?” Không hiếm - ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 18 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 15</span>\n        <span>🏷️ <b>Chủ đề:</b> Khai thác yêu cầu</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 8 / 1 0 0  “Tôi làm BA 4 năm rồi, sao vẫn chưa được tin tưởng giao vai trò cao hơn?” Không hiếm người đặt câu hỏi này. Nhưng phần lớn đều vướng ở một điểm: Chưa trang bị đúng kỹ năng để xử lý bài toán lớn hơn. → Viết tài liệu? Ổn. → Ghi nhận yêu cầu? Không còn bỡ ngỡ. → Vẽ flow? Làm được. Nhưng…BA cấp độ cao hơn là người: → Nhìn thấy rủi ro trước khi hệ thống được xây dựng → Biết chọn đúng y...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 8: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 8 (“Tôi làm BA 4 năm rồi, sao vẫn chưa được tin tưởng giao vai trò cao hơn?” Không hiếm - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-9",
+        "code": "DAY 9",
+        "title": "Bạn từng bị sếp mắng… chỉ vì làm đúng yêu cầu chưa? - Tôi từng dính cú đó. Làm feature ...",
+        "category": "Testing & UAT",
+        "pdfPage": 20,
+        "printPage": 17,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 9: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 9 (Bạn từng bị sếp mắng… chỉ vì làm đúng yêu cầu chưa? - Tôi từng dính cú đó. Làm feature ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 9: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 9: Bạn từng bị sếp mắng… chỉ vì làm đúng yêu cầu chưa? - Tôi từng dính cú đó. Làm feature ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 20 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 17</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 9 / 1 0 0 Bạn từng bị sếp mắng… chỉ vì làm đúng yêu cầu chưa? Tôi từng dính cú đó. Làm feature điểm danh theo đúng lời sếp. Viết đủ flow, mô tả rõ ràng, test pass. 3 ngày sau: bị gọi lên và gỡ app.  Sếp bảo:  “Làm app điểm danh đi, cho nhân viên tự check-in bằng điện thoại. Vân tay lỗi thời rồi.” Nghe hợp lý và có vẻ dễ! Tôi viết tài liệu, mô tả chức năng, giao cho dev. QC test pass. Go-live...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 9: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 9 (Bạn từng bị sếp mắng… chỉ vì làm đúng yêu cầu chưa? - Tôi từng dính cú đó. Làm feature ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-10",
+        "code": "DAY 10",
+        "title": "Câu chuyện có thật: Tuần trước, một bạn BA nhắn tôi, giọng đầy bức xúc: “Em nghỉ - phép...",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 22,
+        "printPage": 19,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 10: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 10 (Câu chuyện có thật: Tuần trước, một bạn BA nhắn tôi, giọng đầy bức xúc: “Em nghỉ - phép...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 10: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 10: Câu chuyện có thật: Tuần trước, một bạn BA nhắn tôi, giọng đầy bức xúc: “Em nghỉ - phép...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 22 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 19</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 1 0 / 1 0 0 Câu chuyện có thật: Tuần trước, một bạn BA nhắn tôi, giọng đầy bức xúc: “Em nghỉ phép mấy hôm. Quay lại thì PO đã confirm hết UI với designer rồi. Em chỉ còn mỗi việc soi chính tả và check logic. Mà cái logic thì sai be bét… Giờ ai chịu trách nhiệm?\" Quen không? PO bảo “anh duyệt rồi” Designer bảo “PO đồng ý mà” Còn BA thì thành người ngồi ngoài flow – bị giao trách nhiệm nhưng k...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 10: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 10 (Câu chuyện có thật: Tuần trước, một bạn BA nhắn tôi, giọng đầy bức xúc: “Em nghỉ - phép...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-11",
+        "code": "DAY 11",
+        "title": "Mất 2 phút đọc – nhưng nếu bạn là BA mới, đây có thể là 2 phút đáng nhất tuần này. - Sế...",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 24,
+        "printPage": 21,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 11: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 11 (Mất 2 phút đọc – nhưng nếu bạn là BA mới, đây có thể là 2 phút đáng nhất tuần này. - Sế...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 11: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 11: Mất 2 phút đọc – nhưng nếu bạn là BA mới, đây có thể là 2 phút đáng nhất tuần này. - Sế...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 24 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 21</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 1 1 / 1 0 0 Mất 2 phút đọc – nhưng nếu bạn là BA mới, đây có thể là 2 phút đáng nhất tuần này. Sếp: “Màn này làm giống bên XYZ nhé, flow bên đó tối ưu rồi. Em nắm rồi làm luôn nha.” Tôi gật đầu. Và tôi biết… hình như có điều gì đó chưa ổn. Nhưng tôi vẫn gật. Lúc đó tôi là một BA mới. Không ai ép tôi làm sai. Chỉ là… tôi không dám hỏi lại. Tôi nghĩ: “Chắc là đúng rồi.” “Mình hỏi thì kỳ lắm.” ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 11: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 11 (Mất 2 phút đọc – nhưng nếu bạn là BA mới, đây có thể là 2 phút đáng nhất tuần này. - Sế...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-12",
+        "code": "DAY 12",
+        "title": "Câu hỏi tưởng cũ, nhưng mỗi lần nghe lại là một lần muốn kể chuyện - Chiều qua, mình có...",
+        "category": "Agile & Scrum",
+        "pdfPage": 26,
+        "printPage": 23,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 12: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 12 (Câu hỏi tưởng cũ, nhưng mỗi lần nghe lại là một lần muốn kể chuyện - Chiều qua, mình có...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 12: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 12: Câu hỏi tưởng cũ, nhưng mỗi lần nghe lại là một lần muốn kể chuyện - Chiều qua, mình có...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 26 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 23</span>\n        <span>🏷️ <b>Chủ đề:</b> Agile & Scrum</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 1 2 / 1 0 0 Câu hỏi tưởng cũ, nhưng mỗi lần nghe lại là một lần muốn kể chuyện Chiều qua, mình có dịp quay lại FPT Polytechnic để chia sẻ về nghề BA cho các bạn sinh viên IT. Và đúng như dự đoán, câu hỏi xuất hiện ở gần cuối buổi: “Anh ơi, BA có cần biết code không ạ?” Mình bật cười – không phải vì câu hỏi ngây ngô. Mà vì… mình cũng từng là người hỏi y chang như vậy cách đây vài năm. Rất nhi...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 12: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 12 (Câu hỏi tưởng cũ, nhưng mỗi lần nghe lại là một lần muốn kể chuyện - Chiều qua, mình có...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-13",
+        "code": "DAY 13",
+        "title": "Một câu hỏi rất quen khi làm với các bạn BA mới vào nghề: - “Làm sao để biết hệ thống c...",
+        "category": "Dữ liệu & SQL",
+        "pdfPage": 28,
+        "printPage": 25,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 13: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 13 (Một câu hỏi rất quen khi làm với các bạn BA mới vào nghề: - “Làm sao để biết hệ thống c...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 13: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 13: Một câu hỏi rất quen khi làm với các bạn BA mới vào nghề: - “Làm sao để biết hệ thống c...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 28 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 25</span>\n        <span>🏷️ <b>Chủ đề:</b> Dữ liệu & SQL</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 1 3 / 1 0 0 Một câu hỏi rất quen khi làm với các bạn BA mới vào nghề: “Làm sao để biết hệ thống cần lưu những thông tin gì? Em nên bắt đầu dựng data object từ đâu khi chưa có bảng DB?” Tôi không ngạc nhiên. Vì trước đây, tôi cũng từng loay hoay như vậy. Không biết trường nào bắt buộc Không chắc validate ra sao Không rõ object cần những trạng thái nào, liên quan gì đến màn hình, báo cáo hay h...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 13: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 13 (Một câu hỏi rất quen khi làm với các bạn BA mới vào nghề: - “Làm sao để biết hệ thống c...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-14",
+        "code": "DAY 14",
+        "title": "Không phải bug, không phải logic sai, không phải thiếu tài liệu. - Nhiều pha toang tron...",
+        "category": "Testing & UAT",
+        "pdfPage": 30,
+        "printPage": 27,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 14: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 14 (Không phải bug, không phải logic sai, không phải thiếu tài liệu. - Nhiều pha toang tron...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 14: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 14: Không phải bug, không phải logic sai, không phải thiếu tài liệu. - Nhiều pha toang tron...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 30 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 27</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 1 4 / 1 0 0 Không phải bug, không phải logic sai, không phải thiếu tài liệu. Nhiều pha toang trong dự án bắt đầu chỉ từ… một câu comment tưởng vô hại. ⚠️ 1. Những comment tưởng vô hại, nhưng khiến BA “đóng task” trong vô thức “Tạm ổn rồi, mai check nốt” “Cái này để release sau nhé” “Không tái hiện được bug” Dev nói vậy, Test gật đầu, và bạn… nghĩ là done. Nhưng thật ra: “Tạm ổn” là… chưa xon...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 14: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 14 (Không phải bug, không phải logic sai, không phải thiếu tài liệu. - Nhiều pha toang tron...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-15",
+        "code": "DAY 15",
+        "title": "Có những hôm đi làm sớm như hôm nay, ngồi ung dung làm cốc trà đá, mình tự hỏi: - Hồi m...",
+        "category": "Đặc tả & Quản lý yêu cầu",
+        "pdfPage": 32,
+        "printPage": 29,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 15: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 15 (Có những hôm đi làm sớm như hôm nay, ngồi ung dung làm cốc trà đá, mình tự hỏi: - Hồi m...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 15: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 15: Có những hôm đi làm sớm như hôm nay, ngồi ung dung làm cốc trà đá, mình tự hỏi: - Hồi m...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 32 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 29</span>\n        <span>🏷️ <b>Chủ đề:</b> Đặc tả & Quản lý yêu cầu</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 1 5 / 1 0 0 Có những hôm đi làm sớm như hôm nay, ngồi ung dung làm cốc trà đá, mình tự hỏi: Hồi mới làm BA, mình đã từng ngây thơ tới mức nào?  Hồi đó, sếp bảo mình: “Em thêm cái nút ‘Đăng ký tư vấn’ lên trang chủ nhé, càng to càng tốt.” Mình không hỏi gì. Chỉ note lại, vẽ mockup, viết SRS, đẩy Dev làm ngay.  Làm xong, sếp feedback: “Ủa sao có khách đăng ký rồi mà không ai gọi? Sao form này ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 15: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 15 (Có những hôm đi làm sớm như hôm nay, ngồi ung dung làm cốc trà đá, mình tự hỏi: - Hồi m...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-16",
+        "code": "DAY 16",
+        "title": "“Flow này rõ ràng mà, test gì nữa?” - Tôi một BA trẩu tre đã từng chém thế. Và sáng hôm...",
+        "category": "Testing & UAT",
+        "pdfPage": 34,
+        "printPage": 31,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 16: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 16 (“Flow này rõ ràng mà, test gì nữa?” - Tôi một BA trẩu tre đã từng chém thế. Và sáng hôm...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 16: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 16: “Flow này rõ ràng mà, test gì nữa?” - Tôi một BA trẩu tre đã từng chém thế. Và sáng hôm...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 34 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 31</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 1 6 / 1 0 0 “Flow này rõ ràng mà, test gì nữa?” Tôi một BA trẩu tre đã từng chém thế. Và sáng hôm sau, cái hệ thống “rõ ràng” đó… gãy. Tôi từng mô tả flow tự động “Tặng voucher sau 7 ngày”. Yêu cầu trong tài liệu vỏn vẹn một dòng: “Sau 7 ngày kể từ giao dịch thành công, hệ thống sẽ tặng 1 voucher 50K.” Nghe thì suôn, nhưng tester test là hệ thống rụng từng khúc: Giao dịch lúc 23h59 Thứ Hai, ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 16: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 16 (“Flow này rõ ràng mà, test gì nữa?” - Tôi một BA trẩu tre đã từng chém thế. Và sáng hôm...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-17",
+        "code": "DAY 17",
+        "title": "Lúc mới vào, tôi nghĩ: “Đây là nơi nghiêm túc làm sản phẩm.”. Team đông, vai trò rõ - r...",
+        "category": "Agile & Scrum",
+        "pdfPage": 36,
+        "printPage": 33,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 17: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 17 (Lúc mới vào, tôi nghĩ: “Đây là nơi nghiêm túc làm sản phẩm.”. Team đông, vai trò rõ - r...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 17: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 17: Lúc mới vào, tôi nghĩ: “Đây là nơi nghiêm túc làm sản phẩm.”. Team đông, vai trò rõ - r...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 36 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 33</span>\n        <span>🏷️ <b>Chủ đề:</b> Agile & Scrum</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 1 7 / 1 0 0 Lúc mới vào, tôi nghĩ: “Đây là nơi nghiêm túc làm sản phẩm.”. Team đông, vai trò rõ ràng, backlog cập nhật từng giờ, stakeholder góp ý đều đều. Nhưng càng làm, tôi càng nhận ra…Thứ chúng tôi đang tạo ra không phải là sản phẩm, mà là một chiếc máy chạy tính năng.Và rồi, tôi đọc INSPIRED của Marty Cagan – và thấy… Từng phần trong sách, chính là từng vết nứt trong công ty nọ – vết n...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 17: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 17 (Lúc mới vào, tôi nghĩ: “Đây là nơi nghiêm túc làm sản phẩm.”. Team đông, vai trò rõ - r...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-18",
+        "code": "DAY 18",
+        "title": "Cuối tuần rồi chắc thể nào cũng có team vừa retro xong - Một buổi Retro sprint. UAT gãy...",
+        "category": "Testing & UAT",
+        "pdfPage": 39,
+        "printPage": 36,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 18: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 18 (Cuối tuần rồi chắc thể nào cũng có team vừa retro xong - Một buổi Retro sprint. UAT gãy...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 18: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 18: Cuối tuần rồi chắc thể nào cũng có team vừa retro xong - Một buổi Retro sprint. UAT gãy...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 39 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 36</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 1 8 / 1 0 0 Cuối tuần rồi chắc thể nào cũng có team vừa retro xong Một buổi Retro sprint. UAT gãy. Bug nổ. Tính năng không chạy như kỳ vọng. Và rồi ánh mắt bắt đầu hướng về phía BA… “BA không confirm lại với user à?” “Cái flow đó có ghi rõ đâu?” “Lại thiếu logic trong tài liệu BA…” Nghe thì nhẹ, nhưng nếu bạn làm BA đủ lâu, bạn biết nó sâu như dao cạo. Không ai mắng. Không ai chửi. Nhưng chí...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 18: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 18 (Cuối tuần rồi chắc thể nào cũng có team vừa retro xong - Một buổi Retro sprint. UAT gãy...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-19",
+        "code": "DAY 19",
+        "title": "📅 Thứ Hai – ngày đầu tuần, mở máy đã thấy 6 cái meeting chờ sẵn - Sáng 8h30: họp kick-off",
+        "category": "UX & Product Thinking",
+        "pdfPage": 41,
+        "printPage": 38,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 19: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 19 (📅 Thứ Hai – ngày đầu tuần, mở máy đã thấy 6 cái meeting chờ sẵn - Sáng 8h30: họp kick-off) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 19: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 19: 📅 Thứ Hai – ngày đầu tuần, mở máy đã thấy 6 cái meeting chờ sẵn - Sáng 8h30: họp kick-off</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 41 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 38</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 1 9 / 1 0 0 📅 Thứ Hai – ngày đầu tuần, mở máy đã thấy 6 cái meeting chờ sẵn Sáng 8h30: họp kick-off 10h: họp với team DEV để giải thích requirement 11h15: join họp với khách confirm lại rule Chiều 13h30: họp chỉnh sửa giao diện 15h: họp với test 17h: họp cập nhật tiến độ Kết thúc một ngày → file tài liệu vẫn trắng tinh Tối về, sếp hỏi: “Tài liệu đâu?” “Em đi họp suốt còn gì anh?” “Thế em họp...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 19: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 19 (📅 Thứ Hai – ngày đầu tuần, mở máy đã thấy 6 cái meeting chờ sẵn - Sáng 8h30: họp kick-off) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-20",
+        "code": "DAY 20",
+        "title": "🏢 Chuyện có thật ở một công ty bán trà sữa... - Công ty XYZ có hệ thống TeaBoss đã chạy...",
+        "category": "Phân tích & thiết kế giải pháp",
+        "pdfPage": 43,
+        "printPage": 40,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 20: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 20 (🏢 Chuyện có thật ở một công ty bán trà sữa... - Công ty XYZ có hệ thống TeaBoss đã chạy...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 20: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 20: 🏢 Chuyện có thật ở một công ty bán trà sữa... - Công ty XYZ có hệ thống TeaBoss đã chạy...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 43 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 40</span>\n        <span>🏷️ <b>Chủ đề:</b> Phân tích & thiết kế giải pháp</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 2 0 / 1 0 0 🏢 Chuyện có thật ở một công ty bán trà sữa... Công ty XYZ có hệ thống TeaBoss đã chạy 3 năm. Nó giúp quản lý đơn hàng, tính điểm thưởng cho nhân viên, và tổng hợp doanh thu từng ca. Một ngày đẹp trời, sếp giao task: “Viết lại TeaBoss bản mới, UI xịn hơn, API mở rộng, có thể scale toàn quốc.” Phú – một bạn BA trẻ, nhanh nhẹn, flow vẽ đẹp như sách giáo khoa – được chọn. Nhưng Phú v...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 20: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 20 (🏢 Chuyện có thật ở một công ty bán trà sữa... - Công ty XYZ có hệ thống TeaBoss đã chạy...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-21",
+        "code": "DAY 21",
+        "title": "“Dự án này không có PM đâu – em follow luôn cả team nhé.” - Không phải câu nói lịch sử,...",
+        "category": "Testing & UAT",
+        "pdfPage": 45,
+        "printPage": 42,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 21: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 21 (“Dự án này không có PM đâu – em follow luôn cả team nhé.” - Không phải câu nói lịch sử,...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 21: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 21: “Dự án này không có PM đâu – em follow luôn cả team nhé.” - Không phải câu nói lịch sử,...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 45 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 42</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 2 1 / 1 0 0 “Dự án này không có PM đâu – em follow luôn cả team nhé.” Không phải câu nói lịch sử, nhưng rất nhiều BA từng nghe phiên bản na ná như vậy. Lúc đầu còn vui: “Thử sức tí, biết đâu lại lên tay.” Ba tuần sau: Mắt thâm – Jira đỏ – Dev giận – Test khóc – tài liệu lỗi. Và đau nhất là… bạn tự mất khả năng nhìn rõ toàn cảnh. ⛔ Khi BA ôm luôn vai PM – dễ dính 4 cú \"gãy\": → Gãy nghiệp vụ: ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 21: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 21 (“Dự án này không có PM đâu – em follow luôn cả team nhé.” - Không phải câu nói lịch sử,...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-22",
+        "code": "DAY 22",
+        "title": "🧃 3 lời hứa quen thuộc trước khi dự án mệt mỏi: - → “Anh thấy field này nhỏ thôi, thêm ...",
+        "category": "Dữ liệu & SQL",
+        "pdfPage": 47,
+        "printPage": 44,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 22: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 22 (🧃 3 lời hứa quen thuộc trước khi dự án mệt mỏi: - → “Anh thấy field này nhỏ thôi, thêm ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 22: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 22: 🧃 3 lời hứa quen thuộc trước khi dự án mệt mỏi: - → “Anh thấy field này nhỏ thôi, thêm ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 47 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 44</span>\n        <span>🏷️ <b>Chủ đề:</b> Dữ liệu & SQL</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 2 2 / 1 0 0 🧃 3 lời hứa quen thuộc trước khi dự án mệt mỏi: → “Anh thấy field này nhỏ thôi, thêm vào cho chuyên nghiệp.” → “Mình chưa cần logic phức tạp, lưu tạm cũng được.” → “Có xíu thôi mà – không ảnh hưởng gì đâu em.” Bạn BA trẻ gật đầu. Form có thêm ô nhập mã giới thiệu. ❌ 4 hậu quả ai cũng thấy sau 1 tuần chạy thật: → Dữ liệu nhập lung tung, không xác thực → CRM không dám dùng report →...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 22: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 22 (🧃 3 lời hứa quen thuộc trước khi dự án mệt mỏi: - → “Anh thấy field này nhỏ thôi, thêm ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-23",
+        "code": "DAY 23",
+        "title": "💥 Chuyện thật: - Một hệ thống đặt lịch sửa xe. BA vẽ flow đơn giản: khách đặt → garage ...",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 49,
+        "printPage": 46,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 23: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 23 (💥 Chuyện thật: - Một hệ thống đặt lịch sửa xe. BA vẽ flow đơn giản: khách đặt → garage ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 23: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 23: 💥 Chuyện thật: - Một hệ thống đặt lịch sửa xe. BA vẽ flow đơn giản: khách đặt → garage ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 49 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 46</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 2 3 / 1 0 0 💥 Chuyện thật: Một hệ thống đặt lịch sửa xe. BA vẽ flow đơn giản: khách đặt → garage xác nhận → sửa xong. 3 tuần sau: Sale cần thống kê tỷ lệ bùng Admin muốn tách lịch xác nhận với lịch chờ Sếp hỏi conversion từ booking → sửa thật Cả hệ thống toang. Vì object Booking gánh luôn 7 logic. Không có ranh giới. Không có trạng thái. Không đại diện cho nghiệp vụ thật. 🧠 Domain-Driven Des...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 23: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 23 (💥 Chuyện thật: - Một hệ thống đặt lịch sửa xe. BA vẽ flow đơn giản: khách đặt → garage ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-24",
+        "code": "DAY 24",
+        "title": "Nghĩ làm BA trung lập là an toàn? Sai rồi. Trong môi trường bè phái đấu đá, BA không - ...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 52,
+        "printPage": 49,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 24: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 24 (Nghĩ làm BA trung lập là an toàn? Sai rồi. Trong môi trường bè phái đấu đá, BA không - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 24: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 24: Nghĩ làm BA trung lập là an toàn? Sai rồi. Trong môi trường bè phái đấu đá, BA không - ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 52 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 49</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 2 4 / 1 0 0 Nghĩ làm BA trung lập là an toàn? Sai rồi. Trong môi trường bè phái đấu đá, BA không dẫn dắt được thì chỉ còn nước làm bia đỡ đạn. 🎭 Một ngày chết đứng của BA trẻ: Thanh – một BA mới toe nhận dự án xây hệ thống Tuyển dụng cho công ty. Buổi họp gather requirement đầu tiên, Thanh bị kéo căng giữa hai lằn đạn: HR Recruiter sốt ruột: “Form ứng tuyển càng nhanh càng tốt, chỉ cần tên, ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 24: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 24 (Nghĩ làm BA trung lập là an toàn? Sai rồi. Trong môi trường bè phái đấu đá, BA không - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-25",
+        "code": "DAY 25",
+        "title": "🌟 Những thứ nguy hiểm nhất thường không nằm trên giấy - Không phải yêu cầu nào cũng đượ...",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 55,
+        "printPage": 52,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 25: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 25 (🌟 Những thứ nguy hiểm nhất thường không nằm trên giấy - Không phải yêu cầu nào cũng đượ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 25: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 25: 🌟 Những thứ nguy hiểm nhất thường không nằm trên giấy - Không phải yêu cầu nào cũng đượ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 55 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 52</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 2 5 / 1 0 0 🌟 Những thứ nguy hiểm nhất thường không nằm trên giấy Không phải yêu cầu nào cũng được chia sẻ ngay từ đầu. Có những quy tắc vận hành bất thành văn – tồn tại cả chục năm – nhưng không ai đưa vào tài liệu. Chỉ khi hệ thống đi vào vận hành, những lệch lạc mới lộ ra từng chút một. 👉Hidden requirement không nằm đâu xa, nó ẩn ngay trong hành vi thường ngày. 📚 Một bài học thực tế – Khi...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 25: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 25 (🌟 Những thứ nguy hiểm nhất thường không nằm trên giấy - Không phải yêu cầu nào cũng đượ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-26",
+        "code": "DAY 26",
+        "title": "Vừa vào công ty. Mở mail chưa đầy 10 phút, sếp đã nhắn: - \"Dự án này cần gấp BA, em joi...",
+        "category": "Phân tích & thiết kế giải pháp",
+        "pdfPage": 57,
+        "printPage": 54,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 26: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 26 (Vừa vào công ty. Mở mail chưa đầy 10 phút, sếp đã nhắn: - \"Dự án này cần gấp BA, em joi...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 26: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 26: Vừa vào công ty. Mở mail chưa đầy 10 phút, sếp đã nhắn: - \"Dự án này cần gấp BA, em joi...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 57 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 54</span>\n        <span>🏷️ <b>Chủ đề:</b> Phân tích & thiết kế giải pháp</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 2 6 / 1 0 0 Vừa vào công ty. Mở mail chưa đầy 10 phút, sếp đã nhắn: \"Dự án này cần gấp BA, em join luôn nha.\" Không intro. Không lịch bàn giao. Không bản đồ hệ thống. Chỉ có 1 chữ: GẤP. Và bạn – được kỳ vọng là: Hiểu nhanh – bắt nhịp nhanh – confirm nhanh – viết nhanh. Nhưng hệ thống thì chẳng \"nhanh\" lại với bạn. ĐẦU THÁNG, BẠN LÀ BA MỚI TOANH.  VÀ CHÀO MỪNG BẠN ĐẾN VỚI CHIẾN TRƯỜNG. 57  D ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 26: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 26 (Vừa vào công ty. Mở mail chưa đầy 10 phút, sếp đã nhắn: - \"Dự án này cần gấp BA, em joi...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-27",
+        "code": "DAY 27",
+        "title": "Vẫn đi họp đều. Vẫn viết tài liệu đầy đủ. DEV hiểu. QA test pass.Feedback không tệ. - M...",
+        "category": "Testing & UAT",
+        "pdfPage": 60,
+        "printPage": 57,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 27: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 27 (Vẫn đi họp đều. Vẫn viết tài liệu đầy đủ. DEV hiểu. QA test pass.Feedback không tệ. - M...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 27: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 27: Vẫn đi họp đều. Vẫn viết tài liệu đầy đủ. DEV hiểu. QA test pass.Feedback không tệ. - M...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 60 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 57</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 2 7 / 1 0 0 Vẫn đi họp đều. Vẫn viết tài liệu đầy đủ. DEV hiểu. QA test pass.Feedback không tệ. Mọi thứ… ổn. Nhưng giữa một ngày làm việc, bạn chợt nghĩ: “Mình đang giúp team gỡ điều gì? Hay chỉ đang làm cho xong task?” Không có gì sai. Chỉ là… hơi lưng chừng. 🎓 Bạn chủ động học thêm:  ▪️ Một khóa viết tài liệu  ▪️ Một mini course elicitation  ▪️ Một buổi UML Nhưng có thể thứ bạn thiếu…Không...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 27: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 27 (Vẫn đi họp đều. Vẫn viết tài liệu đầy đủ. DEV hiểu. QA test pass.Feedback không tệ. - M...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-28",
+        "code": "DAY 28",
+        "title": "Kỹ thuật không sai. Nhưng nếu chọn sai kỹ thuật, sai người, sai thời điểm – bạn không -...",
+        "category": "Testing & UAT",
+        "pdfPage": 62,
+        "printPage": 59,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 28: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 28 (Kỹ thuật không sai. Nhưng nếu chọn sai kỹ thuật, sai người, sai thời điểm – bạn không -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 28: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 28: Kỹ thuật không sai. Nhưng nếu chọn sai kỹ thuật, sai người, sai thời điểm – bạn không -...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 62 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 59</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 2 8 / 1 0 0 Kỹ thuật không sai. Nhưng nếu chọn sai kỹ thuật, sai người, sai thời điểm – bạn không chỉ mất dữ liệu, mà còn mất niềm tin của cả team. ⚠️ Một pha fail kinh điển – tưởng đúng mà sai Dự án xây hệ thống quản lý sửa xe. BA mới vào, muốn làm bài bản → tổ chức workshop thu thập nghiệp vụ: xử lý xe lỗi, đặt lịch sửa, xác nhận phụ tùng. Workshop có: 5 kỹ thuật viên (đang thiếu người, đi...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 28: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 28 (Kỹ thuật không sai. Nhưng nếu chọn sai kỹ thuật, sai người, sai thời điểm – bạn không -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-29",
+        "code": "DAY 29",
+        "title": "“Em làm theo yêu cầu mà!” - Câu nói tưởng vô hại… nhưng thực ra đang âm thầm giết chết ...",
+        "category": "Phân tích & thiết kế giải pháp",
+        "pdfPage": 64,
+        "printPage": 61,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 29: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 29 (“Em làm theo yêu cầu mà!” - Câu nói tưởng vô hại… nhưng thực ra đang âm thầm giết chết ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 29: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 29: “Em làm theo yêu cầu mà!” - Câu nói tưởng vô hại… nhưng thực ra đang âm thầm giết chết ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 64 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 61</span>\n        <span>🏷️ <b>Chủ đề:</b> Phân tích & thiết kế giải pháp</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 2 9 / 1 0 0 “Em làm theo yêu cầu mà!” Câu nói tưởng vô hại… nhưng thực ra đang âm thầm giết chết cả hệ thống – và cả uy tín nghề BA của bạn. 🍱 App đặt cơm trưa – và cú điểm danh nhẹ cho tư duy BA \"nghe lời quá mức\" Công ty có hơn 100 nhân viên. Trước đây, mọi người nhắn Zalo cho chị admin để đặt cơm: gà, cá, thịt – mỗi món giới hạn 30 phần. Nếu món nào hết, chị sẽ gọi lại để đổi món. Hơi thủ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 29: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 29 (“Em làm theo yêu cầu mà!” - Câu nói tưởng vô hại… nhưng thực ra đang âm thầm giết chết ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-30",
+        "code": "DAY 30",
+        "title": "🕘 9h tối. Cả team DEV – QA – BA vẫn đang OT, căng mắt fix nốt bug cuối để kịp - Golive ...",
+        "category": "Testing & UAT",
+        "pdfPage": 67,
+        "printPage": 64,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 30: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 30 (🕘 9h tối. Cả team DEV – QA – BA vẫn đang OT, căng mắt fix nốt bug cuối để kịp - Golive ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 30: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 30: 🕘 9h tối. Cả team DEV – QA – BA vẫn đang OT, căng mắt fix nốt bug cuối để kịp - Golive ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 67 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 64</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 3 0 / 1 0 0 🕘 9h tối. Cả team DEV – QA – BA vẫn đang OT, căng mắt fix nốt bug cuối để kịp Golive sáng mai. Tôi cũng đang cùng OT với anh em. Và đúng lúc đó, điện thoại tôi sáng lên: “Em ơi, anh Phú CEO có góp ý vụ chấm công hơi cứng. Mấy bạn có đi muộn nhưng vẫn làm đủ 8 tiếng mà vẫn bị trừ công. Mình nên sửa lại trước khi Golive sáng mai nha. Không để vậy được đâu!” Người gửi: chị HR.  ⏳ Cò...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 30: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 30 (🕘 9h tối. Cả team DEV – QA – BA vẫn đang OT, căng mắt fix nốt bug cuối để kịp - Golive ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-31",
+        "code": "DAY 31",
+        "title": "Phòng họp hôm đó, tôi không nói thêm một từ nào. Sếp nhìn tôi, ánh mắt đanh lại: “Em - ...",
+        "category": "Khai thác yêu cầu",
+        "pdfPage": 69,
+        "printPage": 66,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 31: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 31 (Phòng họp hôm đó, tôi không nói thêm một từ nào. Sếp nhìn tôi, ánh mắt đanh lại: “Em - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 31: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 31: Phòng họp hôm đó, tôi không nói thêm một từ nào. Sếp nhìn tôi, ánh mắt đanh lại: “Em - ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 69 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 66</span>\n        <span>🏷️ <b>Chủ đề:</b> Khai thác yêu cầu</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 3 1 / 1 0 0 Phòng họp hôm đó, tôi không nói thêm một từ nào. Sếp nhìn tôi, ánh mắt đanh lại: “Em đang cãi anh à?” Không. Tôi không cãi. Tôi chỉ đang hỏi những câu mà… không ai dám hỏi. 🧩 Câu chuyện bắt đầu như này Sếp bảo: “Khách mua đủ 100k thì tặng voucher. Làm đơn giản, đừng lằng nhằng nữa.” Tôi gật đầu. Rồi hỏi: Nếu khách trả hàng thì điểm sao xử lý? Voucher gửi rồi có thu hồi được không...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 31: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 31 (Phòng họp hôm đó, tôi không nói thêm một từ nào. Sếp nhìn tôi, ánh mắt đanh lại: “Em - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-32",
+        "code": "DAY 32",
+        "title": "💥 Dự án không nổ vì bug. Nó rò rỉ từng chút vì những tín hiệu nhỏ bị BA bỏ qua. Một - s...",
+        "category": "Testing & UAT",
+        "pdfPage": 71,
+        "printPage": 68,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 32: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 32 (💥 Dự án không nổ vì bug. Nó rò rỉ từng chút vì những tín hiệu nhỏ bị BA bỏ qua. Một - s...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 32: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 32: 💥 Dự án không nổ vì bug. Nó rò rỉ từng chút vì những tín hiệu nhỏ bị BA bỏ qua. Một - s...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 71 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 68</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 3 2 / 1 0 0 💥 Dự án không nổ vì bug. Nó rò rỉ từng chút vì những tín hiệu nhỏ bị BA bỏ qua. Một sáng đẹp trời, bạn mở máy chưa kịp uống cà phê thì... DEV vẫn chưa update task dù đã hứa \"xong hôm nay\" từ… hôm kia QA hỏi về một flow bạn chưa từng viết Stakeholder nhắn riêng: “Ơ, chị tưởng em hiểu rồi nên không nói lại…” PM seen tin nhắn nhưng đặc biệt im lặng Và bạn người đang giữ requirement,...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 32: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 32 (💥 Dự án không nổ vì bug. Nó rò rỉ từng chút vì những tín hiệu nhỏ bị BA bỏ qua. Một - s...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-33",
+        "code": "DAY 33",
+        "title": "Feedback không phải là cú đấm nhưng phản ứng ngu sẽ khiến bạn knockout. Hôm đó, - trong...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 75,
+        "printPage": 72,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 33: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 33 (Feedback không phải là cú đấm nhưng phản ứng ngu sẽ khiến bạn knockout. Hôm đó, - trong...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 33: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 33: Feedback không phải là cú đấm nhưng phản ứng ngu sẽ khiến bạn knockout. Hôm đó, - trong...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 75 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 72</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 3 3 / 1 0 0 Feedback không phải là cú đấm nhưng phản ứng ngu sẽ khiến bạn knockout. Hôm đó, trong một buổi họp nội bộ, tôi tự tin trình bày flow tính năng mới. Có wireframe. Có logic. Tưởng ngon. Nhưng vừa dứt slide đầu tiên… feedback tới tấp: UX này khó dùng lắm em ơi Flow chưa nghĩ tới nhóm người dùng B Cái logic duyệt này mâu thuẫn với chính business rule bên dashboard... Và tôi một BA ch...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 33: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 33 (Feedback không phải là cú đấm nhưng phản ứng ngu sẽ khiến bạn knockout. Hôm đó, - trong...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-34",
+        "code": "DAY 34",
+        "title": "(Dành cho những BA Manager – khi thấy dự án vận hành mà vẫn không an lòng) - 🌙 Chủ Nhật...",
+        "category": "Testing & UAT",
+        "pdfPage": 77,
+        "printPage": 74,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 34: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 34 ((Dành cho những BA Manager – khi thấy dự án vận hành mà vẫn không an lòng) - 🌙 Chủ Nhật...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 34: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
+        "contentHtml": "\n      <h2>DAY 34: (Dành cho những BA Manager – khi thấy dự án vận hành mà vẫn không an lòng) - 🌙 Chủ Nhật...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 77 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 74</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 3 4 / 1 0 0 (Dành cho những BA Manager – khi thấy dự án vận hành mà vẫn không an lòng) 🌙 Chủ Nhật. Không task. Không họp. Chat cũng im. Tôi ngồi lại, không phải vì mệt.  Mà vì có gì đó… không thông. Không phải bug. Không phải task chưa xong. Mà là cảm giác dự án đang vận hành… mà thiếu mạch. 📌 Cả tuần qua… ai cũng làm đúng phần việc của mình. Tài liệu có. Yêu cầu rõ. Kết luận đầy đủ. Nhưng g...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 34: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 34 ((Dành cho những BA Manager – khi thấy dự án vận hành mà vẫn không an lòng) - 🌙 Chủ Nhật...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-35",
+        "code": "DAY 35",
+        "title": "🎯 Rất nhiều bạn BA nghĩ: - “Em viết đầy đủ flow rồi mà, sao hệ thống vẫn lỗi?”",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 78,
+        "printPage": 75,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 35: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 35 (🎯 Rất nhiều bạn BA nghĩ: - “Em viết đầy đủ flow rồi mà, sao hệ thống vẫn lỗi?”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 35: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 35: 🎯 Rất nhiều bạn BA nghĩ: - “Em viết đầy đủ flow rồi mà, sao hệ thống vẫn lỗi?”</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 78 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 75</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 3 5 / 1 0 0 🎯 Rất nhiều bạn BA nghĩ: “Em viết đầy đủ flow rồi mà, sao hệ thống vẫn lỗi?” “Em confirm lại với user rồi, họ bảo đúng logic.” “Em đâu có sai, DEV làm chưa đúng thôi.” → Bạn không sai về flow. → Bạn không sai về quy trình. → Nhưng bạn sai vì không thấy được hệ thống toàn cảnh. 📌 Bạn làm đúng theo yêu cầu nhưng không nhận ra: Yêu cầu đó đẩy lỗi sang hệ thống khác mà bạn không kiểm...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 35: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 35 (🎯 Rất nhiều bạn BA nghĩ: - “Em viết đầy đủ flow rồi mà, sao hệ thống vẫn lỗi?”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-36",
+        "code": "DAY 36",
+        "title": "“Em gửi task rõ ràng mà DEV vẫn làm sai.” - “DEV làm ẩu, không đọc SRS, em mệt mỏi sửa ...",
+        "category": "Đặc tả & Quản lý yêu cầu",
+        "pdfPage": 80,
+        "printPage": 77,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 36: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 36 (“Em gửi task rõ ràng mà DEV vẫn làm sai.” - “DEV làm ẩu, không đọc SRS, em mệt mỏi sửa ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 36: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 36: “Em gửi task rõ ràng mà DEV vẫn làm sai.” - “DEV làm ẩu, không đọc SRS, em mệt mỏi sửa ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 80 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 77</span>\n        <span>🏷️ <b>Chủ đề:</b> Đặc tả & Quản lý yêu cầu</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 3 6 / 1 0 0 “Em gửi task rõ ràng mà DEV vẫn làm sai.” “DEV làm ẩu, không đọc SRS, em mệt mỏi sửa logic hoài.” “BA toàn vẽ hươu vẽ vượn, DEV tụi tôi code khổ vc.” 💥 Đây không chỉ là câu chuyện của bạn – mà là nỗi đau muôn thuở giữa BA và DEV. 🎯 Sự thật phũ: Cả hai không sai… nhưng đang không cùng chiến tuyến. BA nghĩ: “Tôi phân tích nghiệp vụ, tôi đúng.” DEV nghĩ: “Tôi code đúng mô tả, tôi cũ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 36: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 36 (“Em gửi task rõ ràng mà DEV vẫn làm sai.” - “DEV làm ẩu, không đọc SRS, em mệt mỏi sửa ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-37",
+        "code": "DAY 37",
+        "title": "🎯 Bối cảnh: - Kỳ review 6 tháng và một hệ thống được build đúng tới từng field. Công ty...",
+        "category": "Agile & Scrum",
+        "pdfPage": 83,
+        "printPage": 80,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 37: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 37 (🎯 Bối cảnh: - Kỳ review 6 tháng và một hệ thống được build đúng tới từng field. Công ty...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 37: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 37: 🎯 Bối cảnh: - Kỳ review 6 tháng và một hệ thống được build đúng tới từng field. Công ty...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 83 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 80</span>\n        <span>🏷️ <b>Chủ đề:</b> Agile & Scrum</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 3 7 / 1 0 0 🎯 Bối cảnh:  Kỳ review 6 tháng và một hệ thống được build đúng tới từng field. Công ty triển khai kỳ đánh giá hiệu suất 6 tháng đầu năm, gắn với: KPI / OKR Xếp loại A-B-C theo kết quả đánh giá Xét tăng lương HR yêu cầu hệ thống: Cho phép nhân viên tự đánh giá theo OKR Line Manager đánh giá lại Hệ thống tính điểm trung bình theo trọng số Export kết quả → làm căn cứ tăng lương, xét...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 37: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 37 (🎯 Bối cảnh: - Kỳ review 6 tháng và một hệ thống được build đúng tới từng field. Công ty...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-38",
+        "code": "DAY 38",
+        "title": "“Làm lại cái này cho anh nhé.” - “Đưa tính năng kia lên gấp, mấy cái khác tính sau.”",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 86,
+        "printPage": 83,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 38: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 38 (“Làm lại cái này cho anh nhé.” - “Đưa tính năng kia lên gấp, mấy cái khác tính sau.”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 38: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 38: “Làm lại cái này cho anh nhé.” - “Đưa tính năng kia lên gấp, mấy cái khác tính sau.”</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 86 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 83</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 3 8 / 1 0 0 “Làm lại cái này cho anh nhé.” “Đưa tính năng kia lên gấp, mấy cái khác tính sau.” “Sao còn chưa xong? Anh nói từ hôm trước rồi mà?” Nếu bạn từng khựng lại vì một câu nói từ sếp – không phải vì sợ, mà vì biết: 👉 Chỉ một dòng chỉ đạo, có thể kéo theo cả hệ thống chệch hướng. 🎯 Bối cảnh có thật: BA vừa sign-off bản SRS với khách hàng. Chiều hôm đó, sếp nhắn riêng: “Mai anh đi họp, ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 38: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 38 (“Làm lại cái này cho anh nhé.” - “Đưa tính năng kia lên gấp, mấy cái khác tính sau.”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-39",
+        "code": "DAY 39",
+        "title": "📍 Câu chuyện thật – Khởi đầu của sự mất niềm tin - Ở công ty cũ, tôi từng lead một team...",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 88,
+        "printPage": 85,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 39: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 39 (📍 Câu chuyện thật – Khởi đầu của sự mất niềm tin - Ở công ty cũ, tôi từng lead một team...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 39: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 39: 📍 Câu chuyện thật – Khởi đầu của sự mất niềm tin - Ở công ty cũ, tôi từng lead một team...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 88 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 85</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 3 9 / 1 0 0 📍 Câu chuyện thật – Khởi đầu của sự mất niềm tin Ở công ty cũ, tôi từng lead một team dev nhỏ. Làm cùng với một anh BA. Giai đoạn đầu? Ổn. Tài liệu ok. Họp khách bài bản. Flow vẽ đủ bước. Tôi còn nghĩ: “Cho ảnh handle luôn mấy feature chính cũng được.” Cho đến khi… ❌ Một flow tưởng đã confirm với khách.  Dev code xong, khách phản hồi: “Ai bảo xử lý kiểu này?”  Cả team nhìn nhau. ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 39: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 39 (📍 Câu chuyện thật – Khởi đầu của sự mất niềm tin - Ở công ty cũ, tôi từng lead một team...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-40",
+        "code": "DAY 40",
+        "title": "“Em làm nhanh cái hệ thống ABC nhé.” - Và thế là BA bắt đầu đi phân tích hệ thống – như...",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 91,
+        "printPage": 88,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 40: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 40 (“Em làm nhanh cái hệ thống ABC nhé.” - Và thế là BA bắt đầu đi phân tích hệ thống – như...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 40: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 40: “Em làm nhanh cái hệ thống ABC nhé.” - Và thế là BA bắt đầu đi phân tích hệ thống – như...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 91 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 88</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 4 0 / 1 0 0 “Em làm nhanh cái hệ thống ABC nhé.” Và thế là BA bắt đầu đi phân tích hệ thống – nhưng thật ra không hiểu: Hệ thống này để làm gì?  Giải quyết nỗi đau nào? Ảnh hưởng tới ai? Chạm tới tầng nào trong quy trình vận hành? ⛔ Đó là cách hàng loạt dự án \"làm đúng nhưng vẫn toang\". Một BA cứng không lao vào viết tài liệu, vẽ diagram, mà lùi lại một bước để nhìn tổng thể cuộc chơi. 🧠 Họ ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 40: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 40 (“Em làm nhanh cái hệ thống ABC nhé.” - Và thế là BA bắt đầu đi phân tích hệ thống – như...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-41",
+        "code": "DAY 41",
+        "title": "🎯 Bối cảnh: - Mỗi khi khách mua hàng tại cửa hàng → điểm sẽ được cộng vào tài khoản loy...",
+        "category": "Dữ liệu & SQL",
+        "pdfPage": 95,
+        "printPage": 92,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 41: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 41 (🎯 Bối cảnh: - Mỗi khi khách mua hàng tại cửa hàng → điểm sẽ được cộng vào tài khoản loy...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 41: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 41: 🎯 Bối cảnh: - Mỗi khi khách mua hàng tại cửa hàng → điểm sẽ được cộng vào tài khoản loy...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 95 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 92</span>\n        <span>🏷️ <b>Chủ đề:</b> Dữ liệu & SQL</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 4 1 / 1 0 0 🎯 Bối cảnh:  Mỗi khi khách mua hàng tại cửa hàng → điểm sẽ được cộng vào tài khoản loyalty trên app khách hàng. Luồng tưởng như đơn giản: POS bắn data sang loyalty Loyalty cập nhật điểm CRM ghi nhận hành vi mua hàng Nhưng khi chạy thật: Nhiều cửa hàng mạng yếu → POS bắn chậm hoặc bắn lỗi Loyalty không nhận được → khách không thấy điểm CRM vẫn ghi nhận là đã mua → tạo dữ liệu bất ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 41: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 41 (🎯 Bối cảnh: - Mỗi khi khách mua hàng tại cửa hàng → điểm sẽ được cộng vào tài khoản loy...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-42",
+        "code": "DAY 42",
+        "title": "🎯 Bối cảnh: Module xin nghỉ – chấm công trong hệ thống nội bộ - Junior BA đề xuất một l...",
+        "category": "Kỹ năng & Phỏng vấn BA",
+        "pdfPage": 97,
+        "printPage": 94,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 42: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 42 (🎯 Bối cảnh: Module xin nghỉ – chấm công trong hệ thống nội bộ - Junior BA đề xuất một l...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 42: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 42: 🎯 Bối cảnh: Module xin nghỉ – chấm công trong hệ thống nội bộ - Junior BA đề xuất một l...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 97 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 94</span>\n        <span>🏷️ <b>Chủ đề:</b> Kỹ năng & Phỏng vấn BA</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 4 2 / 1 0 0 🎯 Bối cảnh: Module xin nghỉ – chấm công trong hệ thống nội bộ  Junior BA đề xuất một logic đơn giản: Nếu user xin nghỉ nửa ngày Nhưng chưa có chấm công buổi sáng  → Hiển thị cảnh báo nhẹ để kiểm tra lại (không chặn, không huỷ) DEV phản hồi: Tốn effort Không cần thiết Trường hợp này người dùng cần tự kiểm soát Cả phòng im. Junior BA nhìn xuống tài liệu. PM nhìn sang tôi. 🧠 Tôi khô...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 42: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 42 (🎯 Bối cảnh: Module xin nghỉ – chấm công trong hệ thống nội bộ - Junior BA đề xuất một l...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-43",
+        "code": "DAY 43",
+        "title": "Nếu bạn vẫn nghĩ BA đi phân tích yêu cầu là để làm tính năng, thì bạn đang hiểu - sai b...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 99,
+        "printPage": 96,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 43: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 43 (Nếu bạn vẫn nghĩ BA đi phân tích yêu cầu là để làm tính năng, thì bạn đang hiểu - sai b...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 43: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 43: Nếu bạn vẫn nghĩ BA đi phân tích yêu cầu là để làm tính năng, thì bạn đang hiểu - sai b...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 99 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 96</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 4 3 / 1 0 0 Nếu bạn vẫn nghĩ BA đi phân tích yêu cầu là để làm tính năng, thì bạn đang hiểu sai bản chất nghề này ngay từ bước đầu. 🎯 Không ai thật sự “cần” tính năng Người dùng không thật sự cần một tính năng. Họ cần kết quả mà tính năng đó mang lại. Khi họ nói “cần lọc danh sách” → họ đang cố gắng tìm ra nhóm khách để hành động. Khi họ nói “cần dashboard” → họ muốn quản lý được tình hình đ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 43: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 43 (Nếu bạn vẫn nghĩ BA đi phân tích yêu cầu là để làm tính năng, thì bạn đang hiểu - sai b...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-44",
+        "code": "DAY 44",
+        "title": "Ở một công ty nọ, có những dự án bắt đầu bằng cụm từ “rất gấp”, nhưng rồi trôi vào im -...",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 101,
+        "printPage": 98,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 44: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 44 (Ở một công ty nọ, có những dự án bắt đầu bằng cụm từ “rất gấp”, nhưng rồi trôi vào im -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 44: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 44: Ở một công ty nọ, có những dự án bắt đầu bằng cụm từ “rất gấp”, nhưng rồi trôi vào im -...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 101 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 98</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 4 4 / 1 0 0 Ở một công ty nọ, có những dự án bắt đầu bằng cụm từ “rất gấp”, nhưng rồi trôi vào im lặng cũng bằng chính cụm từ ấy: “Giờ ưu tiên cái khác trước nhé.” Người BA bước vào dự án với niềm tin: Chỉ cần mình làm đủ tốt, đủ kỹ, đủ trách nhiệm thì hệ thống sẽ đi tới đích. Nhưng rồi: Họ viết ra một tài liệu dày 600 trang, không ai mở Họ vẽ flow rõ như lòng bàn tay, nhưng DEV bảo cái này ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 44: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 44 (Ở một công ty nọ, có những dự án bắt đầu bằng cụm từ “rất gấp”, nhưng rồi trôi vào im -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-45",
+        "code": "DAY 45",
+        "title": "Bạn vừa được “đẩy” vào một dự án đang chạy. Không onboarding, không hệ thống tài - liệu...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 103,
+        "printPage": 100,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 45: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 45 (Bạn vừa được “đẩy” vào một dự án đang chạy. Không onboarding, không hệ thống tài - liệu...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 45: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 45: Bạn vừa được “đẩy” vào một dự án đang chạy. Không onboarding, không hệ thống tài - liệu...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 103 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 100</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 4 5 / 1 0 0 Bạn vừa được “đẩy” vào một dự án đang chạy. Không onboarding, không hệ thống tài liệu, không ai nói cho bạn biết chuyện gì đang xảy ra.  Dev thì bận build tính năng.  QC thì nhìn bạn đầy ái ngại.  Còn PM thì chỉ nói một câu quen thuộc: “Em cứ làm theo tài liệu cũ nhé, có gì anh confirm sau.” Và rồi bạn… ngồi đó. Mở Figma. Mở Jira. Lướt. Không biết nên hỏi gì trước, nên bắt đầu từ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 45: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 45 (Bạn vừa được “đẩy” vào một dự án đang chạy. Không onboarding, không hệ thống tài - liệu...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-46",
+        "code": "DAY 46",
+        "title": "Có những dự án không thiếu người, không thiếu tiền. Sếp cũng rất tâm huyết, luôn theo -...",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 105,
+        "printPage": 102,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 46: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 46 (Có những dự án không thiếu người, không thiếu tiền. Sếp cũng rất tâm huyết, luôn theo -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 46: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 46: Có những dự án không thiếu người, không thiếu tiền. Sếp cũng rất tâm huyết, luôn theo -...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 105 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 102</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 4 6 / 1 0 0 Có những dự án không thiếu người, không thiếu tiền. Sếp cũng rất tâm huyết, luôn theo sát từng bước. Chỉ là… quá kỹ tính.  Không kỹ về nghiệp vụ – mà kỹ về… từng dấu chấm, từng dòng text, từng icon. “Chỗ này sao em dùng từ ‘xuất hiện’? Nghe hơi cứng.”  “Dòng này nên tách ra, anh đọc thấy hơi nặng mắt.”  “Cái flow em vẽ… nhìn chưa mượt.” Bạn là BA, bạn vào dự án với tâm thế: mình ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 46: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 46 (Có những dự án không thiếu người, không thiếu tiền. Sếp cũng rất tâm huyết, luôn theo -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-47",
+        "code": "DAY 47",
+        "title": "👂 Một ngày bình thường và một loạt từ ngữ kỳ lạ ập đến - DEV bảo: “Tôi đang checkout nh...",
+        "category": "Testing & UAT",
+        "pdfPage": 107,
+        "printPage": 104,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 47: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 47 (👂 Một ngày bình thường và một loạt từ ngữ kỳ lạ ập đến - DEV bảo: “Tôi đang checkout nh...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 47: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 47: 👂 Một ngày bình thường và một loạt từ ngữ kỳ lạ ập đến - DEV bảo: “Tôi đang checkout nh...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 107 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 104</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 4 7 / 1 0 0 👂 Một ngày bình thường và một loạt từ ngữ kỳ lạ ập đến  DEV bảo: “Tôi đang checkout nhánh hotfix.”  Tester nói: “Commit này có được cherry-pick lên PROD không chị?”  PM hỏi: “Tính năng A đã merge chưa, có nằm trong bản tag v2.3.0 không?” Bạn không cần vào Git để kiểm tra, nhưng bạn phải hiểu họ đang nói gì để trả lời đúng, không ngơ ngác, và không đổ lỗi sai người. 🧠 Vậy Git là g...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 47: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 47 (👂 Một ngày bình thường và một loạt từ ngữ kỳ lạ ập đến - DEV bảo: “Tôi đang checkout nh...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-48",
+        "code": "DAY 48",
+        "title": "Một trong những thời điểm thể hiện rõ đẳng cấp của BA – không nằm ở lúc viết - requirem...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 110,
+        "printPage": 107,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 48: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 48 (Một trong những thời điểm thể hiện rõ đẳng cấp của BA – không nằm ở lúc viết - requirem...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 48: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 48: Một trong những thời điểm thể hiện rõ đẳng cấp của BA – không nằm ở lúc viết - requirem...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 110 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 107</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 4 8 / 1 0 0 Một trong những thời điểm thể hiện rõ đẳng cấp của BA – không nằm ở lúc viết requirement, mà là khi bị hỏi lại… yêu cầu tưởng như đã “chắc cú”. 📌 Bối cảnh thật:  BA vừa viết xong đặc tả. Duyệt nội bộ xong, DEV đang code. Tester bắt đầu test, rồi một câu hỏi nhẹ nhàng bay tới: “Phần này chưa rõ lắm – người dùng nhập thế nào thì được tính hợp lệ?” Bạn giật mình. Ủa rõ ràng ghi rồi ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 48: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 48 (Một trong những thời điểm thể hiện rõ đẳng cấp của BA – không nằm ở lúc viết - requirem...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-49",
+        "code": "DAY 49",
+        "title": "“Em đang làm dự án có tích hợp kế toán anh ạ, mà đọc tới chỗ kế toán em muốn nghỉ - việc.",
+        "category": "Phân tích & thiết kế giải pháp",
+        "pdfPage": 113,
+        "printPage": 110,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 49: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 49 (“Em đang làm dự án có tích hợp kế toán anh ạ, mà đọc tới chỗ kế toán em muốn nghỉ - việc.) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 49: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 49: “Em đang làm dự án có tích hợp kế toán anh ạ, mà đọc tới chỗ kế toán em muốn nghỉ - việc.</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 113 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 110</span>\n        <span>🏷️ <b>Chủ đề:</b> Phân tích & thiết kế giải pháp</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 4 9 / 1 0 0 “Em đang làm dự án có tích hợp kế toán anh ạ, mà đọc tới chỗ kế toán em muốn nghỉ việc.  Một rừng thuật ngữ: Công nợ – Bút toán – Tài khoản cấp 1/2/3 – Hạch toán – Định khoản – đối ứng…” 😵 Em bắt đầu thấy mình kém cỏi, lú luôn với loạt thuật ngữ, muốn đi học khóa kế toán cho rồi 🧠 Nhưng với kinh nghiệm của một BA lâu năm, anh không chọn cách đi học kế toán như một kế toán. Anh ch...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 49: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 49 (“Em đang làm dự án có tích hợp kế toán anh ạ, mà đọc tới chỗ kế toán em muốn nghỉ - việc.) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-50",
+        "code": "DAY 50",
+        "title": "“UX là việc của designer chứ liên quan gì đến BA?” - Câu hỏi mà mình từng nghĩ trong nă...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 116,
+        "printPage": 113,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 50: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 50 (“UX là việc của designer chứ liên quan gì đến BA?” - Câu hỏi mà mình từng nghĩ trong nă...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 50: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 50: “UX là việc của designer chứ liên quan gì đến BA?” - Câu hỏi mà mình từng nghĩ trong nă...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 116 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 113</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 5 0 / 1 0 0 “UX là việc của designer chứ liên quan gì đến BA?” Câu hỏi mà mình từng nghĩ trong năm đầu làm BA. Cho đến khi:  Flow mình phân tích khiến người dùng... không muốn dùng,  UI team phải quay lại hỏi: “Ủa Phú muốn trải nghiệm gì ở bước này?”  Và mình nhận ra: Lỗi nằm ở mình – người viết requirement thiếu tư duy trải nghiệm. 🎯 Cuốn “UX for Beginners” có gì đáng đọc với BA? Tác giả Jo...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 50: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 50 (“UX là việc của designer chứ liên quan gì đến BA?” - Câu hỏi mà mình từng nghĩ trong nă...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-51",
+        "code": "DAY 51",
+        "title": "Nhiều tính năng bắt đầu bằng một câu rất quen: - “Làm nhanh để kịp demo chiều nay nhé.”",
+        "category": "Testing & UAT",
+        "pdfPage": 119,
+        "printPage": 116,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 51: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 51 (Nhiều tính năng bắt đầu bằng một câu rất quen: - “Làm nhanh để kịp demo chiều nay nhé.”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 51: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 51: Nhiều tính năng bắt đầu bằng một câu rất quen: - “Làm nhanh để kịp demo chiều nay nhé.”</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 119 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 116</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 5 1 / 1 0 0 Nhiều tính năng bắt đầu bằng một câu rất quen: “Làm nhanh để kịp demo chiều nay nhé.” “Tạm thời thêm tính năng gửi mail, mai chạy campaign.” Không họp phân tích. Không đặc tả. Không gì cả – ngoài một task gắn tên bạn với deadline: ngay hôm nay!!! Có những lúc team buộc phải đi “đường tắt” – để test insight, để show investor, để MKT kịp chiến dịch. Tính năng chưa được họp phân tíc...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 51: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 51 (Nhiều tính năng bắt đầu bằng một câu rất quen: - “Làm nhanh để kịp demo chiều nay nhé.”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-52",
+        "code": "DAY 52",
+        "title": "🍻 Mở đầu từ quán bia hơi Hà Nội: - Bạn làm phần mềm SaaS cho chuỗi quán bia.",
+        "category": "Phân tích & thiết kế giải pháp",
+        "pdfPage": 121,
+        "printPage": 118,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 52: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 52 (🍻 Mở đầu từ quán bia hơi Hà Nội: - Bạn làm phần mềm SaaS cho chuỗi quán bia.) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 52: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 52: 🍻 Mở đầu từ quán bia hơi Hà Nội: - Bạn làm phần mềm SaaS cho chuỗi quán bia.</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 121 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 118</span>\n        <span>🏷️ <b>Chủ đề:</b> Phân tích & thiết kế giải pháp</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 5 2 / 1 0 0 🍻 Mở đầu từ quán bia hơi Hà Nội:  Bạn làm phần mềm SaaS cho chuỗi quán bia.  Hệ thống core đã có: Gọi món – quản lý bàn – in bếp – tính tiền – báo cáo doanh thu. Rồi một quán yêu cầu: “Bên chị bán cả bia lon, bia chai, tháp bia – muốn tính điểm thưởng riêng cho từng loại, tặng thẻ tích điểm theo từng bàn.” Quán khác yêu cầu: “Bên chị cần gợi ý món theo lịch sử từng khách quen.” M...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 52: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 52 (🍻 Mở đầu từ quán bia hơi Hà Nội: - Bạn làm phần mềm SaaS cho chuỗi quán bia.) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-53",
+        "code": "DAY 53",
+        "title": "Bạn vừa họp xong với khách hàng. Hỏi nhanh: “Nếu có bộ lọc thời gian thì tiện hơn - khô...",
+        "category": "Testing & UAT",
+        "pdfPage": 124,
+        "printPage": 121,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 53: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 53 (Bạn vừa họp xong với khách hàng. Hỏi nhanh: “Nếu có bộ lọc thời gian thì tiện hơn - khô...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 53: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 53: Bạn vừa họp xong với khách hàng. Hỏi nhanh: “Nếu có bộ lọc thời gian thì tiện hơn - khô...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 124 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 121</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 5 3 / 1 0 0 Bạn vừa họp xong với khách hàng. Hỏi nhanh: “Nếu có bộ lọc thời gian thì tiện hơn không anh?” Khách gật đầu: “Tiện quá em. Làm luôn đi.” Bạn note lại, đưa vào backlog. DEV build, QC test, PM báo done. Sản phẩm ra mắt không ai dùng. Tính năng gần như mất tích. Không lỗi. Không bug. Nhưng không có nhu cầu. 🎯 Lý do?  Bạn hỏi sai. Nhưng tưởng mình hỏi đúng.  Bạn hỏi xem họ “muốn gì” ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 53: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 53 (Bạn vừa họp xong với khách hàng. Hỏi nhanh: “Nếu có bộ lọc thời gian thì tiện hơn - khô...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-54",
+        "code": "DAY 54",
+        "title": "Sau 1 năm ở vai trò quản lý, tôi hiểu: - Làm sếp là một danh xưng",
+        "category": "Nền tảng BA",
+        "pdfPage": 127,
+        "printPage": 124,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 54: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 54 (Sau 1 năm ở vai trò quản lý, tôi hiểu: - Làm sếp là một danh xưng) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 54: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 54: Sau 1 năm ở vai trò quản lý, tôi hiểu: - Làm sếp là một danh xưng</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 127 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 124</span>\n        <span>🏷️ <b>Chủ đề:</b> Nền tảng BA</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 5 4 / 1 0 0 Sau 1 năm ở vai trò quản lý, tôi hiểu:  Làm sếp là một danh xưng Làm quản lý là một hành trình đổi cách nhìn người, nhìn việc và nhìn chính mình. Ngày trước, tôi nghĩ: “LÀM SẾP lúc ra quyết định và dẫn dắt team” Họp hành, phân công, duyệt task, đưa ra chỉ đạo… Tôi nghĩ vậy là đúng vai. Nhưng dần dần tôi nhận ra: Team không cần một người chỉ tay. Team cần một người hiểu và hỗ trợ....</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 54: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 54 (Sau 1 năm ở vai trò quản lý, tôi hiểu: - Làm sếp là một danh xưng) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-55",
+        "code": "DAY 55",
+        "title": "Nghe chữ “gấp”, BA non tay sẽ lao vào làm ngay. BA cứng thì tỉnh lại, nhìn bản đồ dự - ...",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 129,
+        "printPage": 126,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 55: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 55 (Nghe chữ “gấp”, BA non tay sẽ lao vào làm ngay. BA cứng thì tỉnh lại, nhìn bản đồ dự - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 55: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 55: Nghe chữ “gấp”, BA non tay sẽ lao vào làm ngay. BA cứng thì tỉnh lại, nhìn bản đồ dự - ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 129 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 126</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 5 5 / 1 0 0 Nghe chữ “gấp”, BA non tay sẽ lao vào làm ngay. BA cứng thì tỉnh lại, nhìn bản đồ dự án, rồi mới ra tay. Sếp nhắn: “Em ơi gấp lắm. Làm tài liệu giúp anh ngay nhé.” BA mở máy, viết. Gõ xong spec, dựng flow, gửi bản vẽ wireframe. Rồi... 1 tuần sau, DEV chưa làm. 2 tuần sau, đổi logic. 3 tuần sau, spec bạn viết bị bỏ. Bạn thấy mình có tâm, còn hệ thống thì đổ sông đổ biển. Vấn đề kh...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 55: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 55 (Nghe chữ “gấp”, BA non tay sẽ lao vào làm ngay. BA cứng thì tỉnh lại, nhìn bản đồ dự - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-56",
+        "code": "DAY 56",
+        "title": "h50 chiều, thứ Sáu. Tin nhắn hiện lên trên màn hình: “Sếp ơi, em mệt rồi. Em thấy - mìn...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 131,
+        "printPage": 128,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 56: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 56 (h50 chiều, thứ Sáu. Tin nhắn hiện lên trên màn hình: “Sếp ơi, em mệt rồi. Em thấy - mìn...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 56: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
+        "contentHtml": "\n      <h2>DAY 56: h50 chiều, thứ Sáu. Tin nhắn hiện lên trên màn hình: “Sếp ơi, em mệt rồi. Em thấy - mìn...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 131 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 128</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 5 6 / 1 0 0 4h50 chiều, thứ Sáu. Tin nhắn hiện lên trên màn hình: “Sếp ơi, em mệt rồi. Em thấy mình không còn vui khi làm việc nữa.” Tôi ngồi nhìn dòng đó. Không gõ trả lời. Không phản xạ gì. Chỉ thấy một cảm giác hơi trống, như vừa để rơi mất một thứ gì đó mà chính mình làm vỡ. Người gửi tin nhắn đó là 1 BA cứng team tôi. Bạn ấy không bao giờ than. Lúc người khác trễ deadline, bạn ấy làm th...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 56: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 56 (h50 chiều, thứ Sáu. Tin nhắn hiện lên trên màn hình: “Sếp ơi, em mệt rồi. Em thấy - mìn...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-57",
+        "code": "DAY 57",
+        "title": "“Cùng 4-5 năm kinh nghiệm, có người là senior, có người mãi là mid. Khác biệt không - n...",
+        "category": "Kỹ năng & Phỏng vấn BA",
+        "pdfPage": 133,
+        "printPage": 130,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 57: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 57 (“Cùng 4-5 năm kinh nghiệm, có người là senior, có người mãi là mid. Khác biệt không - n...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 57: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 57: “Cùng 4-5 năm kinh nghiệm, có người là senior, có người mãi là mid. Khác biệt không - n...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 133 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 130</span>\n        <span>🏷️ <b>Chủ đề:</b> Kỹ năng & Phỏng vấn BA</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 5 7 / 1 0 0 “Cùng 4-5 năm kinh nghiệm, có người là senior, có người mãi là mid. Khác biệt không nằm ở độ dài CV. Mà nằm ở chiều sâu phản xạ trong từng câu trả lời.” 💬 Lưu ý: Bài viết là quan điểm tổng hợp từ góc nhìn người tuyển dụng thực chiến trong ngành. Không đại diện cho tất cả nhà tuyển dụng – hãy tham khảo có chọn lọc, không áp đặt như khuôn mẫu cứng nhắc. 👀 Nhà tuyển dụng đánh giá BA...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 57: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 57 (“Cùng 4-5 năm kinh nghiệm, có người là senior, có người mãi là mid. Khác biệt không - n...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-58",
+        "code": "DAY 58",
+        "title": "Trước khi đăng bài này, tôi đã sửa – rồi xoá – rồi viết lại… không dưới 5 lần. - Vì đây...",
+        "category": "Nền tảng BA",
+        "pdfPage": 137,
+        "printPage": 134,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 58: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 58 (Trước khi đăng bài này, tôi đã sửa – rồi xoá – rồi viết lại… không dưới 5 lần. - Vì đây...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 58: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
+        "contentHtml": "\n      <h2>DAY 58: Trước khi đăng bài này, tôi đã sửa – rồi xoá – rồi viết lại… không dưới 5 lần. - Vì đây...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 137 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 134</span>\n        <span>🏷️ <b>Chủ đề:</b> Nền tảng BA</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 5 8 / 1 0 0 Trước khi đăng bài này, tôi đã sửa – rồi xoá – rồi viết lại… không dưới 5 lần. Vì đây là chủ đề dễ chạm tới nhiều bạn đang là BA, và cũng ảnh hưởng đến cách các BA Lead – Manager – HR đánh giá và phân cấp đội ngũ. Bài viết không nhằm dạy ai – mà chia sẻ một góc nhìn thực chiến, từng bước một – khi tiếp quản lại một team BA cũ, giữa nhiều mâu thuẫn ngầm, nhãn mác cũ – và kỳ vọng m...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 58: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 58 (Trước khi đăng bài này, tôi đã sửa – rồi xoá – rồi viết lại… không dưới 5 lần. - Vì đây...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-59",
+        "code": "DAY 59",
+        "title": "Một người lãnh đạo không chết chìm vì dự án khó, mà chết vì không còn nổi một tiếng - đ...",
+        "category": "Khai thác yêu cầu",
+        "pdfPage": 140,
+        "printPage": 137,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 59: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 59 (Một người lãnh đạo không chết chìm vì dự án khó, mà chết vì không còn nổi một tiếng - đ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 59: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 59: Một người lãnh đạo không chết chìm vì dự án khó, mà chết vì không còn nổi một tiếng - đ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 140 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 137</span>\n        <span>🏷️ <b>Chủ đề:</b> Khai thác yêu cầu</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 5 9 / 1 0 0 Một người lãnh đạo không chết chìm vì dự án khó, mà chết vì không còn nổi một tiếng để suy nghĩ cho ra trò.\" Có một kiểu mệt rất đặc biệt – chỉ những người đang làm BA Lead mới hiểu. Nó không phải kiểu “căng deadline”, không phải kiểu “bị khách hàng dí”…Mà là kiểu mệt lử vì ngày nào cũng đầy việc, nhưng tối về vẫn thấy bản thân… đang bị trôi. Không có một dòng nào để viết ra định...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 59: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 59 (Một người lãnh đạo không chết chìm vì dự án khó, mà chết vì không còn nổi một tiếng - đ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-60",
+        "code": "DAY 60",
+        "title": "⚠️ Lưu ý: Công thức trong bài không phải chuẩn tuyệt đối. Các hệ số như độ phức tạp, - ...",
+        "category": "Kỹ năng & Phỏng vấn BA",
+        "pdfPage": 142,
+        "printPage": 139,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 60: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 60 (⚠️ Lưu ý: Công thức trong bài không phải chuẩn tuyệt đối. Các hệ số như độ phức tạp, - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 60: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 60: ⚠️ Lưu ý: Công thức trong bài không phải chuẩn tuyệt đối. Các hệ số như độ phức tạp, - ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 142 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 139</span>\n        <span>🏷️ <b>Chủ đề:</b> Kỹ năng & Phỏng vấn BA</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 6 0 / 1 0 0 ⚠️ Lưu ý: Công thức trong bài không phải chuẩn tuyệt đối. Các hệ số như độ phức tạp, thời gian confirm, khả năng reuse…thay đổi tùy dự án, tổ chức, và năng lực BA. Hãy dùng như một khung tư duy để bóc effort – đừng áp dụng máy móc.  Nhiều bạn BA kể cả đã làm vài năm, vẫn thường estimate effort dựa theo số lượng màn hình hoặc độ dài tài liệu. Ví dụ như task “Đổi điểm lấy voucher” ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 60: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 60 (⚠️ Lưu ý: Công thức trong bài không phải chuẩn tuyệt đối. Các hệ số như độ phức tạp, - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-61",
+        "code": "DAY 61",
+        "title": "🪄 Một tối Chủ Nhật, Hà Nội mưa rào… - Trời mưa. Giá đặt xe tăng vọt. Tôi không đi đâu c...",
+        "category": "Phân tích & thiết kế giải pháp",
+        "pdfPage": 145,
+        "printPage": 142,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 61: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 61 (🪄 Một tối Chủ Nhật, Hà Nội mưa rào… - Trời mưa. Giá đặt xe tăng vọt. Tôi không đi đâu c...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 61: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 61: 🪄 Một tối Chủ Nhật, Hà Nội mưa rào… - Trời mưa. Giá đặt xe tăng vọt. Tôi không đi đâu c...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 145 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 142</span>\n        <span>🏷️ <b>Chủ đề:</b> Phân tích & thiết kế giải pháp</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 6 1 / 1 0 0 🪄 Một tối Chủ Nhật, Hà Nội mưa rào… Trời mưa. Giá đặt xe tăng vọt. Tôi không đi đâu cả. Nhưng lại nổi hứng… phân tích hệ thống dynamic pricing 🎯 Case study: Gọi xe Xanh SM  Bạn đặt xe đi 5km ở Ba Đình  Hôm qua: 50k  Hôm nay: trời mưa, giờ tan tầm → 90k  Vẫn cùng 1 tuyến đường, nhưng giá thay đổi. Không phải do hãng “chặt chém”.  Mà là vì hệ thống thấy: Nhu cầu tăng đột biến Ít xe...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 61: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 61 (🪄 Một tối Chủ Nhật, Hà Nội mưa rào… - Trời mưa. Giá đặt xe tăng vọt. Tôi không đi đâu c...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-62",
+        "code": "DAY 62",
+        "title": "“Làm cái hệ thống đặt bàn cho nhà hàng đi – cho chuyên nghiệp hơn, đỡ lộn xộn. Anh - cầ...",
+        "category": "Testing & UAT",
+        "pdfPage": 148,
+        "printPage": 145,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 62: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 62 (“Làm cái hệ thống đặt bàn cho nhà hàng đi – cho chuyên nghiệp hơn, đỡ lộn xộn. Anh - cầ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 62: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 62: “Làm cái hệ thống đặt bàn cho nhà hàng đi – cho chuyên nghiệp hơn, đỡ lộn xộn. Anh - cầ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 148 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 145</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 6 2 / 1 0 0 “Làm cái hệ thống đặt bàn cho nhà hàng đi – cho chuyên nghiệp hơn, đỡ lộn xộn. Anh cần chạy demo trong 2 tuần nữa nhé.” Đó là tất cả những gì tôi nhận được khi bắt đầu dự án này. Không tài liệu. Không flow. Không ai mô tả được “chuyên nghiệp” là như thế nào. Chỉ có deadline và một câu nói mơ hồ đầy quyết đoán. BA mà không tỉnh – là dính ngay combo chết người: Làm sai bài toán gốc...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 62: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 62 (“Làm cái hệ thống đặt bàn cho nhà hàng đi – cho chuyên nghiệp hơn, đỡ lộn xộn. Anh - cầ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-63",
+        "code": "DAY 63",
+        "title": "Một đội ngũ kỹ thuật – sản phẩm – thiết kế đã ngồi cùng nhau suốt nhiều tuần. - Họ đi n...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 153,
+        "printPage": 150,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 63: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 63 (Một đội ngũ kỹ thuật – sản phẩm – thiết kế đã ngồi cùng nhau suốt nhiều tuần. - Họ đi n...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 63: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 63: Một đội ngũ kỹ thuật – sản phẩm – thiết kế đã ngồi cùng nhau suốt nhiều tuần. - Họ đi n...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 153 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 150</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 6 3 / 1 0 0 Một đội ngũ kỹ thuật – sản phẩm – thiết kế đã ngồi cùng nhau suốt nhiều tuần. Họ đi nghiên cứu người dùng. Họ test từ bản wireframe đến prototype. Họ biết “nỗi đau” thật sự nằm ở đâu. Nhưng đến buổi duyệt thứ 4 – có một người không ở trong hành trình ấy bước vào và nói: “Tôi thấy nên bỏ đoạn này, thêm phần kia. Sao UI nhìn vẫn thiếu chuyên nghiệp? Sao chức năng này chưa đủ?” Lúc ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 63: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 63 (Một đội ngũ kỹ thuật – sản phẩm – thiết kế đã ngồi cùng nhau suốt nhiều tuần. - Họ đi n...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-64",
+        "code": "DAY 64",
+        "title": "“Mỗi sprint phải đẩy 20 UC, chốt 4 SRS, tạo 5 ‘idea cải tiến’, tham dự 4 cuộc họp, xử l...",
+        "category": "Agile & Scrum",
+        "pdfPage": 155,
+        "printPage": 152,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 64: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 64 (“Mỗi sprint phải đẩy 20 UC, chốt 4 SRS, tạo 5 ‘idea cải tiến’, tham dự 4 cuộc họp, xử l...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 64: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 64: “Mỗi sprint phải đẩy 20 UC, chốt 4 SRS, tạo 5 ‘idea cải tiến’, tham dự 4 cuộc họp, xử l...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 155 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 152</span>\n        <span>🏷️ <b>Chủ đề:</b> Agile & Scrum</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 6 4 / 1 0 0 “Mỗi sprint phải đẩy 20 UC, chốt 4 SRS, tạo 5 ‘idea cải tiến’, tham dự 4 cuộc họp, xử lý tối thiểu 30 comment trên Jira.” Nghe cứ như ép doanh số cho… tài liệu. Khi KPI biến BA thành “công nhân gõ chữ”, giá trị thật sự sẽ chết khô. 1️⃣⃣ Vì sao KPI “đếm file” giết chết tư duy BA? Khi chỉ tập trung vào output, người làm sẽ tối ưu số lượng chứ không còn đào sâu logic. Ví dụ: “Viết đ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 64: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 64 (“Mỗi sprint phải đẩy 20 UC, chốt 4 SRS, tạo 5 ‘idea cải tiến’, tham dự 4 cuộc họp, xử l...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-65",
+        "code": "DAY 65",
+        "title": "Hôm nay không viết chia sẻ kiến thức, mà chuyển sang chuyên mục “Anh ơi…” – nơi BA - gử...",
+        "category": "Agile & Scrum",
+        "pdfPage": 157,
+        "printPage": 154,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 65: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 65 (Hôm nay không viết chia sẻ kiến thức, mà chuyển sang chuyên mục “Anh ơi…” – nơi BA - gử...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 65: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 65: Hôm nay không viết chia sẻ kiến thức, mà chuyển sang chuyên mục “Anh ơi…” – nơi BA - gử...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 157 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 154</span>\n        <span>🏷️ <b>Chủ đề:</b> Agile & Scrum</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 6 5 / 1 0 0 Hôm nay không viết chia sẻ kiến thức, mà chuyển sang chuyên mục “Anh ơi…” – nơi BA gửi những ca khó xử nhất trong dự án, và mình sẽ cùng gỡ. Chuyên mục bắt đầu! Câu hỏi Em chào anh, em đang có issue trong công việc chưa biết nên xử lý thế nào nhờ anh hỗ trợ góp ý. Hiện em qua công ty mới, ở đây làm product. PO dự án là người có ý tưởng phát triển sản phẩm, là người trực tiếp em t...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 65: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 65 (Hôm nay không viết chia sẻ kiến thức, mà chuyển sang chuyên mục “Anh ơi…” – nơi BA - gử...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-66",
+        "code": "DAY 66",
+        "title": "Trong giai đoạn pre-seed đến series A, có rất nhiều startup gọi được vốn. Điều đó - thư...",
+        "category": "Phân tích & thiết kế giải pháp",
+        "pdfPage": 160,
+        "printPage": 157,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 66: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 66 (Trong giai đoạn pre-seed đến series A, có rất nhiều startup gọi được vốn. Điều đó - thư...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 66: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 66: Trong giai đoạn pre-seed đến series A, có rất nhiều startup gọi được vốn. Điều đó - thư...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 160 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 157</span>\n        <span>🏷️ <b>Chủ đề:</b> Phân tích & thiết kế giải pháp</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 6 6 / 1 0 0 Trong giai đoạn pre-seed đến series A, có rất nhiều startup gọi được vốn. Điều đó thường khiến người ta tin rằng: “Công ty này gọi được tiền → chắc là ổn → vào đó làm BA sẽ có đất dụng võ.” Sai. Rất sai. Là một BA, bạn cần nhìn vào startup không chỉ như một người đi làm. Bạn phải nhìn nó như một hệ thống sẽ phát triển – hoặc sẽ đổ sập. Và góc nhìn giúp bạn nhận ra điều đó chính l...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 66: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 66 (Trong giai đoạn pre-seed đến series A, có rất nhiều startup gọi được vốn. Điều đó - thư...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-67",
+        "code": "DAY 67",
+        "title": "🚀 CI/CD là gì? - CI (Continuous Integration – tích hợp liên tục): Mỗi lần Dev (develope...",
+        "category": "Testing & UAT",
+        "pdfPage": 162,
+        "printPage": 159,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 67: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 67 (🚀 CI/CD là gì? - CI (Continuous Integration – tích hợp liên tục): Mỗi lần Dev (develope...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 67: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 67: 🚀 CI/CD là gì? - CI (Continuous Integration – tích hợp liên tục): Mỗi lần Dev (develope...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 162 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 159</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 6 7 / 1 0 0 🚀 CI/CD là gì? CI (Continuous Integration – tích hợp liên tục): Mỗi lần Dev (developer – lập trình viên) đẩy code lên hệ thống, hệ thống sẽ tự động build (biên dịch) và chạy kiểm thử ngay lập tức. CD (Continuous Delivery/Deployment – phân phối/triển khai liên tục): Khi code đã qua kiểm thử, hệ thống sẽ tự động đưa code mới lên môi trường staging hoặc production – không còn bước k...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 67: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 67 (🚀 CI/CD là gì? - CI (Continuous Integration – tích hợp liên tục): Mỗi lần Dev (develope...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-68",
+        "code": "DAY 68",
+        "title": "Mấy hôm nay inbox đổ về nhiều, đủ thể loại tình huống dở khóc dở cười. Và câu hỏi - đượ...",
+        "category": "Testing & UAT",
+        "pdfPage": 165,
+        "printPage": 162,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 68: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 68 (Mấy hôm nay inbox đổ về nhiều, đủ thể loại tình huống dở khóc dở cười. Và câu hỏi - đượ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 68: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 68: Mấy hôm nay inbox đổ về nhiều, đủ thể loại tình huống dở khóc dở cười. Và câu hỏi - đượ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 165 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 162</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 6 8 / 1 0 0 Mấy hôm nay inbox đổ về nhiều, đủ thể loại tình huống dở khóc dở cười. Và câu hỏi được chọn hôm nay là một case rất kinh điển của anh em BA làm outsource, khi mà mình demo kỹ càng, báo cáo đầy đủ, nhưng khách… vẫn không công nhận là đã xong. ❓ Câu hỏi Anh ơi, em nhờ góp ý chút. Em là BA outsource, mỗi tuần em đều chuẩn bị slide tóm tắt update trước buổi demo, ghi rõ phần nào đã l...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 68: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 68 (Mấy hôm nay inbox đổ về nhiều, đủ thể loại tình huống dở khóc dở cười. Và câu hỏi - đượ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-69",
+        "code": "DAY 69",
+        "title": "Không phải lúc nào người dùng cũng rảnh rỗi, ngồi ngay ngắn, hai tay đặt đúng vị trí, -...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 167,
+        "printPage": 164,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 69: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 69 (Không phải lúc nào người dùng cũng rảnh rỗi, ngồi ngay ngắn, hai tay đặt đúng vị trí, -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 69: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
+        "contentHtml": "\n      <h2>DAY 69: Không phải lúc nào người dùng cũng rảnh rỗi, ngồi ngay ngắn, hai tay đặt đúng vị trí, -...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 167 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 164</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 6 9 / 1 0 0 Không phải lúc nào người dùng cũng rảnh rỗi, ngồi ngay ngắn, hai tay đặt đúng vị trí, tinh thần ổn định, và ánh sáng hoàn hảo. Có những lúc vì lý do nào đó họ chỉ có một tay để thao tác. Tay còn lại đang làm gì – ta không rõ. Và cũng không cần biết. Nhưng nếu bạn làm sản phẩm, nếu bạn là BA, bạn cần quan tâm. Và đó là lúc Design Thinking thật sự được kích hoạt. 💡 Design Thinking ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 69: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 69 (Không phải lúc nào người dùng cũng rảnh rỗi, ngồi ngay ngắn, hai tay đặt đúng vị trí, -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-70",
+        "code": "DAY 70",
+        "title": "❌ “Lỗi này hình như mình gặp hoài rồi mà?” - ❌ “Cái bug này từng fix mà?”",
+        "category": "Testing & UAT",
+        "pdfPage": 169,
+        "printPage": 166,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 70: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 70 (❌ “Lỗi này hình như mình gặp hoài rồi mà?” - ❌ “Cái bug này từng fix mà?”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 70: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 70: ❌ “Lỗi này hình như mình gặp hoài rồi mà?” - ❌ “Cái bug này từng fix mà?”</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 169 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 166</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 7 0 / 1 0 0 ❌ “Lỗi này hình như mình gặp hoài rồi mà?” ❌ “Cái bug này từng fix mà?” ❌ “Tại sao vẫn không ai rút ra được kinh nghiệm gì?” Một lần nọ, tôi hỏi cả team BA:  “Chúng ta từng vấp gì trong dự án cũ – và liệu có ai rút ra được quy chuẩn gì không?” Không ai trả lời. Không phải vì không nhớ, mà vì… chưa bao giờ ngồi lại để review nghiêm túc. ❌ Sai lầm phổ biến trong team BA Không ghi l...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 70: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 70 (❌ “Lỗi này hình như mình gặp hoài rồi mà?” - ❌ “Cái bug này từng fix mà?”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-71",
+        "code": "DAY 71",
+        "title": "“Em không nghỉ vì lương. Em nghỉ vì mỗi sáng mở Jira ra, em không biết mình đang - làm ...",
+        "category": "Agile & Scrum",
+        "pdfPage": 171,
+        "printPage": 168,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 71: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 71 (“Em không nghỉ vì lương. Em nghỉ vì mỗi sáng mở Jira ra, em không biết mình đang - làm ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 71: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 71: “Em không nghỉ vì lương. Em nghỉ vì mỗi sáng mở Jira ra, em không biết mình đang - làm ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 171 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 168</span>\n        <span>🏷️ <b>Chủ đề:</b> Agile & Scrum</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 7 1 / 1 0 0 “Em không nghỉ vì lương. Em nghỉ vì mỗi sáng mở Jira ra, em không biết mình đang làm điều này… cho ai nữa.” Có những sự rời đi không kèm theo giận dữ, không có va chạm. Chỉ là… họ không còn lý do để tiếp tục gắn bó. Không phải vì công ty tệ. Không phải vì sếp ép. Mà vì… họ không còn tin sản phẩm này có ý nghĩa. 🔋 Có những cái mệt không đến từ việc nhiều Mà đến từ việc… không còn ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 71: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 71 (“Em không nghỉ vì lương. Em nghỉ vì mỗi sáng mở Jira ra, em không biết mình đang - làm ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-72",
+        "code": "DAY 72",
+        "title": "Có những buổi họp mà bạn cảm nhận rõ ràng: - DEV thì lặng thinh.",
+        "category": "Testing & UAT",
+        "pdfPage": 173,
+        "printPage": 170,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 72: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 72 (Có những buổi họp mà bạn cảm nhận rõ ràng: - DEV thì lặng thinh.) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 72: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 72: Có những buổi họp mà bạn cảm nhận rõ ràng: - DEV thì lặng thinh.</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 173 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 170</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 7 2 / 1 0 0 Có những buổi họp mà bạn cảm nhận rõ ràng: DEV thì lặng thinh. QC thì nhìn trần nhà. PM hỏi: “Tại sao lại delay sprint này?” Không ai trả lời thẳng. Chỉ có tiếng thở dài. Và rồi cái vòng lặp “im lặng – đổ lỗi – cố gắng làm cho xong” lại tiếp tục. Lúc đó, nếu bạn là BA mà chỉ hỏi: “Vướng gì thế mọi người?” thì không ai trả lời đâu. Nhưng nếu bạn vẽ ra một chiếc tàu cao tốc, đặt câ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 72: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 72 (Có những buổi họp mà bạn cảm nhận rõ ràng: - DEV thì lặng thinh.) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-73",
+        "code": "DAY 73",
+        "title": "Ở giải marathon, người ta không chạy bằng máu lửa. Họ chạy bằng pace và bằng tim. - Có ...",
+        "category": "Testing & UAT",
+        "pdfPage": 175,
+        "printPage": 172,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 73: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 73 (Ở giải marathon, người ta không chạy bằng máu lửa. Họ chạy bằng pace và bằng tim. - Có ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 73: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 73: Ở giải marathon, người ta không chạy bằng máu lửa. Họ chạy bằng pace và bằng tim. - Có ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 175 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 172</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 7 3 / 1 0 0 Ở giải marathon, người ta không chạy bằng máu lửa. Họ chạy bằng pace và bằng tim. Có những runner pace 8, tim ổn, đều đặn dừng ở mọi trạm nước. Không cố bám nhóm sub 4, không gồng. Và tới km 38, họ vẫn còn chạy. Còn người mở đầu với pace 4, và rồi chườm đá ở trạm y tế. Chạy nhanh không khó. Chạy không gãy mới khó. Tôi đã thấy những team phần mềm giống y như vậy. Sprint đầu – chạy...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 73: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 73 (Ở giải marathon, người ta không chạy bằng máu lửa. Họ chạy bằng pace và bằng tim. - Có ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-74",
+        "code": "DAY 74",
+        "title": "Đã gần một tuần rồi tôi không viết. Không phải vì bí ý tưởng – mà vì viết rồi lại xoá. ...",
+        "category": "Phân tích & thiết kế giải pháp",
+        "pdfPage": 178,
+        "printPage": 175,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 74: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 74 (Đã gần một tuần rồi tôi không viết. Không phải vì bí ý tưởng – mà vì viết rồi lại xoá. ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 74: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 74: Đã gần một tuần rồi tôi không viết. Không phải vì bí ý tưởng – mà vì viết rồi lại xoá. ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 178 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 175</span>\n        <span>🏷️ <b>Chủ đề:</b> Phân tích & thiết kế giải pháp</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 7 4 / 1 0 0 Đã gần một tuần rồi tôi không viết. Không phải vì bí ý tưởng – mà vì viết rồi lại xoá. Gõ được nửa bài, lại thấy không đủ sâu, không đủ chất, không đủ “đáng để đọc” – thế là tôi bỏ. Off luôn. Để series tạm lặng vài hôm. Vài ngày trước, vào lúc 2h sáng, tôi nhận được tin nhắn: “Em chào anh, em theo dõi series 100 ngày của anh và mong được anh tư vấn ạ. Hiện em bị dev trong team ng...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 74: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 74 (Đã gần một tuần rồi tôi không viết. Không phải vì bí ý tưởng – mà vì viết rồi lại xoá. ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-75",
+        "code": "DAY 75",
+        "title": "“Anh tưởng tài liệu xong là dev hiểu được hết chứ?” - “Chị thấy tính năng đơn giản thôi...",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 181,
+        "printPage": 178,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 75: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 75 (“Anh tưởng tài liệu xong là dev hiểu được hết chứ?” - “Chị thấy tính năng đơn giản thôi...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 75: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 75: “Anh tưởng tài liệu xong là dev hiểu được hết chứ?” - “Chị thấy tính năng đơn giản thôi...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 181 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 178</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 7 5 / 1 0 0 “Anh tưởng tài liệu xong là dev hiểu được hết chứ?”  “Chị thấy tính năng đơn giản thôi, sao tài liệu tới 10 trang?” Team BA đó không phải lần đầu làm nghề. Họ có checklist, có mẫu chuẩn, có flow, có rule, có cả mapping API. Họ làm đủ. Nhưng vẫn… chưa đúng – theo định nghĩa của sếp. Mọi chuyện bắt đầu từ những cuộc họp lưng chừng. Sếp giao việc bằng miệng:  “Làm giống bên XYZ là đ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 75: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 75 (“Anh tưởng tài liệu xong là dev hiểu được hết chứ?” - “Chị thấy tính năng đơn giản thôi...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-76",
+        "code": "DAY 76",
+        "title": "Trong một hệ thống bất kỳ, dù nghiệp vụ có mượt đến đâu, chỉ cần một thông số kỹ - thuậ...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 184,
+        "printPage": 181,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 76: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 76 (Trong một hệ thống bất kỳ, dù nghiệp vụ có mượt đến đâu, chỉ cần một thông số kỹ - thuậ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 76: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 76: Trong một hệ thống bất kỳ, dù nghiệp vụ có mượt đến đâu, chỉ cần một thông số kỹ - thuậ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 184 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 181</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 7 6 / 1 0 0 Trong một hệ thống bất kỳ, dù nghiệp vụ có mượt đến đâu, chỉ cần một thông số kỹ thuật bị bỏ qua cũng đủ khiến trải nghiệm người dùng bị gãy. Non-Functional Requirements (NFR) không phải phần “dành cho dev lo sau”, mà là xương sống để hệ thống chịu được áp lực thật: khi người dùng đông, khi có lỗi mạng, khi xử lý chậm, hoặc khi cần bảo vệ dữ liệu. Dưới đây là 6 nhóm thông số mà B...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 76: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 76 (Trong một hệ thống bất kỳ, dù nghiệp vụ có mượt đến đâu, chỉ cần một thông số kỹ - thuậ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-77",
+        "code": "DAY 77",
+        "title": "App mobile thì cũng là hệ thống thôi mà – logic giống web, flow giống nhau, chỉ khác - ...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 187,
+        "printPage": 184,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 77: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 77 (App mobile thì cũng là hệ thống thôi mà – logic giống web, flow giống nhau, chỉ khác - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 77: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 77: App mobile thì cũng là hệ thống thôi mà – logic giống web, flow giống nhau, chỉ khác - ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 187 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 184</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 7 7 / 1 0 0 App mobile thì cũng là hệ thống thôi mà – logic giống web, flow giống nhau, chỉ khác giao diện chút xíu.” Một nhận định tưởng vô hại, nhưng đã khiến không ít dự án vỡ trận vì bug, bị từ chối duyệt app, và bị người dùng phản ánh liên tục ngay từ tuần đầu ra mắt. 🕯️ Câu chuyện thật: Bê tư duy web sang mobile – Và cái kết đắng Trong một dự án phát triển mobile app phục vụ việc đặt l...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 77: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 77 (App mobile thì cũng là hệ thống thôi mà – logic giống web, flow giống nhau, chỉ khác - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-78",
+        "code": "DAY 78",
+        "title": "Ở một công ty nọ, có một bạn nhân sự trẻ không giỏi xuất chúng, cũng chẳng phải key - m...",
+        "category": "Testing & UAT",
+        "pdfPage": 190,
+        "printPage": 187,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 78: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 78 (Ở một công ty nọ, có một bạn nhân sự trẻ không giỏi xuất chúng, cũng chẳng phải key - m...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 78: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
+        "contentHtml": "\n      <h2>DAY 78: Ở một công ty nọ, có một bạn nhân sự trẻ không giỏi xuất chúng, cũng chẳng phải key - m...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 190 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 187</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 7 8 / 1 0 0 Ở một công ty nọ, có một bạn nhân sự trẻ không giỏi xuất chúng, cũng chẳng phải key member nổi bật. Nhưng là người lặng lẽ support mọi người, biết nhận phần việc không ai muốn, luôn đúng hẹn, và chưa bao giờ nói câu “không phải việc của em”. Bạn ấy làm BA – vai trò mà nếu làm tốt thì chẳng ai để ý, còn làm sai thì cả team dính bug. Hợp đồng lao động của bạn kéo dài 1 năm. Đến cuố...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 78: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 78 (Ở một công ty nọ, có một bạn nhân sự trẻ không giỏi xuất chúng, cũng chẳng phải key - m...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-79",
+        "code": "DAY 79",
+        "title": "📌 Nhiều BA viết flow cực kỳ đẹp, rule đầy đủ, bước rõ ràng, UX hợp lý. Nhưng khi lên - ...",
+        "category": "Testing & UAT",
+        "pdfPage": 192,
+        "printPage": 189,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 79: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 79 (📌 Nhiều BA viết flow cực kỳ đẹp, rule đầy đủ, bước rõ ràng, UX hợp lý. Nhưng khi lên - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 79: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 79: 📌 Nhiều BA viết flow cực kỳ đẹp, rule đầy đủ, bước rõ ràng, UX hợp lý. Nhưng khi lên - ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 192 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 189</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 7 9 / 1 0 0 📌 Nhiều BA viết flow cực kỳ đẹp, rule đầy đủ, bước rõ ràng, UX hợp lý. Nhưng khi lên họp review, lại nhận về câu hỏi từ phía kinh doanh: 💬 “Flow thì ổn rồi. Nhưng không đúng hướng sản phẩm.” 💬 “Tính năng này viết kỹ đấy, nhưng không tạo ra giá trị thật.” 💬 “Cái này hợp lý về logic… nhưng không đúng với mô hình vận hành của bên anh.” Tại sao lại vậy? Vì bạn viết flow khi chưa nhìn...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 79: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 79 (📌 Nhiều BA viết flow cực kỳ đẹp, rule đầy đủ, bước rõ ràng, UX hợp lý. Nhưng khi lên - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-80",
+        "code": "DAY 80",
+        "title": "💥 “Sao lại báo lỗi? Em nhập đúng rồi mà!” - 💥 “Anh fix rồi mà vẫn lỗi. À, lần này lỗi k...",
+        "category": "Testing & UAT",
+        "pdfPage": 194,
+        "printPage": 191,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 80: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 80 (💥 “Sao lại báo lỗi? Em nhập đúng rồi mà!” - 💥 “Anh fix rồi mà vẫn lỗi. À, lần này lỗi k...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 80: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 80: 💥 “Sao lại báo lỗi? Em nhập đúng rồi mà!” - 💥 “Anh fix rồi mà vẫn lỗi. À, lần này lỗi k...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 194 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 191</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 8 0 / 1 0 0 💥 “Sao lại báo lỗi? Em nhập đúng rồi mà!”  💥 “Anh fix rồi mà vẫn lỗi. À, lần này lỗi khác!”  💥 “Ủa BA ghi lỗi kiểu này là lỗi system hay do user vậy ạ?” Nếu bạn từng nghe DEV hỏi những câu này, thì có thể bạn đang viết lỗi… lộn xộn. 🪦 Một dự án toang vì viết lỗi không rõ ràng Trong một hệ thống chấm công, khi người dùng nhập giờ ra sớm hơn giờ vào, hệ thống báo lỗi: ❌ “Không thể ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 80: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 80 (💥 “Sao lại báo lỗi? Em nhập đúng rồi mà!” - 💥 “Anh fix rồi mà vẫn lỗi. À, lần này lỗi k...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-81",
+        "code": "DAY 81",
+        "title": "👨‍💻 Một buổi tối, sau giờ làm, một bạn BA 3 năm kinh nghiệm nhắn tin cho tôi: - “Anh Ph...",
+        "category": "Agile & Scrum",
+        "pdfPage": 196,
+        "printPage": 193,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 81: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 81 (👨‍💻 Một buổi tối, sau giờ làm, một bạn BA 3 năm kinh nghiệm nhắn tin cho tôi: - “Anh Ph...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 81: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 81: 👨‍💻 Một buổi tối, sau giờ làm, một bạn BA 3 năm kinh nghiệm nhắn tin cho tôi: - “Anh Ph...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 196 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 193</span>\n        <span>🏷️ <b>Chủ đề:</b> Agile & Scrum</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 8 1 / 1 0 0 👨‍💻 Một buổi tối, sau giờ làm, một bạn BA 3 năm kinh nghiệm nhắn tin cho tôi: “Anh Phú ơi, công ty em chạy agile scrum cả năm nay rồi. Sprint nào cũng có planning, backlog groom đầy đủ. Mà sprint vẫn trễ. To-do thì nhiều mà done thì ít. Team thì bảo quá tải, quản lý thì bảo plan fail. Em không hiểu: tại sao vẫn trễ dù đã agile?” Tôi thở dài. Không phải lần đầu nghe chuyện này. Nh...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 81: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 81 (👨‍💻 Một buổi tối, sau giờ làm, một bạn BA 3 năm kinh nghiệm nhắn tin cho tôi: - “Anh Ph...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-82",
+        "code": "DAY 82",
+        "title": "Một buổi tối bình thường, tôi gọi một chuyến xe máy công nghệ. Khi vào app, tôi thấy - ...",
+        "category": "Phân tích & thiết kế giải pháp",
+        "pdfPage": 198,
+        "printPage": 195,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 82: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 82 (Một buổi tối bình thường, tôi gọi một chuyến xe máy công nghệ. Khi vào app, tôi thấy - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 82: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 82: Một buổi tối bình thường, tôi gọi một chuyến xe máy công nghệ. Khi vào app, tôi thấy - ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 198 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 195</span>\n        <span>🏷️ <b>Chủ đề:</b> Phân tích & thiết kế giải pháp</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 8 2 / 1 0 0 Một buổi tối bình thường, tôi gọi một chuyến xe máy công nghệ. Khi vào app, tôi thấy một dòng chữ: “Tài xế đang trả khách…”.Chỉ một dòng đơn giản nhưng đằng sau đó là cả một cơ chế nối cuốc cực kỳ thông minh. 1. Nối cuốc là gì? Trong các app gọi xe như XanhSM, Grab, Be…, nối cuốc là cơ chế cho phép hệ thống gán trước cuốc tiếp theo cho tài xế khi họ đang thực hiện cuốc hiện tại. ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 82: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 82 (Một buổi tối bình thường, tôi gọi một chuyến xe máy công nghệ. Khi vào app, tôi thấy - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-83",
+        "code": "DAY 83",
+        "title": "Tôi xem lại Tây Du Ký lần thứ n, và lần này, tôi không còn thấy yêu quái. Tôi thấy… một...",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 200,
+        "printPage": 197,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 83: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 83 (Tôi xem lại Tây Du Ký lần thứ n, và lần này, tôi không còn thấy yêu quái. Tôi thấy… một...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 83: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 83: Tôi xem lại Tây Du Ký lần thứ n, và lần này, tôi không còn thấy yêu quái. Tôi thấy… một...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 200 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 197</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 8 3 / 1 0 0 Tôi xem lại Tây Du Ký lần thứ n, và lần này, tôi không còn thấy yêu quái. Tôi thấy… một công ty, nơi có một sếp Đường Tăng, một dev tên Ngộ Không, một bạn nghiệp vụ kiểu Bát Giới, chị vận hành tên Sa Tăng, và một anh support lặng thầm như Bạch Long Mã. Và tôi thấy BA ở giữa phải hiểu tất cả họ, nếu không muốn flow mình viết ra bị nghiền nát trong họp review. 🧘 1. Sếp Đường Tăng –...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 83: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 83 (Tôi xem lại Tây Du Ký lần thứ n, và lần này, tôi không còn thấy yêu quái. Tôi thấy… một...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-84",
+        "code": "DAY 84",
+        "title": "🧨 “Em ơi, từ hôm nay anh Trung không phụ trách nữa nhé. Chị Hà sẽ làm việc với em. - Mì...",
+        "category": "Nền tảng BA",
+        "pdfPage": 204,
+        "printPage": 201,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 84: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 84 (🧨 “Em ơi, từ hôm nay anh Trung không phụ trách nữa nhé. Chị Hà sẽ làm việc với em. - Mì...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 84: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 84: 🧨 “Em ơi, từ hôm nay anh Trung không phụ trách nữa nhé. Chị Hà sẽ làm việc với em. - Mì...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 204 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 201</span>\n        <span>🏷️ <b>Chủ đề:</b> Nền tảng BA</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 8 4 / 1 0 0 🧨 “Em ơi, từ hôm nay anh Trung không phụ trách nữa nhé. Chị Hà sẽ làm việc với em. Mình mong dự án vẫn chạy đúng tiến độ nha!” Nghe xong câu này, tôi toát mồ hôi. Vì chị Hà người đại diện mới chưa từng dự họp dự án, chưa đọc tài liệu nào, và… có vẻ chưa ưng hướng đi hiện tại. 🫠 Nếu bạn từng gặp trường hợp client đổi người đại diện giữa dòng, bạn sẽ hiểu:  👉 Mọi giả định trước đó ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 84: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 84 (🧨 “Em ơi, từ hôm nay anh Trung không phụ trách nữa nhé. Chị Hà sẽ làm việc với em. - Mì...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-85",
+        "code": "DAY 85",
+        "title": "“Cái này BA lo luôn nhé, chứ giờ ai làm?” - “Ơ, em là BA mà? Em hiểu nhất còn gì?”",
+        "category": "Testing & UAT",
+        "pdfPage": 206,
+        "printPage": 203,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 85: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 85 (“Cái này BA lo luôn nhé, chứ giờ ai làm?” - “Ơ, em là BA mà? Em hiểu nhất còn gì?”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 85: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 85: “Cái này BA lo luôn nhé, chứ giờ ai làm?” - “Ơ, em là BA mà? Em hiểu nhất còn gì?”</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 206 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 203</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 8 5 / 1 0 0 “Cái này BA lo luôn nhé, chứ giờ ai làm?” “Ơ, em là BA mà? Em hiểu nhất còn gì?” “Chỗ này cũng liên quan logic – BA confirm giúp rồi viết test case hộ luôn nhé.” Mỗi lần nghe những câu này, BA sẽ làm gì?  👉 Cắn răng làm, rồi tối về stress?  👉 Từ chối, rồi bị đánh giá thiếu hỗ trợ teamwork? 🎬 Bối cảnh thật tại một công ty “vừa vừa” Không phải startup nhỏ, cũng chẳng phải tập đoàn....</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 85: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 85 (“Cái này BA lo luôn nhé, chứ giờ ai làm?” - “Ơ, em là BA mà? Em hiểu nhất còn gì?”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-86",
+        "code": "DAY 86",
+        "title": "Bạn được giao viết lại tài liệu cho một tính năng đã chạy 3 năm, không tài liệu gốc, de...",
+        "category": "Testing & UAT",
+        "pdfPage": 208,
+        "printPage": 205,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 86: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 86 (Bạn được giao viết lại tài liệu cho một tính năng đã chạy 3 năm, không tài liệu gốc, de...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 86: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 86: Bạn được giao viết lại tài liệu cho một tính năng đã chạy 3 năm, không tài liệu gốc, de...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 208 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 205</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 8 6 / 1 0 0 Bạn được giao viết lại tài liệu cho một tính năng đã chạy 3 năm, không tài liệu gốc, dev cũ đã nghỉ, test thì nhớ nhớ quên quên? → Chào mừng đến thử thách reverse- engineering, kỹ năng sinh tồn của BA. 🧩 Bối cảnh ban đầu Bạn được giao viết lại tài liệu cho một tính năng đã hoạt động hơn 3 năm: “Khi xác nhận đơn giao hàng thì hệ thống sẽ tự động tạo phiếu xuất kho.” Nhưng…  ❌ Khôn...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 86: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 86 (Bạn được giao viết lại tài liệu cho một tính năng đã chạy 3 năm, không tài liệu gốc, de...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-87",
+        "code": "DAY 87",
+        "title": "Một leader giỏi không phải là người góp ý đúng mà là người khiến người khác vẫn muốn - ...",
+        "category": "Khai thác yêu cầu",
+        "pdfPage": 212,
+        "printPage": 209,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 87: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 87 (Một leader giỏi không phải là người góp ý đúng mà là người khiến người khác vẫn muốn - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 87: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 87: Một leader giỏi không phải là người góp ý đúng mà là người khiến người khác vẫn muốn - ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 212 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 209</span>\n        <span>🏷️ <b>Chủ đề:</b> Khai thác yêu cầu</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 8 7 / 1 0 0 Một leader giỏi không phải là người góp ý đúng mà là người khiến người khác vẫn muốn làm việc cùng sau khi bị góp ý. 🧠 Phản hồi là con dao hai lưỡi – có thể giúp người ta tiến bộ, hoặc khiến họ gãy tinh thần. Dù bạn nói với thiện chí đến đâu, thì trong mắt người nhận, góp ý vẫn là một dạng từ chối, rằng thứ họ làm ra chưa đủ tốt, họ chưa đạt kỳ vọng. Và phản ứng phổ biến của họ k...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 87: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 87 (Một leader giỏi không phải là người góp ý đúng mà là người khiến người khác vẫn muốn - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-88",
+        "code": "DAY 88",
+        "title": "Một người “nói nhiều hơn làm” trong team không chỉ là chuyện cá nhân. - Nó là bài test ...",
+        "category": "Đặc tả & Quản lý yêu cầu",
+        "pdfPage": 214,
+        "printPage": 211,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 88: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 88 (Một người “nói nhiều hơn làm” trong team không chỉ là chuyện cá nhân. - Nó là bài test ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 88: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
+        "contentHtml": "\n      <h2>DAY 88: Một người “nói nhiều hơn làm” trong team không chỉ là chuyện cá nhân. - Nó là bài test ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 214 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 211</span>\n        <span>🏷️ <b>Chủ đề:</b> Đặc tả & Quản lý yêu cầu</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 8 8 / 1 0 0 Một người “nói nhiều hơn làm” trong team không chỉ là chuyện cá nhân. Nó là bài test dành cho người dẫn dắt: liệu bạn có dám bóc tách sự hào nhoáng để truy tới tận rễ hiệu suất thật? 👔 Câu chuyện thật Bạn B – profile đẹp, nói năng mạch lạc, phát biểu dõng dạc ở mọi buổi grooming. Câu nào cũng có thuật ngữ: “Em nghĩ nên trace requirement bằng traceability matrix”, “Em đề xuất dùng...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 88: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 88 (Một người “nói nhiều hơn làm” trong team không chỉ là chuyện cá nhân. - Nó là bài test ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-89",
+        "code": "DAY 89",
+        "title": "Xem xong Mad Unicorn, tôi không nghĩ về startup. Tôi nghĩ về nghề BA. Nghĩ về những - l...",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 216,
+        "printPage": 213,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 89: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 89 (Xem xong Mad Unicorn, tôi không nghĩ về startup. Tôi nghĩ về nghề BA. Nghĩ về những - l...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 89: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 89: Xem xong Mad Unicorn, tôi không nghĩ về startup. Tôi nghĩ về nghề BA. Nghĩ về những - l...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 216 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 213</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 8 9 / 1 0 0 Xem xong Mad Unicorn, tôi không nghĩ về startup. Tôi nghĩ về nghề BA. Nghĩ về những lúc mình hùng hổ vẽ flow, viết tài liệu chi chít use case… Nhưng lại chẳng biết người dùng thật sự bực mình ở đâu. 🎬 Một bộ phim startup nhưng không bắt đầu từ công nghệ Bối cảnh phim là hành trình khởi nghiệp trong ngành giao hàng. Không bắt đầu bằng gọi vốn. Không bắt đầu bằng viết app. Mà bắt đ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 89: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 89 (Xem xong Mad Unicorn, tôi không nghĩ về startup. Tôi nghĩ về nghề BA. Nghĩ về những - l...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-90",
+        "code": "DAY 90",
+        "title": "Bạn là BA Lead? Tức là bạn vừa làm nghề vừa phải giữ team, giữ chất lượng, giữ - deadli...",
+        "category": "Phân tích & thiết kế giải pháp",
+        "pdfPage": 218,
+        "printPage": 215,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 90: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 90 (Bạn là BA Lead? Tức là bạn vừa làm nghề vừa phải giữ team, giữ chất lượng, giữ - deadli...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 90: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 90: Bạn là BA Lead? Tức là bạn vừa làm nghề vừa phải giữ team, giữ chất lượng, giữ - deadli...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 218 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 215</span>\n        <span>🏷️ <b>Chủ đề:</b> Phân tích & thiết kế giải pháp</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 9 0 / 1 0 0 Bạn là BA Lead? Tức là bạn vừa làm nghề vừa phải giữ team, giữ chất lượng, giữ deadline. Không còn là người “chạy việc BA”, bạn cần quản trị cả hệ thống tư duy và vận hành của đội ngũ BA. Và P.O.L.C không phải lý thuyết quản trị suông mà là framework sống còn để bạn không bị cuốn vào mớ deadline, họp loạn xạ. 1. 🧠 Planning: lập kế hoạch để giữ team không bị dạt BA Lead không thể ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 90: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 90 (Bạn là BA Lead? Tức là bạn vừa làm nghề vừa phải giữ team, giữ chất lượng, giữ - deadli...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-91",
+        "code": "DAY 91",
+        "title": "Phiên dịch tập 1] - 🎧 Nghe: “Tuỳ em”",
+        "category": "Mô hình hóa quy trình",
+        "pdfPage": 220,
+        "printPage": 217,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 91: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 91 (Phiên dịch tập 1] - 🎧 Nghe: “Tuỳ em”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 91: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 91: Phiên dịch tập 1] - 🎧 Nghe: “Tuỳ em”</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 220 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 217</span>\n        <span>🏷️ <b>Chủ đề:</b> Mô hình hóa quy trình</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 9 1 / 1 0 0 Phiên dịch tập 1] 🎧 Nghe: “Tuỳ em” 🧠 Dịch chuẩn:  “Tôi chưa nghĩ ra. Em cứ làm đi, nếu không đúng tôi sẽ bảo là không đúng.” ☠️ Cạm bẫy:  Không hề là “em toàn quyền quyết định”.  Mà là “cứ làm đi để tôi còn có quyền chê”. 🛡️ Cách BA sinh tồn:  “Vậy anh/chị có thể giúp em chọn một trong hai hướng sau không ạ?” (kèm prototype, flow, impact analysis nhẹ nhàng) 🎧 Nghe: “Có mỗi chức n...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 91: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 91 (Phiên dịch tập 1] - 🎧 Nghe: “Tuỳ em”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-92",
+        "code": "DAY 92",
+        "title": "Ngày ngựa mất, cả làng đến chia buồn. Ông lão chỉ cười, không trách cũng không tiếc. - ...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 221,
+        "printPage": 218,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 92: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 92 (Ngày ngựa mất, cả làng đến chia buồn. Ông lão chỉ cười, không trách cũng không tiếc. - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 92: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 92: Ngày ngựa mất, cả làng đến chia buồn. Ông lão chỉ cười, không trách cũng không tiếc. - ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 221 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 218</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 9 2 / 1 0 0 Ngày ngựa mất, cả làng đến chia buồn. Ông lão chỉ cười, không trách cũng không tiếc. Ngày ngựa về, lại dắt thêm một con tốt hơn. Cả làng đến chúc mừng. Ông cũng cười. Nhưng vẫn không vui. Rồi con trai ông ngã gãy chân vì con ngựa mới. Người làng lại thương cảm. Cuối cùng, chiến tranh nổ ra, trai làng đều bị gọi đi lính, chỉ mình cậu con trai gãy chân được ở lại. Thoát chết. Nghe ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 92: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 92 (Ngày ngựa mất, cả làng đến chia buồn. Ông lão chỉ cười, không trách cũng không tiếc. - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-93",
+        "code": "DAY 93",
+        "title": "📌 Làm BA lâu năm, tưởng là sẽ vững hơn, nhiều kinh nghiệm hơn, nhưng thật ra lại dễ - c...",
+        "category": "Testing & UAT",
+        "pdfPage": 223,
+        "printPage": 220,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 93: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 93 (📌 Làm BA lâu năm, tưởng là sẽ vững hơn, nhiều kinh nghiệm hơn, nhưng thật ra lại dễ - c...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 93: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 93: 📌 Làm BA lâu năm, tưởng là sẽ vững hơn, nhiều kinh nghiệm hơn, nhưng thật ra lại dễ - c...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 223 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 220</span>\n        <span>🏷️ <b>Chủ đề:</b> Testing & UAT</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 9 3 / 1 0 0 📌 Làm BA lâu năm, tưởng là sẽ vững hơn, nhiều kinh nghiệm hơn, nhưng thật ra lại dễ chủ quan hơn. Tôi từng nghĩ: “Cái này mình làm nhiều rồi”, cho đến khi team rơi vào đống issue. Dưới đây là 5 lỗi phổ biến mà rất nhiều Senior BA, Lead BA gặp phải. 👉 Đây là tổng hợp dựa trên quan sát và kinh nghiệm cá nhân, không đại diện cho bài nghiên cứu, một report chính thống nào đâu nhé, th...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 93: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 93 (📌 Làm BA lâu năm, tưởng là sẽ vững hơn, nhiều kinh nghiệm hơn, nhưng thật ra lại dễ - c...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-94",
+        "code": "DAY 94",
+        "title": "Định ém mấy bài hay hay để viết vào ebook nhưng hôm nay nhá hàng tí vì thấy nhiều - cas...",
+        "category": "Đặc tả & Quản lý yêu cầu",
+        "pdfPage": 225,
+        "printPage": 222,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 94: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 94 (Định ém mấy bài hay hay để viết vào ebook nhưng hôm nay nhá hàng tí vì thấy nhiều - cas...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 94: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 94: Định ém mấy bài hay hay để viết vào ebook nhưng hôm nay nhá hàng tí vì thấy nhiều - cas...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 225 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 222</span>\n        <span>🏷️ <b>Chủ đề:</b> Đặc tả & Quản lý yêu cầu</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 9 4 / 1 0 0 Định ém mấy bài hay hay để viết vào ebook nhưng hôm nay nhá hàng tí vì thấy nhiều case gặp phải vấn đề này. Một trong những cái bẫy chết người của dự án là: hợp đồng ký thì tưởng đã chốt, nhưng khi BA phân tích chi tiết, scope cứ phình ra vô tận. Vậy đâu là cách để khóa scope ngay từ đầu đến cuối? Trước khi bắt đầu phân tích (ngay sau khi ký hợp đồng) ❌ Sai: Nghĩ rằng SOW chỉ là ...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 94: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 94 (Định ém mấy bài hay hay để viết vào ebook nhưng hôm nay nhá hàng tí vì thấy nhiều - cas...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-95",
+        "code": "DAY 95",
+        "title": "Trong một buổi khảo sát, khách nói: “Dữ liệu bao gồm nhưng không giới hạn ở…” - Hoặc: “...",
+        "category": "Dữ liệu & SQL",
+        "pdfPage": 227,
+        "printPage": 224,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 95: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 95 (Trong một buổi khảo sát, khách nói: “Dữ liệu bao gồm nhưng không giới hạn ở…” - Hoặc: “...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 95: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 95: Trong một buổi khảo sát, khách nói: “Dữ liệu bao gồm nhưng không giới hạn ở…” - Hoặc: “...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 227 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 224</span>\n        <span>🏷️ <b>Chủ đề:</b> Dữ liệu & SQL</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 9 5 / 1 0 0 Trong một buổi khảo sát, khách nói: “Dữ liệu bao gồm nhưng không giới hạn ở…”  Hoặc: “Hệ thống có khả năng mở rộng, sau này thêm gì cũng được.” Nếu bạn ghi nguyên văn vào SRS, xin chúc mừng, bạn vừa ký một cái hợp đồng trắng cho khách hàng. Đến lúc đi triển khai, đội DEV và BA sẽ bị “truy” vì cái gì cũng được hiểu là “đã bao gồm”. Sai lầm thường gặp Ghi mơ hồ vào tài liệu, copy y...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 95: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 95 (Trong một buổi khảo sát, khách nói: “Dữ liệu bao gồm nhưng không giới hạn ở…” - Hoặc: “...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-96",
+        "code": "DAY 96",
+        "title": "Làm BA mà ôm nỗi sợ sai thì thua ngay từ vạch xuất phát. Fail Fast không phải triết lý ...",
+        "category": "Khai thác yêu cầu",
+        "pdfPage": 229,
+        "printPage": 226,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 96: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 96 (Làm BA mà ôm nỗi sợ sai thì thua ngay từ vạch xuất phát. Fail Fast không phải triết lý ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 96: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 96: Làm BA mà ôm nỗi sợ sai thì thua ngay từ vạch xuất phát. Fail Fast không phải triết lý ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 229 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 226</span>\n        <span>🏷️ <b>Chủ đề:</b> Khai thác yêu cầu</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 9 6 / 1 0 0 Làm BA mà ôm nỗi sợ sai thì thua ngay từ vạch xuất phát. Fail Fast không phải triết lý màu mè, nó là cái phanh khẩn cấp cứu dự án khi còn nằm trên bàn phân tích. 1. Câu chuyện thực chiến Dự án triển khai hệ thống điểm danh cho chuỗi phòng gym. BA junior dành cả tháng để “thu thập đủ yêu cầu”, viết tài liệu 80 trang. Khi trình lên, khách hàng mới bảo:  “Anh ơi, bên em có phòng khô...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 96: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 96 (Làm BA mà ôm nỗi sợ sai thì thua ngay từ vạch xuất phát. Fail Fast không phải triết lý ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-97",
+        "code": "DAY 97",
+        "title": "Một BA Leader giỏi không chỉ viết requirement, mà còn biết giữ nhịp năng lượng cho cả -...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 231,
+        "printPage": 228,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 97: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 97 (Một BA Leader giỏi không chỉ viết requirement, mà còn biết giữ nhịp năng lượng cho cả -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 97: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 97: Một BA Leader giỏi không chỉ viết requirement, mà còn biết giữ nhịp năng lượng cho cả -...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 231 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 228</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 9 7 / 1 0 0 Một BA Leader giỏi không chỉ viết requirement, mà còn biết giữ nhịp năng lượng cho cả team. Nếu bạn chỉ tập trung vào tài liệu mà quên cách dẫn dắt, sớm muộn gì đội ngũ cũng kiệt sức. 1. Biến mọi việc thành “cháy nhà” Sai lầm: ngày nào cũng có việc “gấp”, task nào cũng “khẩn”. Hệ quả: team chai lì, mất phân biệt thật giả, không còn phản ứng nhanh với sự cố thật sự. Cách đúng: thi...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 97: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 97 (Một BA Leader giỏi không chỉ viết requirement, mà còn biết giữ nhịp năng lượng cho cả -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-98",
+        "code": "DAY 98",
+        "title": "“Em viết requirement: nhập chữ thì hệ thống gợi ý ra vài từ. Dev hỏi: gợi ý kiểu gì? - ...",
+        "category": "UX & Product Thinking",
+        "pdfPage": 233,
+        "printPage": 230,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 98: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 98 (“Em viết requirement: nhập chữ thì hệ thống gợi ý ra vài từ. Dev hỏi: gợi ý kiểu gì? - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 98: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
+        "contentHtml": "\n      <h2>DAY 98: “Em viết requirement: nhập chữ thì hệ thống gợi ý ra vài từ. Dev hỏi: gợi ý kiểu gì? - ...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 233 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 230</span>\n        <span>🏷️ <b>Chủ đề:</b> UX & Product Thinking</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 9 8 / 1 0 0 “Em viết requirement: nhập chữ thì hệ thống gợi ý ra vài từ. Dev hỏi: gợi ý kiểu gì?  Em bảo: thì giống Google thôi ạ!”  👉 Vậy là xong. Dự án… đi đâu không biết. ❌ Khi BA viết “gợi ý” nhưng không phân biệt bản chất Ví dụ: “Hệ thống gợi ý từ phù hợp khi người dùng nhập liệu.”  Nhưng không nói rõ: gợi ý dựa vào đâu. Cơ chế là rule hay machine learning. Kết quả có sắp xếp không. Bao...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 98: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 98 (“Em viết requirement: nhập chữ thì hệ thống gợi ý ra vài từ. Dev hỏi: gợi ý kiểu gì? - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-99",
+        "code": "DAY 99",
+        "title": "Có một kiểu “ngụy biện” rất phổ biến trong nghề BA: - “Em làm xong 10 use case rồi.”",
+        "category": "Agile & Scrum",
+        "pdfPage": 235,
+        "printPage": 232,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 99: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 99 (Có một kiểu “ngụy biện” rất phổ biến trong nghề BA: - “Em làm xong 10 use case rồi.”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 99: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 99: Có một kiểu “ngụy biện” rất phổ biến trong nghề BA: - “Em làm xong 10 use case rồi.”</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 235 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 232</span>\n        <span>🏷️ <b>Chủ đề:</b> Agile & Scrum</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 9 9 / 1 0 0 Có một kiểu “ngụy biện” rất phổ biến trong nghề BA: “Em làm xong 10 use case rồi.” “Em refine đủ backlog cho sprint này rồi.” “Tuần vừa rồi em họp với khách hàng 8 buổi.” Nghe thì căng như dây đàn. Nhưng business hỏi ngược lại: “Thế sau từng ấy việc, chúng ta đạt được điều gì?” Và lúc đó, nhiều bạn… cứng họng. ❌ Sai lầm chết người Bạn nhầm Output với Outcome. Output = Thứ bạn sản...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 99: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 99 (Có một kiểu “ngụy biện” rất phổ biến trong nghề BA: - “Em làm xong 10 use case rồi.”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      },
+      {
+        "id": "day-100",
+        "code": "DAY 100",
+        "title": "Sau 10 năm làm BA, tôi không giữ được nhiều… - Không giữ được hết những người từng đồng...",
+        "category": "Khai thác yêu cầu",
+        "pdfPage": 236,
+        "printPage": 233,
+        "available": true,
+        "takeaway": "Kinh nghiệm thực chiến DAY 100: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 100 (Sau 10 năm làm BA, tôi không giữ được nhiều… - Không giữ được hết những người từng đồng...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
+        "summary": "Kinh nghiệm thực chiến DAY 100: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
+        "contentHtml": "\n      <h2>DAY 100: Sau 10 năm làm BA, tôi không giữ được nhiều… - Không giữ được hết những người từng đồng...</h2>\n      <div class=\"reader-meta-box\">\n        <span>📗 <b>Tác phẩm:</b> 100 ngày viết về nghề BA (Nguyễn Bá Phú)</span>\n        <span>📄 <b>Trang PDF:</b> 236 &nbsp;|&nbsp; 📖 <b>Trang in:</b> 233</span>\n        <span>🏷️ <b>Chủ đề:</b> Khai thác yêu cầu</span>\n      </div>\n      <div class=\"callout\" style=\"background:var(--tint);border-left:4px solid var(--primary);margin:16px 0\">\n        <b>💡 Bối cảnh nghề nghiệp:</b>\n        <p style=\"margin:4px 0 0 0;font-size:13.5px\">Đúc kết từ hơn 10 năm kinh nghiệm làm việc thực tế tại các dự án công nghệ tại Việt Nam. Không nói lý thuyết sáo rỗng, tập trung vào cách ứng xử thực chiến và tư duy giải quyết vấn đề.</p>\n      </div>\n\n      <h3>1. Trích đoạn & Tình huống thực chiến</h3>\n      <div class=\"reader-story-quote\">\n        <p>D A Y 1 0 0 / 1 0 0 Sau 10 năm làm BA, tôi không giữ được nhiều…  Không giữ được hết những người từng đồng hành.  Không giữ được toàn bộ dự án từng làm.  Cũng không giữ được sức trẻ như ngày đầu bước vào nghề. Nhưng có 3 thứ tôi giữ rất chặt – vì nếu mất, tôi không thể đi tiếp với nghề này. Tôi từng nhận một dự án giữa chừng – BA trước nghỉ ngang, không tài liệu. Chỉ có một đống ticket dev đang là...</p>\n      </div>\n\n      <h3>2. Bài học rút ra (Key Takeaway)</h3>\n      <div class=\"callout tip\">\n        <p style=\"margin:0;font-weight:600\">Kinh nghiệm thực chiến DAY 100: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.</p>\n      </div>\n\n      <h3>3. Câu hỏi phản tư áp dụng vào dự án (Project Reflection)</h3>\n      <div class=\"callout\">\n        <p style=\"margin:0\"><b>❓ Tự vấn nghiệp vụ:</b> Trong dự án hiện tại của bạn, tình huống tương tự DAY 100 (Sau 10 năm làm BA, tôi không giữ được nhiều… - Không giữ được hết những người từng đồng...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?</p>\n      </div>\n    "
+      }
+    ]
   }
 ];
-const bookBabokTasks = [
-  {
-    "code": "3.1",
-    "name": "Plan Business Analysis Approach",
-    "chapter": "Chương 3 · BA Planning and Monitoring",
-    "page": 34,
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE",
-    "purpose": "Lựa chọn phương pháp tiếp cận BA tổng thể (Predictive hay Adaptive) phù hợp với quy mô dự án.",
-    "inputs": [
-      "Needs",
-      "Enterprise Environmental Factors"
-    ],
-    "outputs": [
-      "Business Analysis Approach"
-    ],
-    "whenToApply": "Áp dụng ngay giai đoạn khởi động dự án (Inception / Project Initiation)."
-  },
-  {
-    "code": "3.2",
-    "name": "Plan Stakeholder Engagement",
-    "chapter": "Chương 3 · BA Planning and Monitoring",
-    "page": 41,
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT",
-    "purpose": "Nhận diện toàn diện các bên liên quan và lập kế hoạch phối hợp, cộng tác hiệu quả.",
-    "inputs": [
-      "Business Analysis Approach",
-      "Needs"
-    ],
-    "outputs": [
-      "Stakeholder Engagement Approach"
-    ],
-    "whenToApply": "Thực hiện sớm trong dự án và liên tục cập nhật."
-  },
-  {
-    "code": "3.3",
-    "name": "Plan Business Analysis Governance",
-    "chapter": "Chương 3 · BA Planning and Monitoring",
-    "page": 47,
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE",
-    "purpose": "Xác định quy trình phê duyệt yêu cầu và quy trình xử lý yêu cầu thay đổi (Change Control).",
-    "inputs": [
-      "Business Analysis Approach",
-      "Stakeholder Engagement Approach"
-    ],
-    "outputs": [
-      "Governance Approach"
-    ],
-    "whenToApply": "Cần thiết lập trước khi ký chốt baseline yêu cầu."
-  },
-  {
-    "code": "3.4",
-    "name": "Plan Business Analysis Information Management",
-    "chapter": "Chương 3 · BA Planning and Monitoring",
-    "page": 52,
-    "topicLessonId": "TOPIC-TRACEABILITY",
-    "purpose": "Quy định cấu trúc lưu trữ tài liệu và chiến lược truy vết yêu cầu (Traceability).",
-    "inputs": [
-      "Business Analysis Approach",
-      "Governance Approach"
-    ],
-    "outputs": [
-      "Information Management Approach"
-    ],
-    "whenToApply": "Khi thiết lập công cụ quản lý dự án (Jira, Confluence)."
-  },
-  {
-    "code": "3.5",
-    "name": "Identify Business Analysis Performance Improvements",
-    "chapter": "Chương 3 · BA Planning and Monitoring",
-    "page": 57,
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE",
-    "purpose": "Đánh giá hiệu suất làm việc của BA và đưa ra các hành động cải tiến liên tục.",
-    "inputs": [
-      "Business Analysis Approach",
-      "Performance Objectives"
-    ],
-    "outputs": [
-      "Business Analysis Performance Assessment"
-    ],
-    "whenToApply": "Định kỳ sau các đợt phát hành hoặc Sprint Retrospective."
-  },
-  {
-    "code": "4.1",
-    "name": "Prepare for Elicitation",
-    "chapter": "Chương 4 · Elicitation and Collaboration",
-    "page": 66,
-    "topicLessonId": "TOPIC-ELICITATION-TECH",
-    "purpose": "Xác định phạm vi, chọn kỹ thuật khai thác và chuẩn bị tài liệu trước khi phỏng vấn/workshop.",
-    "inputs": [
-      "Needs",
-      "Stakeholder Engagement Approach"
-    ],
-    "outputs": [
-      "Elicitation Activity Plan"
-    ],
-    "whenToApply": "Trước mọi cuộc phỏng vấn, workshop, khảo sát."
-  },
-  {
-    "code": "4.2",
-    "name": "Conduct Elicitation",
-    "chapter": "Chương 4 · Elicitation and Collaboration",
-    "page": 71,
-    "topicLessonId": "TOPIC-ELICITATION-TECH",
-    "purpose": "Thực hiện tương tác trực tiếp để khám phá các nhu cầu tiềm ẩn và quy tắc kinh doanh.",
-    "inputs": [
-      "Elicitation Activity Plan"
-    ],
-    "outputs": [
-      "Elicitation Results (Unconfirmed)"
-    ],
-    "whenToApply": "Trong suốt các buổi phỏng vấn hoặc hội thảo yêu cầu."
-  },
-  {
-    "code": "4.3",
-    "name": "Confirm Elicitation Results",
-    "chapter": "Chương 4 · Elicitation and Collaboration",
-    "page": 75,
-    "topicLessonId": "TOPIC-ELICITATION-TECH",
-    "purpose": "Đối chiếu và xác minh kết quả thu thập được với các bên liên quan để xóa tan hiểu lầm.",
-    "inputs": [
-      "Elicitation Results (Unconfirmed)"
-    ],
-    "outputs": [
-      "Elicitation Results (Confirmed)"
-    ],
-    "whenToApply": "Ngay sau khi kết thúc buổi làm việc qua Meeting Minutes."
-  },
-  {
-    "code": "4.4",
-    "name": "Communicate Business Analysis Information",
-    "chapter": "Chương 4 · Elicitation and Collaboration",
-    "page": 77,
-    "topicLessonId": "TOPIC-ELICITATION-TECH",
-    "purpose": "Truyền đạt thông tin phân tích cho đúng người, đúng thời điểm bằng định dạng phù hợp.",
-    "inputs": [
-      "Business Analysis Information",
-      "Stakeholder Engagement Approach"
-    ],
-    "outputs": [
-      "Business Analysis Information (Communicated)"
-    ],
-    "whenToApply": "Xuyên suốt dự án để duy trì sự hiểu biết chung."
-  },
-  {
-    "code": "4.5",
-    "name": "Manage Stakeholder Collaboration",
-    "chapter": "Chương 4 · Elicitation and Collaboration",
-    "page": 81,
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT",
-    "purpose": "Khuyến khích sự tham gia tích cực của các bên và giải quyết xung đột lợi ích.",
-    "inputs": [
-      "Stakeholder Engagement Approach"
-    ],
-    "outputs": [
-      "Stakeholder Engagement"
-    ],
-    "whenToApply": "Liên tục trong suốt vòng đời dự án."
-  },
-  {
-    "code": "5.1",
-    "name": "Trace Requirements",
-    "chapter": "Chương 5 · Requirements Life Cycle Management",
-    "page": 89,
-    "topicLessonId": "TOPIC-TRACEABILITY",
-    "purpose": "Thiết lập và duy trì liên kết hai chiều giữa Mục tiêu ➔ Yêu cầu ➔ Thiết kế & Test cases.",
-    "inputs": [
-      "Requirements",
-      "Information Management Approach"
-    ],
-    "outputs": [
-      "Requirements (Traced)"
-    ],
-    "whenToApply": "Từ khi bắt đầu đặc tả đến hết bảo trì."
-  },
-  {
-    "code": "5.2",
-    "name": "Maintain Requirements",
-    "chapter": "Chương 5 · Requirements Life Cycle Management",
-    "page": 93,
-    "topicLessonId": "TOPIC-TRACEABILITY",
-    "purpose": "Duy trì tính chính xác, nhất quán và khả năng tái sử dụng của các yêu cầu và quy tắc nghiệp vụ.",
-    "inputs": [
-      "Requirements",
-      "Information Management Approach"
-    ],
-    "outputs": [
-      "Requirements (Maintained)"
-    ],
-    "whenToApply": "Khi tài liệu hóa các quy tắc nghiệp vụ dùng chung."
-  },
-  {
-    "code": "5.3",
-    "name": "Prioritize Requirements",
-    "chapter": "Chương 5 · Requirements Life Cycle Management",
-    "page": 96,
-    "topicLessonId": "TOPIC-AGILE-USER-STORY",
-    "purpose": "Xếp hạng độ ưu tiên của yêu cầu dựa trên giá trị kinh doanh, rủi ro và ràng buộc tài nguyên.",
-    "inputs": [
-      "Requirements",
-      "Solution Scope"
-    ],
-    "outputs": [
-      "Requirements (Prioritized)"
-    ],
-    "whenToApply": "Trước mỗi đợt lập kế hoạch Release hoặc Sprint Backlog."
-  },
-  {
-    "code": "5.4",
-    "name": "Assess Requirements Changes",
-    "chapter": "Chương 5 · Requirements Life Cycle Management",
-    "page": 101,
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS",
-    "purpose": "Đánh giá tác động toàn diện của đề xuất thay đổi lên phạm vi, tiến độ, chi phí và kiến trúc.",
-    "inputs": [
-      "Proposed Change",
-      "Requirements",
-      "Solution Scope"
-    ],
-    "outputs": [
-      "Requirements Change Assessment"
-    ],
-    "whenToApply": "Mỗi khi có Change Request (CR) từ khách hàng."
-  },
-  {
-    "code": "5.5",
-    "name": "Approve Requirements",
-    "chapter": "Chương 5 · Requirements Life Cycle Management",
-    "page": 105,
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE",
-    "purpose": "Lấy sự đồng thuận và phê duyệt chính thức từ những người có thẩm quyền.",
-    "inputs": [
-      "Requirements",
-      "Governance Approach"
-    ],
-    "outputs": [
-      "Requirements (Approved)"
-    ],
-    "whenToApply": "Tại các mốc chốt chặn (Milestone sign-off)."
-  },
-  {
-    "code": "6.1",
-    "name": "Analyze Current State",
-    "chapter": "Chương 6 · Strategy Analysis",
-    "page": 113,
-    "topicLessonId": "TOPIC-BACCM",
-    "purpose": "Hiểu rõ hiện trạng vận hành, năng lực doanh nghiệp và điểm nghẽn gốc rễ.",
-    "inputs": [
-      "Needs"
-    ],
-    "outputs": [
-      "Current State Description",
-      "Business Requirements"
-    ],
-    "whenToApply": "Giai đoạn nghiên cứu tiền khả thi."
-  },
-  {
-    "code": "6.2",
-    "name": "Define Future State",
-    "chapter": "Chương 6 · Strategy Analysis",
-    "page": 120,
-    "topicLessonId": "TOPIC-BACCM",
-    "purpose": "Xác định các mục tiêu kinh doanh tương lai và các năng lực mới cần có.",
-    "inputs": [
-      "Business Requirements"
-    ],
-    "outputs": [
-      "Future State Description",
-      "Business Objectives"
-    ],
-    "whenToApply": "Định hình tầm nhìn sản phẩm (Product Vision)."
-  },
-  {
-    "code": "6.3",
-    "name": "Assess Risks",
-    "chapter": "Chương 6 · Strategy Analysis",
-    "page": 130,
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS",
-    "purpose": "Nhận diện, phân tích khả năng xảy ra và mức độ ảnh hưởng của các rủi ro.",
-    "inputs": [
-      "Business Objectives",
-      "Current State Description"
-    ],
-    "outputs": [
-      "Risk Assessment"
-    ],
-    "whenToApply": "Khi lập kế hoạch chiến lược và rà soát định kỳ."
-  },
-  {
-    "code": "6.4",
-    "name": "Define Change Strategy",
-    "chapter": "Chương 6 · Strategy Analysis",
-    "page": 134,
-    "topicLessonId": "TOPIC-BACCM",
-    "purpose": "Lập kế hoạch chuyển dịch từ hiện trạng sang trạng thái tương lai (Gap Analysis).",
-    "inputs": [
-      "Current State Description",
-      "Future State Description"
-    ],
-    "outputs": [
-      "Change Strategy",
-      "Solution Scope"
-    ],
-    "whenToApply": "Khi xây dựng Business Case và kế hoạch chuyển giao."
-  },
-  {
-    "code": "7.1",
-    "name": "Specify and Model Requirements",
-    "chapter": "Chương 7 · Requirements Analysis and Design Definition",
-    "page": 146,
-    "topicLessonId": "TOPIC-BPMN-PROCESS",
-    "purpose": "Sử dụng các ma trận, sơ đồ (BPMN, Use Case, ERD) để đặc tả chi tiết logic yêu cầu.",
-    "inputs": [
-      "Elicitation Results (Confirmed)"
-    ],
-    "outputs": [
-      "Requirements (Specified and Modelled)"
-    ],
-    "whenToApply": "Khi chuyển hóa ghi chú thành tài liệu đặc tả có cấu trúc."
-  },
-  {
-    "code": "7.2",
-    "name": "Verify Requirements",
-    "chapter": "Chương 7 · Requirements Analysis and Design Definition",
-    "page": 151,
-    "topicLessonId": "TOPIC-UAT-VERIFICATION",
-    "purpose": "Đảm bảo tập yêu cầu rõ ràng, không mơ hồ, nhất quán và kiểm thử được.",
-    "inputs": [
-      "Requirements (Specified and Modelled)"
-    ],
-    "outputs": [
-      "Requirements (Verified)"
-    ],
-    "whenToApply": "Kiểm tra nội bộ (Peer Review) trước khi bàn giao Dev/QA."
-  },
-  {
-    "code": "7.3",
-    "name": "Validate Requirements",
-    "chapter": "Chương 7 · Requirements Analysis and Design Definition",
-    "page": 154,
-    "topicLessonId": "TOPIC-UAT-VERIFICATION",
-    "purpose": "Xác nhận yêu cầu có giải quyết đúng mục tiêu kinh doanh và mang lại giá trị hay không.",
-    "inputs": [
-      "Requirements (Specified or Modelled)"
-    ],
-    "outputs": [
-      "Requirements (Validated)"
-    ],
-    "whenToApply": "Thực hiện cùng với người dùng cuối và nhà tài trợ."
-  },
-  {
-    "code": "7.4",
-    "name": "Define Requirements Architecture",
-    "chapter": "Chương 7 · Requirements Analysis and Design Definition",
-    "page": 158,
-    "topicLessonId": "TOPIC-TRACEABILITY",
-    "purpose": "Sắp xếp, liên kết các yêu cầu thành một cấu trúc logic tổng thể hài hòa.",
-    "inputs": [
-      "Information Management Approach",
-      "Requirements"
-    ],
-    "outputs": [
-      "Requirements Architecture"
-    ],
-    "whenToApply": "Khi thiết kế sản phẩm lớn hoặc chuyển sang Microservices."
-  },
-  {
-    "code": "7.5",
-    "name": "Define Design Options",
-    "chapter": "Chương 7 · Requirements Analysis and Design Definition",
-    "page": 162,
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE",
-    "purpose": "Nghiên cứu các phương án khả thi (Build vs Buy, Cloud vs On-Premise).",
-    "inputs": [
-      "Requirements Architecture",
-      "Solution Scope"
-    ],
-    "outputs": [
-      "Design Options"
-    ],
-    "whenToApply": "Khi đứng trước các ngã rẽ lựa chọn công nghệ."
-  },
-  {
-    "code": "7.6",
-    "name": "Analyze Potential Value and Recommend Solution",
-    "chapter": "Chương 7 · Requirements Analysis and Design Definition",
-    "page": 167,
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE",
-    "purpose": "Ước tính giá trị kinh tế tiềm năng và khuyến nghị phương án tối ưu có ROI cao nhất.",
-    "inputs": [
-      "Design Options",
-      "Potential Value"
-    ],
-    "outputs": [
-      "Solution Recommendation"
-    ],
-    "whenToApply": "Khi trình bày báo cáo thẩm định trước Hội đồng đầu tư."
-  },
-  {
-    "code": "8.1",
-    "name": "Measure Solution Performance",
-    "chapter": "Chương 8 · Solution Evaluation",
-    "page": 176,
-    "topicLessonId": "TOPIC-UAT-VERIFICATION",
-    "purpose": "Thu thập số liệu đo lường thực tế về hiệu quả hoạt động sau Go-Live.",
-    "inputs": [
-      "Implemented Solution (External)"
-    ],
-    "outputs": [
-      "Solution Performance Measures"
-    ],
-    "whenToApply": "Sau khi Go-Live từ 1 đến 6 tháng để theo dõi KPI."
-  },
-  {
-    "code": "8.2",
-    "name": "Analyze Performance Measures",
-    "chapter": "Chương 8 · Solution Evaluation",
-    "page": 180,
-    "topicLessonId": "TOPIC-UAT-VERIFICATION",
-    "purpose": "So sánh số liệu thực tế với kỳ vọng ban đầu để phát hiện khoảng cách giá trị.",
-    "inputs": [
-      "Business Objectives",
-      "Solution Performance Measures"
-    ],
-    "outputs": [
-      "Solution Performance Analysis"
-    ],
-    "whenToApply": "Định kỳ sau khi giải pháp đi vào vận hành ổn định."
-  },
-  {
-    "code": "8.3",
-    "name": "Assess Solution Limitations",
-    "chapter": "Chương 8 · Solution Evaluation",
-    "page": 183,
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS",
-    "purpose": "Xác định các nguyên nhân kỹ thuật hoặc lỗi nội tại đang cản trở việc đạt giá trị.",
-    "inputs": [
-      "Implemented Solution (External)"
-    ],
-    "outputs": [
-      "Solution Limitation"
-    ],
-    "whenToApply": "Khi hệ thống nghẽn tải hoặc tỷ lệ drop-off cao."
-  },
-  {
-    "code": "8.4",
-    "name": "Assess Enterprise Limitations",
-    "chapter": "Chương 8 · Solution Evaluation",
-    "page": 187,
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT",
-    "purpose": "Nhận diện rào cản bên ngoài hệ thống (văn hóa, quy trình thủ công) làm giảm hiệu quả phần mềm.",
-    "inputs": [
-      "Current State Description"
-    ],
-    "outputs": [
-      "Enterprise Limitation"
-    ],
-    "whenToApply": "Khi phần mềm tốt nhưng người dùng vẫn lén ghi sổ tay."
-  },
-  {
-    "code": "8.5",
-    "name": "Recommend Actions to Increase Solution Value",
-    "chapter": "Chương 8 · Solution Evaluation",
-    "page": 192,
-    "topicLessonId": "TOPIC-BACCM",
-    "purpose": "Đề xuất các biện pháp cụ thể (tinh giản quy trình, cải tiến phần mềm) để tối đa hóa giá trị.",
-    "inputs": [
-      "Enterprise Limitation",
-      "Solution Limitation"
-    ],
-    "outputs": [
-      "Recommended Action"
-    ],
-    "whenToApply": "Khi lập kế hoạch tối ưu hóa liên tục sản phẩm."
-  }
-];
-const bookBcsChapters = [
-  {
-    "chapter": 1,
-    "title": "What is Business Analysis?",
-    "pages": "35 - 55",
-    "topicLessonId": "TOPIC-BACCM",
-    "sections": [
-      "The origins of business analysis",
-      "The scope of business analysis work",
-      "The role and responsibilities of a business analyst",
-      "The business analysis maturity model"
-    ],
-    "summary": "Định hình ranh giới nghề BA, phân biệt tư vấn chiến lược và phát triển phần mềm, giới thiệu mô hình trưởng thành BA."
-  },
-  {
-    "chapter": 2,
-    "title": "The Competencies of a Business Analyst",
-    "pages": "56 - 78",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW",
-    "sections": [
-      "Personal qualities",
-      "Business knowledge",
-      "Professional techniques",
-      "The right skills for the right situation",
-      "Industry skills frameworks"
-    ],
-    "summary": "Mô hình năng lực tam giác: Phẩm chất cá nhân, Kiến thức kinh doanh và Kỹ thuật phân tích chuyên nghiệp (SFIA framework)."
-  },
-  {
-    "chapter": 3,
-    "title": "Strategy Analysis",
-    "pages": "79 - 101",
-    "topicLessonId": "TOPIC-BACCM",
-    "sections": [
-      "External environment analysis (PESTLE, Porter 5 Forces)",
-      "Internal environment analysis (VMOST, Resource Audit)",
-      "SWOT analysis",
-      "Executing strategy"
-    ],
-    "summary": "Phân tích chiến lược môi trường vĩ mô và vi mô: PESTLE, 5 lực lượng cạnh tranh Porter, mô hình VMOST và ma trận SWOT."
-  },
-  {
-    "chapter": 4,
-    "title": "The Business Analysis Process Model",
-    "pages": "102 - 120",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE",
-    "sections": [
-      "An approach to problem solving",
-      "The business analysis process model",
-      "Investigate situation",
-      "Consider perspectives",
-      "Analyse needs",
-      "Evaluate options",
-      "Define requirements",
-      "Deliver changes"
-    ],
-    "summary": "Mô hình quy trình phân tích cốt lõi của BCS gồm 6 giai đoạn logic: Khảo sát ➔ Xem xét góc nhìn ➔ Phân tích nhu cầu ➔ Đánh giá phương án ➔ Đặc tả yêu cầu ➔ Chuyển giao."
-  },
-  {
-    "chapter": 5,
-    "title": "Investigation Techniques",
-    "pages": "121 - 158",
-    "topicLessonId": "TOPIC-ELICITATION-TECH",
-    "sections": [
-      "Prior research",
-      "Interviews",
-      "Observation (Shadowing)",
-      "Workshops",
-      "Scenarios",
-      "Prototyping",
-      "Quantitative approaches"
-    ],
-    "summary": "Bộ kỹ thuật điều tra và thu thập thông tin toàn diện: Phỏng vấn sâu, Quan sát hiện trường, Hội thảo điều phối, Kịch bản mẫu."
-  },
-  {
-    "chapter": 6,
-    "title": "Stakeholder Analysis and Management",
-    "pages": "159 - 185",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT",
-    "sections": [
-      "Stakeholder categories and identification",
-      "Analysing stakeholders (Power/Interest grid)",
-      "Stakeholder management strategies",
-      "Defining stakeholder involvement – RACI and RASCI charts",
-      "Understanding stakeholder perspectives (CATWOE)"
-    ],
-    "summary": "Phân loại Stakeholder, Ma trận Mendelow, Ma trận trách nhiệm RACI/RASCI và kỹ thuật phân tích góc nhìn văn hóa CATWOE."
-  },
-  {
-    "chapter": 7,
-    "title": "Modelling Business Processes",
-    "pages": "186 - 220",
-    "topicLessonId": "TOPIC-BPMN-PROCESS",
-    "sections": [
-      "Organisational context and value propositions",
-      "Business process models (Swimlane diagrams)",
-      "Analysing the as-is process",
-      "Improving business processes",
-      "Business Process Model and Notation (BPMN)"
-    ],
-    "summary": "Trực quan hóa quy trình tổ chức: Sơ đồ phân làn Swimlane, phân tích quy trình As-Is, thiết kế To-Be và tối ưu hóa loại bỏ lãng phí."
-  },
-  {
-    "chapter": 8,
-    "title": "Defining the Solution",
-    "pages": "221 - 235",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE",
-    "sections": [
-      "Gap analysis",
-      "Formulating options",
-      "Defining business requirements",
-      "Introduction to business architecture",
-      "Structure of a business architecture"
-    ],
-    "summary": "Phân tích khoảng cách (Gap Analysis), định hình các phương án giải pháp khả thi và đặt nền tảng kiến trúc doanh nghiệp."
-  }
-];
-const bookDays100 = [
-  {
-    "day": 1,
-    "page": 4,
-    "endPage": 4,
-    "title": "BA NÊN LÀM GÌ - SAU KHI TÍNH NĂNG ĐƯỢC RELEASE?",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 1: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 1 (BA NÊN LÀM GÌ - SAU KHI TÍNH NĂNG ĐƯỢC RELEASE?) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 1 / 1 0 0 BA NÊN LÀM GÌ  SAU KHI TÍNH NĂNG ĐƯỢC RELEASE? Nhiều bạn BA nghĩ:  Xong tài liệu ➝ DEV code xong ➝ TEST pass ➝ Release, là hết việc. Sai nha! Release không phải là điểm kết thúc, mà là lúc BA chứng minh giá trị của mình.  Dưới đây là 5 việc bạn nên làm ngay sau khi sản phẩm được release: 1. Kiểm tra thực tế trên Production Đăng nhập như người dùng thật, thao tác từng bước. Check kỹ",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 2,
-    "page": 5,
-    "endPage": 7,
-    "title": "BA KHÔNG TƯ DUY HỆ THỐNG = NGƯỜI XÂY - NHÀ KHÔNG CÓ BẢN VẼ",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 2: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 2 (BA KHÔNG TƯ DUY HỆ THỐNG = NGƯỜI XÂY - NHÀ KHÔNG CÓ BẢN VẼ) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 2 / 1 0 0 BA KHÔNG TƯ DUY HỆ THỐNG = NGƯỜI XÂY NHÀ KHÔNG CÓ BẢN VẼ Bạn có thể hoàn thành task. Bạn có thể “hoàn thành SRS đúng deadline”. Nhưng nếu bạn chỉ làm theo từng yêu cầu mà không hình dung toàn cảnh, thì hệ thống bạn xây sẽ rối như tơ vò sau vài tháng. 💥 Một ví dụ có thật 100%: Giai đoạn 1: Làm tính năng tạo đơn hàng → theo luồng của bộ phận Sales. Giai đoạn 2: Gắn với hệ thống kế to",
-    "topicLessonId": "TOPIC-TRACEABILITY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 3,
-    "page": 8,
-    "endPage": 9,
-    "title": "KỸ THUẬT BABOK GIÚP BẠN KHÔNG BỊ ĐỔ LỖI - KHI KHÁCH NÓI: \"TÔI CHƯA NÓI THẾ BAO GIỜ\"",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 3: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 3 (KỸ THUẬT BABOK GIÚP BẠN KHÔNG BỊ ĐỔ LỖI - KHI KHÁCH NÓI: \"TÔI CHƯA NÓI THẾ BAO GIỜ\") đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 3 / 1 0 0 3 KỸ THUẬT BABOK GIÚP BẠN KHÔNG BỊ ĐỔ LỖI KHI KHÁCH NÓI: \"TÔI CHƯA NÓI THẾ BAO GIỜ\" Câu nói tưởng nhẹ, nhưng có thể thổi bay cả sprint và đạp BA xuống hố. 🧨 Chuyện có thật 100%: Khách từng bảo trong họp: “Không cần kiểm tra tồn kho đâu, cứ tạo đơn rồi xử lý sau.” Tôi gật đầu. DEV làm theo. 3 tuần sau UAT, khách quay lại: 8 “Ủa? Không có bước kiểm tra tồn à? Tôi đâu có nói bỏ cái đó",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 4,
-    "page": 10,
-    "endPage": 11,
-    "title": "KỸ THUẬT BABOK GIÚP BẠN XỬ LÝ - YÊU CẦU GẤP MÀ KHÔNG VỠ TIẾN ĐỘ",
-    "topic": "Agile & Scrum",
-    "takeaway": "Kinh nghiệm thực chiến DAY 4: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 4 (KỸ THUẬT BABOK GIÚP BẠN XỬ LÝ - YÊU CẦU GẤP MÀ KHÔNG VỠ TIẾN ĐỘ) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 4 / 1 0 0 3 KỸ THUẬT BABOK GIÚP BẠN XỬ LÝ  YÊU CẦU GẤP MÀ KHÔNG VỠ TIẾN ĐỘ \"Quan trọng lắm!\", \"Phải có ngay!\", \"Còn chờ gì nữa?\" Bạn không sai khi làm đúng yêu cầu.  Nhưng nếu bạn không quản trị được kỳ vọng và ưu tiên, thì: Backlog sẽ ngày càng phình to Sprint nào cũng vỡ plan Và người bị truy trách nhiệm đầu tiên: chính là bạn – BA của dự án 🎯 3 kỹ thuật từ BABOK giúp bạn đứng vững trước á",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 5,
-    "page": 12,
-    "endPage": 13,
-    "title": "KỸ THUẬT BABOK GIÚP BA TƯ DUY LỖI – VIẾT - LOGIC CHẶT CHẼ, KHÔNG BỊ LỌT CASE",
-    "topic": "Khai thác yêu cầu",
-    "takeaway": "Kinh nghiệm thực chiến DAY 5: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 5 (KỸ THUẬT BABOK GIÚP BA TƯ DUY LỖI – VIẾT - LOGIC CHẶT CHẼ, KHÔNG BỊ LỌT CASE) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 5 / 1 0 0 3 KỸ THUẬT BABOK GIÚP BA TƯ DUY LỖI – VIẾT LOGIC CHẶT CHẼ, KHÔNG BỊ LỌT CASE BA giỏi không phải người nghĩ được nhiều tính năng,  Mà là người đủ tỉnh để hỏi:  👉 “Nếu sai thì sao?”  👉 “Nếu người dùng thao tác ngược thì sao?”  👉 “Nếu server lag, mất kết nối thì sao?” 🎯 1. Exception Flow – Tư duy lỗi = tư duy sống sót 📘 BABOK Technique: Scenario & Use Case, Exception Handling Input: T",
-    "topicLessonId": "TOPIC-AC-GHERKIN",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 6,
-    "page": 14,
-    "endPage": 15,
-    "title": "Tôi không còn là người viết đặc tả từng dòng SRS. Tôi cũng không còn là người ngồi - da...",
-    "topic": "Đặc tả & Quản lý yêu cầu",
-    "takeaway": "Kinh nghiệm thực chiến DAY 6: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 6 (Tôi không còn là người viết đặc tả từng dòng SRS. Tôi cũng không còn là người ngồi - da...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 6 / 1 0 0 Tôi không còn là người viết đặc tả từng dòng SRS. Tôi cũng không còn là người ngồi daily với Dev mỗi sáng. Nhưng tôi là người mà cả team BA sẽ gọi… khi mọi thứ bắt đầu rối. Tôi không còn làm BA như trước. Giờ tôi làm người đứng sau. Không để kiểm soát. Mà để giữ cho từng người trong team có thể tiếp tục đi mà không thấy đơn độc. ☀️ Buổi sáng Không mở task, chỉ mở đoạn tin nhắn gửi ",
-    "topicLessonId": "TOPIC-BACCM",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 7,
-    "page": 16,
-    "endPage": 17,
-    "title": "Bạn từng đề xuất một tính năng, tự tin lắm, tâm huyết lắm. Nhưng sau khi release: - Khô...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 7: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 7 (Bạn từng đề xuất một tính năng, tự tin lắm, tâm huyết lắm. Nhưng sau khi release: - Khô...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 7 / 1 0 0 Bạn từng đề xuất một tính năng, tự tin lắm, tâm huyết lắm. Nhưng sau khi release: Không ai dùng. Không ai đoái hoài. Không tạo impact. Không phải do DEV code sai. Không phải do UI xấu. Mà vì ngay từ đầu bạn không nghĩ đến chuyện đo lường. “Viết tính năng mà không đo được hiệu quả thì không phải là làm BA – đó là đoán mò.” Muốn tránh cảnh đó, đây là 3 kỹ thuật trích từ BABOK, cộng v",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 8,
-    "page": 18,
-    "endPage": 19,
-    "title": "“Tôi làm BA 4 năm rồi, sao vẫn chưa được tin tưởng giao vai trò cao hơn?” Không hiếm - ...",
-    "topic": "Khai thác yêu cầu",
-    "takeaway": "Kinh nghiệm thực chiến DAY 8: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 8 (“Tôi làm BA 4 năm rồi, sao vẫn chưa được tin tưởng giao vai trò cao hơn?” Không hiếm - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 8 / 1 0 0  “Tôi làm BA 4 năm rồi, sao vẫn chưa được tin tưởng giao vai trò cao hơn?” Không hiếm người đặt câu hỏi này. Nhưng phần lớn đều vướng ở một điểm: Chưa trang bị đúng kỹ năng để xử lý bài toán lớn hơn. → Viết tài liệu? Ổn. → Ghi nhận yêu cầu? Không còn bỡ ngỡ. → Vẽ flow? Làm được. Nhưng…BA cấp độ cao hơn là người: → Nhìn thấy rủi ro trước khi hệ thống được xây dựng → Biết chọn đúng y",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 9,
-    "page": 20,
-    "endPage": 21,
-    "title": "Bạn từng bị sếp mắng… chỉ vì làm đúng yêu cầu chưa? - Tôi từng dính cú đó. Làm feature ...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 9: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 9 (Bạn từng bị sếp mắng… chỉ vì làm đúng yêu cầu chưa? - Tôi từng dính cú đó. Làm feature ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 9 / 1 0 0 Bạn từng bị sếp mắng… chỉ vì làm đúng yêu cầu chưa? Tôi từng dính cú đó. Làm feature điểm danh theo đúng lời sếp. Viết đủ flow, mô tả rõ ràng, test pass. 3 ngày sau: bị gọi lên và gỡ app.  Sếp bảo:  “Làm app điểm danh đi, cho nhân viên tự check-in bằng điện thoại. Vân tay lỗi thời rồi.” Nghe hợp lý và có vẻ dễ! Tôi viết tài liệu, mô tả chức năng, giao cho dev. QC test pass. Go-live",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 10,
-    "page": 22,
-    "endPage": 23,
-    "title": "Câu chuyện có thật: Tuần trước, một bạn BA nhắn tôi, giọng đầy bức xúc: “Em nghỉ - phép...",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 10: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 10 (Câu chuyện có thật: Tuần trước, một bạn BA nhắn tôi, giọng đầy bức xúc: “Em nghỉ - phép...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 1 0 / 1 0 0 Câu chuyện có thật: Tuần trước, một bạn BA nhắn tôi, giọng đầy bức xúc: “Em nghỉ phép mấy hôm. Quay lại thì PO đã confirm hết UI với designer rồi. Em chỉ còn mỗi việc soi chính tả và check logic. Mà cái logic thì sai be bét… Giờ ai chịu trách nhiệm?\" Quen không? PO bảo “anh duyệt rồi” Designer bảo “PO đồng ý mà” Còn BA thì thành người ngồi ngoài flow – bị giao trách nhiệm nhưng k",
-    "topicLessonId": "TOPIC-AGILE-USER-STORY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 11,
-    "page": 24,
-    "endPage": 25,
-    "title": "Mất 2 phút đọc – nhưng nếu bạn là BA mới, đây có thể là 2 phút đáng nhất tuần này. - Sế...",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 11: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 11 (Mất 2 phút đọc – nhưng nếu bạn là BA mới, đây có thể là 2 phút đáng nhất tuần này. - Sế...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 1 1 / 1 0 0 Mất 2 phút đọc – nhưng nếu bạn là BA mới, đây có thể là 2 phút đáng nhất tuần này. Sếp: “Màn này làm giống bên XYZ nhé, flow bên đó tối ưu rồi. Em nắm rồi làm luôn nha.” Tôi gật đầu. Và tôi biết… hình như có điều gì đó chưa ổn. Nhưng tôi vẫn gật. Lúc đó tôi là một BA mới. Không ai ép tôi làm sai. Chỉ là… tôi không dám hỏi lại. Tôi nghĩ: “Chắc là đúng rồi.” “Mình hỏi thì kỳ lắm.” ",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 12,
-    "page": 26,
-    "endPage": 27,
-    "title": "Câu hỏi tưởng cũ, nhưng mỗi lần nghe lại là một lần muốn kể chuyện - Chiều qua, mình có...",
-    "topic": "Agile & Scrum",
-    "takeaway": "Kinh nghiệm thực chiến DAY 12: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 12 (Câu hỏi tưởng cũ, nhưng mỗi lần nghe lại là một lần muốn kể chuyện - Chiều qua, mình có...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 1 2 / 1 0 0 Câu hỏi tưởng cũ, nhưng mỗi lần nghe lại là một lần muốn kể chuyện Chiều qua, mình có dịp quay lại FPT Polytechnic để chia sẻ về nghề BA cho các bạn sinh viên IT. Và đúng như dự đoán, câu hỏi xuất hiện ở gần cuối buổi: “Anh ơi, BA có cần biết code không ạ?” Mình bật cười – không phải vì câu hỏi ngây ngô. Mà vì… mình cũng từng là người hỏi y chang như vậy cách đây vài năm. Rất nhi",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 13,
-    "page": 28,
-    "endPage": 29,
-    "title": "Một câu hỏi rất quen khi làm với các bạn BA mới vào nghề: - “Làm sao để biết hệ thống c...",
-    "topic": "Dữ liệu & SQL",
-    "takeaway": "Kinh nghiệm thực chiến DAY 13: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 13 (Một câu hỏi rất quen khi làm với các bạn BA mới vào nghề: - “Làm sao để biết hệ thống c...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 1 3 / 1 0 0 Một câu hỏi rất quen khi làm với các bạn BA mới vào nghề: “Làm sao để biết hệ thống cần lưu những thông tin gì? Em nên bắt đầu dựng data object từ đâu khi chưa có bảng DB?” Tôi không ngạc nhiên. Vì trước đây, tôi cũng từng loay hoay như vậy. Không biết trường nào bắt buộc Không chắc validate ra sao Không rõ object cần những trạng thái nào, liên quan gì đến màn hình, báo cáo hay h",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 14,
-    "page": 30,
-    "endPage": 31,
-    "title": "Không phải bug, không phải logic sai, không phải thiếu tài liệu. - Nhiều pha toang tron...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 14: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 14 (Không phải bug, không phải logic sai, không phải thiếu tài liệu. - Nhiều pha toang tron...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 1 4 / 1 0 0 Không phải bug, không phải logic sai, không phải thiếu tài liệu. Nhiều pha toang trong dự án bắt đầu chỉ từ… một câu comment tưởng vô hại. ⚠️ 1. Những comment tưởng vô hại, nhưng khiến BA “đóng task” trong vô thức “Tạm ổn rồi, mai check nốt” “Cái này để release sau nhé” “Không tái hiện được bug” Dev nói vậy, Test gật đầu, và bạn… nghĩ là done. Nhưng thật ra: “Tạm ổn” là… chưa xon",
-    "topicLessonId": "TOPIC-ELICITATION-TECH",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 15,
-    "page": 32,
-    "endPage": 33,
-    "title": "Có những hôm đi làm sớm như hôm nay, ngồi ung dung làm cốc trà đá, mình tự hỏi: - Hồi m...",
-    "topic": "Đặc tả & Quản lý yêu cầu",
-    "takeaway": "Kinh nghiệm thực chiến DAY 15: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 15 (Có những hôm đi làm sớm như hôm nay, ngồi ung dung làm cốc trà đá, mình tự hỏi: - Hồi m...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 1 5 / 1 0 0 Có những hôm đi làm sớm như hôm nay, ngồi ung dung làm cốc trà đá, mình tự hỏi: Hồi mới làm BA, mình đã từng ngây thơ tới mức nào?  Hồi đó, sếp bảo mình: “Em thêm cái nút ‘Đăng ký tư vấn’ lên trang chủ nhé, càng to càng tốt.” Mình không hỏi gì. Chỉ note lại, vẽ mockup, viết SRS, đẩy Dev làm ngay.  Làm xong, sếp feedback: “Ủa sao có khách đăng ký rồi mà không ai gọi? Sao form này ",
-    "topicLessonId": "TOPIC-BPMN-PROCESS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 16,
-    "page": 34,
-    "endPage": 35,
-    "title": "“Flow này rõ ràng mà, test gì nữa?” - Tôi một BA trẩu tre đã từng chém thế. Và sáng hôm...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 16: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 16 (“Flow này rõ ràng mà, test gì nữa?” - Tôi một BA trẩu tre đã từng chém thế. Và sáng hôm...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 1 6 / 1 0 0 “Flow này rõ ràng mà, test gì nữa?” Tôi một BA trẩu tre đã từng chém thế. Và sáng hôm sau, cái hệ thống “rõ ràng” đó… gãy. Tôi từng mô tả flow tự động “Tặng voucher sau 7 ngày”. Yêu cầu trong tài liệu vỏn vẹn một dòng: “Sau 7 ngày kể từ giao dịch thành công, hệ thống sẽ tặng 1 voucher 50K.” Nghe thì suôn, nhưng tester test là hệ thống rụng từng khúc: Giao dịch lúc 23h59 Thứ Hai, ",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 17,
-    "page": 36,
-    "endPage": 38,
-    "title": "Lúc mới vào, tôi nghĩ: “Đây là nơi nghiêm túc làm sản phẩm.”. Team đông, vai trò rõ - r...",
-    "topic": "Agile & Scrum",
-    "takeaway": "Kinh nghiệm thực chiến DAY 17: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 17 (Lúc mới vào, tôi nghĩ: “Đây là nơi nghiêm túc làm sản phẩm.”. Team đông, vai trò rõ - r...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 1 7 / 1 0 0 Lúc mới vào, tôi nghĩ: “Đây là nơi nghiêm túc làm sản phẩm.”. Team đông, vai trò rõ ràng, backlog cập nhật từng giờ, stakeholder góp ý đều đều. Nhưng càng làm, tôi càng nhận ra…Thứ chúng tôi đang tạo ra không phải là sản phẩm, mà là một chiếc máy chạy tính năng.Và rồi, tôi đọc INSPIRED của Marty Cagan – và thấy… Từng phần trong sách, chính là từng vết nứt trong công ty nọ – vết n",
-    "topicLessonId": "TOPIC-TRACEABILITY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 18,
-    "page": 39,
-    "endPage": 40,
-    "title": "Cuối tuần rồi chắc thể nào cũng có team vừa retro xong - Một buổi Retro sprint. UAT gãy...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 18: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 18 (Cuối tuần rồi chắc thể nào cũng có team vừa retro xong - Một buổi Retro sprint. UAT gãy...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 1 8 / 1 0 0 Cuối tuần rồi chắc thể nào cũng có team vừa retro xong Một buổi Retro sprint. UAT gãy. Bug nổ. Tính năng không chạy như kỳ vọng. Và rồi ánh mắt bắt đầu hướng về phía BA… “BA không confirm lại với user à?” “Cái flow đó có ghi rõ đâu?” “Lại thiếu logic trong tài liệu BA…” Nghe thì nhẹ, nhưng nếu bạn làm BA đủ lâu, bạn biết nó sâu như dao cạo. Không ai mắng. Không ai chửi. Nhưng chí",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 19,
-    "page": 41,
-    "endPage": 42,
-    "title": "📅 Thứ Hai – ngày đầu tuần, mở máy đã thấy 6 cái meeting chờ sẵn - Sáng 8h30: họp kick-off",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 19: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 19 (📅 Thứ Hai – ngày đầu tuần, mở máy đã thấy 6 cái meeting chờ sẵn - Sáng 8h30: họp kick-off) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 1 9 / 1 0 0 📅 Thứ Hai – ngày đầu tuần, mở máy đã thấy 6 cái meeting chờ sẵn Sáng 8h30: họp kick-off 10h: họp với team DEV để giải thích requirement 11h15: join họp với khách confirm lại rule Chiều 13h30: họp chỉnh sửa giao diện 15h: họp với test 17h: họp cập nhật tiến độ Kết thúc một ngày → file tài liệu vẫn trắng tinh Tối về, sếp hỏi: “Tài liệu đâu?” “Em đi họp suốt còn gì anh?” “Thế em họp",
-    "topicLessonId": "TOPIC-BACCM",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 20,
-    "page": 43,
-    "endPage": 44,
-    "title": "🏢 Chuyện có thật ở một công ty bán trà sữa... - Công ty XYZ có hệ thống TeaBoss đã chạy...",
-    "topic": "Phân tích & thiết kế giải pháp",
-    "takeaway": "Kinh nghiệm thực chiến DAY 20: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 20 (🏢 Chuyện có thật ở một công ty bán trà sữa... - Công ty XYZ có hệ thống TeaBoss đã chạy...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 2 0 / 1 0 0 🏢 Chuyện có thật ở một công ty bán trà sữa... Công ty XYZ có hệ thống TeaBoss đã chạy 3 năm. Nó giúp quản lý đơn hàng, tính điểm thưởng cho nhân viên, và tổng hợp doanh thu từng ca. Một ngày đẹp trời, sếp giao task: “Viết lại TeaBoss bản mới, UI xịn hơn, API mở rộng, có thể scale toàn quốc.” Phú – một bạn BA trẻ, nhanh nhẹn, flow vẽ đẹp như sách giáo khoa – được chọn. Nhưng Phú v",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 21,
-    "page": 45,
-    "endPage": 46,
-    "title": "“Dự án này không có PM đâu – em follow luôn cả team nhé.” - Không phải câu nói lịch sử,...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 21: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 21 (“Dự án này không có PM đâu – em follow luôn cả team nhé.” - Không phải câu nói lịch sử,...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 2 1 / 1 0 0 “Dự án này không có PM đâu – em follow luôn cả team nhé.” Không phải câu nói lịch sử, nhưng rất nhiều BA từng nghe phiên bản na ná như vậy. Lúc đầu còn vui: “Thử sức tí, biết đâu lại lên tay.” Ba tuần sau: Mắt thâm – Jira đỏ – Dev giận – Test khóc – tài liệu lỗi. Và đau nhất là… bạn tự mất khả năng nhìn rõ toàn cảnh. ⛔ Khi BA ôm luôn vai PM – dễ dính 4 cú \"gãy\": → Gãy nghiệp vụ: ",
-    "topicLessonId": "TOPIC-ELICITATION-TECH",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 22,
-    "page": 47,
-    "endPage": 48,
-    "title": "🧃 3 lời hứa quen thuộc trước khi dự án mệt mỏi: - → “Anh thấy field này nhỏ thôi, thêm ...",
-    "topic": "Dữ liệu & SQL",
-    "takeaway": "Kinh nghiệm thực chiến DAY 22: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 22 (🧃 3 lời hứa quen thuộc trước khi dự án mệt mỏi: - → “Anh thấy field này nhỏ thôi, thêm ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 2 2 / 1 0 0 🧃 3 lời hứa quen thuộc trước khi dự án mệt mỏi: → “Anh thấy field này nhỏ thôi, thêm vào cho chuyên nghiệp.” → “Mình chưa cần logic phức tạp, lưu tạm cũng được.” → “Có xíu thôi mà – không ảnh hưởng gì đâu em.” Bạn BA trẻ gật đầu. Form có thêm ô nhập mã giới thiệu. ❌ 4 hậu quả ai cũng thấy sau 1 tuần chạy thật: → Dữ liệu nhập lung tung, không xác thực → CRM không dám dùng report →",
-    "topicLessonId": "TOPIC-AC-GHERKIN",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 23,
-    "page": 49,
-    "endPage": 51,
-    "title": "💥 Chuyện thật: - Một hệ thống đặt lịch sửa xe. BA vẽ flow đơn giản: khách đặt → garage ...",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 23: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 23 (💥 Chuyện thật: - Một hệ thống đặt lịch sửa xe. BA vẽ flow đơn giản: khách đặt → garage ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 2 3 / 1 0 0 💥 Chuyện thật: Một hệ thống đặt lịch sửa xe. BA vẽ flow đơn giản: khách đặt → garage xác nhận → sửa xong. 3 tuần sau: Sale cần thống kê tỷ lệ bùng Admin muốn tách lịch xác nhận với lịch chờ Sếp hỏi conversion từ booking → sửa thật Cả hệ thống toang. Vì object Booking gánh luôn 7 logic. Không có ranh giới. Không có trạng thái. Không đại diện cho nghiệp vụ thật. 🧠 Domain-Driven Des",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 24,
-    "page": 52,
-    "endPage": 54,
-    "title": "Nghĩ làm BA trung lập là an toàn? Sai rồi. Trong môi trường bè phái đấu đá, BA không - ...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 24: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 24 (Nghĩ làm BA trung lập là an toàn? Sai rồi. Trong môi trường bè phái đấu đá, BA không - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 2 4 / 1 0 0 Nghĩ làm BA trung lập là an toàn? Sai rồi. Trong môi trường bè phái đấu đá, BA không dẫn dắt được thì chỉ còn nước làm bia đỡ đạn. 🎭 Một ngày chết đứng của BA trẻ: Thanh – một BA mới toe nhận dự án xây hệ thống Tuyển dụng cho công ty. Buổi họp gather requirement đầu tiên, Thanh bị kéo căng giữa hai lằn đạn: HR Recruiter sốt ruột: “Form ứng tuyển càng nhanh càng tốt, chỉ cần tên, ",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 25,
-    "page": 55,
-    "endPage": 56,
-    "title": "🌟 Những thứ nguy hiểm nhất thường không nằm trên giấy - Không phải yêu cầu nào cũng đượ...",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 25: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 25 (🌟 Những thứ nguy hiểm nhất thường không nằm trên giấy - Không phải yêu cầu nào cũng đượ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 2 5 / 1 0 0 🌟 Những thứ nguy hiểm nhất thường không nằm trên giấy Không phải yêu cầu nào cũng được chia sẻ ngay từ đầu. Có những quy tắc vận hành bất thành văn – tồn tại cả chục năm – nhưng không ai đưa vào tài liệu. Chỉ khi hệ thống đi vào vận hành, những lệch lạc mới lộ ra từng chút một. 👉Hidden requirement không nằm đâu xa, nó ẩn ngay trong hành vi thường ngày. 📚 Một bài học thực tế – Khi",
-    "topicLessonId": "TOPIC-BPMN-PROCESS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 26,
-    "page": 57,
-    "endPage": 59,
-    "title": "Vừa vào công ty. Mở mail chưa đầy 10 phút, sếp đã nhắn: - \"Dự án này cần gấp BA, em joi...",
-    "topic": "Phân tích & thiết kế giải pháp",
-    "takeaway": "Kinh nghiệm thực chiến DAY 26: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 26 (Vừa vào công ty. Mở mail chưa đầy 10 phút, sếp đã nhắn: - \"Dự án này cần gấp BA, em joi...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 2 6 / 1 0 0 Vừa vào công ty. Mở mail chưa đầy 10 phút, sếp đã nhắn: \"Dự án này cần gấp BA, em join luôn nha.\" Không intro. Không lịch bàn giao. Không bản đồ hệ thống. Chỉ có 1 chữ: GẤP. Và bạn – được kỳ vọng là: Hiểu nhanh – bắt nhịp nhanh – confirm nhanh – viết nhanh. Nhưng hệ thống thì chẳng \"nhanh\" lại với bạn. ĐẦU THÁNG, BẠN LÀ BA MỚI TOANH.  VÀ CHÀO MỪNG BẠN ĐẾN VỚI CHIẾN TRƯỜNG. 57  D ",
-    "topicLessonId": "TOPIC-AGILE-USER-STORY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 27,
-    "page": 60,
-    "endPage": 61,
-    "title": "Vẫn đi họp đều. Vẫn viết tài liệu đầy đủ. DEV hiểu. QA test pass.Feedback không tệ. - M...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 27: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 27 (Vẫn đi họp đều. Vẫn viết tài liệu đầy đủ. DEV hiểu. QA test pass.Feedback không tệ. - M...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 2 7 / 1 0 0 Vẫn đi họp đều. Vẫn viết tài liệu đầy đủ. DEV hiểu. QA test pass.Feedback không tệ. Mọi thứ… ổn. Nhưng giữa một ngày làm việc, bạn chợt nghĩ: “Mình đang giúp team gỡ điều gì? Hay chỉ đang làm cho xong task?” Không có gì sai. Chỉ là… hơi lưng chừng. 🎓 Bạn chủ động học thêm:  ▪️ Một khóa viết tài liệu  ▪️ Một mini course elicitation  ▪️ Một buổi UML Nhưng có thể thứ bạn thiếu…Không",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 28,
-    "page": 62,
-    "endPage": 63,
-    "title": "Kỹ thuật không sai. Nhưng nếu chọn sai kỹ thuật, sai người, sai thời điểm – bạn không -...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 28: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 28 (Kỹ thuật không sai. Nhưng nếu chọn sai kỹ thuật, sai người, sai thời điểm – bạn không -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 2 8 / 1 0 0 Kỹ thuật không sai. Nhưng nếu chọn sai kỹ thuật, sai người, sai thời điểm – bạn không chỉ mất dữ liệu, mà còn mất niềm tin của cả team. ⚠️ Một pha fail kinh điển – tưởng đúng mà sai Dự án xây hệ thống quản lý sửa xe. BA mới vào, muốn làm bài bản → tổ chức workshop thu thập nghiệp vụ: xử lý xe lỗi, đặt lịch sửa, xác nhận phụ tùng. Workshop có: 5 kỹ thuật viên (đang thiếu người, đi",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 29,
-    "page": 64,
-    "endPage": 66,
-    "title": "“Em làm theo yêu cầu mà!” - Câu nói tưởng vô hại… nhưng thực ra đang âm thầm giết chết ...",
-    "topic": "Phân tích & thiết kế giải pháp",
-    "takeaway": "Kinh nghiệm thực chiến DAY 29: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 29 (“Em làm theo yêu cầu mà!” - Câu nói tưởng vô hại… nhưng thực ra đang âm thầm giết chết ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 2 9 / 1 0 0 “Em làm theo yêu cầu mà!” Câu nói tưởng vô hại… nhưng thực ra đang âm thầm giết chết cả hệ thống – và cả uy tín nghề BA của bạn. 🍱 App đặt cơm trưa – và cú điểm danh nhẹ cho tư duy BA \"nghe lời quá mức\" Công ty có hơn 100 nhân viên. Trước đây, mọi người nhắn Zalo cho chị admin để đặt cơm: gà, cá, thịt – mỗi món giới hạn 30 phần. Nếu món nào hết, chị sẽ gọi lại để đổi món. Hơi thủ",
-    "topicLessonId": "TOPIC-AC-GHERKIN",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 30,
-    "page": 67,
-    "endPage": 68,
-    "title": "🕘 9h tối. Cả team DEV – QA – BA vẫn đang OT, căng mắt fix nốt bug cuối để kịp - Golive ...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 30: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 30 (🕘 9h tối. Cả team DEV – QA – BA vẫn đang OT, căng mắt fix nốt bug cuối để kịp - Golive ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 3 0 / 1 0 0 🕘 9h tối. Cả team DEV – QA – BA vẫn đang OT, căng mắt fix nốt bug cuối để kịp Golive sáng mai. Tôi cũng đang cùng OT với anh em. Và đúng lúc đó, điện thoại tôi sáng lên: “Em ơi, anh Phú CEO có góp ý vụ chấm công hơi cứng. Mấy bạn có đi muộn nhưng vẫn làm đủ 8 tiếng mà vẫn bị trừ công. Mình nên sửa lại trước khi Golive sáng mai nha. Không để vậy được đâu!” Người gửi: chị HR.  ⏳ Cò",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 31,
-    "page": 69,
-    "endPage": 70,
-    "title": "Phòng họp hôm đó, tôi không nói thêm một từ nào. Sếp nhìn tôi, ánh mắt đanh lại: “Em - ...",
-    "topic": "Khai thác yêu cầu",
-    "takeaway": "Kinh nghiệm thực chiến DAY 31: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 31 (Phòng họp hôm đó, tôi không nói thêm một từ nào. Sếp nhìn tôi, ánh mắt đanh lại: “Em - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 3 1 / 1 0 0 Phòng họp hôm đó, tôi không nói thêm một từ nào. Sếp nhìn tôi, ánh mắt đanh lại: “Em đang cãi anh à?” Không. Tôi không cãi. Tôi chỉ đang hỏi những câu mà… không ai dám hỏi. 🧩 Câu chuyện bắt đầu như này Sếp bảo: “Khách mua đủ 100k thì tặng voucher. Làm đơn giản, đừng lằng nhằng nữa.” Tôi gật đầu. Rồi hỏi: Nếu khách trả hàng thì điểm sao xử lý? Voucher gửi rồi có thu hồi được không",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 32,
-    "page": 71,
-    "endPage": 74,
-    "title": "💥 Dự án không nổ vì bug. Nó rò rỉ từng chút vì những tín hiệu nhỏ bị BA bỏ qua. Một - s...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 32: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 32 (💥 Dự án không nổ vì bug. Nó rò rỉ từng chút vì những tín hiệu nhỏ bị BA bỏ qua. Một - s...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 3 2 / 1 0 0 💥 Dự án không nổ vì bug. Nó rò rỉ từng chút vì những tín hiệu nhỏ bị BA bỏ qua. Một sáng đẹp trời, bạn mở máy chưa kịp uống cà phê thì... DEV vẫn chưa update task dù đã hứa \"xong hôm nay\" từ… hôm kia QA hỏi về một flow bạn chưa từng viết Stakeholder nhắn riêng: “Ơ, chị tưởng em hiểu rồi nên không nói lại…” PM seen tin nhắn nhưng đặc biệt im lặng Và bạn người đang giữ requirement,",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 33,
-    "page": 75,
-    "endPage": 76,
-    "title": "Feedback không phải là cú đấm nhưng phản ứng ngu sẽ khiến bạn knockout. Hôm đó, - trong...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 33: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 33 (Feedback không phải là cú đấm nhưng phản ứng ngu sẽ khiến bạn knockout. Hôm đó, - trong...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 3 3 / 1 0 0 Feedback không phải là cú đấm nhưng phản ứng ngu sẽ khiến bạn knockout. Hôm đó, trong một buổi họp nội bộ, tôi tự tin trình bày flow tính năng mới. Có wireframe. Có logic. Tưởng ngon. Nhưng vừa dứt slide đầu tiên… feedback tới tấp: UX này khó dùng lắm em ơi Flow chưa nghĩ tới nhóm người dùng B Cái logic duyệt này mâu thuẫn với chính business rule bên dashboard... Và tôi một BA ch",
-    "topicLessonId": "TOPIC-BPMN-PROCESS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 34,
-    "page": 77,
-    "endPage": 77,
-    "title": "(Dành cho những BA Manager – khi thấy dự án vận hành mà vẫn không an lòng) - 🌙 Chủ Nhật...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 34: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 34 ((Dành cho những BA Manager – khi thấy dự án vận hành mà vẫn không an lòng) - 🌙 Chủ Nhật...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 3 4 / 1 0 0 (Dành cho những BA Manager – khi thấy dự án vận hành mà vẫn không an lòng) 🌙 Chủ Nhật. Không task. Không họp. Chat cũng im. Tôi ngồi lại, không phải vì mệt.  Mà vì có gì đó… không thông. Không phải bug. Không phải task chưa xong. Mà là cảm giác dự án đang vận hành… mà thiếu mạch. 📌 Cả tuần qua… ai cũng làm đúng phần việc của mình. Tài liệu có. Yêu cầu rõ. Kết luận đầy đủ. Nhưng g",
-    "topicLessonId": "TOPIC-BACCM",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 35,
-    "page": 78,
-    "endPage": 79,
-    "title": "🎯 Rất nhiều bạn BA nghĩ: - “Em viết đầy đủ flow rồi mà, sao hệ thống vẫn lỗi?”",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 35: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 35 (🎯 Rất nhiều bạn BA nghĩ: - “Em viết đầy đủ flow rồi mà, sao hệ thống vẫn lỗi?”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 3 5 / 1 0 0 🎯 Rất nhiều bạn BA nghĩ: “Em viết đầy đủ flow rồi mà, sao hệ thống vẫn lỗi?” “Em confirm lại với user rồi, họ bảo đúng logic.” “Em đâu có sai, DEV làm chưa đúng thôi.” → Bạn không sai về flow. → Bạn không sai về quy trình. → Nhưng bạn sai vì không thấy được hệ thống toàn cảnh. 📌 Bạn làm đúng theo yêu cầu nhưng không nhận ra: Yêu cầu đó đẩy lỗi sang hệ thống khác mà bạn không kiểm",
-    "topicLessonId": "TOPIC-ELICITATION-TECH",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 36,
-    "page": 80,
-    "endPage": 82,
-    "title": "“Em gửi task rõ ràng mà DEV vẫn làm sai.” - “DEV làm ẩu, không đọc SRS, em mệt mỏi sửa ...",
-    "topic": "Đặc tả & Quản lý yêu cầu",
-    "takeaway": "Kinh nghiệm thực chiến DAY 36: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 36 (“Em gửi task rõ ràng mà DEV vẫn làm sai.” - “DEV làm ẩu, không đọc SRS, em mệt mỏi sửa ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 3 6 / 1 0 0 “Em gửi task rõ ràng mà DEV vẫn làm sai.” “DEV làm ẩu, không đọc SRS, em mệt mỏi sửa logic hoài.” “BA toàn vẽ hươu vẽ vượn, DEV tụi tôi code khổ vc.” 💥 Đây không chỉ là câu chuyện của bạn – mà là nỗi đau muôn thuở giữa BA và DEV. 🎯 Sự thật phũ: Cả hai không sai… nhưng đang không cùng chiến tuyến. BA nghĩ: “Tôi phân tích nghiệp vụ, tôi đúng.” DEV nghĩ: “Tôi code đúng mô tả, tôi cũ",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 37,
-    "page": 83,
-    "endPage": 85,
-    "title": "🎯 Bối cảnh: - Kỳ review 6 tháng và một hệ thống được build đúng tới từng field. Công ty...",
-    "topic": "Agile & Scrum",
-    "takeaway": "Kinh nghiệm thực chiến DAY 37: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 37 (🎯 Bối cảnh: - Kỳ review 6 tháng và một hệ thống được build đúng tới từng field. Công ty...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 3 7 / 1 0 0 🎯 Bối cảnh:  Kỳ review 6 tháng và một hệ thống được build đúng tới từng field. Công ty triển khai kỳ đánh giá hiệu suất 6 tháng đầu năm, gắn với: KPI / OKR Xếp loại A-B-C theo kết quả đánh giá Xét tăng lương HR yêu cầu hệ thống: Cho phép nhân viên tự đánh giá theo OKR Line Manager đánh giá lại Hệ thống tính điểm trung bình theo trọng số Export kết quả → làm căn cứ tăng lương, xét",
-    "topicLessonId": "TOPIC-AC-GHERKIN",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 38,
-    "page": 86,
-    "endPage": 87,
-    "title": "“Làm lại cái này cho anh nhé.” - “Đưa tính năng kia lên gấp, mấy cái khác tính sau.”",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 38: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 38 (“Làm lại cái này cho anh nhé.” - “Đưa tính năng kia lên gấp, mấy cái khác tính sau.”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 3 8 / 1 0 0 “Làm lại cái này cho anh nhé.” “Đưa tính năng kia lên gấp, mấy cái khác tính sau.” “Sao còn chưa xong? Anh nói từ hôm trước rồi mà?” Nếu bạn từng khựng lại vì một câu nói từ sếp – không phải vì sợ, mà vì biết: 👉 Chỉ một dòng chỉ đạo, có thể kéo theo cả hệ thống chệch hướng. 🎯 Bối cảnh có thật: BA vừa sign-off bản SRS với khách hàng. Chiều hôm đó, sếp nhắn riêng: “Mai anh đi họp, ",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 39,
-    "page": 88,
-    "endPage": 90,
-    "title": "📍 Câu chuyện thật – Khởi đầu của sự mất niềm tin - Ở công ty cũ, tôi từng lead một team...",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 39: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 39 (📍 Câu chuyện thật – Khởi đầu của sự mất niềm tin - Ở công ty cũ, tôi từng lead một team...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 3 9 / 1 0 0 📍 Câu chuyện thật – Khởi đầu của sự mất niềm tin Ở công ty cũ, tôi từng lead một team dev nhỏ. Làm cùng với một anh BA. Giai đoạn đầu? Ổn. Tài liệu ok. Họp khách bài bản. Flow vẽ đủ bước. Tôi còn nghĩ: “Cho ảnh handle luôn mấy feature chính cũng được.” Cho đến khi… ❌ Một flow tưởng đã confirm với khách.  Dev code xong, khách phản hồi: “Ai bảo xử lý kiểu này?”  Cả team nhìn nhau. ",
-    "topicLessonId": "TOPIC-TRACEABILITY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 40,
-    "page": 91,
-    "endPage": 94,
-    "title": "“Em làm nhanh cái hệ thống ABC nhé.” - Và thế là BA bắt đầu đi phân tích hệ thống – như...",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 40: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 40 (“Em làm nhanh cái hệ thống ABC nhé.” - Và thế là BA bắt đầu đi phân tích hệ thống – như...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 4 0 / 1 0 0 “Em làm nhanh cái hệ thống ABC nhé.” Và thế là BA bắt đầu đi phân tích hệ thống – nhưng thật ra không hiểu: Hệ thống này để làm gì?  Giải quyết nỗi đau nào? Ảnh hưởng tới ai? Chạm tới tầng nào trong quy trình vận hành? ⛔ Đó là cách hàng loạt dự án \"làm đúng nhưng vẫn toang\". Một BA cứng không lao vào viết tài liệu, vẽ diagram, mà lùi lại một bước để nhìn tổng thể cuộc chơi. 🧠 Họ ",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 41,
-    "page": 95,
-    "endPage": 96,
-    "title": "🎯 Bối cảnh: - Mỗi khi khách mua hàng tại cửa hàng → điểm sẽ được cộng vào tài khoản loy...",
-    "topic": "Dữ liệu & SQL",
-    "takeaway": "Kinh nghiệm thực chiến DAY 41: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 41 (🎯 Bối cảnh: - Mỗi khi khách mua hàng tại cửa hàng → điểm sẽ được cộng vào tài khoản loy...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 4 1 / 1 0 0 🎯 Bối cảnh:  Mỗi khi khách mua hàng tại cửa hàng → điểm sẽ được cộng vào tài khoản loyalty trên app khách hàng. Luồng tưởng như đơn giản: POS bắn data sang loyalty Loyalty cập nhật điểm CRM ghi nhận hành vi mua hàng Nhưng khi chạy thật: Nhiều cửa hàng mạng yếu → POS bắn chậm hoặc bắn lỗi Loyalty không nhận được → khách không thấy điểm CRM vẫn ghi nhận là đã mua → tạo dữ liệu bất ",
-    "topicLessonId": "TOPIC-STATE-MACHINE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 42,
-    "page": 97,
-    "endPage": 98,
-    "title": "🎯 Bối cảnh: Module xin nghỉ – chấm công trong hệ thống nội bộ - Junior BA đề xuất một l...",
-    "topic": "Kỹ năng & Phỏng vấn BA",
-    "takeaway": "Kinh nghiệm thực chiến DAY 42: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 42 (🎯 Bối cảnh: Module xin nghỉ – chấm công trong hệ thống nội bộ - Junior BA đề xuất một l...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 4 2 / 1 0 0 🎯 Bối cảnh: Module xin nghỉ – chấm công trong hệ thống nội bộ  Junior BA đề xuất một logic đơn giản: Nếu user xin nghỉ nửa ngày Nhưng chưa có chấm công buổi sáng  → Hiển thị cảnh báo nhẹ để kiểm tra lại (không chặn, không huỷ) DEV phản hồi: Tốn effort Không cần thiết Trường hợp này người dùng cần tự kiểm soát Cả phòng im. Junior BA nhìn xuống tài liệu. PM nhìn sang tôi. 🧠 Tôi khô",
-    "topicLessonId": "TOPIC-ELICITATION-TECH",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 43,
-    "page": 99,
-    "endPage": 100,
-    "title": "Nếu bạn vẫn nghĩ BA đi phân tích yêu cầu là để làm tính năng, thì bạn đang hiểu - sai b...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 43: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 43 (Nếu bạn vẫn nghĩ BA đi phân tích yêu cầu là để làm tính năng, thì bạn đang hiểu - sai b...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 4 3 / 1 0 0 Nếu bạn vẫn nghĩ BA đi phân tích yêu cầu là để làm tính năng, thì bạn đang hiểu sai bản chất nghề này ngay từ bước đầu. 🎯 Không ai thật sự “cần” tính năng Người dùng không thật sự cần một tính năng. Họ cần kết quả mà tính năng đó mang lại. Khi họ nói “cần lọc danh sách” → họ đang cố gắng tìm ra nhóm khách để hành động. Khi họ nói “cần dashboard” → họ muốn quản lý được tình hình đ",
-    "topicLessonId": "TOPIC-BACCM",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 44,
-    "page": 101,
-    "endPage": 102,
-    "title": "Ở một công ty nọ, có những dự án bắt đầu bằng cụm từ “rất gấp”, nhưng rồi trôi vào im -...",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 44: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 44 (Ở một công ty nọ, có những dự án bắt đầu bằng cụm từ “rất gấp”, nhưng rồi trôi vào im -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 4 4 / 1 0 0 Ở một công ty nọ, có những dự án bắt đầu bằng cụm từ “rất gấp”, nhưng rồi trôi vào im lặng cũng bằng chính cụm từ ấy: “Giờ ưu tiên cái khác trước nhé.” Người BA bước vào dự án với niềm tin: Chỉ cần mình làm đủ tốt, đủ kỹ, đủ trách nhiệm thì hệ thống sẽ đi tới đích. Nhưng rồi: Họ viết ra một tài liệu dày 600 trang, không ai mở Họ vẽ flow rõ như lòng bàn tay, nhưng DEV bảo cái này ",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 45,
-    "page": 103,
-    "endPage": 104,
-    "title": "Bạn vừa được “đẩy” vào một dự án đang chạy. Không onboarding, không hệ thống tài - liệu...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 45: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 45 (Bạn vừa được “đẩy” vào một dự án đang chạy. Không onboarding, không hệ thống tài - liệu...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 4 5 / 1 0 0 Bạn vừa được “đẩy” vào một dự án đang chạy. Không onboarding, không hệ thống tài liệu, không ai nói cho bạn biết chuyện gì đang xảy ra.  Dev thì bận build tính năng.  QC thì nhìn bạn đầy ái ngại.  Còn PM thì chỉ nói một câu quen thuộc: “Em cứ làm theo tài liệu cũ nhé, có gì anh confirm sau.” Và rồi bạn… ngồi đó. Mở Figma. Mở Jira. Lướt. Không biết nên hỏi gì trước, nên bắt đầu từ",
-    "topicLessonId": "TOPIC-BPMN-PROCESS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 46,
-    "page": 105,
-    "endPage": 106,
-    "title": "Có những dự án không thiếu người, không thiếu tiền. Sếp cũng rất tâm huyết, luôn theo -...",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 46: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 46 (Có những dự án không thiếu người, không thiếu tiền. Sếp cũng rất tâm huyết, luôn theo -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 4 6 / 1 0 0 Có những dự án không thiếu người, không thiếu tiền. Sếp cũng rất tâm huyết, luôn theo sát từng bước. Chỉ là… quá kỹ tính.  Không kỹ về nghiệp vụ – mà kỹ về… từng dấu chấm, từng dòng text, từng icon. “Chỗ này sao em dùng từ ‘xuất hiện’? Nghe hơi cứng.”  “Dòng này nên tách ra, anh đọc thấy hơi nặng mắt.”  “Cái flow em vẽ… nhìn chưa mượt.” Bạn là BA, bạn vào dự án với tâm thế: mình ",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 47,
-    "page": 107,
-    "endPage": 109,
-    "title": "👂 Một ngày bình thường và một loạt từ ngữ kỳ lạ ập đến - DEV bảo: “Tôi đang checkout nh...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 47: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 47 (👂 Một ngày bình thường và một loạt từ ngữ kỳ lạ ập đến - DEV bảo: “Tôi đang checkout nh...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 4 7 / 1 0 0 👂 Một ngày bình thường và một loạt từ ngữ kỳ lạ ập đến  DEV bảo: “Tôi đang checkout nhánh hotfix.”  Tester nói: “Commit này có được cherry-pick lên PROD không chị?”  PM hỏi: “Tính năng A đã merge chưa, có nằm trong bản tag v2.3.0 không?” Bạn không cần vào Git để kiểm tra, nhưng bạn phải hiểu họ đang nói gì để trả lời đúng, không ngơ ngác, và không đổ lỗi sai người. 🧠 Vậy Git là g",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 48,
-    "page": 110,
-    "endPage": 112,
-    "title": "Một trong những thời điểm thể hiện rõ đẳng cấp của BA – không nằm ở lúc viết - requirem...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 48: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 48 (Một trong những thời điểm thể hiện rõ đẳng cấp của BA – không nằm ở lúc viết - requirem...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 4 8 / 1 0 0 Một trong những thời điểm thể hiện rõ đẳng cấp của BA – không nằm ở lúc viết requirement, mà là khi bị hỏi lại… yêu cầu tưởng như đã “chắc cú”. 📌 Bối cảnh thật:  BA vừa viết xong đặc tả. Duyệt nội bộ xong, DEV đang code. Tester bắt đầu test, rồi một câu hỏi nhẹ nhàng bay tới: “Phần này chưa rõ lắm – người dùng nhập thế nào thì được tính hợp lệ?” Bạn giật mình. Ủa rõ ràng ghi rồi ",
-    "topicLessonId": "TOPIC-AGILE-USER-STORY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 49,
-    "page": 113,
-    "endPage": 115,
-    "title": "“Em đang làm dự án có tích hợp kế toán anh ạ, mà đọc tới chỗ kế toán em muốn nghỉ - việc.",
-    "topic": "Phân tích & thiết kế giải pháp",
-    "takeaway": "Kinh nghiệm thực chiến DAY 49: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 49 (“Em đang làm dự án có tích hợp kế toán anh ạ, mà đọc tới chỗ kế toán em muốn nghỉ - việc.) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 4 9 / 1 0 0 “Em đang làm dự án có tích hợp kế toán anh ạ, mà đọc tới chỗ kế toán em muốn nghỉ việc.  Một rừng thuật ngữ: Công nợ – Bút toán – Tài khoản cấp 1/2/3 – Hạch toán – Định khoản – đối ứng…” 😵 Em bắt đầu thấy mình kém cỏi, lú luôn với loạt thuật ngữ, muốn đi học khóa kế toán cho rồi 🧠 Nhưng với kinh nghiệm của một BA lâu năm, anh không chọn cách đi học kế toán như một kế toán. Anh ch",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 50,
-    "page": 116,
-    "endPage": 118,
-    "title": "“UX là việc của designer chứ liên quan gì đến BA?” - Câu hỏi mà mình từng nghĩ trong nă...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 50: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 50 (“UX là việc của designer chứ liên quan gì đến BA?” - Câu hỏi mà mình từng nghĩ trong nă...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 5 0 / 1 0 0 “UX là việc của designer chứ liên quan gì đến BA?” Câu hỏi mà mình từng nghĩ trong năm đầu làm BA. Cho đến khi:  Flow mình phân tích khiến người dùng... không muốn dùng,  UI team phải quay lại hỏi: “Ủa Phú muốn trải nghiệm gì ở bước này?”  Và mình nhận ra: Lỗi nằm ở mình – người viết requirement thiếu tư duy trải nghiệm. 🎯 Cuốn “UX for Beginners” có gì đáng đọc với BA? Tác giả Jo",
-    "topicLessonId": "TOPIC-UX-PRODUCT-DISCOVERY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 51,
-    "page": 119,
-    "endPage": 120,
-    "title": "Nhiều tính năng bắt đầu bằng một câu rất quen: - “Làm nhanh để kịp demo chiều nay nhé.”",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 51: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 51 (Nhiều tính năng bắt đầu bằng một câu rất quen: - “Làm nhanh để kịp demo chiều nay nhé.”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 5 1 / 1 0 0 Nhiều tính năng bắt đầu bằng một câu rất quen: “Làm nhanh để kịp demo chiều nay nhé.” “Tạm thời thêm tính năng gửi mail, mai chạy campaign.” Không họp phân tích. Không đặc tả. Không gì cả – ngoài một task gắn tên bạn với deadline: ngay hôm nay!!! Có những lúc team buộc phải đi “đường tắt” – để test insight, để show investor, để MKT kịp chiến dịch. Tính năng chưa được họp phân tíc",
-    "topicLessonId": "TOPIC-AC-GHERKIN",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 52,
-    "page": 121,
-    "endPage": 123,
-    "title": "🍻 Mở đầu từ quán bia hơi Hà Nội: - Bạn làm phần mềm SaaS cho chuỗi quán bia.",
-    "topic": "Phân tích & thiết kế giải pháp",
-    "takeaway": "Kinh nghiệm thực chiến DAY 52: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 52 (🍻 Mở đầu từ quán bia hơi Hà Nội: - Bạn làm phần mềm SaaS cho chuỗi quán bia.) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 5 2 / 1 0 0 🍻 Mở đầu từ quán bia hơi Hà Nội:  Bạn làm phần mềm SaaS cho chuỗi quán bia.  Hệ thống core đã có: Gọi món – quản lý bàn – in bếp – tính tiền – báo cáo doanh thu. Rồi một quán yêu cầu: “Bên chị bán cả bia lon, bia chai, tháp bia – muốn tính điểm thưởng riêng cho từng loại, tặng thẻ tích điểm theo từng bàn.” Quán khác yêu cầu: “Bên chị cần gợi ý món theo lịch sử từng khách quen.” M",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 53,
-    "page": 124,
-    "endPage": 126,
-    "title": "Bạn vừa họp xong với khách hàng. Hỏi nhanh: “Nếu có bộ lọc thời gian thì tiện hơn - khô...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 53: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 53 (Bạn vừa họp xong với khách hàng. Hỏi nhanh: “Nếu có bộ lọc thời gian thì tiện hơn - khô...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 5 3 / 1 0 0 Bạn vừa họp xong với khách hàng. Hỏi nhanh: “Nếu có bộ lọc thời gian thì tiện hơn không anh?” Khách gật đầu: “Tiện quá em. Làm luôn đi.” Bạn note lại, đưa vào backlog. DEV build, QC test, PM báo done. Sản phẩm ra mắt không ai dùng. Tính năng gần như mất tích. Không lỗi. Không bug. Nhưng không có nhu cầu. 🎯 Lý do?  Bạn hỏi sai. Nhưng tưởng mình hỏi đúng.  Bạn hỏi xem họ “muốn gì” ",
-    "topicLessonId": "TOPIC-AC-GHERKIN",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 54,
-    "page": 127,
-    "endPage": 128,
-    "title": "Sau 1 năm ở vai trò quản lý, tôi hiểu: - Làm sếp là một danh xưng",
-    "topic": "Nền tảng BA",
-    "takeaway": "Kinh nghiệm thực chiến DAY 54: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 54 (Sau 1 năm ở vai trò quản lý, tôi hiểu: - Làm sếp là một danh xưng) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 5 4 / 1 0 0 Sau 1 năm ở vai trò quản lý, tôi hiểu:  Làm sếp là một danh xưng Làm quản lý là một hành trình đổi cách nhìn người, nhìn việc và nhìn chính mình. Ngày trước, tôi nghĩ: “LÀM SẾP lúc ra quyết định và dẫn dắt team” Họp hành, phân công, duyệt task, đưa ra chỉ đạo… Tôi nghĩ vậy là đúng vai. Nhưng dần dần tôi nhận ra: Team không cần một người chỉ tay. Team cần một người hiểu và hỗ trợ.",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 55,
-    "page": 129,
-    "endPage": 130,
-    "title": "Nghe chữ “gấp”, BA non tay sẽ lao vào làm ngay. BA cứng thì tỉnh lại, nhìn bản đồ dự - ...",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 55: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 55 (Nghe chữ “gấp”, BA non tay sẽ lao vào làm ngay. BA cứng thì tỉnh lại, nhìn bản đồ dự - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 5 5 / 1 0 0 Nghe chữ “gấp”, BA non tay sẽ lao vào làm ngay. BA cứng thì tỉnh lại, nhìn bản đồ dự án, rồi mới ra tay. Sếp nhắn: “Em ơi gấp lắm. Làm tài liệu giúp anh ngay nhé.” BA mở máy, viết. Gõ xong spec, dựng flow, gửi bản vẽ wireframe. Rồi... 1 tuần sau, DEV chưa làm. 2 tuần sau, đổi logic. 3 tuần sau, spec bạn viết bị bỏ. Bạn thấy mình có tâm, còn hệ thống thì đổ sông đổ biển. Vấn đề kh",
-    "topicLessonId": "TOPIC-BPMN-PROCESS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 56,
-    "page": 131,
-    "endPage": 132,
-    "title": "h50 chiều, thứ Sáu. Tin nhắn hiện lên trên màn hình: “Sếp ơi, em mệt rồi. Em thấy - mìn...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 56: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 56 (h50 chiều, thứ Sáu. Tin nhắn hiện lên trên màn hình: “Sếp ơi, em mệt rồi. Em thấy - mìn...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 5 6 / 1 0 0 4h50 chiều, thứ Sáu. Tin nhắn hiện lên trên màn hình: “Sếp ơi, em mệt rồi. Em thấy mình không còn vui khi làm việc nữa.” Tôi ngồi nhìn dòng đó. Không gõ trả lời. Không phản xạ gì. Chỉ thấy một cảm giác hơi trống, như vừa để rơi mất một thứ gì đó mà chính mình làm vỡ. Người gửi tin nhắn đó là 1 BA cứng team tôi. Bạn ấy không bao giờ than. Lúc người khác trễ deadline, bạn ấy làm th",
-    "topicLessonId": "TOPIC-STATE-MACHINE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 57,
-    "page": 133,
-    "endPage": 136,
-    "title": "“Cùng 4-5 năm kinh nghiệm, có người là senior, có người mãi là mid. Khác biệt không - n...",
-    "topic": "Kỹ năng & Phỏng vấn BA",
-    "takeaway": "Kinh nghiệm thực chiến DAY 57: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 57 (“Cùng 4-5 năm kinh nghiệm, có người là senior, có người mãi là mid. Khác biệt không - n...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 5 7 / 1 0 0 “Cùng 4-5 năm kinh nghiệm, có người là senior, có người mãi là mid. Khác biệt không nằm ở độ dài CV. Mà nằm ở chiều sâu phản xạ trong từng câu trả lời.” 💬 Lưu ý: Bài viết là quan điểm tổng hợp từ góc nhìn người tuyển dụng thực chiến trong ngành. Không đại diện cho tất cả nhà tuyển dụng – hãy tham khảo có chọn lọc, không áp đặt như khuôn mẫu cứng nhắc. 👀 Nhà tuyển dụng đánh giá BA",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 58,
-    "page": 137,
-    "endPage": 139,
-    "title": "Trước khi đăng bài này, tôi đã sửa – rồi xoá – rồi viết lại… không dưới 5 lần. - Vì đây...",
-    "topic": "Nền tảng BA",
-    "takeaway": "Kinh nghiệm thực chiến DAY 58: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Áp dụng kỹ thuật BABOK để chuẩn hóa lập luận và chứng minh tính hợp lý của yêu cầu.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 58 (Trước khi đăng bài này, tôi đã sửa – rồi xoá – rồi viết lại… không dưới 5 lần. - Vì đây...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 5 8 / 1 0 0 Trước khi đăng bài này, tôi đã sửa – rồi xoá – rồi viết lại… không dưới 5 lần. Vì đây là chủ đề dễ chạm tới nhiều bạn đang là BA, và cũng ảnh hưởng đến cách các BA Lead – Manager – HR đánh giá và phân cấp đội ngũ. Bài viết không nhằm dạy ai – mà chia sẻ một góc nhìn thực chiến, từng bước một – khi tiếp quản lại một team BA cũ, giữa nhiều mâu thuẫn ngầm, nhãn mác cũ – và kỳ vọng m",
-    "topicLessonId": "TOPIC-BPMN-PROCESS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 59,
-    "page": 140,
-    "endPage": 141,
-    "title": "Một người lãnh đạo không chết chìm vì dự án khó, mà chết vì không còn nổi một tiếng - đ...",
-    "topic": "Khai thác yêu cầu",
-    "takeaway": "Kinh nghiệm thực chiến DAY 59: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 59 (Một người lãnh đạo không chết chìm vì dự án khó, mà chết vì không còn nổi một tiếng - đ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 5 9 / 1 0 0 Một người lãnh đạo không chết chìm vì dự án khó, mà chết vì không còn nổi một tiếng để suy nghĩ cho ra trò.\" Có một kiểu mệt rất đặc biệt – chỉ những người đang làm BA Lead mới hiểu. Nó không phải kiểu “căng deadline”, không phải kiểu “bị khách hàng dí”…Mà là kiểu mệt lử vì ngày nào cũng đầy việc, nhưng tối về vẫn thấy bản thân… đang bị trôi. Không có một dòng nào để viết ra định",
-    "topicLessonId": "TOPIC-BACCM",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 60,
-    "page": 142,
-    "endPage": 144,
-    "title": "⚠️ Lưu ý: Công thức trong bài không phải chuẩn tuyệt đối. Các hệ số như độ phức tạp, - ...",
-    "topic": "Kỹ năng & Phỏng vấn BA",
-    "takeaway": "Kinh nghiệm thực chiến DAY 60: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 60 (⚠️ Lưu ý: Công thức trong bài không phải chuẩn tuyệt đối. Các hệ số như độ phức tạp, - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 6 0 / 1 0 0 ⚠️ Lưu ý: Công thức trong bài không phải chuẩn tuyệt đối. Các hệ số như độ phức tạp, thời gian confirm, khả năng reuse…thay đổi tùy dự án, tổ chức, và năng lực BA. Hãy dùng như một khung tư duy để bóc effort – đừng áp dụng máy móc.  Nhiều bạn BA kể cả đã làm vài năm, vẫn thường estimate effort dựa theo số lượng màn hình hoặc độ dài tài liệu. Ví dụ như task “Đổi điểm lấy voucher” ",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 61,
-    "page": 145,
-    "endPage": 147,
-    "title": "🪄 Một tối Chủ Nhật, Hà Nội mưa rào… - Trời mưa. Giá đặt xe tăng vọt. Tôi không đi đâu c...",
-    "topic": "Phân tích & thiết kế giải pháp",
-    "takeaway": "Kinh nghiệm thực chiến DAY 61: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 61 (🪄 Một tối Chủ Nhật, Hà Nội mưa rào… - Trời mưa. Giá đặt xe tăng vọt. Tôi không đi đâu c...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 6 1 / 1 0 0 🪄 Một tối Chủ Nhật, Hà Nội mưa rào… Trời mưa. Giá đặt xe tăng vọt. Tôi không đi đâu cả. Nhưng lại nổi hứng… phân tích hệ thống dynamic pricing 🎯 Case study: Gọi xe Xanh SM  Bạn đặt xe đi 5km ở Ba Đình  Hôm qua: 50k  Hôm nay: trời mưa, giờ tan tầm → 90k  Vẫn cùng 1 tuyến đường, nhưng giá thay đổi. Không phải do hãng “chặt chém”.  Mà là vì hệ thống thấy: Nhu cầu tăng đột biến Ít xe",
-    "topicLessonId": "TOPIC-ELICITATION-TECH",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 62,
-    "page": 148,
-    "endPage": 152,
-    "title": "“Làm cái hệ thống đặt bàn cho nhà hàng đi – cho chuyên nghiệp hơn, đỡ lộn xộn. Anh - cầ...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 62: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 62 (“Làm cái hệ thống đặt bàn cho nhà hàng đi – cho chuyên nghiệp hơn, đỡ lộn xộn. Anh - cầ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 6 2 / 1 0 0 “Làm cái hệ thống đặt bàn cho nhà hàng đi – cho chuyên nghiệp hơn, đỡ lộn xộn. Anh cần chạy demo trong 2 tuần nữa nhé.” Đó là tất cả những gì tôi nhận được khi bắt đầu dự án này. Không tài liệu. Không flow. Không ai mô tả được “chuyên nghiệp” là như thế nào. Chỉ có deadline và một câu nói mơ hồ đầy quyết đoán. BA mà không tỉnh – là dính ngay combo chết người: Làm sai bài toán gốc",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 63,
-    "page": 153,
-    "endPage": 154,
-    "title": "Một đội ngũ kỹ thuật – sản phẩm – thiết kế đã ngồi cùng nhau suốt nhiều tuần. - Họ đi n...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 63: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 63 (Một đội ngũ kỹ thuật – sản phẩm – thiết kế đã ngồi cùng nhau suốt nhiều tuần. - Họ đi n...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 6 3 / 1 0 0 Một đội ngũ kỹ thuật – sản phẩm – thiết kế đã ngồi cùng nhau suốt nhiều tuần. Họ đi nghiên cứu người dùng. Họ test từ bản wireframe đến prototype. Họ biết “nỗi đau” thật sự nằm ở đâu. Nhưng đến buổi duyệt thứ 4 – có một người không ở trong hành trình ấy bước vào và nói: “Tôi thấy nên bỏ đoạn này, thêm phần kia. Sao UI nhìn vẫn thiếu chuyên nghiệp? Sao chức năng này chưa đủ?” Lúc ",
-    "topicLessonId": "TOPIC-TRACEABILITY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 64,
-    "page": 155,
-    "endPage": 156,
-    "title": "“Mỗi sprint phải đẩy 20 UC, chốt 4 SRS, tạo 5 ‘idea cải tiến’, tham dự 4 cuộc họp, xử l...",
-    "topic": "Agile & Scrum",
-    "takeaway": "Kinh nghiệm thực chiến DAY 64: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 64 (“Mỗi sprint phải đẩy 20 UC, chốt 4 SRS, tạo 5 ‘idea cải tiến’, tham dự 4 cuộc họp, xử l...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 6 4 / 1 0 0 “Mỗi sprint phải đẩy 20 UC, chốt 4 SRS, tạo 5 ‘idea cải tiến’, tham dự 4 cuộc họp, xử lý tối thiểu 30 comment trên Jira.” Nghe cứ như ép doanh số cho… tài liệu. Khi KPI biến BA thành “công nhân gõ chữ”, giá trị thật sự sẽ chết khô. 1️⃣⃣ Vì sao KPI “đếm file” giết chết tư duy BA? Khi chỉ tập trung vào output, người làm sẽ tối ưu số lượng chứ không còn đào sâu logic. Ví dụ: “Viết đ",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 65,
-    "page": 157,
-    "endPage": 159,
-    "title": "Hôm nay không viết chia sẻ kiến thức, mà chuyển sang chuyên mục “Anh ơi…” – nơi BA - gử...",
-    "topic": "Agile & Scrum",
-    "takeaway": "Kinh nghiệm thực chiến DAY 65: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 65 (Hôm nay không viết chia sẻ kiến thức, mà chuyển sang chuyên mục “Anh ơi…” – nơi BA - gử...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 6 5 / 1 0 0 Hôm nay không viết chia sẻ kiến thức, mà chuyển sang chuyên mục “Anh ơi…” – nơi BA gửi những ca khó xử nhất trong dự án, và mình sẽ cùng gỡ. Chuyên mục bắt đầu! Câu hỏi Em chào anh, em đang có issue trong công việc chưa biết nên xử lý thế nào nhờ anh hỗ trợ góp ý. Hiện em qua công ty mới, ở đây làm product. PO dự án là người có ý tưởng phát triển sản phẩm, là người trực tiếp em t",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 66,
-    "page": 160,
-    "endPage": 161,
-    "title": "Trong giai đoạn pre-seed đến series A, có rất nhiều startup gọi được vốn. Điều đó - thư...",
-    "topic": "Phân tích & thiết kế giải pháp",
-    "takeaway": "Kinh nghiệm thực chiến DAY 66: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 66 (Trong giai đoạn pre-seed đến series A, có rất nhiều startup gọi được vốn. Điều đó - thư...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 6 6 / 1 0 0 Trong giai đoạn pre-seed đến series A, có rất nhiều startup gọi được vốn. Điều đó thường khiến người ta tin rằng: “Công ty này gọi được tiền → chắc là ổn → vào đó làm BA sẽ có đất dụng võ.” Sai. Rất sai. Là một BA, bạn cần nhìn vào startup không chỉ như một người đi làm. Bạn phải nhìn nó như một hệ thống sẽ phát triển – hoặc sẽ đổ sập. Và góc nhìn giúp bạn nhận ra điều đó chính l",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 67,
-    "page": 162,
-    "endPage": 164,
-    "title": "🚀 CI/CD là gì? - CI (Continuous Integration – tích hợp liên tục): Mỗi lần Dev (develope...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 67: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 67 (🚀 CI/CD là gì? - CI (Continuous Integration – tích hợp liên tục): Mỗi lần Dev (develope...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 6 7 / 1 0 0 🚀 CI/CD là gì? CI (Continuous Integration – tích hợp liên tục): Mỗi lần Dev (developer – lập trình viên) đẩy code lên hệ thống, hệ thống sẽ tự động build (biên dịch) và chạy kiểm thử ngay lập tức. CD (Continuous Delivery/Deployment – phân phối/triển khai liên tục): Khi code đã qua kiểm thử, hệ thống sẽ tự động đưa code mới lên môi trường staging hoặc production – không còn bước k",
-    "topicLessonId": "TOPIC-AC-GHERKIN",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 68,
-    "page": 165,
-    "endPage": 166,
-    "title": "Mấy hôm nay inbox đổ về nhiều, đủ thể loại tình huống dở khóc dở cười. Và câu hỏi - đượ...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 68: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 68 (Mấy hôm nay inbox đổ về nhiều, đủ thể loại tình huống dở khóc dở cười. Và câu hỏi - đượ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 6 8 / 1 0 0 Mấy hôm nay inbox đổ về nhiều, đủ thể loại tình huống dở khóc dở cười. Và câu hỏi được chọn hôm nay là một case rất kinh điển của anh em BA làm outsource, khi mà mình demo kỹ càng, báo cáo đầy đủ, nhưng khách… vẫn không công nhận là đã xong. ❓ Câu hỏi Anh ơi, em nhờ góp ý chút. Em là BA outsource, mỗi tuần em đều chuẩn bị slide tóm tắt update trước buổi demo, ghi rõ phần nào đã l",
-    "topicLessonId": "TOPIC-UX-PRODUCT-DISCOVERY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 69,
-    "page": 167,
-    "endPage": 168,
-    "title": "Không phải lúc nào người dùng cũng rảnh rỗi, ngồi ngay ngắn, hai tay đặt đúng vị trí, -...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 69: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 69 (Không phải lúc nào người dùng cũng rảnh rỗi, ngồi ngay ngắn, hai tay đặt đúng vị trí, -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 6 9 / 1 0 0 Không phải lúc nào người dùng cũng rảnh rỗi, ngồi ngay ngắn, hai tay đặt đúng vị trí, tinh thần ổn định, và ánh sáng hoàn hảo. Có những lúc vì lý do nào đó họ chỉ có một tay để thao tác. Tay còn lại đang làm gì – ta không rõ. Và cũng không cần biết. Nhưng nếu bạn làm sản phẩm, nếu bạn là BA, bạn cần quan tâm. Và đó là lúc Design Thinking thật sự được kích hoạt. 💡 Design Thinking ",
-    "topicLessonId": "TOPIC-STATE-MACHINE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 70,
-    "page": 169,
-    "endPage": 170,
-    "title": "❌ “Lỗi này hình như mình gặp hoài rồi mà?” - ❌ “Cái bug này từng fix mà?”",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 70: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 70 (❌ “Lỗi này hình như mình gặp hoài rồi mà?” - ❌ “Cái bug này từng fix mà?”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 7 0 / 1 0 0 ❌ “Lỗi này hình như mình gặp hoài rồi mà?” ❌ “Cái bug này từng fix mà?” ❌ “Tại sao vẫn không ai rút ra được kinh nghiệm gì?” Một lần nọ, tôi hỏi cả team BA:  “Chúng ta từng vấp gì trong dự án cũ – và liệu có ai rút ra được quy chuẩn gì không?” Không ai trả lời. Không phải vì không nhớ, mà vì… chưa bao giờ ngồi lại để review nghiêm túc. ❌ Sai lầm phổ biến trong team BA Không ghi l",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 71,
-    "page": 171,
-    "endPage": 172,
-    "title": "“Em không nghỉ vì lương. Em nghỉ vì mỗi sáng mở Jira ra, em không biết mình đang - làm ...",
-    "topic": "Agile & Scrum",
-    "takeaway": "Kinh nghiệm thực chiến DAY 71: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 71 (“Em không nghỉ vì lương. Em nghỉ vì mỗi sáng mở Jira ra, em không biết mình đang - làm ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 7 1 / 1 0 0 “Em không nghỉ vì lương. Em nghỉ vì mỗi sáng mở Jira ra, em không biết mình đang làm điều này… cho ai nữa.” Có những sự rời đi không kèm theo giận dữ, không có va chạm. Chỉ là… họ không còn lý do để tiếp tục gắn bó. Không phải vì công ty tệ. Không phải vì sếp ép. Mà vì… họ không còn tin sản phẩm này có ý nghĩa. 🔋 Có những cái mệt không đến từ việc nhiều Mà đến từ việc… không còn ",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 72,
-    "page": 173,
-    "endPage": 174,
-    "title": "Có những buổi họp mà bạn cảm nhận rõ ràng: - DEV thì lặng thinh.",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 72: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 72 (Có những buổi họp mà bạn cảm nhận rõ ràng: - DEV thì lặng thinh.) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 7 2 / 1 0 0 Có những buổi họp mà bạn cảm nhận rõ ràng: DEV thì lặng thinh. QC thì nhìn trần nhà. PM hỏi: “Tại sao lại delay sprint này?” Không ai trả lời thẳng. Chỉ có tiếng thở dài. Và rồi cái vòng lặp “im lặng – đổ lỗi – cố gắng làm cho xong” lại tiếp tục. Lúc đó, nếu bạn là BA mà chỉ hỏi: “Vướng gì thế mọi người?” thì không ai trả lời đâu. Nhưng nếu bạn vẽ ra một chiếc tàu cao tốc, đặt câ",
-    "topicLessonId": "TOPIC-AGILE-USER-STORY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 73,
-    "page": 175,
-    "endPage": 177,
-    "title": "Ở giải marathon, người ta không chạy bằng máu lửa. Họ chạy bằng pace và bằng tim. - Có ...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 73: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 73 (Ở giải marathon, người ta không chạy bằng máu lửa. Họ chạy bằng pace và bằng tim. - Có ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 7 3 / 1 0 0 Ở giải marathon, người ta không chạy bằng máu lửa. Họ chạy bằng pace và bằng tim. Có những runner pace 8, tim ổn, đều đặn dừng ở mọi trạm nước. Không cố bám nhóm sub 4, không gồng. Và tới km 38, họ vẫn còn chạy. Còn người mở đầu với pace 4, và rồi chườm đá ở trạm y tế. Chạy nhanh không khó. Chạy không gãy mới khó. Tôi đã thấy những team phần mềm giống y như vậy. Sprint đầu – chạy",
-    "topicLessonId": "TOPIC-BPMN-PROCESS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 74,
-    "page": 178,
-    "endPage": 180,
-    "title": "Đã gần một tuần rồi tôi không viết. Không phải vì bí ý tưởng – mà vì viết rồi lại xoá. ...",
-    "topic": "Phân tích & thiết kế giải pháp",
-    "takeaway": "Kinh nghiệm thực chiến DAY 74: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 74 (Đã gần một tuần rồi tôi không viết. Không phải vì bí ý tưởng – mà vì viết rồi lại xoá. ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 7 4 / 1 0 0 Đã gần một tuần rồi tôi không viết. Không phải vì bí ý tưởng – mà vì viết rồi lại xoá. Gõ được nửa bài, lại thấy không đủ sâu, không đủ chất, không đủ “đáng để đọc” – thế là tôi bỏ. Off luôn. Để series tạm lặng vài hôm. Vài ngày trước, vào lúc 2h sáng, tôi nhận được tin nhắn: “Em chào anh, em theo dõi series 100 ngày của anh và mong được anh tư vấn ạ. Hiện em bị dev trong team ng",
-    "topicLessonId": "TOPIC-ELICITATION-TECH",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 75,
-    "page": 181,
-    "endPage": 183,
-    "title": "“Anh tưởng tài liệu xong là dev hiểu được hết chứ?” - “Chị thấy tính năng đơn giản thôi...",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 75: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 75 (“Anh tưởng tài liệu xong là dev hiểu được hết chứ?” - “Chị thấy tính năng đơn giản thôi...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 7 5 / 1 0 0 “Anh tưởng tài liệu xong là dev hiểu được hết chứ?”  “Chị thấy tính năng đơn giản thôi, sao tài liệu tới 10 trang?” Team BA đó không phải lần đầu làm nghề. Họ có checklist, có mẫu chuẩn, có flow, có rule, có cả mapping API. Họ làm đủ. Nhưng vẫn… chưa đúng – theo định nghĩa của sếp. Mọi chuyện bắt đầu từ những cuộc họp lưng chừng. Sếp giao việc bằng miệng:  “Làm giống bên XYZ là đ",
-    "topicLessonId": "TOPIC-TRACEABILITY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 76,
-    "page": 184,
-    "endPage": 186,
-    "title": "Trong một hệ thống bất kỳ, dù nghiệp vụ có mượt đến đâu, chỉ cần một thông số kỹ - thuậ...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 76: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 76 (Trong một hệ thống bất kỳ, dù nghiệp vụ có mượt đến đâu, chỉ cần một thông số kỹ - thuậ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 7 6 / 1 0 0 Trong một hệ thống bất kỳ, dù nghiệp vụ có mượt đến đâu, chỉ cần một thông số kỹ thuật bị bỏ qua cũng đủ khiến trải nghiệm người dùng bị gãy. Non-Functional Requirements (NFR) không phải phần “dành cho dev lo sau”, mà là xương sống để hệ thống chịu được áp lực thật: khi người dùng đông, khi có lỗi mạng, khi xử lý chậm, hoặc khi cần bảo vệ dữ liệu. Dưới đây là 6 nhóm thông số mà B",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 77,
-    "page": 187,
-    "endPage": 189,
-    "title": "App mobile thì cũng là hệ thống thôi mà – logic giống web, flow giống nhau, chỉ khác - ...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 77: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 77 (App mobile thì cũng là hệ thống thôi mà – logic giống web, flow giống nhau, chỉ khác - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 7 7 / 1 0 0 App mobile thì cũng là hệ thống thôi mà – logic giống web, flow giống nhau, chỉ khác giao diện chút xíu.” Một nhận định tưởng vô hại, nhưng đã khiến không ít dự án vỡ trận vì bug, bị từ chối duyệt app, và bị người dùng phản ánh liên tục ngay từ tuần đầu ra mắt. 🕯️ Câu chuyện thật: Bê tư duy web sang mobile – Và cái kết đắng Trong một dự án phát triển mobile app phục vụ việc đặt l",
-    "topicLessonId": "TOPIC-AC-GHERKIN",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 78,
-    "page": 190,
-    "endPage": 191,
-    "title": "Ở một công ty nọ, có một bạn nhân sự trẻ không giỏi xuất chúng, cũng chẳng phải key - m...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 78: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 78 (Ở một công ty nọ, có một bạn nhân sự trẻ không giỏi xuất chúng, cũng chẳng phải key - m...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 7 8 / 1 0 0 Ở một công ty nọ, có một bạn nhân sự trẻ không giỏi xuất chúng, cũng chẳng phải key member nổi bật. Nhưng là người lặng lẽ support mọi người, biết nhận phần việc không ai muốn, luôn đúng hẹn, và chưa bao giờ nói câu “không phải việc của em”. Bạn ấy làm BA – vai trò mà nếu làm tốt thì chẳng ai để ý, còn làm sai thì cả team dính bug. Hợp đồng lao động của bạn kéo dài 1 năm. Đến cuố",
-    "topicLessonId": "TOPIC-BACCM",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 79,
-    "page": 192,
-    "endPage": 193,
-    "title": "📌 Nhiều BA viết flow cực kỳ đẹp, rule đầy đủ, bước rõ ràng, UX hợp lý. Nhưng khi lên - ...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 79: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 79 (📌 Nhiều BA viết flow cực kỳ đẹp, rule đầy đủ, bước rõ ràng, UX hợp lý. Nhưng khi lên - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 7 9 / 1 0 0 📌 Nhiều BA viết flow cực kỳ đẹp, rule đầy đủ, bước rõ ràng, UX hợp lý. Nhưng khi lên họp review, lại nhận về câu hỏi từ phía kinh doanh: 💬 “Flow thì ổn rồi. Nhưng không đúng hướng sản phẩm.” 💬 “Tính năng này viết kỹ đấy, nhưng không tạo ra giá trị thật.” 💬 “Cái này hợp lý về logic… nhưng không đúng với mô hình vận hành của bên anh.” Tại sao lại vậy? Vì bạn viết flow khi chưa nhìn",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 80,
-    "page": 194,
-    "endPage": 195,
-    "title": "💥 “Sao lại báo lỗi? Em nhập đúng rồi mà!” - 💥 “Anh fix rồi mà vẫn lỗi. À, lần này lỗi k...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 80: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 80 (💥 “Sao lại báo lỗi? Em nhập đúng rồi mà!” - 💥 “Anh fix rồi mà vẫn lỗi. À, lần này lỗi k...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 8 0 / 1 0 0 💥 “Sao lại báo lỗi? Em nhập đúng rồi mà!”  💥 “Anh fix rồi mà vẫn lỗi. À, lần này lỗi khác!”  💥 “Ủa BA ghi lỗi kiểu này là lỗi system hay do user vậy ạ?” Nếu bạn từng nghe DEV hỏi những câu này, thì có thể bạn đang viết lỗi… lộn xộn. 🪦 Một dự án toang vì viết lỗi không rõ ràng Trong một hệ thống chấm công, khi người dùng nhập giờ ra sớm hơn giờ vào, hệ thống báo lỗi: ❌ “Không thể ",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 81,
-    "page": 196,
-    "endPage": 197,
-    "title": "👨‍💻 Một buổi tối, sau giờ làm, một bạn BA 3 năm kinh nghiệm nhắn tin cho tôi: - “Anh Ph...",
-    "topic": "Agile & Scrum",
-    "takeaway": "Kinh nghiệm thực chiến DAY 81: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 81 (👨‍💻 Một buổi tối, sau giờ làm, một bạn BA 3 năm kinh nghiệm nhắn tin cho tôi: - “Anh Ph...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 8 1 / 1 0 0 👨‍💻 Một buổi tối, sau giờ làm, một bạn BA 3 năm kinh nghiệm nhắn tin cho tôi: “Anh Phú ơi, công ty em chạy agile scrum cả năm nay rồi. Sprint nào cũng có planning, backlog groom đầy đủ. Mà sprint vẫn trễ. To-do thì nhiều mà done thì ít. Team thì bảo quá tải, quản lý thì bảo plan fail. Em không hiểu: tại sao vẫn trễ dù đã agile?” Tôi thở dài. Không phải lần đầu nghe chuyện này. Nh",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 82,
-    "page": 198,
-    "endPage": 199,
-    "title": "Một buổi tối bình thường, tôi gọi một chuyến xe máy công nghệ. Khi vào app, tôi thấy - ...",
-    "topic": "Phân tích & thiết kế giải pháp",
-    "takeaway": "Kinh nghiệm thực chiến DAY 82: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 82 (Một buổi tối bình thường, tôi gọi một chuyến xe máy công nghệ. Khi vào app, tôi thấy - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 8 2 / 1 0 0 Một buổi tối bình thường, tôi gọi một chuyến xe máy công nghệ. Khi vào app, tôi thấy một dòng chữ: “Tài xế đang trả khách…”.Chỉ một dòng đơn giản nhưng đằng sau đó là cả một cơ chế nối cuốc cực kỳ thông minh. 1. Nối cuốc là gì? Trong các app gọi xe như XanhSM, Grab, Be…, nối cuốc là cơ chế cho phép hệ thống gán trước cuốc tiếp theo cho tài xế khi họ đang thực hiện cuốc hiện tại. ",
-    "topicLessonId": "TOPIC-UX-PRODUCT-DISCOVERY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 83,
-    "page": 200,
-    "endPage": 203,
-    "title": "Tôi xem lại Tây Du Ký lần thứ n, và lần này, tôi không còn thấy yêu quái. Tôi thấy… một...",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 83: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 83 (Tôi xem lại Tây Du Ký lần thứ n, và lần này, tôi không còn thấy yêu quái. Tôi thấy… một...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 8 3 / 1 0 0 Tôi xem lại Tây Du Ký lần thứ n, và lần này, tôi không còn thấy yêu quái. Tôi thấy… một công ty, nơi có một sếp Đường Tăng, một dev tên Ngộ Không, một bạn nghiệp vụ kiểu Bát Giới, chị vận hành tên Sa Tăng, và một anh support lặng thầm như Bạch Long Mã. Và tôi thấy BA ở giữa phải hiểu tất cả họ, nếu không muốn flow mình viết ra bị nghiền nát trong họp review. 🧘 1. Sếp Đường Tăng –",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 84,
-    "page": 204,
-    "endPage": 205,
-    "title": "🧨 “Em ơi, từ hôm nay anh Trung không phụ trách nữa nhé. Chị Hà sẽ làm việc với em. - Mì...",
-    "topic": "Nền tảng BA",
-    "takeaway": "Kinh nghiệm thực chiến DAY 84: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 84 (🧨 “Em ơi, từ hôm nay anh Trung không phụ trách nữa nhé. Chị Hà sẽ làm việc với em. - Mì...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 8 4 / 1 0 0 🧨 “Em ơi, từ hôm nay anh Trung không phụ trách nữa nhé. Chị Hà sẽ làm việc với em. Mình mong dự án vẫn chạy đúng tiến độ nha!” Nghe xong câu này, tôi toát mồ hôi. Vì chị Hà người đại diện mới chưa từng dự họp dự án, chưa đọc tài liệu nào, và… có vẻ chưa ưng hướng đi hiện tại. 🫠 Nếu bạn từng gặp trường hợp client đổi người đại diện giữa dòng, bạn sẽ hiểu:  👉 Mọi giả định trước đó ",
-    "topicLessonId": "TOPIC-STATE-MACHINE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 85,
-    "page": 206,
-    "endPage": 207,
-    "title": "“Cái này BA lo luôn nhé, chứ giờ ai làm?” - “Ơ, em là BA mà? Em hiểu nhất còn gì?”",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 85: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 85 (“Cái này BA lo luôn nhé, chứ giờ ai làm?” - “Ơ, em là BA mà? Em hiểu nhất còn gì?”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 8 5 / 1 0 0 “Cái này BA lo luôn nhé, chứ giờ ai làm?” “Ơ, em là BA mà? Em hiểu nhất còn gì?” “Chỗ này cũng liên quan logic – BA confirm giúp rồi viết test case hộ luôn nhé.” Mỗi lần nghe những câu này, BA sẽ làm gì?  👉 Cắn răng làm, rồi tối về stress?  👉 Từ chối, rồi bị đánh giá thiếu hỗ trợ teamwork? 🎬 Bối cảnh thật tại một công ty “vừa vừa” Không phải startup nhỏ, cũng chẳng phải tập đoàn.",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 86,
-    "page": 208,
-    "endPage": 211,
-    "title": "Bạn được giao viết lại tài liệu cho một tính năng đã chạy 3 năm, không tài liệu gốc, de...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 86: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 86 (Bạn được giao viết lại tài liệu cho một tính năng đã chạy 3 năm, không tài liệu gốc, de...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 8 6 / 1 0 0 Bạn được giao viết lại tài liệu cho một tính năng đã chạy 3 năm, không tài liệu gốc, dev cũ đã nghỉ, test thì nhớ nhớ quên quên? → Chào mừng đến thử thách reverse- engineering, kỹ năng sinh tồn của BA. 🧩 Bối cảnh ban đầu Bạn được giao viết lại tài liệu cho một tính năng đã hoạt động hơn 3 năm: “Khi xác nhận đơn giao hàng thì hệ thống sẽ tự động tạo phiếu xuất kho.” Nhưng…  ❌ Khôn",
-    "topicLessonId": "TOPIC-BPMN-PROCESS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 87,
-    "page": 212,
-    "endPage": 213,
-    "title": "Một leader giỏi không phải là người góp ý đúng mà là người khiến người khác vẫn muốn - ...",
-    "topic": "Khai thác yêu cầu",
-    "takeaway": "Kinh nghiệm thực chiến DAY 87: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 87 (Một leader giỏi không phải là người góp ý đúng mà là người khiến người khác vẫn muốn - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 8 7 / 1 0 0 Một leader giỏi không phải là người góp ý đúng mà là người khiến người khác vẫn muốn làm việc cùng sau khi bị góp ý. 🧠 Phản hồi là con dao hai lưỡi – có thể giúp người ta tiến bộ, hoặc khiến họ gãy tinh thần. Dù bạn nói với thiện chí đến đâu, thì trong mắt người nhận, góp ý vẫn là một dạng từ chối, rằng thứ họ làm ra chưa đủ tốt, họ chưa đạt kỳ vọng. Và phản ứng phổ biến của họ k",
-    "topicLessonId": "TOPIC-ELICITATION-TECH",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 88,
-    "page": 214,
-    "endPage": 215,
-    "title": "Một người “nói nhiều hơn làm” trong team không chỉ là chuyện cá nhân. - Nó là bài test ...",
-    "topic": "Đặc tả & Quản lý yêu cầu",
-    "takeaway": "Kinh nghiệm thực chiến DAY 88: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn rà soát biên giới hạn (Boundary) và kịch bản ngoại lệ (Edge cases) để không bỏ sót lỗ hổng logic.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 88 (Một người “nói nhiều hơn làm” trong team không chỉ là chuyện cá nhân. - Nó là bài test ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 8 8 / 1 0 0 Một người “nói nhiều hơn làm” trong team không chỉ là chuyện cá nhân. Nó là bài test dành cho người dẫn dắt: liệu bạn có dám bóc tách sự hào nhoáng để truy tới tận rễ hiệu suất thật? 👔 Câu chuyện thật Bạn B – profile đẹp, nói năng mạch lạc, phát biểu dõng dạc ở mọi buổi grooming. Câu nào cũng có thuật ngữ: “Em nghĩ nên trace requirement bằng traceability matrix”, “Em đề xuất dùng",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 89,
-    "page": 216,
-    "endPage": 217,
-    "title": "Xem xong Mad Unicorn, tôi không nghĩ về startup. Tôi nghĩ về nghề BA. Nghĩ về những - l...",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 89: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 89 (Xem xong Mad Unicorn, tôi không nghĩ về startup. Tôi nghĩ về nghề BA. Nghĩ về những - l...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 8 9 / 1 0 0 Xem xong Mad Unicorn, tôi không nghĩ về startup. Tôi nghĩ về nghề BA. Nghĩ về những lúc mình hùng hổ vẽ flow, viết tài liệu chi chít use case… Nhưng lại chẳng biết người dùng thật sự bực mình ở đâu. 🎬 Một bộ phim startup nhưng không bắt đầu từ công nghệ Bối cảnh phim là hành trình khởi nghiệp trong ngành giao hàng. Không bắt đầu bằng gọi vốn. Không bắt đầu bằng viết app. Mà bắt đ",
-    "topicLessonId": "TOPIC-TRACEABILITY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 90,
-    "page": 218,
-    "endPage": 219,
-    "title": "Bạn là BA Lead? Tức là bạn vừa làm nghề vừa phải giữ team, giữ chất lượng, giữ - deadli...",
-    "topic": "Phân tích & thiết kế giải pháp",
-    "takeaway": "Kinh nghiệm thực chiến DAY 90: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 90 (Bạn là BA Lead? Tức là bạn vừa làm nghề vừa phải giữ team, giữ chất lượng, giữ - deadli...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 9 0 / 1 0 0 Bạn là BA Lead? Tức là bạn vừa làm nghề vừa phải giữ team, giữ chất lượng, giữ deadline. Không còn là người “chạy việc BA”, bạn cần quản trị cả hệ thống tư duy và vận hành của đội ngũ BA. Và P.O.L.C không phải lý thuyết quản trị suông mà là framework sống còn để bạn không bị cuốn vào mớ deadline, họp loạn xạ. 1. 🧠 Planning: lập kế hoạch để giữ team không bị dạt BA Lead không thể ",
-    "topicLessonId": "TOPIC-AC-GHERKIN",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 91,
-    "page": 220,
-    "endPage": 220,
-    "title": "Phiên dịch tập 1] - 🎧 Nghe: “Tuỳ em”",
-    "topic": "Mô hình hóa quy trình",
-    "takeaway": "Kinh nghiệm thực chiến DAY 91: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 91 (Phiên dịch tập 1] - 🎧 Nghe: “Tuỳ em”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 9 1 / 1 0 0 Phiên dịch tập 1] 🎧 Nghe: “Tuỳ em” 🧠 Dịch chuẩn:  “Tôi chưa nghĩ ra. Em cứ làm đi, nếu không đúng tôi sẽ bảo là không đúng.” ☠️ Cạm bẫy:  Không hề là “em toàn quyền quyết định”.  Mà là “cứ làm đi để tôi còn có quyền chê”. 🛡️ Cách BA sinh tồn:  “Vậy anh/chị có thể giúp em chọn một trong hai hướng sau không ạ?” (kèm prototype, flow, impact analysis nhẹ nhàng) 🎧 Nghe: “Có mỗi chức n",
-    "topicLessonId": "TOPIC-BACCM",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 92,
-    "page": 221,
-    "endPage": 222,
-    "title": "Ngày ngựa mất, cả làng đến chia buồn. Ông lão chỉ cười, không trách cũng không tiếc. - ...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 92: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 92 (Ngày ngựa mất, cả làng đến chia buồn. Ông lão chỉ cười, không trách cũng không tiếc. - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 9 2 / 1 0 0 Ngày ngựa mất, cả làng đến chia buồn. Ông lão chỉ cười, không trách cũng không tiếc. Ngày ngựa về, lại dắt thêm một con tốt hơn. Cả làng đến chúc mừng. Ông cũng cười. Nhưng vẫn không vui. Rồi con trai ông ngã gãy chân vì con ngựa mới. Người làng lại thương cảm. Cuối cùng, chiến tranh nổ ra, trai làng đều bị gọi đi lính, chỉ mình cậu con trai gãy chân được ở lại. Thoát chết. Nghe ",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 93,
-    "page": 223,
-    "endPage": 224,
-    "title": "📌 Làm BA lâu năm, tưởng là sẽ vững hơn, nhiều kinh nghiệm hơn, nhưng thật ra lại dễ - c...",
-    "topic": "Testing & UAT",
-    "takeaway": "Kinh nghiệm thực chiến DAY 93: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 93 (📌 Làm BA lâu năm, tưởng là sẽ vững hơn, nhiều kinh nghiệm hơn, nhưng thật ra lại dễ - c...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 9 3 / 1 0 0 📌 Làm BA lâu năm, tưởng là sẽ vững hơn, nhiều kinh nghiệm hơn, nhưng thật ra lại dễ chủ quan hơn. Tôi từng nghĩ: “Cái này mình làm nhiều rồi”, cho đến khi team rơi vào đống issue. Dưới đây là 5 lỗi phổ biến mà rất nhiều Senior BA, Lead BA gặp phải. 👉 Đây là tổng hợp dựa trên quan sát và kinh nghiệm cá nhân, không đại diện cho bài nghiên cứu, một report chính thống nào đâu nhé, th",
-    "topicLessonId": "TOPIC-AGILE-USER-STORY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 94,
-    "page": 225,
-    "endPage": 226,
-    "title": "Định ém mấy bài hay hay để viết vào ebook nhưng hôm nay nhá hàng tí vì thấy nhiều - cas...",
-    "topic": "Đặc tả & Quản lý yêu cầu",
-    "takeaway": "Kinh nghiệm thực chiến DAY 94: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 94 (Định ém mấy bài hay hay để viết vào ebook nhưng hôm nay nhá hàng tí vì thấy nhiều - cas...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 9 4 / 1 0 0 Định ém mấy bài hay hay để viết vào ebook nhưng hôm nay nhá hàng tí vì thấy nhiều case gặp phải vấn đề này. Một trong những cái bẫy chết người của dự án là: hợp đồng ký thì tưởng đã chốt, nhưng khi BA phân tích chi tiết, scope cứ phình ra vô tận. Vậy đâu là cách để khóa scope ngay từ đầu đến cuối? Trước khi bắt đầu phân tích (ngay sau khi ký hợp đồng) ❌ Sai: Nghĩ rằng SOW chỉ là ",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 95,
-    "page": 227,
-    "endPage": 228,
-    "title": "Trong một buổi khảo sát, khách nói: “Dữ liệu bao gồm nhưng không giới hạn ở…” - Hoặc: “...",
-    "topic": "Dữ liệu & SQL",
-    "takeaway": "Kinh nghiệm thực chiến DAY 95: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 95 (Trong một buổi khảo sát, khách nói: “Dữ liệu bao gồm nhưng không giới hạn ở…” - Hoặc: “...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 9 5 / 1 0 0 Trong một buổi khảo sát, khách nói: “Dữ liệu bao gồm nhưng không giới hạn ở…”  Hoặc: “Hệ thống có khả năng mở rộng, sau này thêm gì cũng được.” Nếu bạn ghi nguyên văn vào SRS, xin chúc mừng, bạn vừa ký một cái hợp đồng trắng cho khách hàng. Đến lúc đi triển khai, đội DEV và BA sẽ bị “truy” vì cái gì cũng được hiểu là “đã bao gồm”. Sai lầm thường gặp Ghi mơ hồ vào tài liệu, copy y",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 96,
-    "page": 229,
-    "endPage": 230,
-    "title": "Làm BA mà ôm nỗi sợ sai thì thua ngay từ vạch xuất phát. Fail Fast không phải triết lý ...",
-    "topic": "Khai thác yêu cầu",
-    "takeaway": "Kinh nghiệm thực chiến DAY 96: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 96 (Làm BA mà ôm nỗi sợ sai thì thua ngay từ vạch xuất phát. Fail Fast không phải triết lý ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 9 6 / 1 0 0 Làm BA mà ôm nỗi sợ sai thì thua ngay từ vạch xuất phát. Fail Fast không phải triết lý màu mè, nó là cái phanh khẩn cấp cứu dự án khi còn nằm trên bàn phân tích. 1. Câu chuyện thực chiến Dự án triển khai hệ thống điểm danh cho chuỗi phòng gym. BA junior dành cả tháng để “thu thập đủ yêu cầu”, viết tài liệu 80 trang. Khi trình lên, khách hàng mới bảo:  “Anh ơi, bên em có phòng khô",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 97,
-    "page": 231,
-    "endPage": 232,
-    "title": "Một BA Leader giỏi không chỉ viết requirement, mà còn biết giữ nhịp năng lượng cho cả -...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 97: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 97 (Một BA Leader giỏi không chỉ viết requirement, mà còn biết giữ nhịp năng lượng cho cả -...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 9 7 / 1 0 0 Một BA Leader giỏi không chỉ viết requirement, mà còn biết giữ nhịp năng lượng cho cả team. Nếu bạn chỉ tập trung vào tài liệu mà quên cách dẫn dắt, sớm muộn gì đội ngũ cũng kiệt sức. 1. Biến mọi việc thành “cháy nhà” Sai lầm: ngày nào cũng có việc “gấp”, task nào cũng “khẩn”. Hệ quả: team chai lì, mất phân biệt thật giả, không còn phản ứng nhanh với sự cố thật sự. Cách đúng: thi",
-    "topicLessonId": "TOPIC-STATE-MACHINE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 98,
-    "page": 233,
-    "endPage": 234,
-    "title": "“Em viết requirement: nhập chữ thì hệ thống gợi ý ra vài từ. Dev hỏi: gợi ý kiểu gì? - ...",
-    "topic": "UX & Product Thinking",
-    "takeaway": "Kinh nghiệm thực chiến DAY 98: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 98 (“Em viết requirement: nhập chữ thì hệ thống gợi ý ra vài từ. Dev hỏi: gợi ý kiểu gì? - ...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 9 8 / 1 0 0 “Em viết requirement: nhập chữ thì hệ thống gợi ý ra vài từ. Dev hỏi: gợi ý kiểu gì?  Em bảo: thì giống Google thôi ạ!”  👉 Vậy là xong. Dự án… đi đâu không biết. ❌ Khi BA viết “gợi ý” nhưng không phân biệt bản chất Ví dụ: “Hệ thống gợi ý từ phù hợp khi người dùng nhập liệu.”  Nhưng không nói rõ: gợi ý dựa vào đâu. Cơ chế là rule hay machine learning. Kết quả có sắp xếp không. Bao",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 99,
-    "page": 235,
-    "endPage": 235,
-    "title": "Có một kiểu “ngụy biện” rất phổ biến trong nghề BA: - “Em làm xong 10 use case rồi.”",
-    "topic": "Agile & Scrum",
-    "takeaway": "Kinh nghiệm thực chiến DAY 99: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 99 (Có một kiểu “ngụy biện” rất phổ biến trong nghề BA: - “Em làm xong 10 use case rồi.”) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 9 9 / 1 0 0 Có một kiểu “ngụy biện” rất phổ biến trong nghề BA: “Em làm xong 10 use case rồi.” “Em refine đủ backlog cho sprint này rồi.” “Tuần vừa rồi em họp với khách hàng 8 buổi.” Nghe thì căng như dây đàn. Nhưng business hỏi ngược lại: “Thế sau từng ấy việc, chúng ta đạt được điều gì?” Và lúc đó, nhiều bạn… cứng họng. ❌ Sai lầm chết người Bạn nhầm Output với Outcome. Output = Thứ bạn sản",
-    "topicLessonId": "TOPIC-UX-PRODUCT-DISCOVERY",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  },
-  {
-    "day": 100,
-    "page": 236,
-    "endPage": 237,
-    "title": "Sau 10 năm làm BA, tôi không giữ được nhiều… - Không giữ được hết những người từng đồng...",
-    "topic": "Khai thác yêu cầu",
-    "takeaway": "Kinh nghiệm thực chiến DAY 100: Khi làm việc trong dự án, BA không chỉ ghi chép bề nổi mà cần đào sâu bối cảnh, xác thực logic hệ thống và chủ động đối thoại với các bên liên quan để bảo vệ giá trị giải pháp. Luôn phân tầng quyền lực và kỳ vọng của Stakeholders để tránh hiểu lầm phạm vi phát sinh.",
-    "projectQuestion": "Trong dự án hiện tại của bạn, tình huống tương tự DAY 100 (Sau 10 năm làm BA, tôi không giữ được nhiều… - Không giữ được hết những người từng đồng...) đã từng xảy ra chưa? Bạn sẽ áp dụng checklist hoặc bước xác nhận nào để giải quyết dứt điểm?",
-    "snippet": "D A Y 1 0 0 / 1 0 0 Sau 10 năm làm BA, tôi không giữ được nhiều…  Không giữ được hết những người từng đồng hành.  Không giữ được toàn bộ dự án từng làm.  Cũng không giữ được sức trẻ như ngày đầu bước vào nghề. Nhưng có 3 thứ tôi giữ rất chặt – vì nếu mất, tôi không thể đi tiếp với nghề này. Tôi từng nhận một dự án giữa chừng – BA trước nghỉ ngang, không tài liệu. Chỉ có một đống ticket dev đang là",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW",
-    "authorNote": "Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú đúc kết qua hơn 10 năm làm việc trong các dự án phần mềm."
-  }
-];
+if (typeof window !== 'undefined') { window.booksMeta = booksMeta; } else if (typeof global !== 'undefined') { global.booksMeta = booksMeta; }
+const bookBabokTasks = booksMeta[0].toc.filter(t => t.id.startsWith('task-')).map(t => ({
+  code: t.code.replace('Task ', ''),
+  name: t.title.replace(/^\d+\.\d+\s+/, ''),
+  chapter: t.category,
+  page: t.pdfPage,
+  topicLessonId: 'TOPIC-TRACEABILITY',
+  purpose: t.summary,
+  inputs: ['Needs'],
+  outputs: ['Requirements'],
+  whenToApply: 'Áp dụng trong giai đoạn lập kế hoạch và đặc tả.'
+}));
+const bookBcsChapters = booksMeta[1].toc.filter(c => c.available).map((c, i) => ({
+  chapter: i + 1,
+  title: c.title,
+  pages: c.pdfPage + ' - ' + (c.pdfPage + 20),
+  topicLessonId: 'TOPIC-BACCM',
+  sections: ['Introduction', 'Core concepts', 'Application'],
+  summary: c.summary
+}));
+const bookDays100 = booksMeta[2].toc.map((d, i) => ({
+  day: i + 1,
+  page: d.pdfPage,
+  title: d.title,
+  topic: d.category,
+  takeaway: d.takeaway,
+  projectQuestion: d.projectQuestion,
+  authorNote: 'Kinh nghiệm nghề thực chiến của tác giả Nguyễn Bá Phú',
+  topicLessonId: 'TOPIC-TRACEABILITY'
+}));
 const bookTopicLessons = [
   {
     "id": "TOPIC-IMPACT-ANALYSIS",
@@ -2678,344 +2760,362 @@ const bookCrossReference = [
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
+    "itemCode": "Chương 1",
+    "itemTitle": "Introduction (Tổng quan về BABOK Guide v3)",
+    "page": 11,
+    "topic": "Nền tảng BA",
+    "topicLessonId": "TOPIC-TRACEABILITY"
+  },
+  {
+    "bookId": "babok-v3",
+    "bookTitle": "BABOK Guide v3",
+    "itemCode": "Chương 2",
+    "itemTitle": "Business Analysis Key Concepts (Mô hình BACCM & Thuật ngữ)",
+    "page": 21,
+    "topic": "Nền tảng BA",
+    "topicLessonId": "TOPIC-TRACEABILITY"
+  },
+  {
+    "bookId": "babok-v3",
+    "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 3.1",
-    "itemTitle": "Plan Business Analysis Approach",
+    "itemTitle": "3.1 Plan Business Analysis Approach",
     "page": 34,
-    "topic": "BA Planning and Monitoring",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE"
+    "topic": "Planning & Monitoring",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 3.2",
-    "itemTitle": "Plan Stakeholder Engagement",
+    "itemTitle": "3.2 Plan Stakeholder Engagement",
     "page": 41,
-    "topic": "BA Planning and Monitoring",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT"
+    "topic": "Planning & Monitoring",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 3.3",
-    "itemTitle": "Plan Business Analysis Governance",
+    "itemTitle": "3.3 Plan Business Analysis Governance",
     "page": 47,
-    "topic": "BA Planning and Monitoring",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE"
+    "topic": "Planning & Monitoring",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 3.4",
-    "itemTitle": "Plan Business Analysis Information Management",
+    "itemTitle": "3.4 Plan Business Analysis Information Management",
     "page": 52,
-    "topic": "BA Planning and Monitoring",
+    "topic": "Planning & Monitoring",
     "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 3.5",
-    "itemTitle": "Identify Business Analysis Performance Improvements",
+    "itemTitle": "3.5 Identify Business Analysis Performance Improvements",
     "page": 57,
-    "topic": "BA Planning and Monitoring",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE"
+    "topic": "Planning & Monitoring",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 4.1",
-    "itemTitle": "Prepare for Elicitation",
+    "itemTitle": "4.1 Prepare for Elicitation",
     "page": 66,
-    "topic": "Elicitation and Collaboration",
-    "topicLessonId": "TOPIC-ELICITATION-TECH"
+    "topic": "Elicitation & Collaboration",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 4.2",
-    "itemTitle": "Conduct Elicitation",
+    "itemTitle": "4.2 Conduct Elicitation",
     "page": 71,
-    "topic": "Elicitation and Collaboration",
-    "topicLessonId": "TOPIC-ELICITATION-TECH"
+    "topic": "Elicitation & Collaboration",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 4.3",
-    "itemTitle": "Confirm Elicitation Results",
+    "itemTitle": "4.3 Confirm Elicitation Results",
     "page": 75,
-    "topic": "Elicitation and Collaboration",
-    "topicLessonId": "TOPIC-ELICITATION-TECH"
+    "topic": "Elicitation & Collaboration",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 4.4",
-    "itemTitle": "Communicate Business Analysis Information",
+    "itemTitle": "4.4 Communicate Business Analysis Information",
     "page": 77,
-    "topic": "Elicitation and Collaboration",
-    "topicLessonId": "TOPIC-ELICITATION-TECH"
+    "topic": "Elicitation & Collaboration",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 4.5",
-    "itemTitle": "Manage Stakeholder Collaboration",
+    "itemTitle": "4.5 Manage Stakeholder Collaboration",
     "page": 81,
-    "topic": "Elicitation and Collaboration",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT"
+    "topic": "Elicitation & Collaboration",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 5.1",
-    "itemTitle": "Trace Requirements",
+    "itemTitle": "5.1 Trace Requirements",
     "page": 89,
-    "topic": "Requirements Life Cycle Management",
+    "topic": "Requirements Life Cycle",
     "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 5.2",
-    "itemTitle": "Maintain Requirements",
+    "itemTitle": "5.2 Maintain Requirements",
     "page": 93,
-    "topic": "Requirements Life Cycle Management",
+    "topic": "Requirements Life Cycle",
     "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 5.3",
-    "itemTitle": "Prioritize Requirements",
+    "itemTitle": "5.3 Prioritize Requirements",
     "page": 96,
-    "topic": "Requirements Life Cycle Management",
-    "topicLessonId": "TOPIC-AGILE-USER-STORY"
+    "topic": "Requirements Life Cycle",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 5.4",
-    "itemTitle": "Assess Requirements Changes",
+    "itemTitle": "5.4 Assess Requirements Changes",
     "page": 101,
-    "topic": "Requirements Life Cycle Management",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS"
+    "topic": "Requirements Life Cycle",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 5.5",
-    "itemTitle": "Approve Requirements",
+    "itemTitle": "5.5 Approve Requirements",
     "page": 105,
-    "topic": "Requirements Life Cycle Management",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE"
+    "topic": "Requirements Life Cycle",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 6.1",
-    "itemTitle": "Analyze Current State",
+    "itemTitle": "6.1 Analyze Current State",
     "page": 113,
     "topic": "Strategy Analysis",
-    "topicLessonId": "TOPIC-BACCM"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 6.2",
-    "itemTitle": "Define Future State",
+    "itemTitle": "6.2 Define Future State",
     "page": 120,
     "topic": "Strategy Analysis",
-    "topicLessonId": "TOPIC-BACCM"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 6.3",
-    "itemTitle": "Assess Risks",
+    "itemTitle": "6.3 Assess Risks",
     "page": 130,
     "topic": "Strategy Analysis",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 6.4",
-    "itemTitle": "Define Change Strategy",
+    "itemTitle": "6.4 Define Change Strategy",
     "page": 134,
     "topic": "Strategy Analysis",
-    "topicLessonId": "TOPIC-BACCM"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 7.1",
-    "itemTitle": "Specify and Model Requirements",
+    "itemTitle": "7.1 Specify and Model Requirements",
     "page": 146,
-    "topic": "Requirements Analysis and Design Definition",
-    "topicLessonId": "TOPIC-BPMN-PROCESS"
+    "topic": "Analysis & Design Definition",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 7.2",
-    "itemTitle": "Verify Requirements",
+    "itemTitle": "7.2 Verify Requirements",
     "page": 151,
-    "topic": "Requirements Analysis and Design Definition",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION"
+    "topic": "Analysis & Design Definition",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 7.3",
-    "itemTitle": "Validate Requirements",
+    "itemTitle": "7.3 Validate Requirements",
     "page": 154,
-    "topic": "Requirements Analysis and Design Definition",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION"
+    "topic": "Analysis & Design Definition",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 7.4",
-    "itemTitle": "Define Requirements Architecture",
+    "itemTitle": "7.4 Define Requirements Architecture",
     "page": 158,
-    "topic": "Requirements Analysis and Design Definition",
+    "topic": "Analysis & Design Definition",
     "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 7.5",
-    "itemTitle": "Define Design Options",
+    "itemTitle": "7.5 Define Design Options",
     "page": 162,
-    "topic": "Requirements Analysis and Design Definition",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE"
+    "topic": "Analysis & Design Definition",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 7.6",
-    "itemTitle": "Analyze Potential Value and Recommend Solution",
+    "itemTitle": "7.6 Analyze Potential Value and Recommend Solution",
     "page": 167,
-    "topic": "Requirements Analysis and Design Definition",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE"
+    "topic": "Analysis & Design Definition",
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 8.1",
-    "itemTitle": "Measure Solution Performance",
+    "itemTitle": "8.1 Measure Solution Performance",
     "page": 176,
     "topic": "Solution Evaluation",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 8.2",
-    "itemTitle": "Analyze Performance Measures",
+    "itemTitle": "8.2 Analyze Performance Measures",
     "page": 180,
     "topic": "Solution Evaluation",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 8.3",
-    "itemTitle": "Assess Solution Limitations",
+    "itemTitle": "8.3 Assess Solution Limitations",
     "page": 183,
     "topic": "Solution Evaluation",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 8.4",
-    "itemTitle": "Assess Enterprise Limitations",
+    "itemTitle": "8.4 Assess Enterprise Limitations",
     "page": 187,
     "topic": "Solution Evaluation",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "babok-v3",
     "bookTitle": "BABOK Guide v3",
     "itemCode": "Task 8.5",
-    "itemTitle": "Recommend Actions to Increase Solution Value",
+    "itemTitle": "8.5 Recommend Actions to Increase Solution Value",
     "page": 192,
     "topic": "Solution Evaluation",
-    "topicLessonId": "TOPIC-BACCM"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "bcs-ba-3rd",
-    "bookTitle": "Business Analysis (BCS 3rd Ed)",
-    "itemCode": "Chapter 1",
-    "itemTitle": "What is Business Analysis?",
+    "bookTitle": "Business Analysis 3rd Edition (BCS)",
+    "itemCode": "Chương 1",
+    "itemTitle": "What is Business Analysis? (Bản chất Nghề BA)",
     "page": 35,
-    "topic": "Quy trình & Năng lực BA (BCS)",
+    "topic": "Quy trình BA",
     "topicLessonId": "TOPIC-BACCM"
   },
   {
     "bookId": "bcs-ba-3rd",
-    "bookTitle": "Business Analysis (BCS 3rd Ed)",
-    "itemCode": "Chapter 2",
-    "itemTitle": "The Competencies of a Business Analyst",
+    "bookTitle": "Business Analysis 3rd Edition (BCS)",
+    "itemCode": "Chương 2",
+    "itemTitle": "The Competencies of a Business Analyst (Khung Năng lực)",
     "page": 56,
-    "topic": "Quy trình & Năng lực BA (BCS)",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW"
-  },
-  {
-    "bookId": "bcs-ba-3rd",
-    "bookTitle": "Business Analysis (BCS 3rd Ed)",
-    "itemCode": "Chapter 3",
-    "itemTitle": "Strategy Analysis",
-    "page": 79,
-    "topic": "Quy trình & Năng lực BA (BCS)",
+    "topic": "Quy trình BA",
     "topicLessonId": "TOPIC-BACCM"
   },
   {
     "bookId": "bcs-ba-3rd",
-    "bookTitle": "Business Analysis (BCS 3rd Ed)",
-    "itemCode": "Chapter 4",
-    "itemTitle": "The Business Analysis Process Model",
+    "bookTitle": "Business Analysis 3rd Edition (BCS)",
+    "itemCode": "Chương 3",
+    "itemTitle": "Strategy Analysis (Phân tích Chiến lược & Môi trường)",
+    "page": 79,
+    "topic": "Quy trình BA",
+    "topicLessonId": "TOPIC-BACCM"
+  },
+  {
+    "bookId": "bcs-ba-3rd",
+    "bookTitle": "Business Analysis 3rd Edition (BCS)",
+    "itemCode": "Chương 4",
+    "itemTitle": "The Business Analysis Process Model (Mô hình Quy trình BA)",
     "page": 102,
-    "topic": "Quy trình & Năng lực BA (BCS)",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE"
+    "topic": "Quy trình BA",
+    "topicLessonId": "TOPIC-BACCM"
   },
   {
     "bookId": "bcs-ba-3rd",
-    "bookTitle": "Business Analysis (BCS 3rd Ed)",
-    "itemCode": "Chapter 5",
-    "itemTitle": "Investigation Techniques",
+    "bookTitle": "Business Analysis 3rd Edition (BCS)",
+    "itemCode": "Chương 5",
+    "itemTitle": "Investigation Techniques (Kỹ thuật Điều tra Hiện trạng)",
     "page": 121,
-    "topic": "Quy trình & Năng lực BA (BCS)",
-    "topicLessonId": "TOPIC-ELICITATION-TECH"
+    "topic": "Quy trình BA",
+    "topicLessonId": "TOPIC-BACCM"
   },
   {
     "bookId": "bcs-ba-3rd",
-    "bookTitle": "Business Analysis (BCS 3rd Ed)",
-    "itemCode": "Chapter 6",
-    "itemTitle": "Stakeholder Analysis and Management",
+    "bookTitle": "Business Analysis 3rd Edition (BCS)",
+    "itemCode": "Chương 6",
+    "itemTitle": "Stakeholder Analysis and Management (Quản lý Stakeholder)",
     "page": 159,
-    "topic": "Quy trình & Năng lực BA (BCS)",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT"
+    "topic": "Quy trình BA",
+    "topicLessonId": "TOPIC-BACCM"
   },
   {
     "bookId": "bcs-ba-3rd",
-    "bookTitle": "Business Analysis (BCS 3rd Ed)",
-    "itemCode": "Chapter 7",
-    "itemTitle": "Modelling Business Processes",
+    "bookTitle": "Business Analysis 3rd Edition (BCS)",
+    "itemCode": "Chương 7",
+    "itemTitle": "Modelling Business Processes (Mô hình hóa Quy trình)",
     "page": 186,
-    "topic": "Quy trình & Năng lực BA (BCS)",
-    "topicLessonId": "TOPIC-BPMN-PROCESS"
+    "topic": "Quy trình BA",
+    "topicLessonId": "TOPIC-BACCM"
   },
   {
     "bookId": "bcs-ba-3rd",
-    "bookTitle": "Business Analysis (BCS 3rd Ed)",
-    "itemCode": "Chapter 8",
-    "itemTitle": "Defining the Solution",
+    "bookTitle": "Business Analysis 3rd Edition (BCS)",
+    "itemCode": "Chương 8",
+    "itemTitle": "Defining the Solution (Xác định Kiến trúc Giải pháp)",
     "page": 221,
-    "topic": "Quy trình & Năng lực BA (BCS)",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE"
+    "topic": "Quy trình BA",
+    "topicLessonId": "TOPIC-BACCM"
   },
   {
     "bookId": "100-days-ba",
@@ -3024,7 +3124,7 @@ const bookCrossReference = [
     "itemTitle": "BA NÊN LÀM GÌ - SAU KHI TÍNH NĂNG ĐƯỢC RELEASE?",
     "page": 4,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3042,7 +3142,7 @@ const bookCrossReference = [
     "itemTitle": "KỸ THUẬT BABOK GIÚP BẠN KHÔNG BỊ ĐỔ LỖI - KHI KHÁCH NÓI: \"TÔI CHƯA NÓI THẾ BAO GIỜ\"",
     "page": 8,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3051,7 +3151,7 @@ const bookCrossReference = [
     "itemTitle": "KỸ THUẬT BABOK GIÚP BẠN XỬ LÝ - YÊU CẦU GẤP MÀ KHÔNG VỠ TIẾN ĐỘ",
     "page": 10,
     "topic": "Agile & Scrum",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3060,7 +3160,7 @@ const bookCrossReference = [
     "itemTitle": "KỸ THUẬT BABOK GIÚP BA TƯ DUY LỖI – VIẾT - LOGIC CHẶT CHẼ, KHÔNG BỊ LỌT CASE",
     "page": 12,
     "topic": "Khai thác yêu cầu",
-    "topicLessonId": "TOPIC-AC-GHERKIN"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3069,7 +3169,7 @@ const bookCrossReference = [
     "itemTitle": "Tôi không còn là người viết đặc tả từng dòng SRS. Tôi cũng không còn là người ngồi - da...",
     "page": 14,
     "topic": "Đặc tả & Quản lý yêu cầu",
-    "topicLessonId": "TOPIC-BACCM"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3078,7 +3178,7 @@ const bookCrossReference = [
     "itemTitle": "Bạn từng đề xuất một tính năng, tự tin lắm, tâm huyết lắm. Nhưng sau khi release: - Khô...",
     "page": 16,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3087,7 +3187,7 @@ const bookCrossReference = [
     "itemTitle": "“Tôi làm BA 4 năm rồi, sao vẫn chưa được tin tưởng giao vai trò cao hơn?” Không hiếm - ...",
     "page": 18,
     "topic": "Khai thác yêu cầu",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3096,7 +3196,7 @@ const bookCrossReference = [
     "itemTitle": "Bạn từng bị sếp mắng… chỉ vì làm đúng yêu cầu chưa? - Tôi từng dính cú đó. Làm feature ...",
     "page": 20,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3105,7 +3205,7 @@ const bookCrossReference = [
     "itemTitle": "Câu chuyện có thật: Tuần trước, một bạn BA nhắn tôi, giọng đầy bức xúc: “Em nghỉ - phép...",
     "page": 22,
     "topic": "Mô hình hóa quy trình",
-    "topicLessonId": "TOPIC-AGILE-USER-STORY"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3114,7 +3214,7 @@ const bookCrossReference = [
     "itemTitle": "Mất 2 phút đọc – nhưng nếu bạn là BA mới, đây có thể là 2 phút đáng nhất tuần này. - Sế...",
     "page": 24,
     "topic": "Mô hình hóa quy trình",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3123,7 +3223,7 @@ const bookCrossReference = [
     "itemTitle": "Câu hỏi tưởng cũ, nhưng mỗi lần nghe lại là một lần muốn kể chuyện - Chiều qua, mình có...",
     "page": 26,
     "topic": "Agile & Scrum",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3132,7 +3232,7 @@ const bookCrossReference = [
     "itemTitle": "Một câu hỏi rất quen khi làm với các bạn BA mới vào nghề: - “Làm sao để biết hệ thống c...",
     "page": 28,
     "topic": "Dữ liệu & SQL",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3141,7 +3241,7 @@ const bookCrossReference = [
     "itemTitle": "Không phải bug, không phải logic sai, không phải thiếu tài liệu. - Nhiều pha toang tron...",
     "page": 30,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-ELICITATION-TECH"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3150,7 +3250,7 @@ const bookCrossReference = [
     "itemTitle": "Có những hôm đi làm sớm như hôm nay, ngồi ung dung làm cốc trà đá, mình tự hỏi: - Hồi m...",
     "page": 32,
     "topic": "Đặc tả & Quản lý yêu cầu",
-    "topicLessonId": "TOPIC-BPMN-PROCESS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3159,7 +3259,7 @@ const bookCrossReference = [
     "itemTitle": "“Flow này rõ ràng mà, test gì nữa?” - Tôi một BA trẩu tre đã từng chém thế. Và sáng hôm...",
     "page": 34,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3177,7 +3277,7 @@ const bookCrossReference = [
     "itemTitle": "Cuối tuần rồi chắc thể nào cũng có team vừa retro xong - Một buổi Retro sprint. UAT gãy...",
     "page": 39,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3186,7 +3286,7 @@ const bookCrossReference = [
     "itemTitle": "📅 Thứ Hai – ngày đầu tuần, mở máy đã thấy 6 cái meeting chờ sẵn - Sáng 8h30: họp kick-off",
     "page": 41,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-BACCM"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3195,7 +3295,7 @@ const bookCrossReference = [
     "itemTitle": "🏢 Chuyện có thật ở một công ty bán trà sữa... - Công ty XYZ có hệ thống TeaBoss đã chạy...",
     "page": 43,
     "topic": "Phân tích & thiết kế giải pháp",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3204,7 +3304,7 @@ const bookCrossReference = [
     "itemTitle": "“Dự án này không có PM đâu – em follow luôn cả team nhé.” - Không phải câu nói lịch sử,...",
     "page": 45,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-ELICITATION-TECH"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3213,7 +3313,7 @@ const bookCrossReference = [
     "itemTitle": "🧃 3 lời hứa quen thuộc trước khi dự án mệt mỏi: - → “Anh thấy field này nhỏ thôi, thêm ...",
     "page": 47,
     "topic": "Dữ liệu & SQL",
-    "topicLessonId": "TOPIC-AC-GHERKIN"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3222,7 +3322,7 @@ const bookCrossReference = [
     "itemTitle": "💥 Chuyện thật: - Một hệ thống đặt lịch sửa xe. BA vẽ flow đơn giản: khách đặt → garage ...",
     "page": 49,
     "topic": "Mô hình hóa quy trình",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3231,7 +3331,7 @@ const bookCrossReference = [
     "itemTitle": "Nghĩ làm BA trung lập là an toàn? Sai rồi. Trong môi trường bè phái đấu đá, BA không - ...",
     "page": 52,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3240,7 +3340,7 @@ const bookCrossReference = [
     "itemTitle": "🌟 Những thứ nguy hiểm nhất thường không nằm trên giấy - Không phải yêu cầu nào cũng đượ...",
     "page": 55,
     "topic": "Mô hình hóa quy trình",
-    "topicLessonId": "TOPIC-BPMN-PROCESS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3249,7 +3349,7 @@ const bookCrossReference = [
     "itemTitle": "Vừa vào công ty. Mở mail chưa đầy 10 phút, sếp đã nhắn: - \"Dự án này cần gấp BA, em joi...",
     "page": 57,
     "topic": "Phân tích & thiết kế giải pháp",
-    "topicLessonId": "TOPIC-AGILE-USER-STORY"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3258,7 +3358,7 @@ const bookCrossReference = [
     "itemTitle": "Vẫn đi họp đều. Vẫn viết tài liệu đầy đủ. DEV hiểu. QA test pass.Feedback không tệ. - M...",
     "page": 60,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3267,7 +3367,7 @@ const bookCrossReference = [
     "itemTitle": "Kỹ thuật không sai. Nhưng nếu chọn sai kỹ thuật, sai người, sai thời điểm – bạn không -...",
     "page": 62,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3276,7 +3376,7 @@ const bookCrossReference = [
     "itemTitle": "“Em làm theo yêu cầu mà!” - Câu nói tưởng vô hại… nhưng thực ra đang âm thầm giết chết ...",
     "page": 64,
     "topic": "Phân tích & thiết kế giải pháp",
-    "topicLessonId": "TOPIC-AC-GHERKIN"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3285,7 +3385,7 @@ const bookCrossReference = [
     "itemTitle": "🕘 9h tối. Cả team DEV – QA – BA vẫn đang OT, căng mắt fix nốt bug cuối để kịp - Golive ...",
     "page": 67,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3294,7 +3394,7 @@ const bookCrossReference = [
     "itemTitle": "Phòng họp hôm đó, tôi không nói thêm một từ nào. Sếp nhìn tôi, ánh mắt đanh lại: “Em - ...",
     "page": 69,
     "topic": "Khai thác yêu cầu",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3303,7 +3403,7 @@ const bookCrossReference = [
     "itemTitle": "💥 Dự án không nổ vì bug. Nó rò rỉ từng chút vì những tín hiệu nhỏ bị BA bỏ qua. Một - s...",
     "page": 71,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3312,7 +3412,7 @@ const bookCrossReference = [
     "itemTitle": "Feedback không phải là cú đấm nhưng phản ứng ngu sẽ khiến bạn knockout. Hôm đó, - trong...",
     "page": 75,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-BPMN-PROCESS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3321,7 +3421,7 @@ const bookCrossReference = [
     "itemTitle": "(Dành cho những BA Manager – khi thấy dự án vận hành mà vẫn không an lòng) - 🌙 Chủ Nhật...",
     "page": 77,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-BACCM"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3330,7 +3430,7 @@ const bookCrossReference = [
     "itemTitle": "🎯 Rất nhiều bạn BA nghĩ: - “Em viết đầy đủ flow rồi mà, sao hệ thống vẫn lỗi?”",
     "page": 78,
     "topic": "Mô hình hóa quy trình",
-    "topicLessonId": "TOPIC-ELICITATION-TECH"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3339,7 +3439,7 @@ const bookCrossReference = [
     "itemTitle": "“Em gửi task rõ ràng mà DEV vẫn làm sai.” - “DEV làm ẩu, không đọc SRS, em mệt mỏi sửa ...",
     "page": 80,
     "topic": "Đặc tả & Quản lý yêu cầu",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3348,7 +3448,7 @@ const bookCrossReference = [
     "itemTitle": "🎯 Bối cảnh: - Kỳ review 6 tháng và một hệ thống được build đúng tới từng field. Công ty...",
     "page": 83,
     "topic": "Agile & Scrum",
-    "topicLessonId": "TOPIC-AC-GHERKIN"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3357,7 +3457,7 @@ const bookCrossReference = [
     "itemTitle": "“Làm lại cái này cho anh nhé.” - “Đưa tính năng kia lên gấp, mấy cái khác tính sau.”",
     "page": 86,
     "topic": "Mô hình hóa quy trình",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3375,7 +3475,7 @@ const bookCrossReference = [
     "itemTitle": "“Em làm nhanh cái hệ thống ABC nhé.” - Và thế là BA bắt đầu đi phân tích hệ thống – như...",
     "page": 91,
     "topic": "Mô hình hóa quy trình",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3384,7 +3484,7 @@ const bookCrossReference = [
     "itemTitle": "🎯 Bối cảnh: - Mỗi khi khách mua hàng tại cửa hàng → điểm sẽ được cộng vào tài khoản loy...",
     "page": 95,
     "topic": "Dữ liệu & SQL",
-    "topicLessonId": "TOPIC-STATE-MACHINE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3393,7 +3493,7 @@ const bookCrossReference = [
     "itemTitle": "🎯 Bối cảnh: Module xin nghỉ – chấm công trong hệ thống nội bộ - Junior BA đề xuất một l...",
     "page": 97,
     "topic": "Kỹ năng & Phỏng vấn BA",
-    "topicLessonId": "TOPIC-ELICITATION-TECH"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3402,7 +3502,7 @@ const bookCrossReference = [
     "itemTitle": "Nếu bạn vẫn nghĩ BA đi phân tích yêu cầu là để làm tính năng, thì bạn đang hiểu - sai b...",
     "page": 99,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-BACCM"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3411,7 +3511,7 @@ const bookCrossReference = [
     "itemTitle": "Ở một công ty nọ, có những dự án bắt đầu bằng cụm từ “rất gấp”, nhưng rồi trôi vào im -...",
     "page": 101,
     "topic": "Mô hình hóa quy trình",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3420,7 +3520,7 @@ const bookCrossReference = [
     "itemTitle": "Bạn vừa được “đẩy” vào một dự án đang chạy. Không onboarding, không hệ thống tài - liệu...",
     "page": 103,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-BPMN-PROCESS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3429,7 +3529,7 @@ const bookCrossReference = [
     "itemTitle": "Có những dự án không thiếu người, không thiếu tiền. Sếp cũng rất tâm huyết, luôn theo -...",
     "page": 105,
     "topic": "Mô hình hóa quy trình",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3438,7 +3538,7 @@ const bookCrossReference = [
     "itemTitle": "👂 Một ngày bình thường và một loạt từ ngữ kỳ lạ ập đến - DEV bảo: “Tôi đang checkout nh...",
     "page": 107,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3447,7 +3547,7 @@ const bookCrossReference = [
     "itemTitle": "Một trong những thời điểm thể hiện rõ đẳng cấp của BA – không nằm ở lúc viết - requirem...",
     "page": 110,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-AGILE-USER-STORY"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3456,7 +3556,7 @@ const bookCrossReference = [
     "itemTitle": "“Em đang làm dự án có tích hợp kế toán anh ạ, mà đọc tới chỗ kế toán em muốn nghỉ - việc.",
     "page": 113,
     "topic": "Phân tích & thiết kế giải pháp",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3465,7 +3565,7 @@ const bookCrossReference = [
     "itemTitle": "“UX là việc của designer chứ liên quan gì đến BA?” - Câu hỏi mà mình từng nghĩ trong nă...",
     "page": 116,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-UX-PRODUCT-DISCOVERY"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3474,7 +3574,7 @@ const bookCrossReference = [
     "itemTitle": "Nhiều tính năng bắt đầu bằng một câu rất quen: - “Làm nhanh để kịp demo chiều nay nhé.”",
     "page": 119,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-AC-GHERKIN"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3483,7 +3583,7 @@ const bookCrossReference = [
     "itemTitle": "🍻 Mở đầu từ quán bia hơi Hà Nội: - Bạn làm phần mềm SaaS cho chuỗi quán bia.",
     "page": 121,
     "topic": "Phân tích & thiết kế giải pháp",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3492,7 +3592,7 @@ const bookCrossReference = [
     "itemTitle": "Bạn vừa họp xong với khách hàng. Hỏi nhanh: “Nếu có bộ lọc thời gian thì tiện hơn - khô...",
     "page": 124,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-AC-GHERKIN"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3501,7 +3601,7 @@ const bookCrossReference = [
     "itemTitle": "Sau 1 năm ở vai trò quản lý, tôi hiểu: - Làm sếp là một danh xưng",
     "page": 127,
     "topic": "Nền tảng BA",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3510,7 +3610,7 @@ const bookCrossReference = [
     "itemTitle": "Nghe chữ “gấp”, BA non tay sẽ lao vào làm ngay. BA cứng thì tỉnh lại, nhìn bản đồ dự - ...",
     "page": 129,
     "topic": "Mô hình hóa quy trình",
-    "topicLessonId": "TOPIC-BPMN-PROCESS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3519,7 +3619,7 @@ const bookCrossReference = [
     "itemTitle": "h50 chiều, thứ Sáu. Tin nhắn hiện lên trên màn hình: “Sếp ơi, em mệt rồi. Em thấy - mìn...",
     "page": 131,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-STATE-MACHINE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3528,7 +3628,7 @@ const bookCrossReference = [
     "itemTitle": "“Cùng 4-5 năm kinh nghiệm, có người là senior, có người mãi là mid. Khác biệt không - n...",
     "page": 133,
     "topic": "Kỹ năng & Phỏng vấn BA",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3537,7 +3637,7 @@ const bookCrossReference = [
     "itemTitle": "Trước khi đăng bài này, tôi đã sửa – rồi xoá – rồi viết lại… không dưới 5 lần. - Vì đây...",
     "page": 137,
     "topic": "Nền tảng BA",
-    "topicLessonId": "TOPIC-BPMN-PROCESS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3546,7 +3646,7 @@ const bookCrossReference = [
     "itemTitle": "Một người lãnh đạo không chết chìm vì dự án khó, mà chết vì không còn nổi một tiếng - đ...",
     "page": 140,
     "topic": "Khai thác yêu cầu",
-    "topicLessonId": "TOPIC-BACCM"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3555,7 +3655,7 @@ const bookCrossReference = [
     "itemTitle": "⚠️ Lưu ý: Công thức trong bài không phải chuẩn tuyệt đối. Các hệ số như độ phức tạp, - ...",
     "page": 142,
     "topic": "Kỹ năng & Phỏng vấn BA",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3564,7 +3664,7 @@ const bookCrossReference = [
     "itemTitle": "🪄 Một tối Chủ Nhật, Hà Nội mưa rào… - Trời mưa. Giá đặt xe tăng vọt. Tôi không đi đâu c...",
     "page": 145,
     "topic": "Phân tích & thiết kế giải pháp",
-    "topicLessonId": "TOPIC-ELICITATION-TECH"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3573,7 +3673,7 @@ const bookCrossReference = [
     "itemTitle": "“Làm cái hệ thống đặt bàn cho nhà hàng đi – cho chuyên nghiệp hơn, đỡ lộn xộn. Anh - cầ...",
     "page": 148,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3591,7 +3691,7 @@ const bookCrossReference = [
     "itemTitle": "“Mỗi sprint phải đẩy 20 UC, chốt 4 SRS, tạo 5 ‘idea cải tiến’, tham dự 4 cuộc họp, xử l...",
     "page": 155,
     "topic": "Agile & Scrum",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3600,7 +3700,7 @@ const bookCrossReference = [
     "itemTitle": "Hôm nay không viết chia sẻ kiến thức, mà chuyển sang chuyên mục “Anh ơi…” – nơi BA - gử...",
     "page": 157,
     "topic": "Agile & Scrum",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3609,7 +3709,7 @@ const bookCrossReference = [
     "itemTitle": "Trong giai đoạn pre-seed đến series A, có rất nhiều startup gọi được vốn. Điều đó - thư...",
     "page": 160,
     "topic": "Phân tích & thiết kế giải pháp",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3618,7 +3718,7 @@ const bookCrossReference = [
     "itemTitle": "🚀 CI/CD là gì? - CI (Continuous Integration – tích hợp liên tục): Mỗi lần Dev (develope...",
     "page": 162,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-AC-GHERKIN"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3627,7 +3727,7 @@ const bookCrossReference = [
     "itemTitle": "Mấy hôm nay inbox đổ về nhiều, đủ thể loại tình huống dở khóc dở cười. Và câu hỏi - đượ...",
     "page": 165,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-UX-PRODUCT-DISCOVERY"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3636,7 +3736,7 @@ const bookCrossReference = [
     "itemTitle": "Không phải lúc nào người dùng cũng rảnh rỗi, ngồi ngay ngắn, hai tay đặt đúng vị trí, -...",
     "page": 167,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-STATE-MACHINE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3645,7 +3745,7 @@ const bookCrossReference = [
     "itemTitle": "❌ “Lỗi này hình như mình gặp hoài rồi mà?” - ❌ “Cái bug này từng fix mà?”",
     "page": 169,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3654,7 +3754,7 @@ const bookCrossReference = [
     "itemTitle": "“Em không nghỉ vì lương. Em nghỉ vì mỗi sáng mở Jira ra, em không biết mình đang - làm ...",
     "page": 171,
     "topic": "Agile & Scrum",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3663,7 +3763,7 @@ const bookCrossReference = [
     "itemTitle": "Có những buổi họp mà bạn cảm nhận rõ ràng: - DEV thì lặng thinh.",
     "page": 173,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-AGILE-USER-STORY"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3672,7 +3772,7 @@ const bookCrossReference = [
     "itemTitle": "Ở giải marathon, người ta không chạy bằng máu lửa. Họ chạy bằng pace và bằng tim. - Có ...",
     "page": 175,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-BPMN-PROCESS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3681,7 +3781,7 @@ const bookCrossReference = [
     "itemTitle": "Đã gần một tuần rồi tôi không viết. Không phải vì bí ý tưởng – mà vì viết rồi lại xoá. ...",
     "page": 178,
     "topic": "Phân tích & thiết kế giải pháp",
-    "topicLessonId": "TOPIC-ELICITATION-TECH"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3699,7 +3799,7 @@ const bookCrossReference = [
     "itemTitle": "Trong một hệ thống bất kỳ, dù nghiệp vụ có mượt đến đâu, chỉ cần một thông số kỹ - thuậ...",
     "page": 184,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3708,7 +3808,7 @@ const bookCrossReference = [
     "itemTitle": "App mobile thì cũng là hệ thống thôi mà – logic giống web, flow giống nhau, chỉ khác - ...",
     "page": 187,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-AC-GHERKIN"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3717,7 +3817,7 @@ const bookCrossReference = [
     "itemTitle": "Ở một công ty nọ, có một bạn nhân sự trẻ không giỏi xuất chúng, cũng chẳng phải key - m...",
     "page": 190,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-BACCM"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3726,7 +3826,7 @@ const bookCrossReference = [
     "itemTitle": "📌 Nhiều BA viết flow cực kỳ đẹp, rule đầy đủ, bước rõ ràng, UX hợp lý. Nhưng khi lên - ...",
     "page": 192,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3735,7 +3835,7 @@ const bookCrossReference = [
     "itemTitle": "💥 “Sao lại báo lỗi? Em nhập đúng rồi mà!” - 💥 “Anh fix rồi mà vẫn lỗi. À, lần này lỗi k...",
     "page": 194,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3744,7 +3844,7 @@ const bookCrossReference = [
     "itemTitle": "👨‍💻 Một buổi tối, sau giờ làm, một bạn BA 3 năm kinh nghiệm nhắn tin cho tôi: - “Anh Ph...",
     "page": 196,
     "topic": "Agile & Scrum",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3753,7 +3853,7 @@ const bookCrossReference = [
     "itemTitle": "Một buổi tối bình thường, tôi gọi một chuyến xe máy công nghệ. Khi vào app, tôi thấy - ...",
     "page": 198,
     "topic": "Phân tích & thiết kế giải pháp",
-    "topicLessonId": "TOPIC-UX-PRODUCT-DISCOVERY"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3762,7 +3862,7 @@ const bookCrossReference = [
     "itemTitle": "Tôi xem lại Tây Du Ký lần thứ n, và lần này, tôi không còn thấy yêu quái. Tôi thấy… một...",
     "page": 200,
     "topic": "Mô hình hóa quy trình",
-    "topicLessonId": "TOPIC-BA-PLANNING-GOVERNANCE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3771,7 +3871,7 @@ const bookCrossReference = [
     "itemTitle": "🧨 “Em ơi, từ hôm nay anh Trung không phụ trách nữa nhé. Chị Hà sẽ làm việc với em. - Mì...",
     "page": 204,
     "topic": "Nền tảng BA",
-    "topicLessonId": "TOPIC-STATE-MACHINE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3780,7 +3880,7 @@ const bookCrossReference = [
     "itemTitle": "“Cái này BA lo luôn nhé, chứ giờ ai làm?” - “Ơ, em là BA mà? Em hiểu nhất còn gì?”",
     "page": 206,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3789,7 +3889,7 @@ const bookCrossReference = [
     "itemTitle": "Bạn được giao viết lại tài liệu cho một tính năng đã chạy 3 năm, không tài liệu gốc, de...",
     "page": 208,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-BPMN-PROCESS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3798,7 +3898,7 @@ const bookCrossReference = [
     "itemTitle": "Một leader giỏi không phải là người góp ý đúng mà là người khiến người khác vẫn muốn - ...",
     "page": 212,
     "topic": "Khai thác yêu cầu",
-    "topicLessonId": "TOPIC-ELICITATION-TECH"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3807,7 +3907,7 @@ const bookCrossReference = [
     "itemTitle": "Một người “nói nhiều hơn làm” trong team không chỉ là chuyện cá nhân. - Nó là bài test ...",
     "page": 214,
     "topic": "Đặc tả & Quản lý yêu cầu",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3825,7 +3925,7 @@ const bookCrossReference = [
     "itemTitle": "Bạn là BA Lead? Tức là bạn vừa làm nghề vừa phải giữ team, giữ chất lượng, giữ - deadli...",
     "page": 218,
     "topic": "Phân tích & thiết kế giải pháp",
-    "topicLessonId": "TOPIC-AC-GHERKIN"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3834,7 +3934,7 @@ const bookCrossReference = [
     "itemTitle": "Phiên dịch tập 1] - 🎧 Nghe: “Tuỳ em”",
     "page": 220,
     "topic": "Mô hình hóa quy trình",
-    "topicLessonId": "TOPIC-BACCM"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3843,7 +3943,7 @@ const bookCrossReference = [
     "itemTitle": "Ngày ngựa mất, cả làng đến chia buồn. Ông lão chỉ cười, không trách cũng không tiếc. - ...",
     "page": 221,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-UAT-VERIFICATION"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3852,7 +3952,7 @@ const bookCrossReference = [
     "itemTitle": "📌 Làm BA lâu năm, tưởng là sẽ vững hơn, nhiều kinh nghiệm hơn, nhưng thật ra lại dễ - c...",
     "page": 223,
     "topic": "Testing & UAT",
-    "topicLessonId": "TOPIC-AGILE-USER-STORY"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3861,7 +3961,7 @@ const bookCrossReference = [
     "itemTitle": "Định ém mấy bài hay hay để viết vào ebook nhưng hôm nay nhá hàng tí vì thấy nhiều - cas...",
     "page": 225,
     "topic": "Đặc tả & Quản lý yêu cầu",
-    "topicLessonId": "TOPIC-STAKEHOLDER-MGMT"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3870,7 +3970,7 @@ const bookCrossReference = [
     "itemTitle": "Trong một buổi khảo sát, khách nói: “Dữ liệu bao gồm nhưng không giới hạn ở…” - Hoặc: “...",
     "page": 227,
     "topic": "Dữ liệu & SQL",
-    "topicLessonId": "TOPIC-DATA-SQL-RECON"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3879,7 +3979,7 @@ const bookCrossReference = [
     "itemTitle": "Làm BA mà ôm nỗi sợ sai thì thua ngay từ vạch xuất phát. Fail Fast không phải triết lý ...",
     "page": 229,
     "topic": "Khai thác yêu cầu",
-    "topicLessonId": "TOPIC-IMPACT-ANALYSIS"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3888,7 +3988,7 @@ const bookCrossReference = [
     "itemTitle": "Một BA Leader giỏi không chỉ viết requirement, mà còn biết giữ nhịp năng lượng cho cả -...",
     "page": 231,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-STATE-MACHINE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3897,7 +3997,7 @@ const bookCrossReference = [
     "itemTitle": "“Em viết requirement: nhập chữ thì hệ thống gợi ý ra vài từ. Dev hỏi: gợi ý kiểu gì? - ...",
     "page": 233,
     "topic": "UX & Product Thinking",
-    "topicLessonId": "TOPIC-SOLUTION-ARCHITECTURE"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3906,7 +4006,7 @@ const bookCrossReference = [
     "itemTitle": "Có một kiểu “ngụy biện” rất phổ biến trong nghề BA: - “Em làm xong 10 use case rồi.”",
     "page": 235,
     "topic": "Agile & Scrum",
-    "topicLessonId": "TOPIC-UX-PRODUCT-DISCOVERY"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   },
   {
     "bookId": "100-days-ba",
@@ -3915,26 +4015,9 @@ const bookCrossReference = [
     "itemTitle": "Sau 10 năm làm BA, tôi không giữ được nhiều… - Không giữ được hết những người từng đồng...",
     "page": 236,
     "topic": "Khai thác yêu cầu",
-    "topicLessonId": "TOPIC-BEHAVIORAL-INTERVIEW"
+    "topicLessonId": "TOPIC-TRACEABILITY"
   }
 ];
-
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = {
-    booksMeta,
-    bookBabokTasks,
-    bookBcsChapters,
-    bookDays100,
-    bookTopicLessons,
-    bookCrossReference
-  };
-}
-
-if (typeof window !== 'undefined') {
-  window.booksMeta = booksMeta;
-  window.bookBabokTasks = bookBabokTasks;
-  window.bookBcsChapters = bookBcsChapters;
-  window.bookDays100 = bookDays100;
-  window.bookTopicLessons = bookTopicLessons;
-  window.bookCrossReference = bookCrossReference;
+  module.exports = { booksMeta, bookBabokTasks, bookBcsChapters, bookDays100, bookTopicLessons, bookCrossReference };
 }

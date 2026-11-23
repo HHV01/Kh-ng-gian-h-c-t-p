@@ -20,17 +20,23 @@ const MIME_TYPES = {
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
   '.ttf': 'font/ttf',
-  '.webp': 'image/webp'
+  '.webp': 'image/webp',
+  '.pdf': 'application/pdf'
 };
 
 const server = http.createServer((req, res) => {
   let reqPath = decodeURI(req.url.split('?')[0]);
   if (reqPath === '/') reqPath = '/index.html';
 
-  let filePath = path.join(DIST_DIR, reqPath);
+  let rootDir = DIST_DIR;
+  if (reqPath.startsWith('/docs/')) {
+    rootDir = __dirname;
+  }
+
+  let filePath = path.join(rootDir, reqPath);
 
   // Ngăn chặn directory traversal
-  if (!filePath.startsWith(DIST_DIR)) {
+  if (!filePath.startsWith(DIST_DIR) && !filePath.startsWith(path.join(__dirname, 'docs'))) {
     res.writeHead(403);
     res.end('Forbidden');
     return;

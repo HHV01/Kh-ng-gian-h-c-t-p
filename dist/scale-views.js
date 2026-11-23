@@ -22,7 +22,7 @@ function goScale(view = 'home', slug = 'caching', step = 1) {
 
   // Cập nhật URL hash
   if (view === 'home') {
-    location.hash = '#/scale';
+    location.hash = '#/books';
   } else if (view === 'lesson') {
     location.hash = `#/${slug}/${scaleState.activeStep}`;
   } else {
