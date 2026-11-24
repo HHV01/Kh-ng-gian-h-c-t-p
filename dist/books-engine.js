@@ -205,8 +205,8 @@
             (b.missingNotice ? '<div class="callout" style="font-size:12px;padding:10px 12px;margin-bottom:16px;background:#fef3c7;border-left:3px solid #d97706;color:#92400e">' + b.missingNotice + '</div>' : '') +
           '</div>' +
           '<div style="margin-top:auto;display:flex;gap:10px;flex-wrap:wrap">' +
-            '<button class="primary" style="flex:1.2" data-open-book="' + b.id + '">Xem nội dung ➔</button>' +
-            (firstItemId ? '<button class="secondary" style="flex:1" data-book-id="' + b.id + '" data-open-item="' + firstItemId + '">Đọc ngay 📖</button>' : '') +
+            '<a href="#/books/' + b.id + '" class="primary" style="flex:1.2;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:9px 16px;border-radius:8px;font-size:14px" data-open-book="' + b.id + '">Xem nội dung ➔</a>' +
+            (firstItemId ? '<a href="#/books/' + b.id + '/' + firstItemId + '" class="secondary" style="flex:1;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:9px 16px;border-radius:8px;font-size:14px" data-book-id="' + b.id + '" data-open-item="' + firstItemId + '">Đọc ngay 📖</a>' : '') +
           '</div>' +
         '</div>';
       }).join('') +
@@ -224,7 +224,7 @@
     var pdfFileUrl = b.pdfUrl || ('/docs/' + b.id + '.pdf');
 
     var navBarHtml = '<div style="margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">' +
-      '<button class="secondary" id="btn-back-overview">← Về danh sách 3 cuốn sách</button>' +
+      '<a href="#/books" class="secondary" id="btn-back-overview" style="text-decoration:none;display:inline-flex;align-items:center;padding:8px 16px;border-radius:8px">← Về danh sách 3 cuốn sách</a>' +
       '<span class="metadata">Mục lục lấy trực tiếp từ PDF thực tế (' + b.totalPages + ' trang)</span>' +
     '</div>';
 
@@ -242,10 +242,10 @@
           (b.missingNotice ? '<div class="callout warning" style="margin-top:14px"><b>⚠️ Phạm vi tài liệu split_1:</b> ' + b.missingNotice + '</div>' : '') +
           (firstAvailableItem ?
             '<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">' +
-              '<button class="primary" data-book-id="' + b.id + '" data-open-item="' + firstAvailableItem.id + '" style="font-size:14px;padding:10px 18px">' +
+              '<a href="#/books/' + b.id + '/' + firstAvailableItem.id + '" class="primary" data-book-id="' + b.id + '" data-open-item="' + firstAvailableItem.id + '" style="font-size:14px;padding:10px 18px;text-decoration:none;display:inline-flex;align-items:center;border-radius:8px">' +
                 '📖 Bắt đầu đọc: ' + firstAvailableItem.code + ' ➔' +
-              '</button>' +
-              '<a href="' + pdfFileUrl + '" target="_blank" rel="noopener noreferrer" class="secondary" style="display:inline-flex;align-items:center;padding:10px 18px;border-radius:10px;text-decoration:none;font-size:14px">' +
+              '</a>' +
+              '<a href="' + pdfFileUrl + '" target="_blank" rel="noopener noreferrer" class="secondary" style="display:inline-flex;align-items:center;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px">' +
                 '📄 Xem toàn bộ file PDF gốc ↗' +
               '</a>' +
             '</div>' : '') +
@@ -310,7 +310,7 @@
             '<h4 style="font-size:15px;font-weight:700;margin-bottom:6px;line-height:1.4">' + it.title + '</h4>' +
             (it.category ? '<span class="metadata" style="display:inline-block;background:var(--surface-soft);padding:2px 8px;border-radius:4px;font-size:11px;margin-bottom:8px">' + it.category + '</span>' : '') +
             '<p style="font-size:12.5px;line-height:1.5;color:var(--muted);margin-bottom:12px">' + it.summary + '</p>' +
-            '<button class="secondary full" data-book-id="' + b.id + '" data-open-item="' + it.id + '" style="font-size:12.5px;padding:6px 12px">Mở nội dung đọc ➔</button>' +
+            '<a href="#/books/' + b.id + '/' + it.id + '" class="secondary full" data-book-id="' + b.id + '" data-open-item="' + it.id + '" style="font-size:12.5px;padding:8px 12px;text-decoration:none;display:block;text-align:center;border-radius:6px">Mở nội dung đọc ➔</a>' +
           '</div>';
         }).join('') : '<div style="text-align:center;padding:40px;color:var(--muted)">Không tìm thấy mục nào khớp với từ khóa.</div>') +
       '</div>' +
@@ -332,8 +332,8 @@
     // Header actions
     var topBarHtml = '<div class="reader-top-bar">' +
       '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">' +
-        '<button class="secondary" id="btn-back-overview" title="Về danh sách sách">← Danh sách sách</button>' +
-        '<button class="secondary" id="btn-back-book-detail" data-book-id="' + b.id + '">≡ Mục lục cuốn này</button>' +
+        '<a href="#/books" class="secondary" id="btn-back-overview" title="Về danh sách sách" style="text-decoration:none;display:inline-flex;align-items:center;padding:7px 14px;border-radius:8px">← Danh sách sách</a>' +
+        '<a href="#/books/' + b.id + '" class="secondary" id="btn-back-book-detail" data-book-id="' + b.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:7px 14px;border-radius:8px">≡ Mục lục cuốn này</a>' +
         '<button class="secondary mobile-toc-toggle-btn" id="btn-toggle-mobile-toc">' + (booksEngineState.isMobileTocOpen ? '✕ Đóng mục lục' : '☰ Hiện mục lục') + '</button>' +
       '</div>' +
       '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' +
@@ -341,8 +341,14 @@
           '<button class="reader-mode-btn ' + (booksEngineState.readerMode === 'notes' ? 'active' : '') + '" data-set-reader-mode="notes">📖 Bài ôn tiếng Việt</button>' +
           '<button class="reader-mode-btn ' + (booksEngineState.readerMode === 'pdf' ? 'active' : '') + '" data-set-reader-mode="pdf">📄 Trang PDF (' + item.pdfPage + ')</button>' +
         '</div>' +
-        '<button class="secondary" id="btn-prev-item" ' + (!adj.prev ? 'disabled' : '') + ' data-book-id="' + b.id + '" data-open-item="' + (adj.prev ? adj.prev.id : '') + '">← Mục trước</button>' +
-        '<button class="primary" id="btn-next-item" ' + (!adj.next ? 'disabled' : '') + ' data-book-id="' + b.id + '" data-open-item="' + (adj.next ? adj.next.id : '') + '">Mục tiếp theo →</button>' +
+        (adj.prev ?
+          '<a href="#/books/' + b.id + '/' + adj.prev.id + '" class="secondary" id="btn-prev-item" data-book-id="' + b.id + '" data-open-item="' + adj.prev.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:7px 14px;border-radius:8px">← Mục trước</a>' :
+          '<button class="secondary" id="btn-prev-item" disabled style="opacity:0.5;cursor:not-allowed">← Mục trước</button>'
+        ) +
+        (adj.next ?
+          '<a href="#/books/' + b.id + '/' + adj.next.id + '" class="primary" id="btn-next-item" data-book-id="' + b.id + '" data-open-item="' + adj.next.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:7px 14px;border-radius:8px">Mục tiếp theo →</a>' :
+          '<button class="primary" id="btn-next-item" disabled style="opacity:0.5;cursor:not-allowed">Mục tiếp theo →</button>'
+        ) +
       '</div>' +
     '</div>';
 
@@ -367,13 +373,13 @@
             '</div>';
           }
           var isActive = it.id === item.id;
-          return '<button class="reader-toc-link ' + (isActive ? 'active' : '') + '" data-book-id="' + b.id + '" data-open-item="' + it.id + '">' +
+          return '<a href="#/books/' + b.id + '/' + it.id + '" class="reader-toc-link ' + (isActive ? 'active' : '') + '" data-book-id="' + b.id + '" data-open-item="' + it.id + '" style="text-decoration:none;display:block">' +
             '<div style="display:flex;justify-content:space-between;width:100%">' +
               '<small class="code">' + it.code + '</small>' +
               '<small class="page">p.' + it.pdfPage + '</small>' +
             '</div>' +
             '<span class="title">' + it.title + '</span>' +
-          '</button>';
+          '</a>';
         }).join('') +
       '</div>' +
     '</aside>';
@@ -410,8 +416,14 @@
         ) +
 
         '<div class="reader-bottom-nav">' +
-          '<button class="secondary" id="btn-prev-item-bot" ' + (!adj.prev ? 'disabled' : '') + ' data-book-id="' + b.id + '" data-open-item="' + (adj.prev ? adj.prev.id : '') + '">← Mục trước (' + (adj.prev ? adj.prev.code : 'Đầu sách') + ')</button>' +
-          '<button class="primary" id="btn-next-item-bot" ' + (!adj.next ? 'disabled' : '') + ' data-book-id="' + b.id + '" data-open-item="' + (adj.next ? adj.next.id : '') + '">Mục tiếp theo (' + (adj.next ? adj.next.code : 'Hết sách') + ') →</button>' +
+          (adj.prev ?
+            '<a href="#/books/' + b.id + '/' + adj.prev.id + '" class="secondary" id="btn-prev-item-bot" data-book-id="' + b.id + '" data-open-item="' + adj.prev.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:8px 16px;border-radius:8px">← Mục trước (' + adj.prev.code + ')</a>' :
+            '<button class="secondary" id="btn-prev-item-bot" disabled style="opacity:0.5;cursor:not-allowed">← Đầu sách</button>'
+          ) +
+          (adj.next ?
+            '<a href="#/books/' + b.id + '/' + adj.next.id + '" class="primary" id="btn-next-item-bot" data-book-id="' + b.id + '" data-open-item="' + adj.next.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:8px 16px;border-radius:8px">Mục tiếp theo (' + adj.next.code + ') →</a>' :
+            '<button class="primary" id="btn-next-item-bot" disabled style="opacity:0.5;cursor:not-allowed">Hết sách →</button>'
+          ) +
         '</div>' +
       '</div>' +
     '</div>';

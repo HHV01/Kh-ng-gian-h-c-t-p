@@ -22,7 +22,7 @@ function goScale(view = 'home', slug = 'caching', step = 1) {
 
   // Cập nhật URL hash
   if (view === 'home') {
-    location.hash = '#/books';
+    location.hash = '#/scale';
   } else if (view === 'lesson') {
     location.hash = `#/${slug}/${scaleState.activeStep}`;
   } else {
@@ -560,25 +560,46 @@ window.addEventListener('hashchange', () => {
   const hash = location.hash.replace(/^#\/?/, '');
   if (!hash) return;
 
-  // Đồng bộ trạng thái page VyWorkspace
-  if (typeof page !== 'undefined' && page !== 'System Scale') {
-    page = 'System Scale';
-    document.querySelectorAll('[data-nav]').forEach(b => {
-      b.classList.toggle('active', b.dataset.nav === 'System Scale');
-    });
+  // Nếu hash thuộc về module Sách BA (#/books hoặc #/books/...) -> hoàn toàn không can thiệp
+  if (hash === 'books' || hash.startsWith('books/')) {
+    return;
   }
 
   if (hash === 'scale' || hash === 'pricing') {
+    if (typeof page !== 'undefined' && page !== 'System Scale') {
+      page = 'System Scale';
+      document.querySelectorAll('[data-nav]').forEach(b => {
+        b.classList.toggle('active', b.dataset.nav === 'System Scale');
+      });
+    }
     goScale('home');
   } else if (['about', 'contact', 'privacy', 'terms'].includes(hash)) {
+    if (typeof page !== 'undefined' && page !== 'System Scale') {
+      page = 'System Scale';
+      document.querySelectorAll('[data-nav]').forEach(b => {
+        b.classList.toggle('active', b.dataset.nav === 'System Scale');
+      });
+    }
     goScale(hash);
   } else {
     const parts = hash.split('/');
     if (parts[0] === 'scale' && parts[1]) {
+      if (typeof page !== 'undefined' && page !== 'System Scale') {
+        page = 'System Scale';
+        document.querySelectorAll('[data-nav]').forEach(b => {
+          b.classList.toggle('active', b.dataset.nav === 'System Scale');
+        });
+      }
       const slug = parts[1];
       const step = parts[2] || 1;
       goScale('lesson', slug, step);
-    } else if (parts[0]) {
+    } else if (parts[0] && typeof scaleLessonsDetail !== 'undefined' && scaleLessonsDetail[parts[0]]) {
+      if (typeof page !== 'undefined' && page !== 'System Scale') {
+        page = 'System Scale';
+        document.querySelectorAll('[data-nav]').forEach(b => {
+          b.classList.toggle('active', b.dataset.nav === 'System Scale');
+        });
+      }
       const slug = parts[0];
       const step = parts[1] || 1;
       goScale('lesson', slug, step);
