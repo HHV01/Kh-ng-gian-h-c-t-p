@@ -2,7 +2,16 @@ iconPaths.list='<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>';
 const moduleLessons=[['Business Analysis là gì?','Vai trò BA trong vòng đời dự án','Các nhóm stakeholder','Tư duy giải quyết vấn đề','Phân loại yêu cầu','Đo lường giá trị kinh doanh'],['Lập kế hoạch khai thác yêu cầu','Kỹ thuật phỏng vấn','Workshop & brainstorming','Stakeholder Analysis & Mapping','Quan sát và phân tích tài liệu','Xác nhận kết quả khai thác'],['Vòng đời của yêu cầu','Ưu tiên với MoSCoW','Truy vết yêu cầu với RTM','Quản lý thay đổi yêu cầu','Phê duyệt và baseline','Giải quyết yêu cầu mâu thuẫn'],['Đọc hiểu lưu đồ quy trình','BPMN: Event, Task & Gateway','Mô hình As-is và To-be','Swimlane & trách nhiệm','Xử lý ngoại lệ trong quy trình','Thực hành mô hình hóa'],['Từ nhu cầu đến giải pháp','User story & acceptance criteria','Use case & kịch bản ngoại lệ','Phân tích business rule','Đánh giá phương án giải pháp','Yêu cầu phi chức năng'],['Tư duy dữ liệu cho BA','SQL: SELECT và WHERE','JOIN & quan hệ dữ liệu','REST API & HTTP cơ bản','Đọc tài liệu API','Chỉ số và chất lượng dữ liệu'],['Agile mindset','Vai trò trong Scrum','Product Backlog & refinement','Sprint Planning & Sprint Goal','Kanban & giới hạn WIP','Retrospective hiệu quả'],['Nghiên cứu người dùng','Persona & hành trình khách hàng','Problem statement','Wireframe & prototype','Kiểm thử khả dụng','Ưu tiên theo giá trị sản phẩm'],['Vai trò BA trong kiểm thử','Thiết kế test scenario','Acceptance criteria đến test case','Lập kế hoạch UAT','Phân loại và xử lý lỗi','Nghiệm thu giải pháp'],['Giao tiếp với stakeholder','Kỹ thuật trình bày giải pháp','Xử lý xung đột','Chuẩn bị phỏng vấn BA','Trả lời câu hỏi tình huống','Trình bày case study']];
 function currentLessons(){return moduleLessons[trackId]||lessonNames}
 let libraryFilter='all',libraryView='grid';
-function lessonStatus(t,l){return state.done.includes(key(t,l))?'done':t===1&&l===3?'learning':'new'}
+function lessonStatus(t,l){
+  if(state.done.includes(key(t,l))) return 'done';
+  if(typeof VyProfileManager!=='undefined'){
+    var pData=VyProfileManager.getProfileData();
+    if(pData&&pData.lastActivity&&pData.lastActivity.type==='lesson'&&pData.lastActivity.data&&pData.lastActivity.data.trackId===t&&pData.lastActivity.data.lessonId===l){
+      return 'learning';
+    }
+  }
+  return 'new';
+}
 function libraryPage(){
  let total=moduleLessons.reduce((n,l)=>n+l.length,0),done=moduleLessons.reduce((n,ls,t)=>n+ls.filter((_,l)=>lessonStatus(t,l)==='done').length,0),percent=Math.round(done/total*100);
  let modules=tracks.map((t,i)=>({t,i})).filter(({i})=>libraryFilter==='all'||(libraryFilter==='basic'?i<4:libraryFilter==='advanced'?i>=4:libraryFilter==='learning'?moduleLessons[i].some((_,l)=>lessonStatus(i,l)==='learning'):moduleLessons[i].every((_,l)=>lessonStatus(i,l)==='new')));

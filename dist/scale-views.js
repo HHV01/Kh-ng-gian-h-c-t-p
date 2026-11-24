@@ -565,14 +565,10 @@ window.addEventListener('hashchange', () => {
     return;
   }
 
-  if (hash === 'scale' || hash === 'pricing') {
-    if (typeof page !== 'undefined' && page !== 'System Scale') {
-      page = 'System Scale';
-      document.querySelectorAll('[data-nav]').forEach(b => {
-        b.classList.toggle('active', b.dataset.nav === 'System Scale');
-      });
-    }
-    goScale('home');
+  if (hash === 'scale' || hash === 'pricing' || hash === 'ba-tech' || hash === 'system-scale') {
+    if (typeof location !== 'undefined') location.hash = '#/books';
+    if (typeof page !== 'undefined') page = 'Sách BA';
+    return;
   } else if (['about', 'contact', 'privacy', 'terms'].includes(hash)) {
     if (typeof page !== 'undefined' && page !== 'System Scale') {
       page = 'System Scale';

@@ -89,6 +89,55 @@
     root.quizTrack = track;
     root.quizIndex = 0;
     root.answers = quizEngineState.userAns;
+    saveQuizProgress();
+  }
+
+  function saveQuizProgress() {
+    if (typeof VyProfileManager !== 'undefined') {
+      try {
+        var pData = VyProfileManager.getProfileData();
+        pData.quizInProgress = {
+          track: quizEngineState.track,
+          currentIndex: (typeof quizIndex !== 'undefined') ? quizIndex : (root.quizIndex || 0),
+          order: quizEngineState.order,
+          correctPos: quizEngineState.correctPos,
+          shuffledOpts: quizEngineState.shuffledOpts,
+          userAns: quizEngineState.userAns,
+          mode: quizEngineState.mode,
+          viewMode: quizEngineState.viewMode
+        };
+        pData.lastActivity = {
+          type: 'quiz',
+          title: (typeof tracks !== 'undefined' && tracks[quizEngineState.track]) ? tracks[quizEngineState.track][0] : 'Quiz BA',
+          subtitle: 'Chủ đề ' + (quizEngineState.track + 1) + ' · Đang làm bài',
+          route: '#/quiz',
+          data: { track: quizEngineState.track },
+          timestamp: Date.now()
+        };
+        VyProfileManager.saveProfileData(null, pData);
+      } catch (_) {}
+    }
+  }
+
+  function clearQuizProgress() {
+    if (typeof VyProfileManager !== 'undefined') {
+      try {
+        var pData = VyProfileManager.getProfileData();
+        pData.quizInProgress = null;
+        VyProfileManager.saveProfileData(null, pData);
+      } catch (_) {}
+    }
+  }
+
+  if (typeof VyProfileManager !== 'undefined') {
+    VyProfileManager.onProfileChange(function () {
+      quizEngineState.built = false;
+      quizEngineState.viewMode = 'list';
+      quizEngineState.userAns = [];
+      if (typeof render === 'function' && typeof page !== 'undefined' && page === 'Quiz') {
+        render();
+      }
+    });
   }
 
   // 1. Topic List Overview Page
@@ -159,6 +208,29 @@
 
   // 2. Main quizPage implementation
   root.quizPage = function () {
+    if (!quizEngineState.built && typeof VyProfileManager !== 'undefined') {
+      try {
+        var pData = VyProfileManager.getProfileData();
+        if (pData && pData.quizInProgress && pData.quizInProgress.order && pData.quizInProgress.order.length > 0) {
+          var qp = pData.quizInProgress;
+          quizEngineState.track = qp.track;
+          quizEngineState.order = qp.order;
+          quizEngineState.correctPos = qp.correctPos;
+          quizEngineState.shuffledOpts = qp.shuffledOpts;
+          quizEngineState.userAns = qp.userAns;
+          quizEngineState.mode = qp.mode || 'full';
+          quizEngineState.viewMode = qp.viewMode || 'quiz';
+          quizEngineState.built = true;
+          try { quizTrack = qp.track; } catch (_) {}
+          try { quizIndex = qp.currentIndex || 0; } catch (_) {}
+          try { answers = qp.userAns; } catch (_) {}
+          root.quizTrack = qp.track;
+          root.quizIndex = qp.currentIndex || 0;
+          root.answers = qp.userAns;
+        }
+      } catch (_) {}
+    }
+
     if (quizEngineState.viewMode === 'list') {
       return renderTopicList();
     }
@@ -208,6 +280,7 @@
         state.scores[currentTrack] = Math.max(existing, score);
         save();
       }
+      clearQuizProgress();
 
       var passed = score >= 70;
 

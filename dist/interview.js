@@ -1388,6 +1388,13 @@ const interviewScenariosData = [
 // QUẢN LÝ TRẠNG THÁI & PHIÊN PHỎNG VẤN (SESSION & STATE MANAGEMENT)
 // =========================================================================
 
+function getInterviewStorageData() {
+  if (typeof VyProfileManager !== 'undefined') {
+    return VyProfileManager.getProfileData();
+  }
+  return null;
+}
+
 const interviewState = {
   activeScenarioId: null,
   currentTurnIndex: 1,
@@ -1405,6 +1412,10 @@ const interviewState = {
   answers: {}, // { [scenarioId]: { turn1: { type, content, key }, turn2: { ... } } }
   sessions: (function() {
     try {
+      if (typeof VyProfileManager !== 'undefined') {
+        const pData = VyProfileManager.getProfileData();
+        if (pData && pData.interviewSessions) return pData.interviewSessions;
+      }
       return JSON.parse(localStorage.getItem('vy-interview-sessions')) || {};
     } catch(e) {
       return {};
@@ -1412,7 +1423,38 @@ const interviewState = {
   })()
 };
 
-// Lưu phiên phỏng vấn vào localStorage
+function syncInterviewStateWithProfile() {
+  const pData = getInterviewStorageData();
+  if (pData) {
+    interviewState.sessions = pData.interviewSessions || {};
+    interviewState.answers = pData.interviewDrafts || {};
+    if (pData.interviewActive && pData.interviewActive.scenarioId && !interviewState.activeScenarioId) {
+      interviewState.activeScenarioId = pData.interviewActive.scenarioId;
+      interviewState.currentTurnIndex = pData.interviewActive.turn || 1;
+    }
+  } else {
+    try {
+      interviewState.sessions = JSON.parse(localStorage.getItem('vy-interview-sessions')) || {};
+    } catch (_) {
+      interviewState.sessions = {};
+    }
+  }
+}
+syncInterviewStateWithProfile();
+
+if (typeof VyProfileManager !== 'undefined') {
+  VyProfileManager.onProfileChange(function () {
+    syncInterviewStateWithProfile();
+    interviewState.activeScenarioId = null;
+    interviewState.isFinished = false;
+    interviewState.selectedOptionKey = null;
+    if (typeof render === 'function' && typeof page !== 'undefined' && page === 'Phỏng vấn') {
+      render();
+    }
+  });
+}
+
+// Lưu phiên phỏng vấn vào localStorage và active profile
 function saveInterviewSession(scId, status, score, grade) {
   if (!scId) return;
   const now = new Date();
@@ -1433,6 +1475,22 @@ function saveInterviewSession(scId, status, score, grade) {
     updatedAt: dateStr,
     answers: interviewState.answers[scId] || {}
   };
+
+  const pData = getInterviewStorageData();
+  if (pData) {
+    pData.interviewSessions = interviewState.sessions;
+    pData.interviewDrafts = interviewState.answers;
+    pData.interviewActive = (status === 'in_progress') ? { scenarioId: scId, turn: interviewState.currentTurnIndex } : null;
+    pData.lastActivity = {
+      type: 'interview',
+      title: scenario.title,
+      subtitle: scenario.level + ' · ' + (scenario.category || ''),
+      route: '#/interview',
+      data: { scenarioId: scId },
+      timestamp: Date.now()
+    };
+    VyProfileManager.saveProfileData(null, pData);
+  }
 
   try {
     localStorage.setItem('vy-interview-sessions', JSON.stringify(interviewState.sessions));
@@ -1584,14 +1642,18 @@ function renderInterviewHome() {
           const session = interviewState.sessions[sc.id];
           const isDone = session && session.status === 'completed';
           const isInProgress = session && session.status === 'in_progress';
+          const userAns = interviewState.answers[sc.id];
+          const hasDraft = isInProgress || (userAns && Object.keys(userAns).some(k => userAns[k] && (userAns[k].content || userAns[k].key)));
           const lvlClass = sc.level.toLowerCase();
+          const btnLabel = isDone ? 'Luyện tập lại' : (hasDraft ? 'Tiếp tục' : 'Bắt đầu');
+          const btnAction = (hasDraft && !isDone) ? 'resume-scenario' : 'start-scenario';
 
           return `
             <article class="scenario-card">
               <div class="scenario-top">
                 <div class="scenario-badges">
                   <span class="badge-level ${lvlClass}">${sc.level}</span>
-                  <span class="badge-skill">${escInterview(sc.category)}</span>
+                  <span class="badge-skill">${escInterview(sc.skill || sc.category)}</span>
                 </div>
                 <span class="scenario-duration">⏱ ${sc.estimatedDuration}</span>
               </div>
@@ -1606,12 +1668,12 @@ function renderInterviewHome() {
               </div>
 
               <div class="scenario-footer">
-                <span class="scenario-status ${isDone ? 'completed' : isInProgress ? 'in-progress' : ''}">
-                  ${isDone ? `✓ Đã hoàn thành (${session.score}/100)` : isInProgress ? `⚡ Đang làm dở (Vòng ${session.turn})` : '○ Chưa thực hành'}
+                <span class="scenario-status ${isDone ? 'completed' : (hasDraft ? 'in-progress' : '')}">
+                  ${isDone ? `✓ Đã hoàn thành (${session.score}/100)` : (hasDraft ? `⚡ Đang làm dở (Vòng ${session && session.turn ? session.turn : 1})` : '○ Chưa thực hành')}
                 </span>
 
-                <button class="btn-start-interview" data-interview-action="start-scenario" data-scenario-id="${sc.id}">
-                  <span>${isDone ? 'Luyện tập lại' : isInProgress ? 'Tiếp tục phỏng vấn' : 'Bắt đầu phỏng vấn'}</span>
+                <button class="btn-start-interview" data-interview-action="${btnAction}" data-scenario-id="${sc.id}" title="${btnLabel} phỏng vấn" aria-label="Bắt đầu phỏng vấn ${escInterview(sc.title)}">
+                  <span>${btnLabel}</span>
                   <span>→</span>
                 </button>
               </div>
@@ -1684,6 +1746,26 @@ function renderInterviewStudio() {
         <div class="studio-layout-grid">
           <!-- CỘT CHÍNH: HỘI THOẠI & SOẠN CÂU TRẢ LỜI -->
           <main class="dialogue-main-column">
+            <!-- 0. Bối cảnh dự án & Vai trò BA (Có thể thu gọn / mở rộng, tối ưu thao tác trên Mobile) -->
+            <details class="studio-collapsible-context" id="studio-collapsible-context" open>
+              <summary class="studio-context-summary">
+                <div class="summary-left" style="display:flex;align-items:center;gap:8px">
+                  <span style="font-size:16px">📋</span>
+                  <strong>Bối cảnh tình huống & Vai trò</strong>
+                  <span class="badge-skill" style="font-size:11px;padding:2px 8px">${escInterview(scenario.category)} · ${scenario.level}</span>
+                </div>
+                <span class="context-toggle-hint" style="font-size:11.5px;color:var(--muted)">Thu gọn / Mở rộng ▾</span>
+              </summary>
+              <div class="studio-context-content">
+                <p style="font-size:13.5px;line-height:1.75;margin:8px 0;color:var(--text)">${escInterview(scenario.scenarioContext || scenario.context)}</p>
+                <div class="scenario-roles-strip" style="margin-top:10px;font-size:12.5px">
+                  <span>👤 <strong>Bạn đóng vai:</strong> ${escInterview(scenario.candidateRole)}</span>
+                  <span>👔 <strong>Người phỏng vấn:</strong> ${escInterview(scenario.interviewerRole)}</span>
+                  <span>⏱ <strong>Thời lượng:</strong> ${scenario.estimatedDuration}</span>
+                </div>
+              </div>
+            </details>
+
             <!-- 1. Lịch sử vòng 1 (nếu đang ở vòng 2) -->
             ${prevTurn && prevAnswer ? `
               <section class="timeline-prev-turn">
@@ -1961,25 +2043,33 @@ function renderInterviewEvaluation(scenario) {
         <!-- 4. Strengths & Weaknesses -->
         <div class="rubric-feedback-row">
           <div class="feedback-card strengths">
-            <h3><span>✓</span> Điểm mạnh nổi bật</h3>
+            <h3><span>✓</span> Phần bạn đã làm tốt</h3>
             <ul>
               ${scenario.strengths.map(s => `<li>${escInterview(s)}</li>`).join('')}
             </ul>
           </div>
 
           <div class="feedback-card weaknesses">
-            <h3><span>⚠️</span> Điểm cần hoàn thiện thêm</h3>
+            <h3><span>⚠️</span> Dữ kiện hoặc lập luận còn thiếu</h3>
             <ul>
               ${scenario.weaknesses.map(w => `<li>${escInterview(w)}</li>`).join('')}
             </ul>
           </div>
         </div>
 
-        <!-- 5. Model Answer (STAR) -->
+        <!-- 5. Gợi ý cách trả lời & Bẫy lỗi -->
+        <div class="pitfalls-card">
+          <h3><span>💡</span> Gợi ý cách trả lời & Các lỗi sai thường gặp (Common Pitfalls) cần tránh</h3>
+          <ul>
+            ${scenario.pitfalls.map(p => `<li>${escInterview(p)}</li>`).join('')}
+          </ul>
+        </div>
+
+        <!-- 6. Model Answer (STAR) -->
         <div class="model-answer-card">
           <div class="model-answer-head">
-            <span class="model-badge">MẪU CHUẨN THỰC CHIẾN</span>
-            <h3>Câu trả lời mẫu chuẩn phương pháp STAR</h3>
+            <span class="model-badge">ĐÁP ÁN MẪU CHUẨN THỰC CHIẾN</span>
+            <h3>Gợi ý câu trả lời mẫu theo phương pháp STAR</h3>
           </div>
 
           <div class="star-breakdown">
@@ -2002,18 +2092,10 @@ function renderInterviewEvaluation(scenario) {
           </div>
         </div>
 
-        <!-- 6. Common Pitfalls -->
-        <div class="pitfalls-card">
-          <h3>🚫 Các lỗi sai thường gặp (Common Pitfalls) cần tuyệt đối tránh</h3>
-          <ul>
-            ${scenario.pitfalls.map(p => `<li>${escInterview(p)}</li>`).join('')}
-          </ul>
-        </div>
-
         <!-- 7. Footer Actions -->
         <div class="evaluation-footer-actions">
           <button class="btn-hint-toggle" data-interview-action="restart-scenario">
-            <span>↺</span> Luyện tập lại tình huống này
+            <span>↺</span> Làm lại tình huống này
           </button>
           <button class="btn-start-interview" data-interview-action="back-home">
             <span>Chọn tình huống khác →</span>
@@ -2301,6 +2383,11 @@ document.addEventListener('click', e => {
     interviewState.selectedOptionKey = null;
     interviewState.draftSavedTime = null;
     interviewState.isSubmitting = false;
+    const scId = interviewState.activeScenarioId;
+    if (scId && interviewState.answers[scId]) {
+      delete interviewState.answers[scId];
+      saveInterviewSession(scId, 'in_progress');
+    }
     if (typeof render === 'function') render();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     return;

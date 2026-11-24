@@ -2,7 +2,7 @@ const iconPaths={grid:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x=
 function uiIcon(name){return `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true">${iconPaths[name]||iconPaths.book}</svg>`}
 function polish(){
   try {
-    const navIcons=['grid','route','book','cards','check','chat','case','glossary','spark','news'];
+    const navIcons=['grid','route','book','check','chat','case','spark','glossary','news'];
     document.querySelectorAll('[data-nav]').forEach(b=>{
       let i=typeof navs!=='undefined'?navs.findIndex(n=>n[0]===b.dataset.nav):-1;
       let slot=b.querySelector('.nav-icon');
@@ -17,13 +17,21 @@ function polish(){
     document.querySelectorAll('[data-nav].active').forEach(b=>b.setAttribute('aria-current','page'));
     document.querySelectorAll('[data-nav]:not(.active)').forEach(b=>{if(b.removeAttribute)b.removeAttribute('aria-current');});
     const date=document.querySelector('.date');if(date)date.innerHTML=uiIcon('calendar')+'<span>Thứ Sáu, 20 tháng 11, 2026</span>';
+
+    // Update Profile Widget in header
+    const profileContainer=document.querySelector('#header-profile-container');
+    if(profileContainer&&typeof VyProfileManager!=='undefined'){
+      VyProfileManager.renderProfileWidget(profileContainer);
+    }
+
     if(typeof page!=='undefined'&&page==='Dashboard'){
       const hero=document.querySelector('.hero');
-      if(hero)hero.innerHTML=`<div class="hero-copy"><div class="eyebrow">✦ KHÔNG GIAN HỌC TẬP BA</div><h2>Nuôi dưỡng tư duy đỉnh cao.<br>Kiến tạo giá trị vượt bậc.</h2><p>Chào mừng trở lại với Vy Workspace!<br>Tiếp tục hành trình làm chủ kiến thức và kỹ năng Business Analyst thực chiến.</p><div class="hero-actions"><button class="primary" data-lesson="1,3">${uiIcon('play')}Vào học ngay</button><button class="text-button" data-nav="Lộ trình học">Khám phá lộ trình</button></div></div><div class="hero-art" aria-hidden="true"><div class="orb"></div><span class="spark">✦</span><div class="book">${uiIcon('book')}</div><div class="float-card">${uiIcon('spark')} Vy Workspace · Không gian học tập</div></div>`;
-      document.querySelectorAll('.stat .icon').forEach((el,i)=>{if(el)el.innerHTML=uiIcon(['book','check','cards','flame'][i]);});
+      var pName=(typeof VyProfileManager!=='undefined')?VyProfileManager.getActiveProfile().name:'Vy';
+      if(hero)hero.innerHTML=`<div class="hero-copy"><div class="eyebrow">✦ KHÔNG GIAN HỌC TẬP BA</div><h2>Nuôi dưỡng tư duy đỉnh cao.<br>Kiến tạo giá trị vượt bậc.</h2><p>Chào mừng trở lại với Vy Workspace, <strong>${pName}</strong>!<br>Tiếp tục hành trình làm chủ kiến thức và kỹ năng Business Analyst thực chiến.</p><div class="hero-actions"><button class="primary" data-lesson="0,0">${uiIcon('play')}Vào học ngay</button><button class="text-button" data-nav="Lộ trình học">Khám phá lộ trình</button></div></div><div class="hero-art" aria-hidden="true"><div class="orb"></div><span class="spark">✦</span><div class="book">${uiIcon('book')}</div><div class="float-card">${uiIcon('spark')} Vy Workspace · Không gian học tập</div></div>`;
+      document.querySelectorAll('.stat .icon').forEach((el,i)=>{if(el)el.innerHTML=uiIcon(['book','check','spark','flame'][i]);});
       const streak=document.querySelector('.streak>span');if(streak)streak.innerHTML=uiIcon('flame');
       const calHead=document.querySelector('.right-col .panel:nth-child(2) .section-head>span');if(calHead)calHead.innerHTML=uiIcon('calendar');
-      document.querySelectorAll('.review-icon').forEach((el,i)=>{if(el)el.innerHTML=uiIcon(i?'check':'cards');});
+      document.querySelectorAll('.review-icon').forEach((el,i)=>{if(el)el.innerHTML=uiIcon(i?'check':'spark');});
       document.querySelectorAll('.review-row button').forEach(el=>{if(el)el.innerHTML=uiIcon('play');});
       const chart=document.querySelector('.chart');
       if(chart){
@@ -35,7 +43,7 @@ function polish(){
       }
       const dLayout=document.querySelector('.dashboard-layout');
       if(dLayout&&!document.querySelector('.dashboard-footnote')){
-        const foot=document.createElement('p');foot.className='dashboard-footnote';foot.textContent='Không gian học tập cá nhân · Số liệu minh họa · Tiến độ được lưu trên thiết bị này';dLayout.after(foot);
+        const foot=document.createElement('p');foot.className='dashboard-footnote';foot.textContent='Không gian học tập cá nhân · Hồ sơ [' + pName + '] · Tiến độ được lưu trên thiết bị này (LocalStorage)';dLayout.after(foot);
       }
     }
     document.querySelectorAll('.track').forEach(el=>{

@@ -26,6 +26,12 @@
 
   function getCompletedItems() {
     try {
+      if (typeof VyProfileManager !== 'undefined') {
+        var pData = VyProfileManager.getProfileData();
+        if (pData && Array.isArray(pData.booksCompleted)) {
+          return pData.booksCompleted;
+        }
+      }
       if (typeof localStorage === 'undefined') return [];
       var raw = localStorage.getItem('ba-books-completed');
       return raw ? JSON.parse(raw) : [];
@@ -36,10 +42,23 @@
 
   function saveCompletedItems(list) {
     try {
+      if (typeof VyProfileManager !== 'undefined') {
+        var pData = VyProfileManager.getProfileData();
+        pData.booksCompleted = list;
+        VyProfileManager.saveProfileData(null, pData);
+      }
       if (typeof localStorage !== 'undefined') {
         localStorage.setItem('ba-books-completed', JSON.stringify(list));
       }
     } catch (e) {}
+  }
+
+  if (typeof VyProfileManager !== 'undefined') {
+    VyProfileManager.onProfileChange(function() {
+      if (typeof render === 'function' && typeof page !== 'undefined' && page === 'Sách BA') {
+        render();
+      }
+    });
   }
 
   var booksEngineState = {
@@ -536,6 +555,22 @@
 
     var item = findItem(b, booksEngineState.activeItemId);
     if (!item) return renderBookDetail();
+
+    // Record last activity into active profile
+    if (typeof VyProfileManager !== 'undefined') {
+      try {
+        var pData = VyProfileManager.getProfileData();
+        pData.lastActivity = {
+          type: 'book',
+          title: item.title,
+          subtitle: (b.shortTitle || b.title) + (item.day ? ' · DAY ' + item.day : (item.chapter ? ' · ' + item.chapter : '')),
+          route: '#/books/' + b.id + '/' + item.id,
+          data: { bookId: b.id, itemId: item.id },
+          timestamp: Date.now()
+        };
+        VyProfileManager.saveProfileData(null, pData);
+      } catch (_) {}
+    }
 
     var adj = getAdjacentItems(b, item.id);
     var isDone = isItemCompleted(item.id);
