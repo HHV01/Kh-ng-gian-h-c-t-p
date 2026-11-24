@@ -737,6 +737,34 @@ body.dark .reader-story-quote {
   border: 1px solid var(--line);
   border-radius: 10px;
 }
+.reader-pdf-empty-state {
+  padding: 44px 24px;
+  text-align: center;
+  background: var(--surface-soft);
+  border: 2px dashed var(--line);
+  border-radius: 16px;
+  margin: 16px 0;
+  animation: fadeIn 0.3s ease;
+}
+.reader-pdf-restoring-wrap {
+  padding: 56px 24px;
+  text-align: center;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  margin: 16px 0;
+  animation: fadeIn 0.3s ease;
+}
+.reader-pdf-spinner {
+  display: inline-block;
+  font-size: 32px;
+  margin-bottom: 12px;
+  animation: spin 1.2s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 .btn-choose-pdf-label {
   cursor: pointer;
   user-select: none;

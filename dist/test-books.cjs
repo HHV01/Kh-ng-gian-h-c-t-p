@@ -128,13 +128,23 @@ assert(html.includes('Mục đích của Task (Purpose)'), 'Reader must have Pur
 assert(html.includes('Đầu vào (Inputs):'), 'Reader must have Inputs');
 assert(html.includes('Đầu ra (Outputs):'), 'Reader must have Outputs');
 
-// Verify PDF Mode Switch
+// Verify PDF Mode Switch (Empty State when no usable PDF yet)
 engine.booksEngineState.readerMode = 'pdf';
 html = global.booksPage();
-assert(html.includes('reader-pdf-iframe'), 'PDF mode must render iframe');
-assert(html.includes('#page=34'), 'Iframe src must point to #page=34');
+assert(!html.includes('reader-pdf-iframe'), 'PDF mode without usable file must NOT mount broken iframe');
+assert(html.includes('reader-pdf-empty-state'), 'PDF mode without usable file must render empty state');
+assert(html.includes('Chọn PDF của cuốn này'), 'Must offer "Chọn PDF của cuốn này"');
+assert(html.includes('Quay lại bài ôn tiếng Việt'), 'Must offer button to return to notes');
 
-// Switch back to notes mode
+// When PDF file is supplied, iframe must mount pointing to exact PDF page 34
+engine.setBookLocalPdf('babok-v3', { name: 'BABOK v3.pdf', size: 3000000 });
+html = global.booksPage();
+assert(html.includes('reader-pdf-iframe'), 'PDF mode with usable file must render iframe');
+assert(html.includes('#page=34'), 'Iframe src must point to #page=34');
+assert(html.includes('Mở trong tab mới'), 'Must render "Mở trong tab mới" link');
+
+// Clean up local mock file and switch back to notes mode
+engine.clearBookLocalPdf('babok-v3');
 engine.booksEngineState.readerMode = 'notes';
 console.log('  ✓ BABOK Task 3.1 Reader verified: dual mode (Vietnamese notes & PDF iframe at page 34) and TOC rail.');
 
@@ -270,37 +280,83 @@ console.log('  ✓ Numeric route aliases (#/books/1, #/books/2, #/books/3, #/boo
 // ============================================================
 console.log('\n--- Test 9: Client-Side Local PDF File Selection & Page Jumping ---');
 
-// 9.1 Verify "Chọn PDF của cuốn này" input/button rendered in Reader PDF view
+// 9.1 Verify Empty State when no file is selected yet (NO iframe mounted)
 engine.handleBooksHash(['babok-v3', 'task-3-1']);
 engine.booksEngineState.readerMode = 'pdf';
 html = global.booksPage();
+assert(!html.includes('reader-pdf-iframe'), 'Empty state must NOT mount iframe');
+assert(html.includes('reader-pdf-empty-state'), 'Must display reader-pdf-empty-state');
 assert(html.includes('Chọn PDF của cuốn này'), 'Reader PDF mode must have "Chọn PDF của cuốn này" option');
 assert(html.includes('pdf-file-input'), 'Must have pdf-file-input element');
 
-// 9.2 Simulate user selecting a local PDF file from their computer
-const mockPdf = {
+// 9.2 Verify Restoring State display ("Đang mở PDF...")
+engine.booksEngineState.isRestoringPdf = true;
+html = global.booksPage();
+assert(html.includes('Đang mở PDF...'), 'Restoring state must display "Đang mở PDF..."');
+engine.booksEngineState.isRestoringPdf = false;
+
+// 9.3 Simulate user selecting local PDF for Book 1 (BABOK)
+const mockBabok = {
   name: 'A GUIDE TO THE BUSINESS ANALYSIS BODY OF KNOWLEDGE ( PDFDrive.com ).pdf',
   size: 3290073
 };
-const loadedPdf = engine.setBookLocalPdf('babok-v3', mockPdf);
-assert(loadedPdf, 'setBookLocalPdf must register file');
-assert.strictEqual(loadedPdf.name, mockPdf.name);
+const loadedBabok = engine.setBookLocalPdf('babok-v3', mockBabok);
+assert(loadedBabok, 'setBookLocalPdf must register file');
+assert.strictEqual(loadedBabok.name, mockBabok.name);
 
-// 9.3 Verify Reader renders local file name and updates iframe src to jump to page 34
+// 9.4 Verify BABOK Task 3.1: iframe and "Mở trong tab mới" jump to PDF page 34
 html = global.booksPage();
-assert(html.includes(mockPdf.name), 'Reader must display the loaded local PDF file name');
+assert(html.includes(mockBabok.name), 'Reader must display the loaded local PDF file name');
+assert(html.includes('reader-pdf-iframe'), 'Iframe must be mounted once file is usable');
 assert(html.includes('#page=34'), 'Iframe src must jump to page 34 of the local PDF');
+assert(html.includes('Mở trong tab mới ↗'), 'Must provide link to open PDF in new tab');
 
-// 9.4 Verify navigating to another task in the same book preserves the loaded PDF and jumps to new page
+// 9.5 Verify BABOK Chapter 1: jumps to PDF page 11
+engine.handleBooksHash(['babok-v3', 'ch-1']);
+html = global.booksPage();
+assert(html.includes('#page=11'), 'BABOK Chapter 1 must jump to PDF page 11');
+
+// 9.6 Verify BABOK Task 3.2: jumps to PDF page 41
 engine.handleBooksHash(['babok-v3', 'task-3-2']);
 html = global.booksPage();
-assert(html.includes(mockPdf.name), 'Loaded local PDF must be preserved across tasks in same book');
-assert(html.includes('#page=41'), 'Iframe src must automatically jump to Task 3.2 page 41');
+assert(html.includes('#page=41'), 'BABOK Task 3.2 must jump to PDF page 41');
 
-// 9.5 Clear local PDF
+// 9.7 Multi-book isolation: Select file for Book 2 (BCS)
+const mockBcs = {
+  name: '3rd_Business_Analysis__split_1.pdf',
+  size: 9298427
+};
+engine.setBookLocalPdf('bcs-ba-3rd', mockBcs);
+
+// Open BCS Chapter 1 -> PDF page 35
+engine.handleBooksHash(['bcs-ba-3rd', 'bcs-ch-1']);
+html = global.booksPage();
+assert(html.includes(mockBcs.name), 'BCS reader must display BCS local PDF name');
+assert(html.includes('#page=35'), 'BCS Chapter 1 must jump to PDF page 35');
+
+// Switch back to BABOK Task 3.1 -> still retains BABOK file and page 34
+engine.handleBooksHash(['babok-v3', 'task-3-1']);
+html = global.booksPage();
+assert(html.includes(mockBabok.name), 'BABOK retained its distinct PDF file');
+assert(html.includes('#page=34'), 'BABOK Task 3.1 retained page 34');
+
+// 9.8 Clear Book 1 (BABOK) only: BABOK reverts to empty state, BCS remains loaded
 engine.clearBookLocalPdf('babok-v3');
-assert.strictEqual(engine.getBookLocalPdf('babok-v3'), null, 'Local PDF must be cleared');
-console.log('  ✓ Client-side local PDF file selection and page jumping verified 100%.');
+assert.strictEqual(engine.getBookLocalPdf('babok-v3'), null, 'BABOK local PDF must be cleared');
+html = global.booksPage();
+assert(!html.includes('reader-pdf-iframe'), 'Cleared BABOK must not render iframe');
+assert(html.includes('reader-pdf-empty-state'), 'Cleared BABOK must show empty state');
+
+// Verify BCS is still intact
+engine.handleBooksHash(['bcs-ba-3rd', 'bcs-ch-1']);
+html = global.booksPage();
+assert(html.includes(mockBcs.name), 'BCS must remain loaded after clearing BABOK');
+assert(html.includes('#page=35'), 'BCS still points to page 35');
+
+// Clean up BCS
+engine.clearBookLocalPdf('bcs-ba-3rd');
+engine.booksEngineState.readerMode = 'notes';
+console.log('  ✓ Client-side local PDF file selection, multi-book isolation, and page jumping verified 100%.');
 
 console.log('\n======================================================');
 console.log('🎉 ALL BA BOOKS READER TESTS PASSED! 100% COMPLIANT!');
