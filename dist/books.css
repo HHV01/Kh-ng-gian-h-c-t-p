@@ -732,6 +732,23 @@ body.dark .reader-story-quote {
   display: flex;
   flex-direction: column;
 }
+.reader-pdf-toolbar {
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.btn-choose-pdf-label {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+.btn-choose-pdf-label:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+.local-pdf-tip-banner {
+  animation: fadeIn 0.3s ease;
+}
 .reader-pdf-iframe, .reader-pdf-frame {
   width: 100%;
   min-height: 750px;

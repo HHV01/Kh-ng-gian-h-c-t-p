@@ -77,6 +77,62 @@
     completedItems: getCompletedItems()
   };
 
+  // In-memory mapping of local user-selected PDF files per book:
+  // { [bookId]: { url: objectUrl, name: fileName, size: fileSize } }
+  var localPdfMap = {};
+
+  function setBookLocalPdf(bookId, file) {
+    if (!bookId || !file) return null;
+    var current = localPdfMap[bookId];
+    if (current && current.url && typeof URL !== 'undefined' && typeof URL.revokeObjectURL === 'function') {
+      try { URL.revokeObjectURL(current.url); } catch (_) {}
+    }
+    var objectUrl = '';
+    if (typeof URL !== 'undefined' && typeof URL.createObjectURL === 'function') {
+      try {
+        objectUrl = URL.createObjectURL(file);
+      } catch (_) {}
+    }
+    if (!objectUrl) {
+      objectUrl = 'blob:local-pdf/' + encodeURIComponent(file.name || 'document.pdf');
+    }
+    localPdfMap[bookId] = {
+      url: objectUrl,
+      name: file.name || 'document.pdf',
+      size: file.size || 0
+    };
+    return localPdfMap[bookId];
+  }
+
+  function getBookLocalPdf(bookId) {
+    return localPdfMap[bookId] || null;
+  }
+
+  function clearBookLocalPdf(bookId) {
+    if (localPdfMap[bookId]) {
+      if (localPdfMap[bookId].url && typeof URL !== 'undefined' && typeof URL.revokeObjectURL === 'function') {
+        try { URL.revokeObjectURL(localPdfMap[bookId].url); } catch (_) {}
+      }
+      delete localPdfMap[bookId];
+    }
+  }
+
+  function getEffectivePdfUrl(book, item) {
+    var local = book ? localPdfMap[book.id] : null;
+    if (local && local.url) {
+      return {
+        url: local.url,
+        isLocal: true,
+        fileName: local.name
+      };
+    }
+    return {
+      url: (book && (book.pdfUrl || ('/docs/' + book.id + '.pdf'))) || '',
+      isLocal: false,
+      fileName: book ? (book.pdfFileName || (book.id + '.pdf')) : ''
+    };
+  }
+
   function getBooksList() {
     if (typeof booksMeta !== 'undefined') return booksMeta;
     if (root && root.booksMeta) return root.booksMeta;
@@ -364,7 +420,9 @@
     if (!b) return renderOverview();
 
     var firstAvailableItem = (b.toc || []).find(function (it) { return it.available; });
-    var pdfFileUrl = b.pdfUrl || ('/docs/' + b.id + '.pdf');
+    var localPdf = getBookLocalPdf(b.id);
+    var pdfInfo = getEffectivePdfUrl(b);
+    var pdfFileUrl = pdfInfo.url;
 
     var availableCount = (b.toc || []).filter(function (it) { return it.available; }).length;
     var completedCount = (b.toc || []).filter(function (it) { return it.available && isItemCompleted(it.id); }).length;
@@ -396,10 +454,16 @@
             '<p style="line-height:1.65;font-size:13.5px;margin-bottom:14px">' + b.description + '</p>' +
             (b.missingNotice ? '<div class="callout warning" style="margin-top:12px"><b>⚠️ Phạm vi tài liệu split_1:</b> ' + b.missingNotice + '</div>' : '') +
             (firstAvailableItem ?
-              '<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">' +
+              '<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">' +
                 '<a href="#/books/' + b.id + '/' + firstAvailableItem.id + '" class="primary" data-book-id="' + b.id + '" data-open-item="' + firstAvailableItem.id + '" style="font-size:13.5px;padding:9px 18px;text-decoration:none;display:inline-flex;align-items:center;border-radius:8px">' +
                   '📖 Bắt đầu đọc: ' + firstAvailableItem.code + ' ➔' +
                 '</a>' +
+                '<label class="secondary btn-choose-pdf-label" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:8px;font-size:13.5px;cursor:pointer">' +
+                  '<span>📂</span> Chọn PDF của cuốn này' +
+                  '<input type="file" class="pdf-file-input-trigger" accept=".pdf" style="display:none">' +
+                '</label>' +
+                (localPdf ?
+                  '<span style="font-size:12.5px;color:#10b981;font-weight:600;display:inline-flex;align-items:center;gap:4px">✓ Đã nạp từ máy: <b>' + esc(localPdf.name) + '</b></span>' : '') +
                 '<a href="' + pdfFileUrl + '" target="_blank" rel="noopener noreferrer" class="secondary" style="display:inline-flex;align-items:center;padding:9px 16px;border-radius:8px;text-decoration:none;font-size:13.5px">' +
                   '📄 Xem toàn bộ file PDF gốc ↗' +
                 '</a>' +
@@ -575,7 +639,10 @@
     var adj = getAdjacentItems(b, item.id);
     var isDone = isItemCompleted(item.id);
     var readingTime = getReadingTimeEstimate(item.contentHtml);
-    var pdfFileUrl = b.pdfUrl || ('/docs/' + b.id + '.pdf');
+    var localPdf = getBookLocalPdf(b.id);
+    var pdfInfo = getEffectivePdfUrl(b, item);
+    var pdfFileUrl = pdfInfo.url;
+    var isLocalPdf = pdfInfo.isLocal;
 
     // Breadcrumbs
     var breadcrumbsHtml = '<div class="books-breadcrumb-bar">' +
@@ -680,7 +747,12 @@
           (item.category ? '<div><b>Chủ đề:</b> ' + item.category + '</div>' : '') +
           '<div><b>Thời gian đọc:</b> ~' + readingTime + '</div>' +
         '</div>' +
-        '<div style="margin-top:12px">' +
+        '<div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">' +
+          '<label class="secondary full btn-choose-pdf-label" style="font-size:12px;padding:6px 10px;text-align:center;border-radius:6px;display:block;cursor:pointer">' +
+            '📂 Chọn PDF của cuốn này' +
+            '<input type="file" class="pdf-file-input-trigger" accept=".pdf" style="display:none">' +
+          '</label>' +
+          (isLocalPdf ? '<small style="font-size:11px;color:#10b981;text-align:center;display:block">✓ ' + esc(pdfInfo.fileName) + '</small>' : '') +
           '<a href="' + pdfFileUrl + '#page=' + item.pdfPage + '" target="_blank" rel="noopener noreferrer" class="secondary full" style="font-size:12px;padding:6px 10px;text-decoration:none;display:block;text-align:center;border-radius:6px">📄 Mở PDF trang ' + item.pdfPage + ' ↗</a>' +
         '</div>' +
       '</div>' +
@@ -709,6 +781,11 @@
           '<h1 style="font-size:23px;line-height:1.4;margin:8px 0 12px">' + item.title + '</h1>' +
           '<div style="display:flex;gap:12px;margin-bottom:8px;flex-wrap:wrap;align-items:center">' +
             '<button class="secondary" data-set-reader-mode="pdf" style="font-size:12px;padding:5px 12px;border-radius:6px">📄 Chuyển sang xem trang PDF ' + item.pdfPage + '</button>' +
+            '<label class="secondary btn-choose-pdf-label" style="cursor:pointer;font-size:12px;padding:5px 12px;border-radius:6px;display:inline-flex;align-items:center;gap:4px">' +
+              '<span>📂</span> Chọn PDF của cuốn này' +
+              '<input type="file" class="pdf-file-input-trigger" accept=".pdf" style="display:none">' +
+            '</label>' +
+            (isLocalPdf ? '<span style="font-size:12px;color:#10b981;font-weight:600">✓ Đã nạp từ máy: ' + esc(pdfInfo.fileName) + '</span>' : '') +
             '<a href="' + pdfFileUrl + '#page=' + item.pdfPage + '" target="_blank" rel="noopener noreferrer" class="subtle" style="font-size:12px;align-self:center">Mở file PDF gốc toàn màn hình ↗</a>' +
           '</div>' +
         '</div>' +
@@ -718,10 +795,29 @@
             item.contentHtml +
           '</article>' :
           '<div class="reader-pdf-viewer-wrap">' +
-            '<div style="padding:10px 14px;background:var(--surface-soft);border:1px solid var(--line);border-radius:10px;margin-bottom:12px;font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">' +
-              '<span>Đang hiển thị trang PDF <b>' + item.pdfPage + '</b> của tác phẩm <i>' + b.title + '</i></span>' +
-              '<a href="' + pdfFileUrl + '#page=' + item.pdfPage + '" target="_blank" class="primary" style="font-size:12px;padding:5px 12px;text-decoration:none;border-radius:6px">Mở toàn màn hình tab mới ↗</a>' +
+            '<div class="reader-pdf-toolbar" style="padding:10px 14px;background:var(--surface-soft);border:1px solid var(--line);border-radius:10px;margin-bottom:12px;font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">' +
+              '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">' +
+                '<label class="primary btn-choose-pdf-label" style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;font-size:12.5px;font-weight:600">' +
+                  '<span>📂</span> Chọn PDF của cuốn này' +
+                  '<input type="file" id="pdf-file-input" class="pdf-file-input-trigger" accept=".pdf" style="display:none">' +
+                '</label>' +
+                (isLocalPdf ?
+                  '<span style="font-size:12.5px;color:var(--text);display:inline-flex;align-items:center;gap:6px">' +
+                    '<span style="color:#10b981">●</span> Đang mở: <b>' + esc(pdfInfo.fileName) + '</b> · Trang <b>' + item.pdfPage + '</b>' +
+                  '</span>' +
+                  '<button class="subtle" id="btn-clear-local-pdf" style="font-size:12px;padding:3px 8px" title="Bỏ file đã chọn">✕ Bỏ file</button>' :
+                  '<span style="font-size:12.5px;color:var(--muted)">Đang hiển thị trang PDF <b>' + item.pdfPage + '</b> của tác phẩm <i>' + b.title + '</i></span>'
+                ) +
+              '</div>' +
+              '<div style="display:flex;gap:8px;align-items:center">' +
+                '<a href="' + pdfFileUrl + '#page=' + item.pdfPage + '" target="_blank" class="secondary" style="font-size:12px;padding:5px 12px;text-decoration:none;border-radius:6px">Mở toàn màn hình tab mới ↗</a>' +
+              '</div>' +
             '</div>' +
+            (!isLocalPdf ?
+              '<div class="local-pdf-tip-banner" style="padding:10px 14px;background:rgba(96,86,217,0.08);border:1px dashed var(--primary);border-radius:8px;margin-bottom:12px;font-size:12.5px;color:var(--text);line-height:1.5">' +
+                '💡 <b>Mở file PDF từ máy bạn:</b> Khi học trên web deploy (Render) không có sẵn file sách bản quyền trên server, hãy bấm nút <b>"Chọn PDF của cuốn này"</b> ở trên. Web sẽ mở file trực tiếp từ máy của bạn trong trình duyệt và tự động nhảy đến đúng trang <b>' + item.pdfPage + '</b>!' +
+              '</div>' : ''
+            ) +
             '<iframe class="reader-pdf-iframe reader-pdf-frame" src="' + pdfFileUrl + '#page=' + item.pdfPage + '" style="width:100%;height:800px;border:1px solid var(--line);border-radius:12px;background:#fff" title="Trình đọc PDF ' + b.title + '"></iframe>' +
           '</div>'
         ) +
@@ -990,6 +1086,18 @@
         return;
       }
 
+      // Clear local PDF
+      if (b.id === 'btn-clear-local-pdf') {
+        e.preventDefault();
+        var currentBook = findBook(booksEngineState.activeBookId);
+        if (currentBook) {
+          clearBookLocalPdf(currentBook.id);
+          if (typeof toast === 'function') toast('Đã hủy liên kết file PDF từ máy.');
+          if (typeof render === 'function') render();
+        }
+        return;
+      }
+
       // Reset day filter
       if (b.id === 'btn-reset-day-filter') {
         e.preventDefault();
@@ -1053,6 +1161,25 @@
         booksEngineState.dayTopicFilter = e.target.value;
         if (typeof render === 'function') render();
       }
+
+      // Handle PDF file selection from local device
+      if (e.target && (e.target.id === 'pdf-file-input' || e.target.classList.contains('pdf-file-input-trigger'))) {
+        var file = e.target.files && e.target.files[0];
+        if (file) {
+          var book = findBook(booksEngineState.activeBookId);
+          if (book) {
+            setBookLocalPdf(book.id, file);
+            if (booksEngineState.view === 'reader') {
+              booksEngineState.readerMode = 'pdf';
+            }
+            if (typeof toast === 'function') {
+              var targetPage = booksEngineState.activeItemId ? ((findItem(book, booksEngineState.activeItemId) || {}).pdfPage || '1') : '1';
+              toast('✓ Đã nạp file: ' + file.name + ' (Đang mở trang ' + targetPage + ')');
+            }
+            if (typeof render === 'function') render();
+          }
+        }
+      }
     });
 
     // Hash change event listener
@@ -1083,7 +1210,11 @@
       renderBookDetail: renderBookDetail,
       renderReader: renderReader,
       isItemCompleted: isItemCompleted,
-      toggleItemCompleted: toggleItemCompleted
+      toggleItemCompleted: toggleItemCompleted,
+      setBookLocalPdf: setBookLocalPdf,
+      getBookLocalPdf: getBookLocalPdf,
+      clearBookLocalPdf: clearBookLocalPdf,
+      getEffectivePdfUrl: getEffectivePdfUrl
     };
   }
 })();

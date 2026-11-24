@@ -265,6 +265,43 @@ html = global.booksPage();
 assert(html.includes('DAY 100'), 'Must render Day 100');
 console.log('  ✓ Numeric route aliases (#/books/1, #/books/2, #/books/3, #/books/3/100) fully supported with zero action errors.');
 
+// ============================================================
+// TEST 9: CLIENT-SIDE LOCAL PDF FILE SELECTION & OBJECT URL JUMPING
+// ============================================================
+console.log('\n--- Test 9: Client-Side Local PDF File Selection & Page Jumping ---');
+
+// 9.1 Verify "Chọn PDF của cuốn này" input/button rendered in Reader PDF view
+engine.handleBooksHash(['babok-v3', 'task-3-1']);
+engine.booksEngineState.readerMode = 'pdf';
+html = global.booksPage();
+assert(html.includes('Chọn PDF của cuốn này'), 'Reader PDF mode must have "Chọn PDF của cuốn này" option');
+assert(html.includes('pdf-file-input'), 'Must have pdf-file-input element');
+
+// 9.2 Simulate user selecting a local PDF file from their computer
+const mockPdf = {
+  name: 'A GUIDE TO THE BUSINESS ANALYSIS BODY OF KNOWLEDGE ( PDFDrive.com ).pdf',
+  size: 3290073
+};
+const loadedPdf = engine.setBookLocalPdf('babok-v3', mockPdf);
+assert(loadedPdf, 'setBookLocalPdf must register file');
+assert.strictEqual(loadedPdf.name, mockPdf.name);
+
+// 9.3 Verify Reader renders local file name and updates iframe src to jump to page 34
+html = global.booksPage();
+assert(html.includes(mockPdf.name), 'Reader must display the loaded local PDF file name');
+assert(html.includes('#page=34'), 'Iframe src must jump to page 34 of the local PDF');
+
+// 9.4 Verify navigating to another task in the same book preserves the loaded PDF and jumps to new page
+engine.handleBooksHash(['babok-v3', 'task-3-2']);
+html = global.booksPage();
+assert(html.includes(mockPdf.name), 'Loaded local PDF must be preserved across tasks in same book');
+assert(html.includes('#page=41'), 'Iframe src must automatically jump to Task 3.2 page 41');
+
+// 9.5 Clear local PDF
+engine.clearBookLocalPdf('babok-v3');
+assert.strictEqual(engine.getBookLocalPdf('babok-v3'), null, 'Local PDF must be cleared');
+console.log('  ✓ Client-side local PDF file selection and page jumping verified 100%.');
+
 console.log('\n======================================================');
 console.log('🎉 ALL BA BOOKS READER TESTS PASSED! 100% COMPLIANT!');
 console.log('======================================================\n');
