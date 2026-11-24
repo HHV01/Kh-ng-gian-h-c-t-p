@@ -124,6 +124,8 @@
 
     var cards = '<div class="book-catalog-grid">' +
       getBooksList().map(function (b) {
+        var firstItem = b.toc.find(function (it) { return it.available; });
+        var firstItemId = firstItem ? firstItem.id : '';
         return '<div class="book-card clickable-book-card" data-open-book="' + b.id + '" style="cursor:pointer">' +
           '<div>' +
             '<div class="book-card-header">' +
@@ -135,8 +137,9 @@
             '<p style="font-size:13.5px;line-height:1.6;color:var(--muted);margin-bottom:16px">' + b.description + '</p>' +
             (b.missingNotice ? '<div class="callout" style="font-size:12px;padding:10px 12px;margin-bottom:16px;background:#fef3c7;border-left:3px solid #d97706;color:#92400e">' + b.missingNotice + '</div>' : '') +
           '</div>' +
-          '<div style="margin-top:auto">' +
-            '<button class="primary full" data-open-book="' + b.id + '">Xem nội dung ➔</button>' +
+          '<div style="margin-top:auto;display:flex;gap:10px;flex-wrap:wrap">' +
+            '<button class="primary" style="flex:1.2" data-open-book="' + b.id + '">Xem nội dung ➔</button>' +
+            (firstItemId ? '<button class="secondary" style="flex:1" data-book-id="' + b.id + '" data-open-item="' + firstItemId + '">Đọc ngay 📖</button>' : '') +
           '</div>' +
         '</div>';
       }).join('') +
@@ -149,6 +152,9 @@
   function renderBookDetail() {
     var b = findBook(booksEngineState.activeBookId);
     if (!b) return renderOverview();
+
+    var firstAvailableItem = (b.toc || []).find(function (it) { return it.available; });
+    var pdfFileUrl = b.pdfUrl || ('/docs/' + b.id + '.pdf');
 
     var navBarHtml = '<div style="margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">' +
       '<button class="secondary" id="btn-back-overview">← Về danh sách 3 cuốn sách</button>' +
@@ -167,6 +173,15 @@
           '<p class="metadata" style="font-size:14px;margin-bottom:12px"><b>Tác giả / Cơ quan ban hành:</b> ' + b.author + '</p>' +
           '<p style="line-height:1.7;font-size:14px">' + b.description + '</p>' +
           (b.missingNotice ? '<div class="callout warning" style="margin-top:14px"><b>⚠️ Phạm vi tài liệu split_1:</b> ' + b.missingNotice + '</div>' : '') +
+          (firstAvailableItem ?
+            '<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">' +
+              '<button class="primary" data-book-id="' + b.id + '" data-open-item="' + firstAvailableItem.id + '" style="font-size:14px;padding:10px 18px">' +
+                '📖 Bắt đầu đọc: ' + firstAvailableItem.code + ' ➔' +
+              '</button>' +
+              '<a href="' + pdfFileUrl + '" target="_blank" rel="noopener noreferrer" class="secondary" style="display:inline-flex;align-items:center;padding:10px 18px;border-radius:10px;text-decoration:none;font-size:14px">' +
+                '📄 Xem toàn bộ file PDF gốc ↗' +
+              '</a>' +
+            '</div>' : '') +
         '</div>' +
       '</div>' +
     '</section>';
@@ -220,7 +235,7 @@
             '</div>';
           }
 
-          return '<div class="book-toc-item clickable-toc-item" data-open-item="' + it.id + '">' +
+          return '<div class="book-toc-item clickable-toc-item" data-book-id="' + b.id + '" data-open-item="' + it.id + '">' +
             '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">' +
               '<span class="book-toc-code">' + it.code + '</span>' +
               '<span class="metadata" style="font-size:12px">📄 Trang PDF: <b>' + it.pdfPage + '</b> · 📖 Trang in: ' + it.printPage + '</span>' +
@@ -228,7 +243,7 @@
             '<h4 style="font-size:15px;font-weight:700;margin-bottom:6px;line-height:1.4">' + it.title + '</h4>' +
             (it.category ? '<span class="metadata" style="display:inline-block;background:var(--surface-soft);padding:2px 8px;border-radius:4px;font-size:11px;margin-bottom:8px">' + it.category + '</span>' : '') +
             '<p style="font-size:12.5px;line-height:1.5;color:var(--muted);margin-bottom:12px">' + it.summary + '</p>' +
-            '<button class="secondary full" data-open-item="' + it.id + '" style="font-size:12.5px;padding:6px 12px">Mở nội dung đọc ➔</button>' +
+            '<button class="secondary full" data-book-id="' + b.id + '" data-open-item="' + it.id + '" style="font-size:12.5px;padding:6px 12px">Mở nội dung đọc ➔</button>' +
           '</div>';
         }).join('') : '<div style="text-align:center;padding:40px;color:var(--muted)">Không tìm thấy mục nào khớp với từ khóa.</div>') +
       '</div>' +
@@ -296,6 +311,8 @@
       '</div>' +
     '</aside>';
 
+    var pdfFileUrl = b.pdfUrl || ('/docs/' + b.id + '.pdf');
+
     // Main Reading Pane
     var readingPaneHtml = '<div class="reader-content-pane">' +
       '<div class="reader-content-body">' +
@@ -308,7 +325,7 @@
           '<h1 style="font-size:24px;line-height:1.4;margin:6px 0 12px">' + item.title + '</h1>' +
           '<div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap">' +
             '<button class="secondary" data-set-reader-mode="pdf" style="font-size:12px;padding:4px 10px">📄 Mở xem trang PDF ' + item.pdfPage + '</button>' +
-            '<a href="/docs/' + encodeURIComponent(b.pdfFileName) + '#page=' + item.pdfPage + '" target="_blank" rel="noopener noreferrer" class="subtle" style="font-size:12px;align-self:center">Mở file PDF gốc trong tab mới ↗</a>' +
+            '<a href="' + pdfFileUrl + '#page=' + item.pdfPage + '" target="_blank" rel="noopener noreferrer" class="subtle" style="font-size:12px;align-self:center">Mở file PDF gốc trong tab mới ↗</a>' +
           '</div>' +
         '</div>' +
 
@@ -319,9 +336,9 @@
           '<div class="reader-pdf-viewer-wrap">' +
             '<div style="padding:10px 14px;background:var(--surface-soft);border:1px solid var(--line);border-radius:8px;margin-bottom:12px;font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">' +
               '<span>Đang hiển thị trang PDF <b>' + item.pdfPage + '</b> của tác phẩm <i>' + b.title + '</i></span>' +
-              '<a href="/docs/' + encodeURIComponent(b.pdfFileName) + '#page=' + item.pdfPage + '" target="_blank" class="primary" style="font-size:12px;padding:4px 10px">Mở toàn màn hình tab mới ↗</a>' +
+              '<a href="' + pdfFileUrl + '#page=' + item.pdfPage + '" target="_blank" class="primary" style="font-size:12px;padding:4px 10px;text-decoration:none">Mở toàn màn hình tab mới ↗</a>' +
             '</div>' +
-            '<iframe class="reader-pdf-iframe" src="/docs/' + encodeURIComponent(b.pdfFileName) + '#page=' + item.pdfPage + '" title="Trình đọc PDF ' + b.title + '"></iframe>' +
+            '<iframe class="reader-pdf-iframe reader-pdf-frame" src="' + pdfFileUrl + '#page=' + item.pdfPage + '" style="width:100%;height:800px;border:1px solid var(--line);border-radius:10px;background:#fff" title="Trình đọc PDF ' + b.title + '"></iframe>' +
           '</div>'
         ) +
 
@@ -388,14 +405,16 @@
       if (b.dataset.openItem) {
         e.preventDefault();
         var itemId = b.dataset.openItem;
-        var book = findBook(booksEngineState.activeBookId);
+        var bookId = b.dataset.bookId || booksEngineState.activeBookId;
+        var book = findBook(bookId);
         if (book) {
           var item = findItem(book, itemId);
           if (item && item.available) {
+            booksEngineState.activeBookId = bookId;
             booksEngineState.activeItemId = itemId;
             booksEngineState.view = 'reader';
             booksEngineState.isMobileTocOpen = false;
-            updateUrlHash(booksEngineState.activeBookId, itemId);
+            updateUrlHash(bookId, itemId);
             if (typeof render === 'function') render();
             window.scrollTo(0, 0);
             return;

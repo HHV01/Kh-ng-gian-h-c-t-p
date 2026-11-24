@@ -50,8 +50,8 @@
 .reader-story-quote { background: var(--surface-soft); border-left: 4px solid #059669; padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 16px 0; font-style: italic; font-size: 14.5px; line-height: 1.7; }
 body.dark .reader-story-quote { background: #064e3b18; border-color: #10b981; }
 
-.reader-pdf-viewer-wrap { width: 100%; height: 750px; display: flex; flex-direction: column; }
-.reader-pdf-iframe { width: 100%; flex: 1; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.reader-pdf-viewer-wrap { width: 100%; height: 850px; display: flex; flex-direction: column; }
+.reader-pdf-iframe, .reader-pdf-frame { width: 100%; min-height: 750px; flex: 1; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
 .reader-bottom-nav { display: flex; justify-content: space-between; gap: 14px; margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--line); flex-wrap: wrap; }
 
 /* Mobile TOC Drawer */
