@@ -4,9 +4,13 @@
  * Features:
  * - 3 Books Overview with clickable cards & "Xem nội dung" buttons
  * - Detailed Book Views with actual PDF Table of Contents
- * - 100 Days filter by day number (1-100) and title
+ * - 100 Days filter by day number (1-100), topic pills, day range, and title search
  * - Full Reader View with split TOC rail (desktop) & collapsible drawer (mobile)
  * - Dual reading mode: Vietnamese review content (bám sát nguồn) & Embedded PDF Viewer (#page=X)
+ * - Reading Comfort: Font size controls (A- / A / A+), Focus/Zen mode, Scroll Progress bar
+ * - Reading Progress Tracking: "Đánh dấu đã đọc" with local persistence and TOC checkmarks
+ * - Keyboard Shortcuts: [ (prev), ] (next), M (mode toggle), F (focus mode)
+ * - Auto-scroll TOC rail to current active item
  * - Distinct hash URL for every item (#/books/:bookId/:itemId) supporting direct reload & deep-linking
  * - BCS split_1 truncated chapters handling ("Chưa có trong PDF đính kèm")
  * - Sequential navigation: "Về danh sách sách", "Mục trước", "Mục tiếp theo"
@@ -17,15 +21,38 @@
 
   var root = (typeof window !== 'undefined') ? window : global;
 
+  function getCompletedItems() {
+    try {
+      if (typeof localStorage === 'undefined') return [];
+      var raw = localStorage.getItem('ba-books-completed');
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveCompletedItems(list) {
+    try {
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('ba-books-completed', JSON.stringify(list));
+      }
+    } catch (e) {}
+  }
+
   var booksEngineState = {
     view: 'overview',          // 'overview' | 'book-detail' | 'reader'
     activeBookId: null,        // 'babok-v3' | 'bcs-ba-3rd' | '100-days-ba'
     activeItemId: null,        // e.g. 'task-3-1', 'bcs-ch-1', 'day-100'
     readerMode: 'notes',       // 'notes' | 'pdf'
+    fontSize: 'normal',        // 'small' | 'normal' | 'large'
+    isFocusMode: false,        // boolean (Zen/Focus mode)
     isMobileTocOpen: false,
     daySearchQuery: '',
     dayTopicFilter: 'all',
-    tocSearchQuery: ''
+    dayRangeFilter: 'all',     // 'all' | '1-25' | '26-50' | '51-75' | '76-100'
+    tocSearchQuery: '',
+    catalogSearchQuery: '',
+    completedItems: getCompletedItems()
   };
 
   function getBooksList() {
@@ -122,6 +149,35 @@
     };
   }
 
+  function isItemCompleted(itemId) {
+    var items = booksEngineState.completedItems || [];
+    return items.includes(itemId);
+  }
+
+  function toggleItemCompleted(itemId) {
+    var items = getCompletedItems();
+    var idx = items.indexOf(itemId);
+    var nowCompleted = false;
+    if (idx > -1) {
+      items.splice(idx, 1);
+      nowCompleted = false;
+    } else {
+      items.push(itemId);
+      nowCompleted = true;
+    }
+    saveCompletedItems(items);
+    booksEngineState.completedItems = items;
+    return nowCompleted;
+  }
+
+  function getReadingTimeEstimate(html) {
+    if (!html) return '2 phút đọc';
+    var text = String(html).replace(/<[^>]*>/g, ' ');
+    var words = text.trim().split(/\s+/).length;
+    var minutes = Math.max(2, Math.round(words / 200));
+    return minutes + ' phút đọc';
+  }
+
   // Hash Navigation Handler
   function handleBooksHash(parts) {
     if (!parts || parts.length === 0 || !parts[0]) {
@@ -169,35 +225,71 @@
 
   // 1. View: Books Catalog Overview
   function renderOverview() {
+    var allBooks = getBooksList();
+    var totalItems = 0;
+    var completedCount = 0;
+
+    allBooks.forEach(function (b) {
+      (b.toc || []).forEach(function (it) {
+        if (it.available) {
+          totalItems++;
+          if (isItemCompleted(it.id)) completedCount++;
+        }
+      });
+    });
+
+    var overallPct = totalItems > 0 ? Math.round((completedCount / totalItems) * 100) : 0;
+
     var header = heading('Sách BA Thực Chiến', 'Khám phá tri thức chuẩn quốc tế và bài học xương máu nghề Business Analyst qua 3 tác phẩm kinh điển.') +
-      '<section class="panel" style="padding:22px;margin-bottom:24px">' +
-        '<div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">' +
-          '<div>' +
-            '<h2 style="font-size:20px;margin-bottom:6px">Thư Viện Sách Business Analyst</h2>' +
-            '<p class="metadata">Kết nối lý thuyết chuẩn mực của IIBA & BCS với 100 câu chuyện va vấp thực tế tại doanh nghiệp Việt Nam. Bấm vào bất kỳ cuốn sách nào để xem mục lục và đọc nội dung chi tiết.</p>' +
-          '</div>' +
-          '<div style="display:flex;gap:12px">' +
-            '<div style="padding:10px 16px;background:var(--tint);border-radius:10px;text-align:center">' +
-              '<b style="font-size:20px;color:var(--primary);display:block">3 Cuốn sách</b>' +
-              '<small class="metadata">986 trang tài liệu</small>' +
+      '<section class="books-hero-panel books-animate-fade">' +
+        '<div style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">' +
+          '<div style="max-width:680px">' +
+            '<div style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">' +
+              '<span>📚 Tủ sách Business Analysis chuyên sâu</span>' +
             '</div>' +
-            '<div style="padding:10px 16px;background:var(--tint);border-radius:10px;text-align:center">' +
-              '<b style="font-size:20px;color:var(--primary);display:block">100 DAY</b>' +
-              '<small class="metadata">Kinh nghiệm thực chiến</small>' +
+            '<h2 style="font-size:24px;letter-spacing:-0.5px;margin-bottom:10px;line-height:1.3">Thư Viện Sách Business Analyst</h2>' +
+            '<p class="metadata" style="font-size:13.5px;line-height:1.7;margin:0 0 16px">' +
+              'Kết nối chuẩn mực quốc tế của IIBA (BABOK Guide v3) & BCS (Business Analysis 3rd) với 100 câu chuyện va vấp thực tế tại doanh nghiệp Việt Nam. ' +
+              'Đọc bài tóm tắt cô đọng bằng tiếng Việt hoặc đối chiếu trực tiếp trang sách PDF gốc.' +
+            '</p>' +
+            '<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">' +
+              '<span class="book-status-pill">✓ Chuẩn hóa 2026</span>' +
+              '<span class="book-status-pill" style="background:#ecfdf5;color:#059669;border-color:#a7f3d0">🎯 Đã đọc ' + completedCount + '/' + totalItems + ' mục (' + overallPct + '%)</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="books-stats-badge-group">' +
+            '<div class="books-stat-chip">' +
+              '<b>3 Cuốn</b>' +
+              '<small>Chuẩn quốc tế</small>' +
+            '</div>' +
+            '<div class="books-stat-chip">' +
+              '<b>986 Trang</b>' +
+              '<small>Tài liệu thực tế</small>' +
+            '</div>' +
+            '<div class="books-stat-chip">' +
+              '<b>100 DAY</b>' +
+              '<small>Kinh nghiệm thực chiến</small>' +
             '</div>' +
           '</div>' +
         '</div>' +
       '</section>';
 
     var cards = '<div class="book-catalog-grid">' +
-      getBooksList().map(function (b) {
-        var firstItem = b.toc.find(function (it) { return it.available; });
+      allBooks.map(function (b) {
+        var firstItem = (b.toc || []).find(function (it) { return it.available; });
         var firstItemId = firstItem ? firstItem.id : '';
-        return '<div class="book-card clickable-book-card" data-open-book="' + b.id + '" style="cursor:pointer">' +
+        var bTotal = (b.toc || []).filter(function (it) { return it.available; }).length;
+        var bDone = (b.toc || []).filter(function (it) { return it.available && isItemCompleted(it.id); }).length;
+        var bPct = bTotal > 0 ? Math.round((bDone / bTotal) * 100) : 0;
+
+        return '<div class="book-card clickable-book-card" data-open-book="' + b.id + '" style="cursor:pointer;--book-accent:' + b.color + '">' +
           '<div>' +
             '<div class="book-card-header">' +
               '<div class="book-icon-badge" style="background:' + b.color + '18;color:' + b.color + '">' + b.icon + '</div>' +
-              '<span class="book-status-pill">' + b.status + '</span>' +
+              '<div style="text-align:right">' +
+                '<span class="book-status-pill">' + b.status + '</span>' +
+                (bDone > 0 ? '<div style="font-size:11px;color:#059669;font-weight:600;margin-top:4px">✓ Đã đọc ' + bDone + '/' + bTotal + ' (' + bPct + '%)</div>' : '') +
+              '</div>' +
             '</div>' +
             '<h3 style="font-size:18px;font-weight:700;margin:12px 0 6px;line-height:1.4">' + b.title + '</h3>' +
             '<p class="metadata" style="margin-bottom:10px"><b>Tác giả:</b> ' + b.author + ' (' + b.year + ') · <b>Quy mô:</b> ' + b.totalPages + ' trang</p>' +
@@ -223,29 +315,48 @@
     var firstAvailableItem = (b.toc || []).find(function (it) { return it.available; });
     var pdfFileUrl = b.pdfUrl || ('/docs/' + b.id + '.pdf');
 
-    var navBarHtml = '<div style="margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">' +
+    var availableCount = (b.toc || []).filter(function (it) { return it.available; }).length;
+    var completedCount = (b.toc || []).filter(function (it) { return it.available && isItemCompleted(it.id); }).length;
+    var bookPct = availableCount > 0 ? Math.round((completedCount / availableCount) * 100) : 0;
+
+    var breadcrumbsHtml = '<div class="books-breadcrumb-bar">' +
+      '<a href="#/books" id="btn-back-overview">Thư viện Sách BA</a>' +
+      '<span class="sep">›</span>' +
+      '<span class="current">' + (b.shortTitle || b.title) + '</span>' +
+    '</div>';
+
+    var navBarHtml = '<div style="margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">' +
       '<a href="#/books" class="secondary" id="btn-back-overview" style="text-decoration:none;display:inline-flex;align-items:center;padding:8px 16px;border-radius:8px">← Về danh sách 3 cuốn sách</a>' +
       '<span class="metadata">Mục lục lấy trực tiếp từ PDF thực tế (' + b.totalPages + ' trang)</span>' +
     '</div>';
 
-    var headerHtml = '<section class="panel" style="padding:28px;margin-bottom:24px">' +
-      '<div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap">' +
-        '<div class="book-icon-badge" style="width:68px;height:68px;font-size:34px;background:' + b.color + '18;color:' + b.color + '">' + b.icon + '</div>' +
+    var headerHtml = '<section class="book-detail-hero books-animate-fade" style="--book-accent:' + b.color + '">' +
+      '<div style="display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap">' +
+        '<div class="book-icon-badge" style="width:72px;height:72px;font-size:36px;background:' + b.color + '18;color:' + b.color + '">' + b.icon + '</div>' +
         '<div style="flex:1;min-width:280px">' +
-          '<div style="display:flex;gap:8px;align-items:center;margin-bottom:6px;flex-wrap:wrap">' +
+          '<div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap">' +
             '<span class="book-status-pill">' + b.status + '</span>' +
             '<span class="metadata">Năm xuất bản: ' + b.year + ' · Tổng ' + b.totalPages + ' trang</span>' +
           '</div>' +
           '<h1 style="font-size:24px;margin-bottom:8px;line-height:1.3">' + b.title + '</h1>' +
           '<p class="metadata" style="font-size:14px;margin-bottom:12px"><b>Tác giả / Cơ quan ban hành:</b> ' + b.author + '</p>' +
-          '<p style="line-height:1.7;font-size:14px">' + b.description + '</p>' +
+          '<p style="line-height:1.7;font-size:14px;margin-bottom:16px">' + b.description + '</p>' +
           (b.missingNotice ? '<div class="callout warning" style="margin-top:14px"><b>⚠️ Phạm vi tài liệu split_1:</b> ' + b.missingNotice + '</div>' : '') +
+          '<div class="book-progress-tracker">' +
+            '<div>' +
+              '<b style="font-size:13px;display:block">Tiến độ ôn tập cuốn này: ' + completedCount + '/' + availableCount + ' mục (' + bookPct + '%)</b>' +
+              '<small class="metadata">' + (completedCount === availableCount ? '🎉 Bạn đã hoàn thành toàn bộ nội dung cuốn này!' : 'Hãy đọc và đánh dấu hoàn thành từng mục') + '</small>' +
+            '</div>' +
+            '<div class="book-progress-bar-outer">' +
+              '<div class="book-progress-bar-inner" style="width:' + bookPct + '%"></div>' +
+            '</div>' +
+          '</div>' +
           (firstAvailableItem ?
-            '<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">' +
-              '<a href="#/books/' + b.id + '/' + firstAvailableItem.id + '" class="primary" data-book-id="' + b.id + '" data-open-item="' + firstAvailableItem.id + '" style="font-size:14px;padding:10px 18px;text-decoration:none;display:inline-flex;align-items:center;border-radius:8px">' +
+            '<div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">' +
+              '<a href="#/books/' + b.id + '/' + firstAvailableItem.id + '" class="primary" data-book-id="' + b.id + '" data-open-item="' + firstAvailableItem.id + '" style="font-size:14px;padding:10px 20px;text-decoration:none;display:inline-flex;align-items:center;border-radius:10px">' +
                 '📖 Bắt đầu đọc: ' + firstAvailableItem.code + ' ➔' +
               '</a>' +
-              '<a href="' + pdfFileUrl + '" target="_blank" rel="noopener noreferrer" class="secondary" style="display:inline-flex;align-items:center;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px">' +
+              '<a href="' + pdfFileUrl + '" target="_blank" rel="noopener noreferrer" class="secondary" style="display:inline-flex;align-items:center;padding:10px 18px;border-radius:10px;text-decoration:none;font-size:14px">' +
                 '📄 Xem toàn bộ file PDF gốc ↗' +
               '</a>' +
             '</div>' : '') +
@@ -256,37 +367,79 @@
     var filterBarHtml = '';
     var itemsToDisplay = b.toc || [];
 
-    // Filter bar for 100 Days BA
+    // Filter controls for 100 Days BA
     if (b.id === '100-days-ba') {
       var q = (booksEngineState.daySearchQuery || '').trim().toLowerCase();
       var topicFilter = booksEngineState.dayTopicFilter;
+      var rangeFilter = booksEngineState.dayRangeFilter;
 
       itemsToDisplay = b.toc.filter(function (it) {
         if (topicFilter !== 'all' && it.category !== topicFilter) return false;
+
+        // Day range check
+        if (rangeFilter && rangeFilter !== 'all') {
+          var dNum = parseInt(it.code.replace(/\D/g, ''), 10);
+          if (rangeFilter === '1-25' && (dNum < 1 || dNum > 25)) return false;
+          if (rangeFilter === '26-50' && (dNum < 26 || dNum > 50)) return false;
+          if (rangeFilter === '51-75' && (dNum < 51 || dNum > 75)) return false;
+          if (rangeFilter === '76-100' && (dNum < 76 || dNum > 100)) return false;
+        }
+
         if (!q) return true;
-        // Search by day number e.g. "100", "day 100", "23"
         var cleanQ = q.replace(/^(day|ngày)\s*/i, '');
         if (cleanQ && it.code.toLowerCase().replace('day ', '') === cleanQ) return true;
         return (it.code + ' ' + it.title + ' ' + it.summary).toLowerCase().includes(q);
       });
 
       var dayTopics = ['all', 'Testing & UAT', 'Dữ liệu & SQL', 'Mô hình hóa quy trình', 'Agile & Scrum', 'UX & Product Thinking', 'Khai thác yêu cầu', 'Đặc tả & Quản lý yêu cầu', 'Phân tích & thiết kế giải pháp', 'Kỹ năng & Phỏng vấn BA', 'Nền tảng BA'];
+      var dayRanges = [
+        { id: 'all', label: 'Tất cả (1-100)' },
+        { id: '1-25', label: 'DAY 1–25' },
+        { id: '26-50', label: 'DAY 26–50' },
+        { id: '51-75', label: 'DAY 51–75' },
+        { id: '76-100', label: 'DAY 76–100' }
+      ];
 
-      filterBarHtml = '<div class="days-filter-bar" style="margin-bottom:20px">' +
-        '<input type="text" class="topic-search-input" id="day-search-input" style="max-width:320px" placeholder="Tìm theo số ngày (ví dụ: 100, 23) hoặc tiêu đề..." value="' + esc(booksEngineState.daySearchQuery) + '">' +
-        '<select class="topic-search-input" id="day-topic-select" style="max-width:240px">' +
+      filterBarHtml = '<div style="margin-bottom:20px">' +
+        // Range pills
+        '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap">' +
+          '<div class="filter-pill-group" style="margin-bottom:0">' +
+            dayRanges.map(function (rng) {
+              var isAct = rangeFilter === rng.id;
+              return '<button class="filter-pill-btn ' + (isAct ? 'active' : '') + '" data-set-day-range="' + rng.id + '">' + rng.label + '</button>';
+            }).join('') +
+          '</div>' +
+          // Search box with clear button
+          '<div class="search-box-wrap">' +
+            '<input type="text" id="day-search-input" placeholder="Tìm số ngày (100, 23) hoặc tiêu đề..." value="' + esc(booksEngineState.daySearchQuery) + '">' +
+            (booksEngineState.daySearchQuery ? '<button class="clear-btn" id="btn-clear-day-search" title="Xóa tìm kiếm">✕</button>' : '') +
+          '</div>' +
+        '</div>' +
+        // Topic pills
+        '<div class="filter-pill-group">' +
           dayTopics.map(function (top) {
-            return '<option value="' + top + '" ' + (topicFilter === top ? 'selected' : '') + '>' + (top === 'all' ? 'Tất cả chủ đề (' + b.toc.length + ' ngày)' : top) + '</option>';
+            var isAct = topicFilter === top;
+            var label = top === 'all' ? 'Tất cả chủ đề (' + b.toc.length + ')' : top;
+            return '<button class="filter-pill-btn ' + (isAct ? 'active' : '') + '" data-set-day-topic="' + top + '">' + label + '</button>';
+          }).join('') +
+        '</div>' +
+        // Hidden select element for contract preservation
+        '<select id="day-topic-select" style="display:none">' +
+          dayTopics.map(function (top) {
+            return '<option value="' + top + '" ' + (topicFilter === top ? 'selected' : '') + '>' + top + '</option>';
           }).join('') +
         '</select>' +
-        (booksEngineState.daySearchQuery || topicFilter !== 'all' ? '<button class="secondary" id="btn-reset-day-filter">Đặt lại bộ lọc</button>' : '') +
+        (booksEngineState.daySearchQuery || topicFilter !== 'all' || rangeFilter !== 'all' ? '<div style="margin-top:8px"><button class="secondary" id="btn-reset-day-filter" style="font-size:12px;padding:4px 10px">↺ Đặt lại tất cả bộ lọc</button></div>' : '') +
       '</div>';
     }
 
-    var tocListHtml = '<section class="panel" style="padding:24px">' +
+    var tocListHtml = '<section class="panel books-animate-fade" style="padding:26px">' +
       '<div class="section-head" style="margin-bottom:16px">' +
-        '<h3>Mục Lục Sách Thực Tế (' + itemsToDisplay.length + ' mục)</h3>' +
-        '<span class="metadata">Bấm vào bất kỳ mục nào để mở nội dung đọc tương ứng</span>' +
+        '<div>' +
+          '<h3 style="font-size:18px;margin-bottom:4px">Mục Lục Sách Thực Tế (' + itemsToDisplay.length + ' mục)</h3>' +
+          '<span class="metadata">Bấm vào bất kỳ mục nào để mở nội dung đọc tương ứng</span>' +
+        '</div>' +
+        (completedCount > 0 ? '<span class="book-toc-completed-badge">✓ Đã đọc ' + completedCount + '/' + availableCount + '</span>' : '') +
       '</div>' +
       filterBarHtml +
       '<div class="book-toc-grid">' +
@@ -302,21 +455,29 @@
             '</div>';
           }
 
-          return '<div class="book-toc-item clickable-toc-item" data-book-id="' + b.id + '" data-open-item="' + it.id + '">' +
-            '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">' +
-              '<span class="book-toc-code">' + it.code + '</span>' +
-              '<span class="metadata" style="font-size:12px">📄 Trang PDF: <b>' + it.pdfPage + '</b> · 📖 Trang in: ' + it.printPage + '</span>' +
+          var isDone = isItemCompleted(it.id);
+
+          return '<div class="book-toc-item clickable-toc-item ' + (isDone ? 'completed' : '') + '" data-book-id="' + b.id + '" data-open-item="' + it.id + '">' +
+            '<div>' +
+              '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:6px">' +
+                '<span class="book-toc-code">' + (isDone ? '✓ ' : '') + it.code + '</span>' +
+                '<span class="metadata" style="font-size:12px">📄 Trang PDF: <b>' + it.pdfPage + '</b> · 📖 Trang in: ' + it.printPage + '</span>' +
+              '</div>' +
+              '<h4 style="font-size:15px;font-weight:700;margin-bottom:6px;line-height:1.4">' + it.title + '</h4>' +
+              (it.category ? '<span class="metadata" style="display:inline-block;background:var(--surface-soft);padding:2px 8px;border-radius:4px;font-size:11px;margin-bottom:8px">' + it.category + '</span>' : '') +
+              '<p style="font-size:12.5px;line-height:1.5;color:var(--muted);margin-bottom:14px">' + it.summary + '</p>' +
             '</div>' +
-            '<h4 style="font-size:15px;font-weight:700;margin-bottom:6px;line-height:1.4">' + it.title + '</h4>' +
-            (it.category ? '<span class="metadata" style="display:inline-block;background:var(--surface-soft);padding:2px 8px;border-radius:4px;font-size:11px;margin-bottom:8px">' + it.category + '</span>' : '') +
-            '<p style="font-size:12.5px;line-height:1.5;color:var(--muted);margin-bottom:12px">' + it.summary + '</p>' +
-            '<a href="#/books/' + b.id + '/' + it.id + '" class="secondary full" data-book-id="' + b.id + '" data-open-item="' + it.id + '" style="font-size:12.5px;padding:8px 12px;text-decoration:none;display:block;text-align:center;border-radius:6px">Mở nội dung đọc ➔</a>' +
+            '<div style="display:flex;gap:8px;align-items:center;margin-top:auto">' +
+              '<a href="#/books/' + b.id + '/' + it.id + '" class="secondary full" data-book-id="' + b.id + '" data-open-item="' + it.id + '" style="font-size:12.5px;padding:8px 12px;text-decoration:none;display:block;text-align:center;border-radius:8px;font-weight:600">' +
+                (isDone ? 'Đọc lại mục này ➔' : 'Mở nội dung đọc ➔') +
+              '</a>' +
+            '</div>' +
           '</div>';
-        }).join('') : '<div style="text-align:center;padding:40px;color:var(--muted)">Không tìm thấy mục nào khớp với từ khóa.</div>') +
+        }).join('') : '<div style="text-align:center;padding:50px 20px;color:var(--muted)">Không tìm thấy mục nào khớp với bộ lọc hiện tại.</div>') +
       '</div>' +
     '</section>';
 
-    return navBarHtml + headerHtml + tocListHtml;
+    return breadcrumbsHtml + navBarHtml + headerHtml + tocListHtml;
   }
 
   // 3. View: Full Reader with Desktop TOC Rail & Mobile Drawer
@@ -328,25 +489,55 @@
     if (!item) return renderBookDetail();
 
     var adj = getAdjacentItems(b, item.id);
+    var isDone = isItemCompleted(item.id);
+    var readingTime = getReadingTimeEstimate(item.contentHtml);
+    var pdfFileUrl = b.pdfUrl || ('/docs/' + b.id + '.pdf');
 
-    // Header actions
+    // Breadcrumbs
+    var breadcrumbsHtml = '<div class="books-breadcrumb-bar">' +
+      '<a href="#/books" id="btn-back-overview">Sách BA</a>' +
+      '<span class="sep">›</span>' +
+      '<a href="#/books/' + b.id + '" id="btn-back-book-detail" data-book-id="' + b.id + '">' + (b.shortTitle || b.title) + '</a>' +
+      '<span class="sep">›</span>' +
+      '<span class="current">' + item.code + ': ' + item.title + '</span>' +
+    '</div>';
+
+    // Reading Progress Global Bar
+    var progressBarHtml = '<div class="reader-progress-bar-wrap"><div class="reader-progress-bar" id="reader-global-progress"></div></div>';
+
+    // Header Actions
     var topBarHtml = '<div class="reader-top-bar">' +
       '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">' +
         '<a href="#/books" class="secondary" id="btn-back-overview" title="Về danh sách sách" style="text-decoration:none;display:inline-flex;align-items:center;padding:7px 14px;border-radius:8px">← Danh sách sách</a>' +
         '<a href="#/books/' + b.id + '" class="secondary" id="btn-back-book-detail" data-book-id="' + b.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:7px 14px;border-radius:8px">≡ Mục lục cuốn này</a>' +
         '<button class="secondary mobile-toc-toggle-btn" id="btn-toggle-mobile-toc">' + (booksEngineState.isMobileTocOpen ? '✕ Đóng mục lục' : '☰ Hiện mục lục') + '</button>' +
       '</div>' +
-      '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' +
+      '<div class="reader-controls-cluster">' +
+        // Dual Mode Switch
         '<div class="reader-mode-switch">' +
           '<button class="reader-mode-btn ' + (booksEngineState.readerMode === 'notes' ? 'active' : '') + '" data-set-reader-mode="notes">📖 Bài ôn tiếng Việt</button>' +
           '<button class="reader-mode-btn ' + (booksEngineState.readerMode === 'pdf' ? 'active' : '') + '" data-set-reader-mode="pdf">📄 Trang PDF (' + item.pdfPage + ')</button>' +
         '</div>' +
+        // Font Size Controls (Notes Mode)
+        (booksEngineState.readerMode === 'notes' ?
+          '<div style="display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden">' +
+            '<button class="reader-tool-btn ' + (booksEngineState.fontSize === 'small' ? 'active' : '') + '" data-set-font-size="small" title="Cỡ chữ nhỏ" style="border:none;border-radius:0">A-</button>' +
+            '<button class="reader-tool-btn ' + (booksEngineState.fontSize === 'normal' ? 'active' : '') + '" data-set-font-size="normal" title="Cỡ chữ tiêu chuẩn" style="border:none;border-radius:0">A</button>' +
+            '<button class="reader-tool-btn ' + (booksEngineState.fontSize === 'large' ? 'active' : '') + '" data-set-font-size="large" title="Cỡ chữ lớn" style="border:none;border-radius:0">A+</button>' +
+          '</div>' : '') +
+        // Focus/Zen Mode Toggle
+        '<button class="reader-tool-btn ' + (booksEngineState.isFocusMode ? 'active' : '') + '" id="btn-toggle-focus" title="Chế độ tập trung (Ẩn cột mục lục)">⛶ Focus</button>' +
+        // Mark as completed button
+        '<button class="btn-mark-completed ' + (isDone ? 'is-completed' : '') + '" id="btn-toggle-completed" data-item-id="' + item.id + '" title="Đánh dấu đã ôn xong mục này">' +
+          (isDone ? '✓ Đã đọc' : '○ Đánh dấu đã đọc') +
+        '</button>' +
+        // Prev & Next Buttons
         (adj.prev ?
-          '<a href="#/books/' + b.id + '/' + adj.prev.id + '" class="secondary" id="btn-prev-item" data-book-id="' + b.id + '" data-open-item="' + adj.prev.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:7px 14px;border-radius:8px">← Mục trước</a>' :
+          '<a href="#/books/' + b.id + '/' + adj.prev.id + '" class="secondary" id="btn-prev-item" data-book-id="' + b.id + '" data-open-item="' + adj.prev.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:7px 14px;border-radius:8px" title="Phím tắt: [">← Mục trước</a>' :
           '<button class="secondary" id="btn-prev-item" disabled style="opacity:0.5;cursor:not-allowed">← Mục trước</button>'
         ) +
         (adj.next ?
-          '<a href="#/books/' + b.id + '/' + adj.next.id + '" class="primary" id="btn-next-item" data-book-id="' + b.id + '" data-open-item="' + adj.next.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:7px 14px;border-radius:8px">Mục tiếp theo →</a>' :
+          '<a href="#/books/' + b.id + '/' + adj.next.id + '" class="primary" id="btn-next-item" data-book-id="' + b.id + '" data-open-item="' + adj.next.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:7px 14px;border-radius:8px" title="Phím tắt: ]">Mục tiếp theo →</a>' :
           '<button class="primary" id="btn-next-item" disabled style="opacity:0.5;cursor:not-allowed">Mục tiếp theo →</button>'
         ) +
       '</div>' +
@@ -361,21 +552,26 @@
 
     var tocRailHtml = '<aside class="reader-toc-rail ' + (booksEngineState.isMobileTocOpen ? 'mobile-open' : '') + '">' +
       '<div class="reader-toc-head">' +
-        '<div style="font-weight:700;font-size:14px">' + b.icon + ' ' + (b.shortTitle || b.title) + '</div>' +
-        '<input type="text" class="reader-toc-search" id="reader-toc-search-input" placeholder="Lọc mục lục..." value="' + esc(booksEngineState.tocSearchQuery) + '">' +
+        '<div style="font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:space-between">' +
+          '<span>' + b.icon + ' ' + (b.shortTitle || b.title) + '</span>' +
+          '<small class="metadata">' + filteredToc.length + ' mục</small>' +
+        '</div>' +
+        '<input type="text" class="reader-toc-search" id="reader-toc-search-input" placeholder="Lọc nhanh mục lục..." value="' + esc(booksEngineState.tocSearchQuery) + '">' +
       '</div>' +
       '<div class="reader-toc-list" id="reader-toc-list-container">' +
         filteredToc.map(function (it) {
           if (!it.available) {
             return '<div class="reader-toc-link disabled">' +
               '<small class="metadata" style="color:#ef4444">' + it.code + ' (Chưa có)</small>' +
-              '<span>' + it.title + '</span>' +
+              '<span class="title">' + it.title + '</span>' +
             '</div>';
           }
           var isActive = it.id === item.id;
+          var itemDone = isItemCompleted(it.id);
+
           return '<a href="#/books/' + b.id + '/' + it.id + '" class="reader-toc-link ' + (isActive ? 'active' : '') + '" data-book-id="' + b.id + '" data-open-item="' + it.id + '" style="text-decoration:none;display:block">' +
-            '<div style="display:flex;justify-content:space-between;width:100%">' +
-              '<small class="code">' + it.code + '</small>' +
+            '<div style="display:flex;justify-content:space-between;align-items:center;width:100%">' +
+              '<small class="code">' + (itemDone ? '✓ ' : '') + it.code + '</small>' +
               '<small class="page">p.' + it.pdfPage + '</small>' +
             '</div>' +
             '<span class="title">' + it.title + '</span>' +
@@ -384,54 +580,58 @@
       '</div>' +
     '</aside>';
 
-    var pdfFileUrl = b.pdfUrl || ('/docs/' + b.id + '.pdf');
-
     // Main Reading Pane
-    var readingPaneHtml = '<div class="reader-content-pane">' +
+    var readingPaneHtml = '<div class="reader-content-pane books-animate-fade">' +
       '<div class="reader-content-body">' +
         '<div class="reader-item-header">' +
-          '<div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap">' +
+          '<div style="display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap">' +
             '<span class="book-toc-code">' + item.code + '</span>' +
             (item.category ? '<span class="book-status-pill">' + item.category + '</span>' : '') +
             '<span class="metadata">📄 Trang PDF: <b>' + item.pdfPage + '</b> &nbsp;|&nbsp; 📖 Trang in: <b>' + item.printPage + '</b></span>' +
+            '<span class="metadata" style="margin-left:auto">⏱️ ' + readingTime + '</span>' +
           '</div>' +
-          '<h1 style="font-size:24px;line-height:1.4;margin:6px 0 12px">' + item.title + '</h1>' +
-          '<div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap">' +
-            '<button class="secondary" data-set-reader-mode="pdf" style="font-size:12px;padding:4px 10px">📄 Mở xem trang PDF ' + item.pdfPage + '</button>' +
-            '<a href="' + pdfFileUrl + '#page=' + item.pdfPage + '" target="_blank" rel="noopener noreferrer" class="subtle" style="font-size:12px;align-self:center">Mở file PDF gốc trong tab mới ↗</a>' +
+          '<h1 style="font-size:24px;line-height:1.4;margin:8px 0 14px">' + item.title + '</h1>' +
+          '<div style="display:flex;gap:12px;margin-bottom:8px;flex-wrap:wrap;align-items:center">' +
+            '<button class="secondary" data-set-reader-mode="pdf" style="font-size:12px;padding:5px 12px;border-radius:6px">📄 Chuyển sang xem trang PDF ' + item.pdfPage + '</button>' +
+            '<a href="' + pdfFileUrl + '#page=' + item.pdfPage + '" target="_blank" rel="noopener noreferrer" class="subtle" style="font-size:12px;align-self:center">Mở file PDF gốc toàn màn hình ↗</a>' +
           '</div>' +
         '</div>' +
 
         (booksEngineState.readerMode === 'notes' ?
-          '<article class="reader-article-body">' +
+          '<article class="reader-article-body" data-font-size="' + (booksEngineState.fontSize || 'normal') + '">' +
             item.contentHtml +
           '</article>' :
           '<div class="reader-pdf-viewer-wrap">' +
-            '<div style="padding:10px 14px;background:var(--surface-soft);border:1px solid var(--line);border-radius:8px;margin-bottom:12px;font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">' +
+            '<div style="padding:10px 14px;background:var(--surface-soft);border:1px solid var(--line);border-radius:10px;margin-bottom:12px;font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">' +
               '<span>Đang hiển thị trang PDF <b>' + item.pdfPage + '</b> của tác phẩm <i>' + b.title + '</i></span>' +
-              '<a href="' + pdfFileUrl + '#page=' + item.pdfPage + '" target="_blank" class="primary" style="font-size:12px;padding:4px 10px;text-decoration:none">Mở toàn màn hình tab mới ↗</a>' +
+              '<a href="' + pdfFileUrl + '#page=' + item.pdfPage + '" target="_blank" class="primary" style="font-size:12px;padding:5px 12px;text-decoration:none;border-radius:6px">Mở toàn màn hình tab mới ↗</a>' +
             '</div>' +
-            '<iframe class="reader-pdf-iframe reader-pdf-frame" src="' + pdfFileUrl + '#page=' + item.pdfPage + '" style="width:100%;height:800px;border:1px solid var(--line);border-radius:10px;background:#fff" title="Trình đọc PDF ' + b.title + '"></iframe>' +
+            '<iframe class="reader-pdf-iframe reader-pdf-frame" src="' + pdfFileUrl + '#page=' + item.pdfPage + '" style="width:100%;height:800px;border:1px solid var(--line);border-radius:12px;background:#fff" title="Trình đọc PDF ' + b.title + '"></iframe>' +
           '</div>'
         ) +
 
         '<div class="reader-bottom-nav">' +
-          (adj.prev ?
-            '<a href="#/books/' + b.id + '/' + adj.prev.id + '" class="secondary" id="btn-prev-item-bot" data-book-id="' + b.id + '" data-open-item="' + adj.prev.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:8px 16px;border-radius:8px">← Mục trước (' + adj.prev.code + ')</a>' :
-            '<button class="secondary" id="btn-prev-item-bot" disabled style="opacity:0.5;cursor:not-allowed">← Đầu sách</button>'
-          ) +
-          (adj.next ?
-            '<a href="#/books/' + b.id + '/' + adj.next.id + '" class="primary" id="btn-next-item-bot" data-book-id="' + b.id + '" data-open-item="' + adj.next.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:8px 16px;border-radius:8px">Mục tiếp theo (' + adj.next.code + ') →</a>' :
-            '<button class="primary" id="btn-next-item-bot" disabled style="opacity:0.5;cursor:not-allowed">Hết sách →</button>'
-          ) +
+          '<div style="display:flex;gap:10px;flex-wrap:wrap">' +
+            (adj.prev ?
+              '<a href="#/books/' + b.id + '/' + adj.prev.id + '" class="secondary" id="btn-prev-item-bot" data-book-id="' + b.id + '" data-open-item="' + adj.prev.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:8px 16px;border-radius:8px">← Mục trước (' + adj.prev.code + ')</a>' :
+              '<button class="secondary" id="btn-prev-item-bot" disabled style="opacity:0.5;cursor:not-allowed">← Đầu sách</button>'
+            ) +
+            (adj.next ?
+              '<a href="#/books/' + b.id + '/' + adj.next.id + '" class="primary" id="btn-next-item-bot" data-book-id="' + b.id + '" data-open-item="' + adj.next.id + '" style="text-decoration:none;display:inline-flex;align-items:center;padding:8px 16px;border-radius:8px">Mục tiếp theo (' + adj.next.code + ') →</a>' :
+              '<button class="primary" id="btn-next-item-bot" disabled style="opacity:0.5;cursor:not-allowed">Hết sách →</button>'
+            ) +
+          '</div>' +
+          '<span class="reader-keyboard-hint">Phím tắt: <kbd>[</kbd> Trước &nbsp;·&nbsp; <kbd>]</kbd> Sau &nbsp;·&nbsp; <kbd>M</kbd> PDF/Bản dịch &nbsp;·&nbsp; <kbd>F</kbd> Focus</span>' +
         '</div>' +
       '</div>' +
     '</div>';
 
     var backdropHtml = booksEngineState.isMobileTocOpen ? '<div class="reader-toc-backdrop" id="reader-toc-backdrop"></div>' : '';
 
-    return topBarHtml +
-      '<div class="book-reader-layout">' +
+    return breadcrumbsHtml +
+      progressBarHtml +
+      topBarHtml +
+      '<div class="book-reader-layout ' + (booksEngineState.isFocusMode ? 'focus-mode' : '') + '">' +
         tocRailHtml +
         readingPaneHtml +
       '</div>' +
@@ -440,17 +640,83 @@
 
   // Master booksPage function
   root.booksPage = function () {
+    var outHtml = '';
     if (booksEngineState.view === 'reader') {
-      return renderReader();
+      outHtml = renderReader();
+    } else if (booksEngineState.view === 'book-detail') {
+      outHtml = renderBookDetail();
+    } else {
+      outHtml = renderOverview();
     }
-    if (booksEngineState.view === 'book-detail') {
-      return renderBookDetail();
+
+    // Auto-scroll TOC rail in reader mode
+    if (typeof document !== 'undefined' && booksEngineState.view === 'reader') {
+      setTimeout(function () {
+        var activeLink = document.querySelector('.reader-toc-link.active');
+        if (activeLink) {
+          activeLink.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      }, 80);
     }
-    return renderOverview();
+
+    return outHtml;
   };
 
   root.handleBooksHash = handleBooksHash;
   root.booksEngineState = booksEngineState;
+
+  // Global Scroll Progress Tracker for Reader View
+  if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
+    window.addEventListener('scroll', function () {
+      if (booksEngineState.view !== 'reader') return;
+      var article = document.querySelector('.reader-article-body');
+      var bar = document.getElementById('reader-global-progress');
+      if (!article || !bar) return;
+      var max = Math.max(1, article.offsetHeight - window.innerHeight + 200);
+      var pct = Math.min(100, Math.max(0, Math.round(window.scrollY / max * 100)));
+      bar.style.width = pct + '%';
+    }, { passive: true });
+  }
+
+  // Keyboard Shortcuts for Reader View
+  if (typeof document !== 'undefined' && typeof document.addEventListener === 'function') {
+    document.addEventListener('keydown', function (e) {
+      if (booksEngineState.view !== 'reader') return;
+      if (document.activeElement && ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+      // '[' or Alt+Left for Prev Item
+      if (e.key === '[' || (e.altKey && e.key === 'ArrowLeft')) {
+        var prevBtn = document.getElementById('btn-prev-item');
+        if (prevBtn && !prevBtn.hasAttribute('disabled')) {
+          e.preventDefault();
+          prevBtn.click();
+        }
+      }
+
+      // ']' or Alt+Right for Next Item
+      if (e.key === ']' || (e.altKey && e.key === 'ArrowRight')) {
+        var nextBtn = document.getElementById('btn-next-item');
+        if (nextBtn && !nextBtn.hasAttribute('disabled')) {
+          e.preventDefault();
+          nextBtn.click();
+        }
+      }
+
+      // 'm' or 'M' for Mode Toggle (Notes <-> PDF)
+      if (e.key === 'm' || e.key === 'M') {
+        e.preventDefault();
+        booksEngineState.readerMode = booksEngineState.readerMode === 'notes' ? 'pdf' : 'notes';
+        if (typeof render === 'function') render();
+      }
+
+      // 'f' or 'F' for Focus / Zen Mode Toggle
+      if (e.key === 'f' || e.key === 'F') {
+        e.preventDefault();
+        booksEngineState.isFocusMode = !booksEngineState.isFocusMode;
+        if (typeof render === 'function') render();
+      }
+    });
+  }
 
   // Event Listeners Registration
   if (typeof document !== 'undefined') {
@@ -549,11 +815,68 @@
         return;
       }
 
+      // Switch font size
+      if (b.dataset.setFontSize) {
+        e.preventDefault();
+        booksEngineState.fontSize = b.dataset.setFontSize;
+        if (typeof render === 'function') render();
+        return;
+      }
+
+      // Toggle Focus / Zen Mode
+      if (b.id === 'btn-toggle-focus') {
+        e.preventDefault();
+        booksEngineState.isFocusMode = !booksEngineState.isFocusMode;
+        if (typeof render === 'function') render();
+        return;
+      }
+
+      // Toggle Mark Completed
+      if (b.id === 'btn-toggle-completed') {
+        e.preventDefault();
+        var itemId = b.dataset.itemId;
+        if (itemId) {
+          var completed = toggleItemCompleted(itemId);
+          if (typeof toast === 'function') {
+            toast(completed ? '✓ Đã đánh dấu hoàn thành mục ôn này!' : 'Đã bỏ đánh dấu hoàn thành.');
+          }
+          if (typeof render === 'function') render();
+        }
+        return;
+      }
+
+      // Set Day Topic Filter pill in 100 Days BA
+      if (b.dataset.setDayTopic) {
+        e.preventDefault();
+        booksEngineState.dayTopicFilter = b.dataset.setDayTopic;
+        if (typeof render === 'function') render();
+        return;
+      }
+
+      // Set Day Range Filter pill in 100 Days BA
+      if (b.dataset.setDayRange) {
+        e.preventDefault();
+        booksEngineState.dayRangeFilter = b.dataset.setDayRange;
+        if (typeof render === 'function') render();
+        return;
+      }
+
+      // Clear Day Search button
+      if (b.id === 'btn-clear-day-search') {
+        e.preventDefault();
+        booksEngineState.daySearchQuery = '';
+        if (typeof render === 'function') render();
+        var inp = document.getElementById('day-search-input');
+        if (inp) inp.focus();
+        return;
+      }
+
       // Reset day filter
       if (b.id === 'btn-reset-day-filter') {
         e.preventDefault();
         booksEngineState.daySearchQuery = '';
         booksEngineState.dayTopicFilter = 'all';
+        booksEngineState.dayRangeFilter = 'all';
         if (typeof render === 'function') render();
         return;
       }
@@ -563,11 +886,9 @@
     document.addEventListener('input', function (e) {
       if (e.target && e.target.id === 'day-search-input') {
         booksEngineState.daySearchQuery = e.target.value;
-        // Re-render TOC items without losing input focus
         var grid = document.querySelector('.book-toc-grid');
         var b = findBook(booksEngineState.activeBookId);
         if (grid && b) {
-          // Re-render detail view smoothly
           if (typeof render === 'function') render();
           var inp = document.getElementById('day-search-input');
           if (inp) {
@@ -591,17 +912,18 @@
             if (!it.available) {
               return '<div class="reader-toc-link disabled">' +
                 '<small class="metadata" style="color:#ef4444">' + it.code + ' (Chưa có)</small>' +
-                '<span>' + it.title + '</span>' +
+                '<span class="title">' + it.title + '</span>' +
               '</div>';
             }
             var isActive = it.id === booksEngineState.activeItemId;
-            return '<button class="reader-toc-link ' + (isActive ? 'active' : '') + '" data-open-item="' + it.id + '">' +
-              '<div style="display:flex;justify-content:space-between;width:100%">' +
-                '<small class="code">' + it.code + '</small>' +
+            var itemDone = isItemCompleted(it.id);
+            return '<a href="#/books/' + b.id + '/' + it.id + '" class="reader-toc-link ' + (isActive ? 'active' : '') + '" data-book-id="' + b.id + '" data-open-item="' + it.id + '" style="text-decoration:none;display:block">' +
+              '<div style="display:flex;justify-content:space-between;align-items:center;width:100%">' +
+                '<small class="code">' + (itemDone ? '✓ ' : '') + it.code + '</small>' +
                 '<small class="page">p.' + it.pdfPage + '</small>' +
               '</div>' +
               '<span class="title">' + it.title + '</span>' +
-            '</button>';
+            '</a>';
           }).join('');
         }
       }
@@ -640,7 +962,9 @@
       handleBooksHash: handleBooksHash,
       renderOverview: renderOverview,
       renderBookDetail: renderBookDetail,
-      renderReader: renderReader
+      renderReader: renderReader,
+      isItemCompleted: isItemCompleted,
+      toggleItemCompleted: toggleItemCompleted
     };
   }
 })();
