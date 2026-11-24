@@ -38,12 +38,77 @@
 
   function findBook(id) {
     var list = getBooksList();
-    return list.find(function (b) { return b.id === id; }) || null;
+    if (!id) return null;
+    var strId = String(id).trim();
+
+    // 1. Direct ID match
+    var found = list.find(function (b) { return b.id === strId; });
+    if (found) return found;
+
+    // 2. Numeric 1-based index (1 -> babok-v3, 2 -> bcs-ba-3rd, 3 -> 100-days-ba)
+    var num = parseInt(strId, 10);
+    if (!isNaN(num) && num >= 1 && num <= list.length) {
+      return list[num - 1];
+    }
+
+    // 3. Keyword / slug alias matches
+    var lower = strId.toLowerCase();
+    if (lower === 'babok' || lower === 'iiba' || lower === 'babok-guide' || lower === 'babok-v3') {
+      return list.find(function (b) { return b.id === 'babok-v3'; }) || null;
+    }
+    if (lower === 'bcs' || lower === 'bcs-3rd' || lower === 'bcs-ba' || lower === 'bcs-ba-3rd') {
+      return list.find(function (b) { return b.id === 'bcs-ba-3rd'; }) || null;
+    }
+    if (lower === '100' || lower === '100-days' || lower === '100-ngay' || lower === '100-days-ba') {
+      return list.find(function (b) { return b.id === '100-days-ba'; }) || null;
+    }
+
+    return null;
   }
 
   function findItem(book, itemId) {
     if (!book || !book.toc) return null;
-    return book.toc.find(function (item) { return item.id === itemId; }) || null;
+    if (!itemId) return null;
+    var strId = String(itemId).trim();
+
+    // 1. Direct ID match
+    var found = book.toc.find(function (item) { return item.id === strId; });
+    if (found) return found;
+
+    // 2. Day number match in 100 Days BA (e.g. '1', '100', 'day-1', 'day-100', 'day 100')
+    if (book.id === '100-days-ba') {
+      var dNum = parseInt(strId.replace(/\D/g, ''), 10);
+      if (!isNaN(dNum)) {
+        var dayFound = book.toc.find(function (item) { return item.id === ('day-' + dNum); });
+        if (dayFound) return dayFound;
+      }
+    }
+
+    // 3. Task number match in BABOK (e.g. '3.1', 'task-3-1', 'task 3.1')
+    if (book.id === 'babok-v3') {
+      var cleanCode = strId.toLowerCase().replace(/^(task|chương|chuong)\s*/, '').replace(/[-_]/g, '.');
+      var babokFound = book.toc.find(function (item) {
+        var itemClean = item.code.toLowerCase().replace(/^(task|chương|chuong)\s*/, '').replace(/[-_]/g, '.');
+        return itemClean === cleanCode || item.id === ('task-' + strId.replace(/\./g, '-'));
+      });
+      if (babokFound) return babokFound;
+    }
+
+    // 4. Numeric 1-based index in TOC (e.g. '1' -> first item)
+    var num = parseInt(strId, 10);
+    if (!isNaN(num) && num >= 1 && num <= book.toc.length) {
+      return book.toc[num - 1];
+    }
+
+    // 5. Code match (e.g. 'Chương 1', 'Task 3.1')
+    var lower = strId.toLowerCase();
+    var codeFound = book.toc.find(function (item) {
+      return item.code.toLowerCase() === lower ||
+             item.code.toLowerCase().replace(/\s+/g, '') === lower.replace(/\s+/g, '');
+    });
+    if (codeFound) return codeFound;
+
+    return null;
   }
 
   function getAdjacentItems(book, currentItemId) {
@@ -70,17 +135,19 @@
     var book = findBook(bookId);
     if (!book) {
       booksEngineState.view = 'overview';
+      booksEngineState.activeBookId = null;
+      booksEngineState.activeItemId = null;
       return;
     }
 
-    booksEngineState.activeBookId = bookId;
+    booksEngineState.activeBookId = book.id;
 
     if (parts.length >= 2 && parts[1]) {
       var itemId = parts[1];
       var item = findItem(book, itemId);
       if (item && item.available) {
         booksEngineState.view = 'reader';
-        booksEngineState.activeItemId = itemId;
+        booksEngineState.activeItemId = item.id;
         return;
       }
     }
@@ -90,12 +157,12 @@
   }
 
   function updateUrlHash(bookId, itemId) {
-    if (typeof history !== 'undefined' && history.pushState) {
-      var newHash = '#/books';
-      if (bookId) {
-        newHash += '/' + bookId;
-        if (itemId) newHash += '/' + itemId;
-      }
+    var newHash = '#/books';
+    if (bookId) {
+      newHash += '/' + bookId;
+      if (itemId) newHash += '/' + itemId;
+    }
+    if (typeof location !== 'undefined' && location.hash !== newHash) {
       location.hash = newHash;
     }
   }
@@ -274,8 +341,8 @@
           '<button class="reader-mode-btn ' + (booksEngineState.readerMode === 'notes' ? 'active' : '') + '" data-set-reader-mode="notes">📖 Bài ôn tiếng Việt</button>' +
           '<button class="reader-mode-btn ' + (booksEngineState.readerMode === 'pdf' ? 'active' : '') + '" data-set-reader-mode="pdf">📄 Trang PDF (' + item.pdfPage + ')</button>' +
         '</div>' +
-        '<button class="secondary" id="btn-prev-item" ' + (!adj.prev ? 'disabled' : '') + ' data-open-item="' + (adj.prev ? adj.prev.id : '') + '">← Mục trước</button>' +
-        '<button class="primary" id="btn-next-item" ' + (!adj.next ? 'disabled' : '') + ' data-open-item="' + (adj.next ? adj.next.id : '') + '">Mục tiếp theo →</button>' +
+        '<button class="secondary" id="btn-prev-item" ' + (!adj.prev ? 'disabled' : '') + ' data-book-id="' + b.id + '" data-open-item="' + (adj.prev ? adj.prev.id : '') + '">← Mục trước</button>' +
+        '<button class="primary" id="btn-next-item" ' + (!adj.next ? 'disabled' : '') + ' data-book-id="' + b.id + '" data-open-item="' + (adj.next ? adj.next.id : '') + '">Mục tiếp theo →</button>' +
       '</div>' +
     '</div>';
 
@@ -300,7 +367,7 @@
             '</div>';
           }
           var isActive = it.id === item.id;
-          return '<button class="reader-toc-link ' + (isActive ? 'active' : '') + '" data-open-item="' + it.id + '">' +
+          return '<button class="reader-toc-link ' + (isActive ? 'active' : '') + '" data-book-id="' + b.id + '" data-open-item="' + it.id + '">' +
             '<div style="display:flex;justify-content:space-between;width:100%">' +
               '<small class="code">' + it.code + '</small>' +
               '<small class="page">p.' + it.pdfPage + '</small>' +
@@ -343,8 +410,8 @@
         ) +
 
         '<div class="reader-bottom-nav">' +
-          '<button class="secondary" id="btn-prev-item-bot" ' + (!adj.prev ? 'disabled' : '') + ' data-open-item="' + (adj.prev ? adj.prev.id : '') + '">← Mục trước (' + (adj.prev ? adj.prev.code : 'Đầu sách') + ')</button>' +
-          '<button class="primary" id="btn-next-item-bot" ' + (!adj.next ? 'disabled' : '') + ' data-open-item="' + (adj.next ? adj.next.id : '') + '">Mục tiếp theo (' + (adj.next ? adj.next.code : 'Hết sách') + ') →</button>' +
+          '<button class="secondary" id="btn-prev-item-bot" ' + (!adj.prev ? 'disabled' : '') + ' data-book-id="' + b.id + '" data-open-item="' + (adj.prev ? adj.prev.id : '') + '">← Mục trước (' + (adj.prev ? adj.prev.code : 'Đầu sách') + ')</button>' +
+          '<button class="primary" id="btn-next-item-bot" ' + (!adj.next ? 'disabled' : '') + ' data-book-id="' + b.id + '" data-open-item="' + (adj.next ? adj.next.id : '') + '">Mục tiếp theo (' + (adj.next ? adj.next.code : 'Hết sách') + ') →</button>' +
         '</div>' +
       '</div>' +
     '</div>';
@@ -392,29 +459,33 @@
       if (b.dataset.openBook) {
         e.preventDefault();
         var bookId = b.dataset.openBook;
-        booksEngineState.activeBookId = bookId;
-        booksEngineState.activeItemId = null;
-        booksEngineState.view = 'book-detail';
-        updateUrlHash(bookId, null);
-        if (typeof render === 'function') render();
-        window.scrollTo(0, 0);
-        return;
+        var book = findBook(bookId);
+        if (book) {
+          booksEngineState.activeBookId = book.id;
+          booksEngineState.activeItemId = null;
+          booksEngineState.view = 'book-detail';
+          updateUrlHash(book.id, null);
+          if (typeof render === 'function') render();
+          window.scrollTo(0, 0);
+          return;
+        }
       }
 
       // Open a specific chapter/task/day item directly
       if (b.dataset.openItem) {
         e.preventDefault();
         var itemId = b.dataset.openItem;
+        if (!itemId) return;
         var bookId = b.dataset.bookId || booksEngineState.activeBookId;
         var book = findBook(bookId);
         if (book) {
           var item = findItem(book, itemId);
           if (item && item.available) {
-            booksEngineState.activeBookId = bookId;
-            booksEngineState.activeItemId = itemId;
+            booksEngineState.activeBookId = book.id;
+            booksEngineState.activeItemId = item.id;
             booksEngineState.view = 'reader';
             booksEngineState.isMobileTocOpen = false;
-            updateUrlHash(bookId, itemId);
+            updateUrlHash(book.id, item.id);
             if (typeof render === 'function') render();
             window.scrollTo(0, 0);
             return;
@@ -437,12 +508,17 @@
       // Back to Book Detail
       if (b.id === 'btn-back-book-detail') {
         e.preventDefault();
-        booksEngineState.view = 'book-detail';
-        booksEngineState.activeItemId = null;
-        updateUrlHash(booksEngineState.activeBookId, null);
-        if (typeof render === 'function') render();
-        window.scrollTo(0, 0);
-        return;
+        var bookId = b.dataset.bookId || booksEngineState.activeBookId;
+        var book = findBook(bookId);
+        if (book) {
+          booksEngineState.activeBookId = book.id;
+          booksEngineState.view = 'book-detail';
+          booksEngineState.activeItemId = null;
+          updateUrlHash(book.id, null);
+          if (typeof render === 'function') render();
+          window.scrollTo(0, 0);
+          return;
+        }
       }
 
       // Toggle Mobile TOC

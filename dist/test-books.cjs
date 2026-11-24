@@ -227,6 +227,44 @@ assert(adjTask31.prev && adjTask31.prev.id === 'ch-2', 'Item before Task 3.1 is 
 assert(adjTask31.next && adjTask31.next.id === 'task-3-2', 'Item after Task 3.1 is Task 3.2');
 console.log('  ✓ Sequential navigation correctly steps through TOC items.');
 
+// ============================================================
+// TEST 8: NUMERIC ALIASES (#/books/1, #/books/2, #/books/3, #/books/1/1, #/books/3/100)
+// ============================================================
+console.log('\n--- Test 8: Numeric & Friendly Route Aliases (#/books/1, #/books/2, #/books/3) ---');
+
+// #/books/1 -> Book 1 (BABOK)
+engine.handleBooksHash(['1']);
+assert.strictEqual(engine.booksEngineState.view, 'book-detail', '#/books/1 must open Book Detail');
+assert.strictEqual(engine.booksEngineState.activeBookId, 'babok-v3', '#/books/1 must map to babok-v3');
+html = global.booksPage();
+assert(html.includes('BABOK® Guide v3'), '#/books/1 must render BABOK TOC');
+assert(html.includes('data-book-id="babok-v3"'), 'TOC cards must carry data-book-id="babok-v3"');
+
+// #/books/2 -> Book 2 (BCS)
+engine.handleBooksHash(['2']);
+assert.strictEqual(engine.booksEngineState.view, 'book-detail');
+assert.strictEqual(engine.booksEngineState.activeBookId, 'bcs-ba-3rd');
+
+// #/books/3 -> Book 3 (100 Days BA)
+engine.handleBooksHash(['3']);
+assert.strictEqual(engine.booksEngineState.view, 'book-detail');
+assert.strictEqual(engine.booksEngineState.activeBookId, '100-days-ba');
+
+// #/books/1/1 -> Book 1, Chapter 1
+engine.handleBooksHash(['1', '1']);
+assert.strictEqual(engine.booksEngineState.view, 'reader');
+assert.strictEqual(engine.booksEngineState.activeBookId, 'babok-v3');
+assert.strictEqual(engine.booksEngineState.activeItemId, 'ch-1');
+
+// #/books/3/100 -> Book 3, Day 100
+engine.handleBooksHash(['3', '100']);
+assert.strictEqual(engine.booksEngineState.view, 'reader');
+assert.strictEqual(engine.booksEngineState.activeBookId, '100-days-ba');
+assert.strictEqual(engine.booksEngineState.activeItemId, 'day-100');
+html = global.booksPage();
+assert(html.includes('DAY 100'), 'Must render Day 100');
+console.log('  ✓ Numeric route aliases (#/books/1, #/books/2, #/books/3, #/books/3/100) fully supported with zero action errors.');
+
 console.log('\n======================================================');
 console.log('🎉 ALL BA BOOKS READER TESTS PASSED! 100% COMPLIANT!');
 console.log('======================================================\n');
