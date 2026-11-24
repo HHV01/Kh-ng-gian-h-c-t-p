@@ -1,14 +1,22 @@
 /* =========================================================================
    SÁCH BA REAL-WORLD READER & CATALOG - VY WORKSPACE UI/UX STYLING
+   Optimized for balanced spacing, zero awkward voids, high density, and focus
    ========================================================================= */
 
-/* --- 1. Global & Micro-Interactions --- */
+/* --- Container max-width to eliminate ultrawide desert voids --- */
+.books-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Animations */
 .books-animate-fade {
-  animation: booksFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: booksFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes booksFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -19,24 +27,31 @@
   gap: 8px;
   font-size: 13px;
   color: var(--muted);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   flex-wrap: wrap;
 }
 .books-breadcrumb-bar a {
   color: var(--muted);
   text-decoration: none;
   transition: color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 .books-breadcrumb-bar a:hover {
   color: var(--primary);
 }
 .books-breadcrumb-bar .sep {
-  opacity: 0.5;
+  opacity: 0.45;
   font-size: 11px;
 }
 .books-breadcrumb-bar .current {
   color: var(--text);
   font-weight: 600;
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Reading Progress Global Bar */
@@ -59,43 +74,57 @@
   border-radius: 2px;
 }
 
-/* --- 2. Catalog Overview (Hero & Cards) --- */
+/* --- 1. Catalog Overview (Hero & 2-Column Balanced Spacing) --- */
+.books-overview-hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+@media (max-width: 1024px) {
+  .books-overview-hero-grid { grid-template-columns: 1fr; }
+}
+
 .books-hero-panel {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 18px;
-  padding: 28px 32px;
-  margin-bottom: 24px;
+  padding: 26px 28px;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
   overflow: hidden;
 }
-.books-hero-panel::after {
-  content: '';
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle, var(--tint) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-.books-stats-badge-group {
+
+.books-stats-sidebar-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px 26px;
+  box-shadow: var(--shadow);
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(180deg, var(--tint) 0%, var(--card) 60%);
+}
+
+.books-stat-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 .books-stat-chip {
-  padding: 10px 18px;
-  background: var(--surface-soft);
+  padding: 10px 12px;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: 12px;
   text-align: center;
-  min-width: 110px;
 }
 .books-stat-chip b {
-  font-size: 20px;
+  font-size: 18px;
   display: block;
   color: var(--primary);
   line-height: 1.2;
@@ -108,15 +137,19 @@
 /* Book Catalog Grid */
 .book-catalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  gap: 24px;
-  margin-top: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 14px;
 }
+@media (max-width: 1100px) {
+  .book-catalog-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+}
+
 .book-card {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 18px;
-  padding: 26px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -133,28 +166,27 @@
   right: 0;
   height: 4px;
   background: var(--book-accent, var(--primary));
-  opacity: 0.9;
+  opacity: 0.95;
 }
 .book-card:hover {
   transform: translateY(-3px);
   border-color: var(--book-accent, var(--primary));
-  box-shadow: 0 12px 32px rgba(91, 91, 214, 0.1);
+  box-shadow: 0 10px 28px rgba(91, 91, 214, 0.12);
 }
 .book-card-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 .book-icon-badge {
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   border-radius: 14px;
   display: grid;
   place-items: center;
-  font-size: 26px;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  font-size: 25px;
 }
 .book-status-pill {
   font-size: 11.5px;
@@ -169,34 +201,48 @@
   gap: 5px;
 }
 
-/* --- 3. Book Detail View & Filters --- */
-.book-detail-hero {
-  padding: 30px;
+/* --- 2. Book Detail View (2-Column Hero & Compact Filters) --- */
+.book-detail-hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+@media (max-width: 1024px) {
+  .book-detail-hero-grid { grid-template-columns: 1fr; }
+}
+
+.book-detail-main-panel {
+  padding: 26px 28px;
   border-radius: 18px;
   background: var(--card);
   border: 1px solid var(--line);
-  margin-bottom: 24px;
   box-shadow: var(--shadow);
-}
-.book-progress-tracker {
-  margin-top: 16px;
-  padding: 12px 16px;
-  background: var(--surface-soft);
-  border: 1px solid var(--line);
-  border-radius: 12px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
 }
+
+.book-detail-stats-card {
+  padding: 24px 26px;
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  background: linear-gradient(180deg, var(--tint) 0%, var(--card) 65%);
+}
+
 .book-progress-bar-outer {
-  flex: 1;
-  min-width: 140px;
+  width: 100%;
   height: 8px;
   background: var(--line);
   border-radius: 10px;
   overflow: hidden;
+  margin: 6px 0 10px;
 }
 .book-progress-bar-inner {
   height: 100%;
@@ -205,18 +251,28 @@
   transition: width 0.3s ease;
 }
 
-/* Filter Bar & Pills */
+/* Toolbar & Filter Bar */
+.book-filter-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 16px;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
 .filter-pill-group {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 14px;
 }
 .filter-pill-btn {
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 12.5px;
+  padding: 6px 13px;
+  border-radius: 18px;
+  font-size: 12px;
   font-weight: 500;
   border: 1px solid var(--line);
   background: var(--card);
@@ -225,10 +281,10 @@
   transition: all 0.16s ease;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 .filter-pill-btn:hover {
-  background: var(--surface-soft);
+  background: var(--tint);
   color: var(--text);
   border-color: var(--primary);
 }
@@ -237,7 +293,7 @@
   color: #fff;
   border-color: var(--primary);
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(91, 91, 214, 0.25);
+  box-shadow: 0 2px 6px rgba(91, 91, 214, 0.25);
 }
 
 .search-box-wrap {
@@ -245,65 +301,59 @@
   display: inline-flex;
   align-items: center;
   flex: 1;
-  max-width: 360px;
+  max-width: 320px;
 }
 .search-box-wrap input {
   width: 100%;
-  padding: 9px 34px 9px 14px;
-  border-radius: 10px;
+  padding: 8px 30px 8px 12px;
+  border-radius: 8px;
   border: 1px solid var(--line);
-  background: var(--surface-soft);
+  background: var(--card);
   color: var(--text);
-  font-size: 13px;
+  font-size: 12.5px;
   outline: none;
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s;
 }
 .search-box-wrap input:focus {
   border-color: var(--primary);
-  background: var(--card);
 }
 .search-box-wrap .clear-btn {
   position: absolute;
-  right: 10px;
+  right: 8px;
   background: none;
   border: none;
   color: var(--muted);
   cursor: pointer;
-  font-size: 14px;
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-.search-box-wrap .clear-btn:hover {
-  color: var(--text);
+  font-size: 13px;
+  padding: 2px 5px;
 }
 
-/* Table of Contents Grid */
+/* TOC Grid */
 .book-toc-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 16px;
-  margin-top: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
 }
 .book-toc-item {
-  background: var(--surface-soft);
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 18px 20px;
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.18s, box-shadow 0.18s;
   cursor: pointer;
-  position: relative;
 }
 .book-toc-item:hover {
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
 }
 .book-toc-item.completed {
   border-color: #10b98150;
-  background: linear-gradient(180deg, rgba(16, 185, 129, 0.04) 0%, var(--surface-soft) 100%);
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.04) 0%, var(--card) 100%);
 }
 .book-toc-code {
   font-size: 11.5px;
@@ -339,31 +389,61 @@ body.dark .book-toc-completed-badge {
   cursor: not-allowed;
   border-style: dashed;
 }
-.disabled-toc-item:hover {
-  transform: none;
-  border-color: var(--line);
-  box-shadow: none;
-}
 
-/* --- 4. Full Reader Layout --- */
+/* --- 3. Full Reader View (3-Column / Balanced 2-Column + Inspector) --- */
 .book-reader-layout {
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
-  gap: 24px;
+  grid-template-columns: 280px minmax(0, 1fr) 290px;
+  gap: 20px;
   align-items: flex-start;
   margin-top: 14px;
-  transition: grid-template-columns 0.25s ease;
+  transition: grid-template-columns 0.22s ease;
 }
+
+/* Focus / Zen Mode */
 .book-reader-layout.focus-mode {
   grid-template-columns: 1fr;
 }
-.book-reader-layout.focus-mode .reader-toc-rail {
+.book-reader-layout.focus-mode .reader-toc-rail,
+.book-reader-layout.focus-mode .reader-companion-pane {
   display: none;
 }
 .book-reader-layout.focus-mode .reader-content-pane {
-  max-width: 920px;
+  max-width: 860px;
   margin: 0 auto;
   width: 100%;
+}
+
+/* Responsive fallbacks for screen sizes */
+@media (max-width: 1280px) {
+  .book-reader-layout {
+    grid-template-columns: 280px minmax(0, 1fr);
+  }
+  .reader-companion-pane {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .book-reader-layout {
+    grid-template-columns: 1fr;
+  }
+  .mobile-toc-toggle-btn { display: inline-flex; }
+  .reader-toc-rail {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 300px;
+    height: 100vh;
+    max-height: 100vh;
+    z-index: 1000;
+    border-radius: 0;
+    transition: left 0.25s ease-in-out;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.25);
+  }
+  .reader-toc-rail.mobile-open { left: 0; }
+  .reader-toc-backdrop { display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.45); backdrop-filter: blur(2px); z-index: 999; }
+  .reader-content-pane { padding: 22px 18px; }
+  .book-toc-grid { grid-template-columns: 1fr; }
 }
 
 /* Reader Top Bar */
@@ -373,14 +453,14 @@ body.dark .book-toc-completed-badge {
   z-index: 25;
   background: var(--bg);
   backdrop-filter: blur(8px);
-  padding: 14px 0;
+  padding: 12px 0;
   border-bottom: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .reader-controls-cluster {
   display: inline-flex;
@@ -393,24 +473,24 @@ body.dark .book-toc-completed-badge {
 .reader-mode-switch {
   display: inline-flex;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
   background: var(--surface-soft);
   padding: 2px;
 }
 .reader-mode-btn {
-  padding: 6px 14px;
-  font-size: 12.5px;
+  padding: 6px 12px;
+  font-size: 12px;
   font-weight: 600;
   border: none;
   background: transparent;
   color: var(--muted);
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: all 0.16s ease;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
 }
 .reader-mode-btn:hover:not(.active) {
   color: var(--text);
@@ -418,22 +498,21 @@ body.dark .book-toc-completed-badge {
 .reader-mode-btn.active {
   background: var(--card);
   color: var(--primary);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-/* Font Size & Tool Toggles */
 .reader-tool-btn {
-  padding: 7px 11px;
+  padding: 6px 10px;
   border: 1px solid var(--line);
   background: var(--card);
   border-radius: 8px;
   color: var(--muted);
   cursor: pointer;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   transition: all 0.15s ease;
 }
 .reader-tool-btn:hover {
@@ -447,11 +526,10 @@ body.dark .book-toc-completed-badge {
   border-color: var(--primary);
 }
 
-/* Mark Completed Action */
 .btn-mark-completed {
-  padding: 7px 14px;
+  padding: 6px 12px;
   border-radius: 8px;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 600;
   border: 1px solid var(--line);
   background: var(--card);
@@ -459,7 +537,7 @@ body.dark .book-toc-completed-badge {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   transition: all 0.18s ease;
 }
 .btn-mark-completed:hover {
@@ -470,10 +548,10 @@ body.dark .book-toc-completed-badge {
   background: #10b981;
   border-color: #10b981;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
 }
 
-/* --- 5. Left Table of Contents Rail --- */
+/* Left TOC Rail */
 .reader-toc-rail {
   position: sticky;
   top: 76px;
@@ -482,10 +560,10 @@ body.dark .book-toc-completed-badge {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 16px;
-  padding: 16px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   box-shadow: var(--shadow);
   scrollbar-width: thin;
 }
@@ -501,16 +579,16 @@ body.dark .book-toc-completed-badge {
   flex-direction: column;
   gap: 8px;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 12px;
+  padding-bottom: 10px;
 }
 .reader-toc-search {
   width: 100%;
-  padding: 8px 12px;
+  padding: 7px 10px;
   border-radius: 8px;
   border: 1px solid var(--line);
   background: var(--surface-soft);
   color: var(--text);
-  font-size: 13px;
+  font-size: 12.5px;
   outline: none;
   transition: border-color 0.18s;
 }
@@ -520,25 +598,24 @@ body.dark .book-toc-completed-badge {
 .reader-toc-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
   overflow-y: auto;
 }
 .reader-toc-link {
   text-align: left;
-  padding: 10px 12px;
-  border-radius: 10px;
+  padding: 9px 11px;
+  border-radius: 8px;
   border: 1px solid transparent;
   background: transparent;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.4;
   transition: all 0.15s ease;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
   color: var(--text);
   width: 100%;
-  position: relative;
 }
 .reader-toc-link:hover {
   background: var(--surface-soft);
@@ -556,14 +633,14 @@ body.dark .book-toc-completed-badge {
   font-size: 11px;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
 }
 .reader-toc-link .page {
   color: var(--muted);
   font-size: 11px;
 }
 .reader-toc-link .title {
-  font-size: 12.5px;
+  font-size: 12px;
   word-break: break-word;
 }
 .reader-toc-link.disabled {
@@ -571,119 +648,81 @@ body.dark .book-toc-completed-badge {
   cursor: not-allowed;
 }
 
-/* --- 6. Main Reading Pane & Typography --- */
+/* Center Article Pane */
 .reader-content-pane {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 18px;
-  padding: 36px 42px;
+  padding: 32px 36px;
   box-shadow: var(--shadow);
   min-height: 650px;
 }
 .reader-item-header {
   border-bottom: 1px solid var(--line);
-  padding-bottom: 20px;
-  margin-bottom: 24px;
+  padding-bottom: 18px;
+  margin-bottom: 22px;
 }
 .reader-meta-box {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 14px;
   font-size: 13px;
   color: var(--muted);
   background: var(--surface-soft);
-  padding: 14px 18px;
-  border-radius: 12px;
-  margin: 16px 0 22px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 14px 0 20px;
   border: 1px solid var(--line);
 }
 .reader-article-body {
   line-height: 1.85;
   color: var(--text);
-  font-size: 16px;
-  max-width: 860px;
+  font-size: 15.5px;
 }
 .reader-article-body[data-font-size="small"] {
   font-size: 14.5px;
 }
 .reader-article-body[data-font-size="large"] {
-  font-size: 18px;
+  font-size: 17.5px;
   line-height: 1.9;
 }
-
 .reader-article-body h2 {
-  font-size: 22px;
+  font-size: 21px;
   margin-top: 0;
   margin-bottom: 14px;
-  letter-spacing: -0.4px;
+  letter-spacing: -0.3px;
 }
 .reader-article-body h3 {
-  font-size: 17px;
-  margin-top: 28px;
-  margin-bottom: 12px;
+  font-size: 16.5px;
+  margin-top: 26px;
+  margin-bottom: 10px;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 .reader-article-body p {
   margin: 12px 0 16px;
 }
 .reader-article-body ul, .reader-article-body ol {
-  padding-left: 24px;
-  margin: 12px 0 18px;
+  padding-left: 22px;
+  margin: 12px 0 16px;
 }
 .reader-article-body li {
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 
-/* Editorial Story Quotes in 100 Days BA */
+/* Editorial Story Quotes */
 .reader-story-quote {
   background: var(--surface-soft);
   border-left: 4px solid #059669;
-  padding: 16px 22px;
+  padding: 16px 20px;
   border-radius: 0 12px 12px 0;
-  margin: 20px 0;
+  margin: 18px 0;
   font-style: italic;
-  font-size: 15px;
-  line-height: 1.8;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  font-size: 14.5px;
+  line-height: 1.75;
 }
 body.dark .reader-story-quote {
   background: #064e3b18;
   border-color: #10b981;
-}
-
-/* Highlight Callout Enhancement */
-.reader-io-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 18px 0 22px;
-}
-.reader-io-card {
-  padding: 16px 18px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  background: var(--surface-soft);
-}
-.reader-io-card.inputs {
-  border-left: 4px solid var(--primary);
-}
-.reader-io-card.outputs {
-  border-left: 4px solid #10b981;
-}
-.reader-io-card b {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13.5px;
-  margin-bottom: 8px;
-}
-.reader-io-card ul {
-  margin: 0;
-  padding-left: 18px;
-  font-size: 13.5px;
 }
 
 /* PDF Embedded View */
@@ -702,56 +741,58 @@ body.dark .reader-story-quote {
   background: #fff;
 }
 
-/* Reader Bottom Sticky Bar */
+/* Bottom Nav */
 .reader-bottom-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 14px;
-  margin-top: 40px;
-  padding-top: 24px;
+  margin-top: 36px;
+  padding-top: 22px;
   border-top: 1px solid var(--line);
   flex-wrap: wrap;
 }
-
-/* Keyboard hint bar */
 .reader-keyboard-hint {
   font-size: 11.5px;
   color: var(--muted);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 .reader-keyboard-hint kbd {
   background: var(--surface-soft);
   border: 1px solid var(--line);
   border-radius: 4px;
-  padding: 2px 6px;
-  font-size: 11px;
+  padding: 2px 5px;
+  font-size: 10.5px;
 }
 
-/* Mobile TOC Drawer & Responsiveness */
-.mobile-toc-toggle-btn { display: none; }
-.reader-toc-backdrop { display: none; }
-
-@media (max-width: 900px) {
-  .book-reader-layout { grid-template-columns: 1fr; }
-  .mobile-toc-toggle-btn { display: inline-flex; }
-  .reader-toc-rail {
-    position: fixed;
-    top: 0;
-    left: -320px;
-    width: 300px;
-    height: 100vh;
-    max-height: 100vh;
-    z-index: 1000;
-    border-radius: 0;
-    transition: left 0.25s ease-in-out;
-    box-shadow: 4px 0 24px rgba(0,0,0,0.25);
-  }
-  .reader-toc-rail.mobile-open { left: 0; }
-  .reader-toc-backdrop { display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.45); backdrop-filter: blur(2px); z-index: 999; }
-  .reader-content-pane { padding: 22px 18px; }
-  .book-toc-grid { grid-template-columns: 1fr; }
-  .reader-io-grid { grid-template-columns: 1fr; }
+/* --- 4. Right Companion Inspector Pane --- */
+.reader-companion-pane {
+  position: sticky;
+  top: 76px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.reader-companion-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
+.reader-companion-card h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.reader-companion-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
 }
